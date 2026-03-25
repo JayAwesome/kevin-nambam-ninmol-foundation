@@ -2,11 +2,6 @@
 deployment:
   tasks:
     - export DEPLOYPATH=/home/sdvvtqww/public_html/
-    - /bin/rm -rf $DEPLOYPATH/*
     - /opt/cpanel/ea-nodejs20/bin/npm install
     - /opt/cpanel/ea-nodejs20/bin/npm run build
-    - /bin/cp -R build/* $DEPLOYPATH---
-deployment:
-  tasks:
-    - export DEPLOYPATH=/home/sdvvtqww/public_html/
-    - /bin/cp -R build/* $DEPLOYPATH
+    - /bin/cp -R dist/* $DEPLOYPATH
