@@ -233,6 +233,25 @@ export const credibilityHighlights = [
   },
 ];
 
+export const sitewideCredibility = [
+  {
+    title: 'Registration Status',
+    text: 'Registration details can be added here as soon as formal documentation and registration references are ready for publication.',
+  },
+  {
+    title: 'Commitment to Accountability',
+    text: 'The foundation is committed to clear governance, responsible stewardship, and honest communication with donors, partners, and beneficiaries.',
+  },
+  {
+    title: 'Ethical Use of Funds',
+    text: 'Resources are intended to support mission-aligned programs, youth development activities, education support, mentoring, and accountable program delivery.',
+  },
+  {
+    title: 'Safeguarding',
+    text: 'The foundation is committed to safeguarding children and young people through safe engagement practices, responsible supervision, and respectful conduct standards.',
+  },
+];
+
 export const inspirations = [
   {
     name: 'Masai Ujiri',

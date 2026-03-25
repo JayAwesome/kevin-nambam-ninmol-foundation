@@ -99,7 +99,7 @@ function FloatingActions() {
         rel="noreferrer"
         aria-label="Chat with Kevin Nambam Ninmol Foundation on WhatsApp"
       >
-        WhatsApp
+        WhatsApp Chat
       </a>
 
       <button
@@ -108,7 +108,7 @@ function FloatingActions() {
         onClick={() => setIsChatOpen((current) => !current)}
         aria-expanded={isChatOpen}
       >
-        AI Help
+        FAQ Assistant
       </button>
 
       {isChatOpen ? (
@@ -124,8 +124,8 @@ function FloatingActions() {
           </div>
 
           <p className="chatbot-copy">
-            Ask about the foundation, donations, volunteering, or general FAQs. You can also tap a
-            topic below.
+            Ask what the foundation does, how to donate, how to volunteer, or use one of the quick
+            topic buttons below.
           </p>
 
           <div className="chatbot-quick-actions">

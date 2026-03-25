@@ -1,4 +1,5 @@
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import CredibilitySection from './components/CredibilitySection';
 import FloatingActions from './components/FloatingActions';
 import SiteFooter from './components/SiteFooter';
 import SiteHeader from './components/SiteHeader';
@@ -32,6 +33,7 @@ function App() {
           <Route path="/events" element={<EventsPage />} />
           <Route path="/contact" element={<ContactPage />} />
         </Routes>
+        <CredibilitySection />
         <SiteFooter />
         <FloatingActions />
       </div>
