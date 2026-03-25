@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom';
+import { useLanguage } from '../context/LanguageContext';
 import { navItems, siteContact } from '../siteData';
 
 function IconLink({ href, label, children }) {
@@ -10,6 +11,8 @@ function IconLink({ href, label, children }) {
 }
 
 function SiteFooter() {
+  const { t } = useLanguage();
+
   return (
     <footer className="site-footer">
       <div className="container footer-grid">
@@ -18,28 +21,25 @@ function SiteFooter() {
             <span className="brand-title">Kevin Nambam Ninmol Foundation</span>
             <span className="brand-subtitle">Fear No Fear</span>
           </Link>
-          <p className="footer-text">
-            A youth-focused foundation using sports, education, mentorship, and community
-            support to build courageous futures.
-          </p>
+          <p className="footer-text">{t('footer.text')}</p>
         </div>
 
         <div>
-          <h3>Explore</h3>
+          <h3>{t('footer.explore')}</h3>
           <div className="footer-links">
             {navItems.map((item) => (
               <Link key={item.to} to={item.to}>
-                {item.label}
+                {t(`nav.${item.labelKey}`)}
               </Link>
             ))}
           </div>
         </div>
 
         <div>
-          <h3>Contact</h3>
-          <p className="footer-text">Email: {siteContact.email}</p>
-          <p className="footer-text">Phone: {siteContact.phone}</p>
-          <p className="footer-text">Address: {siteContact.address}</p>
+          <h3>{t('footer.contact')}</h3>
+          <p className="footer-text">{t('footer.email')}: {siteContact.email}</p>
+          <p className="footer-text">{t('footer.phone')}: {siteContact.phone}</p>
+          <p className="footer-text">{t('footer.address')}: {siteContact.address}</p>
           <div className="social-row">
             <IconLink href="https://facebook.com" label="Facebook">
               <svg viewBox="0 0 24 24" aria-hidden="true">
@@ -61,9 +61,7 @@ function SiteFooter() {
       </div>
 
       <div className="container footer-bottom">
-        <p className="footer-text">
-          Copyright (c) 2026 Kevin Nambam Ninmol Foundation. All rights reserved.
-        </p>
+        <p className="footer-text">{t('footer.copyright')}</p>
       </div>
     </footer>
   );

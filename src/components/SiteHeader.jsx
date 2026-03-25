@@ -1,11 +1,13 @@
 import { useEffect, useState } from 'react';
 import { Link, NavLink, useLocation } from 'react-router-dom';
 import { navItems } from '../siteData';
+import { useLanguage } from '../context/LanguageContext';
 
 function SiteHeader() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [theme, setTheme] = useState(() => localStorage.getItem('theme') || 'light');
+  const { language, setLanguage, t } = useLanguage();
   const location = useLocation();
 
   const handleNavClick = () => {
@@ -43,7 +45,7 @@ function SiteHeader() {
           aria-controls="site-navigation"
           onClick={() => setIsMenuOpen((current) => !current)}
         >
-          Menu
+          {t('ui.menu')}
         </button>
 
         <nav
@@ -58,23 +60,39 @@ function SiteHeader() {
               onClick={handleNavClick}
               className={({ isActive }) => (isActive ? 'nav-link-active' : undefined)}
             >
-              {item.label}
+              {t(`nav.${item.labelKey}`)}
             </NavLink>
           ))}
+          <div className="language-toggle" aria-label="Language switcher">
+            <button
+              type="button"
+              className={language === 'en' ? 'language-active' : ''}
+              onClick={() => setLanguage('en')}
+            >
+              {t('ui.english')}
+            </button>
+            <button
+              type="button"
+              className={language === 'fr' ? 'language-active' : ''}
+              onClick={() => setLanguage('fr')}
+            >
+              {t('ui.french')}
+            </button>
+          </div>
           <button
             type="button"
             className="theme-toggle"
             onClick={() => setTheme((current) => (current === 'dark' ? 'light' : 'dark'))}
-            aria-label={`Switch to ${theme === 'dark' ? 'light' : 'dark'} mode`}
+            aria-label={theme === 'dark' ? t('ui.switchToLight') : t('ui.switchToDark')}
             aria-pressed={theme === 'dark'}
           >
             <span className="theme-toggle-track" aria-hidden="true">
               <span className="theme-toggle-thumb"></span>
             </span>
-            <span className="theme-toggle-label">{theme === 'dark' ? 'Light Mode' : 'Dark Mode'}</span>
+            <span className="theme-toggle-label">{theme === 'dark' ? t('ui.lightMode') : t('ui.darkMode')}</span>
           </button>
           <NavLink to="/donate" className="button button-accent header-donate" onClick={handleNavClick}>
-            Donate
+            {t('ui.donate')}
           </NavLink>
         </nav>
       </div>

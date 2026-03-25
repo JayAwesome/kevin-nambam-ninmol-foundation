@@ -1,15 +1,15 @@
 export const navItems = [
-  { label: 'Home', to: '/' },
-  { label: 'About', to: '/about' },
-  { label: 'Leadership', to: '/leadership-governance' },
-  { label: 'Policies', to: '/policies-safeguarding' },
-  { label: 'Programs', to: '/programs' },
-  { label: 'Impact', to: '/impact' },
-  { label: 'Get Involved', to: '/get-involved' },
-  { label: 'Donate', to: '/donate' },
-  { label: 'News', to: '/news' },
-  { label: 'Events', to: '/events' },
-  { label: 'Contact', to: '/contact' },
+  { labelKey: 'home', to: '/' },
+  { labelKey: 'about', to: '/about' },
+  { labelKey: 'leadership', to: '/leadership-governance' },
+  { labelKey: 'policies', to: '/policies-safeguarding' },
+  { labelKey: 'programs', to: '/programs' },
+  { labelKey: 'impact', to: '/impact' },
+  { labelKey: 'getInvolved', to: '/get-involved' },
+  { labelKey: 'donate', to: '/donate' },
+  { labelKey: 'news', to: '/news' },
+  { labelKey: 'events', to: '/events' },
+  { labelKey: 'contact', to: '/contact' },
 ];
 
 export const siteContact = {
