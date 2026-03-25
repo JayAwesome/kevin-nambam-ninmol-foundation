@@ -110,39 +110,40 @@ export const latestNews = [
 ];
 
 export const aboutStory = [
-  'Kevin Nambam Ninmol Foundation was born out of lived experience, resilience, and a belief that every young person deserves access to hope, discipline, and opportunity.',
-  'Kevin came from a struggling background, but basketball opened a path to education, growth, and leadership. Through sport, he gained the confidence and structure that helped shape his future, eventually becoming a senior officer and mentor to many.',
-  'Today, the foundation exists to turn that personal journey into a wider mission: helping children and youth rise above limitation through sports, education, mentorship, and community support.',
+  'Kevin Nambam Ninmol Foundation was born from a personal journey marked by hardship, resilience, and the life-changing power of opportunity.',
+  'Kevin grew up in a challenging environment where the future did not always appear clear. Basketball became more than a sport. It gave him direction, discipline, and access to education. Education, in turn, opened the way to leadership, service, and a wider sense of responsibility.',
+  'What began as one young man’s breakthrough has now become a public mission. The foundation exists to help children and young people, especially those facing social or economic limitation, discover that fear does not have to define their future.',
+  'Through sports, mentorship, education support, and community-based outreach, the foundation works to build confidence, expand opportunity, and help young people make positive choices with lasting impact.',
 ];
 
 export const visionMission = {
   vision:
-    'A future where young people, regardless of background, have the confidence, support, and opportunity to fulfill their full potential.',
+    'A future where every young person, regardless of background, has the support, confidence, and opportunity to live with purpose and fulfill their potential.',
   mission:
-    'To use basketball, education, mentorship, and lived experience to help young people choose hope over fear and make positive choices for their future.',
+    'To use basketball, education, mentorship, and lived experience to help young people choose hope over fear, build character, and make positive choices for their future.',
 };
 
 export const coreValues = [
   {
-    title: 'Hope',
-    text: 'We believe every child deserves encouragement, dignity, and a reason to believe in a brighter future.',
-  },
-  {
-    title: 'Discipline',
-    text: 'We use sports and structure to help young people build resilience, focus, and personal responsibility.',
-  },
-  {
-    title: 'Opportunity',
-    text: 'We create practical pathways through education, mentoring, and access to developmental programs.',
-  },
-  {
     title: 'Integrity',
-    text: 'We serve with transparency, accountability, and genuine care for the communities we reach.',
+    text: 'We are committed to honesty, ethical conduct, and consistency between our values, our words, and our work.',
+  },
+  {
+    title: 'Compassion',
+    text: 'We serve with empathy and respect, recognizing the dignity, challenges, and potential of every child and community we engage.',
+  },
+  {
+    title: 'Impact',
+    text: 'We focus on practical interventions that create visible, measurable change in the lives of young people and their communities.',
+  },
+  {
+    title: 'Accountability',
+    text: 'We believe in responsible stewardship, transparent communication, and building trust with donors, partners, and beneficiaries.',
   },
 ];
 
 export const founderMessage =
-  'Fear No Fear is more than a phrase. It is a call for young people to reject limitation, stand tall, and believe that their story can still become something meaningful. This foundation exists because one opportunity changed my life, and I believe the same can happen for many others.';
+  'Fear No Fear is not simply a slogan. It is a conviction born from experience. I know what it means to come from difficulty and to be changed by one real opportunity. This foundation was created so that more young people can receive guidance, support, and belief at the moment they need it most. Our commitment is to serve with sincerity, discipline, and purpose, and to help the next generation rise with courage.';
 
 export const leadershipTeam = [
   {
@@ -151,15 +152,21 @@ export const leadershipTeam = [
     image: '/media/founder-portrait.jpeg',
   },
   {
-    name: 'Programs Coordinator',
-    role: 'Youth Development and Outreach',
+    name: 'Program Delivery Team',
+    role: 'Youth development, outreach coordination, and field implementation',
     image: '/media/community-group.jpeg',
   },
   {
-    name: 'Community Partnerships Lead',
-    role: 'Schools and Institutional Engagement',
+    name: 'Partnerships and Community Relations Team',
+    role: 'Institutional engagement, school partnerships, and stakeholder collaboration',
     image: '/media/outreach-school.jpeg',
   },
+];
+
+export const legalCredibility = [
+  'The foundation is committed to operating in line with applicable legal, ethical, and nonprofit standards.',
+  'Registration, governance, and organizational documentation can be presented during donor, institutional, or partnership due diligence processes.',
+  'Program reporting, partner engagement, and stewardship practices are being structured to reflect transparency, accountability, and responsible use of resources.',
 ];
 
 export const inspirations = [

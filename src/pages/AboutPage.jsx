@@ -2,7 +2,15 @@ import PageHero from '../components/PageHero';
 import NewsletterSection from '../components/NewsletterSection';
 import SectionIntro from '../components/SectionIntro';
 import usePageTitle from '../hooks/usePageTitle';
-import { aboutStory, coreValues, founderMessage, inspirations, leadershipTeam, visionMission } from '../siteData';
+import {
+  aboutStory,
+  coreValues,
+  founderMessage,
+  inspirations,
+  leadershipTeam,
+  legalCredibility,
+  visionMission,
+} from '../siteData';
 
 function AboutPage() {
   usePageTitle('About');
@@ -11,8 +19,8 @@ function AboutPage() {
     <main>
       <PageHero
         eyebrow="About"
-        title="A foundation built on resilience, purpose, and opportunity."
-        subtitle="A trustworthy NGO story should feel both personal and institutional."
+        title="A foundation built on resilience, purpose, and public trust."
+        subtitle="Professional, community-rooted, and committed to helping young people rise beyond fear and limitation."
         image="/media/founder-portrait.jpeg"
       />
 
@@ -21,7 +29,7 @@ function AboutPage() {
           <div>
             <SectionIntro
               eyebrow="Our Story"
-              title="From lived experience to a wider mission of service."
+              title="From personal breakthrough to a mission of service and opportunity."
               text={aboutStory[0]}
             />
             <div className="stacked-copy">
@@ -59,7 +67,7 @@ function AboutPage() {
         <div className="container">
           <SectionIntro
             eyebrow="Core Values"
-            title="The principles guiding our programs, partnerships, and presence."
+            title="The principles guiding our work, stewardship, and partnerships."
             centered
           />
           <div className="values-grid">
@@ -78,14 +86,14 @@ function AboutPage() {
           <div>
             <SectionIntro
               eyebrow="Founder&apos;s Message"
-              title="A global-facing foundation still grounded in humanity."
+              title="A sincere mission, shaped by lived experience."
               text={founderMessage}
             />
           </div>
           <div className="quote-panel">
             <p>
-              “The right support at the right moment can redirect a young person’s entire
-              future. That belief is at the heart of this foundation.”
+              "The right support at the right moment can redirect a young person&apos;s entire
+              future. That belief is at the heart of this foundation."
             </p>
           </div>
         </div>
@@ -95,13 +103,14 @@ function AboutPage() {
         <div className="container">
           <SectionIntro
             eyebrow="Leadership"
-            title="A team committed to credibility, stewardship, and impact."
+            title="Leadership committed to service, credibility, and responsible impact."
+            text="The foundation is led by the founder and supported by teams focused on program delivery, community engagement, and partnership development."
             centered
           />
           <div className="team-grid">
             {leadershipTeam.map((person) => (
               <article key={person.name} className="team-card">
-                <img src={person.image} alt={person.name} />
+                <img src={person.image} alt={person.name} loading="lazy" decoding="async" />
                 <div className="team-card-body">
                   <h3>{person.name}</h3>
                   <p>{person.role}</p>
@@ -112,11 +121,28 @@ function AboutPage() {
         </div>
       </section>
 
+      <section className="section-space">
+        <div className="container">
+          <SectionIntro
+            eyebrow="Legal and Organizational Credibility"
+            title="Built with accountability in mind."
+            text="Institutional trust depends on more than good intentions. The foundation is being structured to meet the expectations of donors, partners, and formal stakeholders."
+          />
+          <div className="values-grid">
+            {legalCredibility.map((item) => (
+              <article key={item} className="value-card">
+                <p>{item}</p>
+              </article>
+            ))}
+          </div>
+        </div>
+      </section>
+
       <section className="section-space section-alt">
         <div className="container">
           <SectionIntro
             eyebrow="Those Who Inspired Him"
-            title="Basketball leaders and mentors who helped shape the founder’s vision."
+            title="Basketball leaders and mentors who helped shape the founder&apos;s vision."
             text="This project did not grow in isolation. It was influenced by coaches, administrators, and continental basketball leaders whose work showed what sport can do for young people."
             centered
           />
