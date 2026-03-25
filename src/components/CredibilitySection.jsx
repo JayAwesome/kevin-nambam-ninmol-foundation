@@ -12,6 +12,10 @@ function CredibilitySection() {
             The foundation is committed to transparency, accountability, ethical stewardship, and
             responsible safeguarding practices as its work continues to grow.
           </p>
+          <p className="credibility-trust-line">
+            Trusted by communities and strengthened through visible service, practical
+            partnerships, and responsible stewardship.
+          </p>
         </div>
 
         <div className="values-grid">

@@ -737,8 +737,27 @@ export const transformationStories = [
 export const reports = [
   {
     title: 'Annual Impact Report 2025',
+    type: 'Annual Report',
+    format: 'PDF Placeholder',
+    date: 'December 2025',
     description:
       'A downloadable placeholder for the foundation\'s annual report covering activities, outputs, partnerships, and key learning points.',
+  },
+  {
+    title: 'Financial Summary 2025',
+    type: 'Financial Summary',
+    format: 'PDF Placeholder',
+    date: 'December 2025',
+    description:
+      'A concise placeholder summary of income, expenditure priorities, and stewardship commitments for donor and institutional review.',
+  },
+  {
+    title: 'Program Delivery Report',
+    type: 'Program Report',
+    format: 'PDF Placeholder',
+    date: 'Quarter 4, 2025',
+    description:
+      'A placeholder program report highlighting delivery areas, activities completed, and practical lessons from outreach, mentoring, and youth engagement.',
   },
 ];
 
@@ -838,7 +857,8 @@ export const donationBreakdown = [
 ];
 
 export const donationTrustSignals = [
-  'Secure payment gateway placeholder: Paystack / Flutterwave',
+  'Secure checkout placeholder',
+  'Paystack / Flutterwave ready',
   'Transparent stewardship and responsible fund use',
   'Mission-aligned giving for measurable youth impact',
 ];
@@ -847,6 +867,12 @@ export const internationalPaymentOptions = [
   'NGN donors: local transfer or Paystack integration placeholder',
   'USD, GBP, and EUR donors: international card or Flutterwave gateway placeholder',
   'Currency conversion shown on the page is indicative and can be updated when live gateway rates are connected',
+];
+
+export const homepageTrustSignals = [
+  'Trusted by communities',
+  'Visible outreach and local partnerships',
+  'Transparent, mission-led delivery',
 ];
 
 export const sponsorOptions = [

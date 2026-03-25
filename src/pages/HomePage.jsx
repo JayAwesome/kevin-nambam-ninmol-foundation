@@ -5,6 +5,7 @@ import SectionIntro from '../components/SectionIntro';
 import usePageTitle from '../hooks/usePageTitle';
 import {
   heroStats,
+  homepageTrustSignals,
   latestActivities,
   homepagePrograms,
   latestNews,
@@ -53,6 +54,13 @@ function HomePage() {
                 Rooted in lived experience, youth mentorship, and visible community engagement in
                 Jos and beyond.
               </p>
+              <div className="hero-trust-list">
+                {homepageTrustSignals.map((item) => (
+                  <span key={item} className="hero-trust-pill">
+                    {item}
+                  </span>
+                ))}
+              </div>
             </div>
           </div>
         </div>

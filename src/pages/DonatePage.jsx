@@ -160,7 +160,7 @@ function DonatePage() {
             </p>
 
             <div className="secure-payment-box">
-              <strong>Payment integration placeholder</strong>
+              <strong>Secure payment options</strong>
               <p>
                 Paystack or Flutterwave can be connected here for secure one-time and monthly
                 donations.
@@ -183,6 +183,10 @@ function DonatePage() {
                 Every contribution is used responsibly to create measurable impact. Donations help
                 fund direct youth support, educational materials, mentoring activities, outreach
                 delivery, and practical development programs.
+              </p>
+              <p className="transparency-statement">
+                The foundation is committed to transparent stewardship so donors can understand how
+                support is translated into practical work.
               </p>
               <div className="donation-breakdown-list">
                 {donationBreakdown.map((item) => (

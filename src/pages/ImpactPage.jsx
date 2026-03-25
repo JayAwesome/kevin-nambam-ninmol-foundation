@@ -133,14 +133,19 @@ function ImpactPage() {
       <section className="section-space">
         <div className="container">
           <SectionIntro
-            eyebrow="Reports"
-            title="Annual reporting placeholder"
-            text="A formal annual report can be made available here for donors, partners, and institutions that require a consolidated overview of activities and results."
+            eyebrow="Reports & Documents"
+            title="Reporting materials that support transparency and professionalism."
+            text="These document placeholders show the reporting structure the foundation can use for annual communication, financial transparency, and program documentation."
             centered
           />
           <div className="reports-grid">
             {reports.map((report) => (
-              <article key={report.title} className="news-card">
+              <article key={report.title} className="report-card">
+                <div className="report-card-top">
+                  <span className="report-format-badge">{report.format}</span>
+                  <span className="meta-line">{report.date}</span>
+                </div>
+                <p className="program-tag">{report.type}</p>
                 <h3>{report.title}</h3>
                 <p>{report.description}</p>
                 <button

@@ -22,13 +22,14 @@ function NewsletterSection() {
       <div className="container newsletter-layout">
         <div>
           <p className="eyebrow">Newsletter</p>
-          <h2>Stay connected to the mission.</h2>
+          <h2>Stay updated on our impact.</h2>
           <p>
-            Receive stories, program updates, partnership opportunities, and upcoming events from
-            the foundation.
+            Join our email list to receive stories, program updates, recent activities, and
+            opportunities to support the foundation’s work.
           </p>
           <p className="micro-note">
-            Subscribe to hear how the work is growing and where support is making a difference.
+            Build with us over the long term through updates that show where support is making a
+            difference.
           </p>
         </div>
 
@@ -47,8 +48,8 @@ function NewsletterSection() {
 
         {isSubscribed ? (
           <p className="newsletter-success">
-            Thank you. Newsletter integration placeholder confirmed and your subscription flow is
-            ready to be connected.
+            Thank you. Your newsletter signup has been captured in this placeholder flow and is
+            ready to be connected to a live mailing system.
           </p>
         ) : null}
       </div>
