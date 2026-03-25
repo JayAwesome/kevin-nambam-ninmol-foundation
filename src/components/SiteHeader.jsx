@@ -1,13 +1,6 @@
 import { useEffect, useState } from 'react';
 import { Link, NavLink, useLocation } from 'react-router-dom';
-
-const homeNavItems = [
-  { label: 'Home', href: '/#home', match: '/' },
-  { label: 'Story', href: '/#story', match: '/' },
-  { label: 'Mission', href: '/#mission', match: '/' },
-  { label: 'Programs', href: '/#programs', match: '/' },
-  { label: 'Get Involved', href: '/get-involved', match: '/get-involved' },
-];
+import { navItems } from '../siteData';
 
 function SiteHeader() {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -25,17 +18,11 @@ function SiteHeader() {
     setIsMenuOpen(false);
   }, [location.pathname, location.hash]);
 
-  useEffect(() => {
-    const closeMenu = () => setIsMenuOpen(false);
-    window.addEventListener('resize', closeMenu);
-    return () => window.removeEventListener('resize', closeMenu);
-  }, []);
-
   return (
     <header className={`site-header ${isScrolled ? 'site-header-scrolled' : ''}`}>
       <div className="container nav-row">
         <Link to="/" className="brand">
-          <span className="brand-title">Kevin NanBam Ninmol Foundation</span>
+          <span className="brand-title">Kevin Nambam Ninmol Foundation</span>
           <span className="brand-subtitle">Fear No Fear</span>
         </Link>
 
@@ -54,19 +41,18 @@ function SiteHeader() {
           className={`site-nav ${isMenuOpen ? 'site-nav-open' : ''}`}
           aria-label="Primary navigation"
         >
-          {homeNavItems.map((item) => (
+          {navItems.map((item) => (
             <NavLink
-              key={item.label}
-              to={item.href}
-              className={({ isActive }) =>
-                isActive || (item.match === '/' && location.pathname === '/')
-                  ? 'nav-link-active'
-                  : undefined
-              }
+              key={item.to}
+              to={item.to}
+              className={({ isActive }) => (isActive ? 'nav-link-active' : undefined)}
             >
               {item.label}
             </NavLink>
           ))}
+          <NavLink to="/donate" className="button button-accent header-donate">
+            Donate
+          </NavLink>
         </nav>
       </div>
     </header>

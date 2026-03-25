@@ -1,3 +1,6 @@
+import { Link } from 'react-router-dom';
+import { navItems, siteContact } from '../siteData';
+
 function IconLink({ href, label, children }) {
   return (
     <a href={href} aria-label={label} className="social-link">
@@ -11,24 +14,32 @@ function SiteFooter() {
     <footer className="site-footer">
       <div className="container footer-grid">
         <div>
-          <a href="/" className="brand footer-brand">
-            <span className="brand-title">Kevin NanBam Ninmol Foundation</span>
+          <Link to="/" className="brand footer-brand">
+            <span className="brand-title">Kevin Nambam Ninmol Foundation</span>
             <span className="brand-subtitle">Fear No Fear</span>
-          </a>
+          </Link>
           <p className="footer-text">
-            Empowering youth through sports, education, mentorship, and opportunity.
+            A youth-focused foundation using sports, education, mentorship, and community
+            support to build courageous futures.
           </p>
         </div>
 
         <div>
-          <h3>Contact</h3>
-          <p className="footer-text">Email: info@kevinnanbamfoundation.org</p>
-          <p className="footer-text">Phone: +234 000 000 0000</p>
-          <p className="footer-text">Address: Jos, Plateau State, Nigeria</p>
+          <h3>Explore</h3>
+          <div className="footer-links">
+            {navItems.map((item) => (
+              <Link key={item.to} to={item.to}>
+                {item.label}
+              </Link>
+            ))}
+          </div>
         </div>
 
         <div>
-          <h3>Follow</h3>
+          <h3>Contact</h3>
+          <p className="footer-text">Email: {siteContact.email}</p>
+          <p className="footer-text">Phone: {siteContact.phone}</p>
+          <p className="footer-text">Address: {siteContact.address}</p>
           <div className="social-row">
             <IconLink href="https://facebook.com" label="Facebook">
               <svg viewBox="0 0 24 24" aria-hidden="true">
@@ -50,7 +61,9 @@ function SiteFooter() {
       </div>
 
       <div className="container footer-bottom">
-        <p className="footer-text">Copyright (c) 2026 Kevin NanBam Ninmol Foundation. All rights reserved.</p>
+        <p className="footer-text">
+          Copyright (c) 2026 Kevin Nambam Ninmol Foundation. All rights reserved.
+        </p>
       </div>
     </footer>
   );
