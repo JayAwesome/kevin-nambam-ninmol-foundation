@@ -13,25 +13,21 @@ function HomePage() {
         <div className="container home-hero-layout">
           <div className="home-hero-copy">
             <p className="eyebrow">Kevin Nambam Ninmol Foundation</p>
-            <h1>Fear No Fear. Helping young people choose hope, courage, and opportunity.</h1>
+            <h1>Empowering Youth Through Basketball, Education, and Mentorship</h1>
             <p className="home-hero-text">
-              We use basketball, mentorship, education support, and community outreach to help
-              children and young people rise above limitation, make positive choices, and build
-              lives of purpose.
+              We help young people choose hope over fear by opening pathways to growth,
+              confidence, and opportunity through sport, learning, and guidance.
             </p>
             <p className="home-hero-support">
-              Founded from lived experience and grounded in visible community action, the
-              foundation exists to make opportunity more accessible for the next generation.
+              Founded from lived experience and grounded in practical service, the foundation
+              exists to help children and youth rise above limitation and pursue brighter futures.
             </p>
             <div className="hero-actions">
               <Link to="/donate" className="button button-accent">
                 Donate Now
               </Link>
               <Link to="/get-involved" className="button button-ghost">
-                Volunteer
-              </Link>
-              <Link to="/about" className="button button-ghost button-inline-light">
-                Read Our Story
+                Join Us
               </Link>
             </div>
           </div>
@@ -57,16 +53,50 @@ function HomePage() {
         <div className="container">
           <SectionIntro
             eyebrow="Impact Snapshot"
-            title="Visible work. Practical support. A growing record of youth-centered impact."
-            text="Our approach combines measurable action with personal presence, helping donors and partners quickly understand the scale and seriousness of the work."
+            title="A growing record of visible, community-rooted impact."
+            text="We believe trust is built through measurable work, clear purpose, and consistent presence in the lives of young people."
           />
           <div className="metric-grid">
             {heroStats.map((item) => (
               <article key={item.label} className="metric-card">
+                <span className="metric-icon" aria-hidden="true">
+                  {item.icon}
+                </span>
                 <strong>{item.value}</strong>
-                <span>{item.label}</span>
+                <span className="metric-label">{item.label}</span>
+                <p>{item.detail}</p>
               </article>
             ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="section-space">
+        <div className="container split-panel">
+          <div>
+            <SectionIntro
+              eyebrow="About Preview"
+              title="A personal story transformed into a public mission."
+              text="Kevin Nambam Ninmol Foundation grew from a journey marked by hardship, resilience, and the life-changing power of opportunity."
+            />
+            <p className="detail-copy">
+              From a difficult beginning to national and international basketball opportunities,
+              Kevin's experience now fuels a foundation committed to helping young people find
+              hope, structure, and support for the future.
+            </p>
+            <Link to="/about" className="button button-accent">
+              Learn More About Us
+            </Link>
+          </div>
+
+          <div className="split-panel-media">
+            <img
+              src="/media/founder-national.jpeg"
+              alt="Founder in Nigeria national basketball kit"
+              className="media-focus-center"
+              loading="lazy"
+              decoding="async"
+            />
           </div>
         </div>
       </section>
@@ -75,11 +105,11 @@ function HomePage() {
         <div className="container">
           <SectionIntro
             eyebrow="Programs"
-            title="Programs that meet urgent needs while building long-term growth."
-            text="Our initiatives are designed to support learning, strengthen confidence, and create real pathways for young people to thrive."
+            title="Focused programs that support learning, guidance, and youth development."
+            text="Each program area is designed to respond to real needs with practical support and long-term encouragement."
           />
           <div className="program-preview-grid">
-            {homepagePrograms.slice(0, 3).map((program) => (
+            {homepagePrograms.map((program) => (
               <article key={program.slug} className="feature-card">
                 <img src={program.image} alt={program.title} loading="lazy" decoding="async" />
                 <div className="feature-card-body">
@@ -97,36 +127,6 @@ function HomePage() {
             <Link to="/programs" className="button button-ghost">
               Explore All Programs
             </Link>
-          </div>
-        </div>
-      </section>
-
-      <section className="section-space">
-        <div className="container split-panel">
-          <div>
-            <SectionIntro
-              eyebrow="About the Foundation"
-              title="A personal journey transformed into a public mission of service."
-              text="From a difficult beginning to national and international basketball opportunities, Kevin Nambam Ninmol's story is now being translated into a foundation that helps young people discover dignity, structure, and hope."
-            />
-            <p className="detail-copy">
-              The foundation exists to show that background does not have to determine destiny.
-              Through sport, mentoring, education support, and community outreach, it creates the
-              kind of encouragement and access that can change a life.
-            </p>
-            <Link to="/about" className="button button-accent">
-              Read Our Story
-            </Link>
-          </div>
-
-          <div className="split-panel-media">
-            <img
-              src="/media/founder-portrait.jpeg"
-              alt="Founder in Nigeria national basketball kit"
-              className="media-focus-center"
-              loading="lazy"
-              decoding="async"
-            />
           </div>
         </div>
       </section>
@@ -155,8 +155,8 @@ function HomePage() {
         <div className="container">
           <SectionIntro
             eyebrow="Testimonials"
-            title="Trust is built through real experiences and real relationships."
-            text="These voices reflect how the foundation is experienced by participants, families, and local partners."
+            title="Stories that reflect hope, growth, and real support."
+            text="These short beneficiary-style stories help visitors understand how the foundation is experienced on the ground."
           />
           <div className="testimonial-grid">
             {testimonials.map((item) => (
@@ -174,18 +174,18 @@ function HomePage() {
         <div className="container cta-band">
           <div>
             <p className="eyebrow">Take Action</p>
-            <h2>Stand with a foundation helping young people fear less and aim higher.</h2>
+            <h2>Partner with us to expand hope, opportunity, and youth development.</h2>
             <p>
-              Whether you give, volunteer, or partner with us, your support helps create safer
-              spaces, stronger mentoring, and more opportunity for children and youth.
+              Your donations, partnerships, and support help strengthen education access,
+              mentoring, and practical development opportunities for young people.
             </p>
           </div>
           <div className="cta-band-actions">
             <Link to="/donate" className="button button-accent">
-              Donate
+              Donate Now
             </Link>
             <Link to="/get-involved" className="button button-ghost">
-              Volunteer
+              Join Us
             </Link>
           </div>
         </div>
@@ -195,8 +195,8 @@ function HomePage() {
         <div className="container">
           <SectionIntro
             eyebrow="Latest Updates"
-            title="Recent news and field updates from the foundation."
-            text="Fresh updates help donors, partners, and communities see that the work is current, transparent, and active."
+            title="Recent activities and updates from the field."
+            text="Current updates help donors, partners, and visitors see that the work is active, transparent, and ongoing."
           />
           <div className="news-grid">
             {latestNews.map((item) => (

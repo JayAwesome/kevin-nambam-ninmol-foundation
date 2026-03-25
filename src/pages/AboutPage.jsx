@@ -1,15 +1,18 @@
+import { Link } from 'react-router-dom';
 import PageHero from '../components/PageHero';
 import NewsletterSection from '../components/NewsletterSection';
 import SectionIntro from '../components/SectionIntro';
 import usePageTitle from '../hooks/usePageTitle';
 import {
   aboutStory,
-  coreValues,
+  credibilityHighlights,
+  foundationGoals,
+  foundationObjectives,
   founderMessage,
-  inspirations,
   leadershipTeam,
   legalCredibility,
   visionMission,
+  whyItMatters,
 } from '../siteData';
 
 function AboutPage() {
@@ -18,18 +21,18 @@ function AboutPage() {
   return (
     <main>
       <PageHero
-        eyebrow="About"
-        title="A foundation built on resilience, purpose, and public trust."
-        subtitle="Professional, community-rooted, and committed to helping young people rise beyond fear and limitation."
-        image="/media/founder-portrait.jpeg"
+        eyebrow="About Us"
+        title="About Us"
+        subtitle="Our Story, Mission, and Commitment to Youth Development"
+        image="/media/founder-national.jpeg"
       />
 
       <section className="section-space">
         <div className="container split-panel">
           <div>
             <SectionIntro
-              eyebrow="Our Story"
-              title="From personal breakthrough to a mission of service and opportunity."
+              eyebrow="Founder&apos;s Story"
+              title="Founder&apos;s Story"
               text={aboutStory[0]}
             />
             <div className="stacked-copy">
@@ -37,7 +40,11 @@ function AboutPage() {
                 <p key={paragraph}>{paragraph}</p>
               ))}
             </div>
+            <blockquote className="about-story-quote">
+              <p>"Your beginning does not determine your end."</p>
+            </blockquote>
           </div>
+
           <div className="split-panel-media">
             <img
               src="/media/founder-action.jpeg"
@@ -51,14 +58,14 @@ function AboutPage() {
       </section>
 
       <section className="section-space section-alt">
-        <div className="container dual-card-grid">
-          <article className="info-panel">
-            <p className="program-tag">Vision</p>
-            <h2>{visionMission.vision}</h2>
-          </article>
-          <article className="info-panel">
-            <p className="program-tag">Mission</p>
-            <h2>{visionMission.mission}</h2>
+        <div className="container">
+          <SectionIntro
+            eyebrow="Our Mission"
+            title="Our Mission"
+            centered
+          />
+          <article className="mission-highlight-panel">
+            <p>{visionMission.mission}</p>
           </article>
         </div>
       </section>
@@ -66,36 +73,76 @@ function AboutPage() {
       <section className="section-space">
         <div className="container">
           <SectionIntro
-            eyebrow="Core Values"
-            title="The principles guiding our work, stewardship, and partnerships."
+            eyebrow="Why It Matters"
+            title="Why this work matters"
+            text="The foundation exists in response to real barriers that affect how young people see themselves, the choices available to them, and the futures they believe they can reach."
             centered
           />
           <div className="values-grid">
-            {coreValues.map((value) => (
-              <article key={value.title} className="value-card">
-                <h3>{value.title}</h3>
-                <p>{value.text}</p>
+            {whyItMatters.map((item) => (
+              <article key={item.title} className="value-card">
+                <h3>{item.title}</h3>
+                <p>{item.text}</p>
               </article>
             ))}
           </div>
         </div>
       </section>
 
-      <section className="section-space section-dark">
-        <div className="container split-panel">
-          <div>
-            <SectionIntro
-              eyebrow="Founder&apos;s Message"
-              title="A sincere mission, shaped by lived experience."
-              text={founderMessage}
-            />
+      <section className="section-space">
+        <div className="container">
+          <SectionIntro
+            eyebrow="Our Goals"
+            title="Our Goals"
+            text="These priorities shape how the foundation supports young people in practical, long-term ways."
+            centered
+          />
+          <div className="values-grid">
+            {foundationGoals.map((goal, index) => (
+              <article key={goal.title} className="value-card goal-card">
+                <span className="goal-icon" aria-hidden="true">
+                  {index + 1}
+                </span>
+                <h3>{goal.title}</h3>
+                <p>{goal.text}</p>
+              </article>
+            ))}
           </div>
-          <div className="quote-panel">
-            <p>
-              "The right support at the right moment can redirect a young person&apos;s entire
-              future. That belief is at the heart of this foundation."
-            </p>
+        </div>
+      </section>
+
+      <section className="section-space section-alt">
+        <div className="container">
+          <SectionIntro
+            eyebrow="Our Objectives"
+            title="Our Objectives"
+            text="Our objectives keep the work clear, measurable, and grounded in the real needs of young people and communities."
+          />
+          <div className="objectives-panel">
+            <ol className="objectives-list">
+              {foundationObjectives.map((objective, index) => (
+                <li key={objective} className="objective-item">
+                  <span className="objective-icon" aria-hidden="true">
+                    {index + 1}
+                  </span>
+                  <p>{objective}</p>
+                </li>
+              ))}
+            </ol>
           </div>
+        </div>
+      </section>
+
+      <section className="section-space">
+        <div className="container dual-card-grid">
+          <article className="info-panel">
+            <p className="program-tag">Vision</p>
+            <h2>{visionMission.vision}</h2>
+          </article>
+          <article className="info-panel">
+            <p className="program-tag">Founder&apos;s Message</p>
+            <p className="detail-copy">{founderMessage}</p>
+          </article>
         </div>
       </section>
 
@@ -103,8 +150,8 @@ function AboutPage() {
         <div className="container">
           <SectionIntro
             eyebrow="Leadership"
-            title="Leadership committed to service, credibility, and responsible impact."
-            text="The foundation is led by the founder and supported by teams focused on program delivery, community engagement, and partnership development."
+            title="Leadership and stewardship"
+            text="The foundation is led with a commitment to service, credibility, and responsible community impact."
             centered
           />
           <div className="team-grid">
@@ -124,10 +171,19 @@ function AboutPage() {
       <section className="section-space">
         <div className="container">
           <SectionIntro
-            eyebrow="Legal and Organizational Credibility"
-            title="Built with accountability in mind."
-            text="Institutional trust depends on more than good intentions. The foundation is being structured to meet the expectations of donors, partners, and formal stakeholders."
+            eyebrow="Credibility"
+            title="Legal and organizational credibility"
+            text="We understand that trust matters. The foundation is being structured to meet the expectations of donors, institutions, and long-term partners."
           />
+          <div className="dual-card-grid">
+            {credibilityHighlights.map((item) => (
+              <article key={item.title} className="info-panel">
+                <p className="program-tag">{item.title}</p>
+                <p className="detail-copy">{item.text}</p>
+              </article>
+            ))}
+          </div>
+          <div className="section-spacer-sm" />
           <div className="values-grid">
             {legalCredibility.map((item) => (
               <article key={item} className="value-card">
@@ -138,28 +194,24 @@ function AboutPage() {
         </div>
       </section>
 
-      <section className="section-space section-alt">
-        <div className="container">
-          <SectionIntro
-            eyebrow="Those Who Inspired Him"
-            title="Basketball leaders and mentors who helped shape the founder&apos;s vision."
-            text="This project did not grow in isolation. It was influenced by coaches, administrators, and continental basketball leaders whose work showed what sport can do for young people."
-            centered
-          />
-          <div className="inspiration-grid">
-            {inspirations.map((person) => (
-              <article key={person.name} className="team-card inspiration-card">
-                <img src={person.image} alt={person.name} loading="lazy" decoding="async" />
-                <div className="team-card-body">
-                  <h3>{person.name}</h3>
-                  <p className="inspiration-role">{person.role}</p>
-                  <p>{person.summary}</p>
-                  <a href={person.sourceUrl} target="_blank" rel="noreferrer" className="text-link">
-                    {person.sourceLabel}
-                  </a>
-                </div>
-              </article>
-            ))}
+      <section className="section-space section-accent-band">
+        <div className="container cta-band">
+          <div>
+            <p className="eyebrow">Take Action</p>
+            <h2>Partner with us to shape the future of young people</h2>
+            <p>
+              Your support helps the foundation expand mentoring, education support, youth
+              development, and practical community-based opportunities with greater reach and
+              long-term impact.
+            </p>
+          </div>
+          <div className="cta-band-actions">
+            <Link to="/donate" className="button button-accent">
+              Donate
+            </Link>
+            <Link to="/get-involved" className="button button-ghost">
+              Partner With Us
+            </Link>
           </div>
         </div>
       </section>

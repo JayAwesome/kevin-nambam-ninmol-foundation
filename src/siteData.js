@@ -20,43 +20,55 @@ export const siteContact = {
 };
 
 export const heroStats = [
-  { value: '2,500+', label: 'Young people reached through clinics, mentoring, and outreach' },
-  { value: '20+', label: 'Communities and institutions engaged' },
-  { value: '40+', label: 'Programs, clinics, and outreach activities delivered' },
-  { value: '18+', label: 'Education support and scholarship actions provided' },
+  {
+    value: '2,500+',
+    label: 'Youth reached',
+    detail: 'Young people reached through clinics, mentoring, and outreach',
+    icon: 'Y',
+  },
+  {
+    value: '40+',
+    label: 'Programs conducted',
+    detail: 'Programs, clinics, and outreach activities delivered',
+    icon: 'P',
+  },
+  {
+    value: '20+',
+    label: 'Communities impacted',
+    detail: 'Communities and institutions engaged through direct support',
+    icon: 'C',
+  },
+  {
+    value: '18+',
+    label: 'Education actions',
+    detail: 'Education support and scholarship actions provided',
+    icon: 'E',
+  },
 ];
 
 export const homepagePrograms = [
   {
     slug: 'scholars-of-tomorrow',
-    title: 'Scholars of Tomorrow',
-    subtitle: 'Education and scholarships',
+    title: 'Education Support',
+    subtitle: 'Learning access and scholarship pathways',
     excerpt:
-      'Academic support, school materials, mentoring, and scholarship pathways for underserved youth.',
+      'Academic support, school materials, and scholarship pathways that help underserved students remain connected to opportunity.',
     image: '/media/program-certificate.jpeg',
   },
   {
     slug: 'fear-no-fear-clinics',
-    title: 'Fear No Fear Clinics',
-    subtitle: 'Sports and confidence building',
+    title: 'Youth Development',
+    subtitle: 'Sports, discipline, and confidence building',
     excerpt:
-      'Basketball clinics that build discipline, resilience, teamwork, and leadership in boys and girls.',
+      'Basketball clinics and mindset coaching that build discipline, resilience, teamwork, and leadership in boys and girls.',
     image: '/media/hero-court.jpeg',
   },
   {
-    slug: 'girl-child-initiative',
-    title: 'Girl Child Initiative',
-    subtitle: 'Equity and empowerment',
-    excerpt:
-      'Focused support that helps girls see opportunity, leadership, and confidence as their birthright.',
-    image: '/media/indoor-clinic.jpeg',
-  },
-  {
     slug: 'game-plan-for-life',
-    title: 'Game Plan for Life',
-    subtitle: 'Mentorship and life skills',
+    title: 'Mentorship',
+    subtitle: 'Guidance, life skills, and emotional support',
     excerpt:
-      'Training in communication, decision-making, emotional intelligence, and practical life direction.',
+      'Mentorship that strengthens communication, emotional well-being, decision-making, and practical life direction.',
     image: '/media/outreach-school.jpeg',
   },
 ];
@@ -145,11 +157,52 @@ export const coreValues = [
 export const founderMessage =
   'Fear No Fear is not simply a slogan. It is a conviction born from experience. I know what it means to come from difficulty and to be changed by one real opportunity. This foundation was created so that more young people can receive guidance, support, and belief at the moment they need it most. Our commitment is to serve with sincerity, discipline, and purpose, and to help the next generation rise with courage.';
 
+export const foundationGoals = [
+  {
+    title: 'Growth Mindset Development',
+    text: 'Encourage young people to view challenges as opportunities for growth, resilience, and personal development.',
+  },
+  {
+    title: 'Life Skills Empowerment',
+    text: 'Equip young people with practical skills such as problem-solving, communication, teamwork, and responsible decision-making.',
+  },
+  {
+    title: 'Mentorship and Guidance',
+    text: 'Provide positive role models, encouragement, and personal guidance that help young people build confidence and direction.',
+  },
+  {
+    title: 'Emotional Well-being',
+    text: 'Promote healthy coping mechanisms and emotional support so young people can manage pressure and respond to life with strength.',
+  },
+];
+
+export const foundationObjectives = [
+  'Establish and strengthen programs that promote emotional well-being, resilience, and life-skills development.',
+  'Build partnerships with schools, communities, organizations, and businesses to expand reach and provide meaningful support.',
+  'Train staff and volunteers so they are equipped to support young people effectively and responsibly.',
+  'Evaluate and improve programs and services to ensure they continue to meet the real needs of young people.',
+];
+
+export const whyItMatters = [
+  {
+    title: 'Limited access to opportunity',
+    text: 'Many young people grow up with ability and ambition, but without the support systems, safe spaces, and practical encouragement needed to move forward.',
+  },
+  {
+    title: 'Fear can become a barrier',
+    text: 'When children and youth face hardship, rejection, or low expectations, fear can begin to shape their choices and limit what they believe is possible.',
+  },
+  {
+    title: 'Timely support changes outcomes',
+    text: 'Mentorship, education support, and structured youth development can redirect a young person toward confidence, discipline, and a more hopeful future.',
+  },
+];
+
 export const leadershipTeam = [
   {
     name: 'Kevin Nambam Ninmol',
     role: 'Founder and Executive Director',
-    image: '/media/founder-portrait.jpeg',
+    image: '/media/founder-national.jpeg',
   },
   {
     name: 'Program Delivery Team',
@@ -167,6 +220,17 @@ export const legalCredibility = [
   'The foundation is committed to operating in line with applicable legal, ethical, and nonprofit standards.',
   'Registration, governance, and organizational documentation can be presented during donor, institutional, or partnership due diligence processes.',
   'Program reporting, partner engagement, and stewardship practices are being structured to reflect transparency, accountability, and responsible use of resources.',
+];
+
+export const credibilityHighlights = [
+  {
+    title: 'Registration',
+    text: 'Formal registration details can be inserted here as soon as the foundation\'s registration number and legal records are ready for publication.',
+  },
+  {
+    title: 'Accountability',
+    text: 'The foundation is committed to clear stewardship, responsible use of funds, transparent reporting, and honest communication with donors, partners, and beneficiaries.',
+  },
 ];
 
 export const inspirations = [
