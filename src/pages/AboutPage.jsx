@@ -11,6 +11,7 @@ import {
   founderMessage,
   leadershipTeam,
   legalCredibility,
+  theoryOfChange,
   visionMission,
   whyItMatters,
 } from '../siteData';
@@ -83,6 +84,37 @@ function AboutPage() {
               <article key={item.title} className="value-card">
                 <h3>{item.title}</h3>
                 <p>{item.text}</p>
+              </article>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="section-space section-alt">
+        <div className="container">
+          <SectionIntro
+            eyebrow="Our Approach"
+            title="How the foundation creates change"
+            text="Our approach is simple, practical, and structured around how support translates into visible change for young people."
+            centered
+          />
+          <div className="approach-flow-grid">
+            {theoryOfChange.map((step, index) => (
+              <article key={step.title} className="approach-step-card">
+                <div className="approach-step-header">
+                  <span className="approach-step-number" aria-hidden="true">
+                    {index + 1}
+                  </span>
+                  <div>
+                    <p className="program-tag">{step.tag}</p>
+                    <h3>{step.title}</h3>
+                  </div>
+                </div>
+                <ul className="program-bullet-list">
+                  {step.points.map((point) => (
+                    <li key={point}>{point}</li>
+                  ))}
+                </ul>
               </article>
             ))}
           </div>

@@ -2,6 +2,7 @@ export const navItems = [
   { label: 'Home', to: '/' },
   { label: 'About', to: '/about' },
   { label: 'Leadership', to: '/leadership-governance' },
+  { label: 'Policies', to: '/policies-safeguarding' },
   { label: 'Programs', to: '/programs' },
   { label: 'Impact', to: '/impact' },
   { label: 'Get Involved', to: '/get-involved' },
@@ -199,6 +200,45 @@ export const whyItMatters = [
   },
 ];
 
+export const theoryOfChange = [
+  {
+    title: 'Challenge',
+    tag: 'Why the work is needed',
+    points: [
+      'Young people often face limited opportunities and restricted access to support.',
+      'Negative environments can shape confidence, expectations, and daily choices.',
+      'Many children and youth lack consistent guidance, structure, and positive role models.',
+    ],
+  },
+  {
+    title: 'Intervention',
+    tag: 'What the foundation does',
+    points: [
+      'Basketball training creates discipline, teamwork, and a safe environment for growth.',
+      'Mentorship provides encouragement, role models, and practical guidance for life decisions.',
+      'Education support helps young people stay connected to learning and future opportunity.',
+    ],
+  },
+  {
+    title: 'Outcome',
+    tag: 'What changes in the short term',
+    points: [
+      'Improved confidence and self-belief among participants.',
+      'Better decision-making and stronger emotional resilience.',
+      'Life skills development in communication, teamwork, and responsibility.',
+    ],
+  },
+  {
+    title: 'Impact',
+    tag: 'What lasting change looks like',
+    points: [
+      'Young people become more empowered, responsible, and hopeful about their future.',
+      'Participants are better equipped to contribute positively to their schools, families, and communities.',
+      'Communities benefit from young individuals who are growing in character, confidence, and purpose.',
+    ],
+  },
+];
+
 export const leadershipTeam = [
   {
     name: 'Kevin Nambam Ninmol',
@@ -267,26 +307,41 @@ export const governanceStatement = [
 ];
 
 export const legalCredibility = [
+  'Kevin Nambam Ninmol Foundation operates in accordance with applicable laws and is committed to transparency and accountability.',
+  'Country of registration: Nigeria. Registration number: available to be added once formal publication details are ready.',
   'The foundation is committed to operating in line with applicable legal, ethical, and nonprofit standards.',
   'Registration, governance, and organizational documentation can be presented during donor, institutional, or partnership due diligence processes.',
   'Program reporting, partner engagement, and stewardship practices are being structured to reflect transparency, accountability, and responsible use of resources.',
+  'The foundation is committed to ethical operations, responsible stewardship, and legal compliance in the communities where it works.',
 ];
 
 export const credibilityHighlights = [
   {
     title: 'Registration',
-    text: 'Formal registration details can be inserted here as soon as the foundation\'s registration number and legal records are ready for publication.',
+    text: 'Country of registration: Nigeria. Formal registration details and registration number can be inserted here as soon as the foundation\'s legal records are ready for publication.',
   },
   {
     title: 'Accountability',
     text: 'The foundation is committed to clear stewardship, responsible use of funds, transparent reporting, and honest communication with donors, partners, and beneficiaries.',
   },
+  {
+    title: 'Legal Compliance',
+    text: 'Kevin Nambam Ninmol Foundation operates in accordance with applicable laws and is committed to transparency and accountability.',
+  },
 ];
 
 export const sitewideCredibility = [
   {
-    title: 'Registration Status',
-    text: 'Registration details can be added here as soon as formal documentation and registration references are ready for publication.',
+    title: 'Country of Registration',
+    text: 'Nigeria. Formal registration references and the official registration number can be published here once approved for public release.',
+  },
+  {
+    title: 'Registration Number',
+    text: 'Registration number placeholder: to be inserted as soon as the foundation\'s formal registration number is ready for publication.',
+  },
+  {
+    title: 'Legal Compliance',
+    text: 'Kevin Nambam Ninmol Foundation operates in accordance with applicable laws and is committed to transparency and accountability.',
   },
   {
     title: 'Commitment to Accountability',
@@ -295,6 +350,10 @@ export const sitewideCredibility = [
   {
     title: 'Ethical Use of Funds',
     text: 'Resources are intended to support mission-aligned programs, youth development activities, education support, mentoring, and accountable program delivery.',
+  },
+  {
+    title: 'Ethical Operations',
+    text: 'The foundation is committed to lawful, ethical, and mission-aligned operations that protect trust, dignity, and responsible service delivery.',
   },
   {
     title: 'Safeguarding',
@@ -534,16 +593,37 @@ export const impactMetrics = [
     label: 'Youth impacted',
     value: '2,500+',
     detail: 'Young people reached through direct engagement, mentoring, clinics, and outreach.',
+    chartValue: 100,
   },
   {
     label: 'Communities reached',
     value: '20+',
     detail: 'Communities, schools, and institutions engaged through foundation activity.',
+    chartValue: 52,
   },
   {
     label: 'Programs delivered',
     value: '40+',
     detail: 'Programs, basketball clinics, mentoring sessions, and outreach activities executed.',
+    chartValue: 68,
+  },
+];
+
+export const impactOutcomes = [
+  {
+    title: 'Improved confidence',
+    detail:
+      'Young people are given visible opportunities to participate, be encouraged, and build belief in their own ability.',
+  },
+  {
+    title: 'Better decision-making',
+    detail:
+      'Mentorship, coaching, and guided conversations help participants make healthier and more responsible life choices.',
+  },
+  {
+    title: 'Life skills development',
+    detail:
+      'Programs reinforce teamwork, communication, discipline, emotional resilience, and positive social behavior.',
   },
 ];
 
@@ -786,5 +866,48 @@ export const assistantTopics = [
       'Common questions include how to support the foundation, whether organizations can partner, and how programs go beyond basketball into education, mentoring, and outreach.',
     actionLabel: 'Open WhatsApp',
     actionHref: 'https://wa.me/2348037840841',
+  },
+];
+
+export const policySections = [
+  {
+    title: 'Child Protection Policy',
+    summary:
+      'The foundation is committed to creating safe environments for children and young people in all programs, outreach activities, and community engagements.',
+    points: [
+      'Children and young people must be treated with dignity, respect, and age-appropriate care at all times.',
+      'Staff, volunteers, and partners are expected to avoid any conduct that could place a child at risk of harm, exploitation, neglect, or abuse.',
+      'Safeguarding concerns are expected to be reported responsibly and responded to in a timely and protective manner.',
+    ],
+  },
+  {
+    title: 'Code of Conduct',
+    summary:
+      'All representatives of the foundation are expected to act professionally, respectfully, and in a way that protects trust in the organization.',
+    points: [
+      'Behave with integrity, fairness, and respect toward beneficiaries, colleagues, donors, and partners.',
+      'Avoid abusive, discriminatory, exploitative, or inappropriate conduct in any setting connected to the foundation.',
+      'Uphold responsible behavior in communication, program delivery, financial handling, and representation of the foundation.',
+    ],
+  },
+  {
+    title: 'Transparency and Accountability',
+    summary:
+      'The foundation is committed to responsible stewardship, transparent communication, and accountable decision-making.',
+    points: [
+      'Funds are intended for mission-aligned programs, operations, and activities that directly support the foundation’s work.',
+      'The foundation aims to communicate honestly with donors, partners, and communities about its work, growth, and limitations.',
+      'Governance, reporting, and oversight processes are being strengthened to reflect international nonprofit expectations.',
+    ],
+  },
+  {
+    title: 'Data Privacy Assurance',
+    summary:
+      'The foundation respects the privacy of supporters, partners, and participants and is committed to handling personal information with care.',
+    points: [
+      'Personal details collected through forms or communications are intended only for legitimate foundation purposes.',
+      'Information will not be shared irresponsibly and should be handled in a way that protects confidentiality and trust.',
+      'As systems grow, data handling practices will continue to align with good governance, security, and lawful record management.',
+    ],
   },
 ];

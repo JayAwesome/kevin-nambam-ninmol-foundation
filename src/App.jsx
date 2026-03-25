@@ -13,6 +13,7 @@ import GetInvolvedPage from './pages/GetInvolvedPage';
 import HomePage from './pages/HomePage';
 import ImpactPage from './pages/ImpactPage';
 import LeadershipGovernancePage from './pages/LeadershipGovernancePage';
+import PoliciesSafeguardingPage from './pages/PoliciesSafeguardingPage';
 import ProgramDetailPage from './pages/ProgramDetailPage';
 import ProgramsPage from './pages/ProgramsPage';
 
@@ -26,6 +27,7 @@ function App() {
           <Route path="/" element={<HomePage />} />
           <Route path="/about" element={<AboutPage />} />
           <Route path="/leadership-governance" element={<LeadershipGovernancePage />} />
+          <Route path="/policies-safeguarding" element={<PoliciesSafeguardingPage />} />
           <Route path="/programs" element={<ProgramsPage />} />
           <Route path="/programs/:slug" element={<ProgramDetailPage />} />
           <Route path="/impact" element={<ImpactPage />} />

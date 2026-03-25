@@ -1,4 +1,4 @@
-import { useMemo, useState } from 'react';
+import { useEffect, useMemo, useRef, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { assistantTopics, faqs, siteContact } from '../siteData';
 
@@ -6,6 +6,8 @@ function FloatingActions() {
   const navigate = useNavigate();
   const [isChatOpen, setIsChatOpen] = useState(false);
   const [query, setQuery] = useState('');
+  const chatCardRef = useRef(null);
+  const triggerRef = useRef(null);
   const [messages, setMessages] = useState([
     {
       role: 'assistant',
@@ -21,6 +23,34 @@ function FloatingActions() {
       })),
     []
   );
+
+  useEffect(() => {
+    if (!isChatOpen) {
+      return undefined;
+    }
+
+    const handlePointerDown = (event) => {
+      if (chatCardRef.current?.contains(event.target) || triggerRef.current?.contains(event.target)) {
+        return;
+      }
+
+      setIsChatOpen(false);
+    };
+
+    const handleEscape = (event) => {
+      if (event.key === 'Escape') {
+        setIsChatOpen(false);
+      }
+    };
+
+    document.addEventListener('mousedown', handlePointerDown);
+    document.addEventListener('keydown', handleEscape);
+
+    return () => {
+      document.removeEventListener('mousedown', handlePointerDown);
+      document.removeEventListener('keydown', handleEscape);
+    };
+  }, [isChatOpen]);
 
   const goToAction = (href) => {
     if (href.startsWith('http')) {
@@ -103,16 +133,24 @@ function FloatingActions() {
       </a>
 
       <button
+        ref={triggerRef}
         type="button"
         className="floating-chat-trigger"
         onClick={() => setIsChatOpen((current) => !current)}
         aria-expanded={isChatOpen}
+        aria-controls="foundation-assistant"
       >
         FAQ Assistant
       </button>
 
       {isChatOpen ? (
-        <div className="chatbot-card" role="dialog" aria-label="Foundation assistant">
+        <div
+          ref={chatCardRef}
+          id="foundation-assistant"
+          className="chatbot-card"
+          role="dialog"
+          aria-label="Foundation assistant"
+        >
           <div className="chatbot-header">
             <div>
               <strong>Foundation Assistant</strong>

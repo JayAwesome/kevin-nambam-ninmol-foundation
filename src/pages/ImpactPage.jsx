@@ -2,7 +2,14 @@ import PageHero from '../components/PageHero';
 import NewsletterSection from '../components/NewsletterSection';
 import SectionIntro from '../components/SectionIntro';
 import usePageTitle from '../hooks/usePageTitle';
-import { caseStudies, impactMetrics, mediaGallery, mediaVideos, reports } from '../siteData';
+import {
+  caseStudies,
+  impactMetrics,
+  impactOutcomes,
+  mediaGallery,
+  mediaVideos,
+  reports,
+} from '../siteData';
 
 function ImpactPage() {
   usePageTitle('Impact');
@@ -19,16 +26,54 @@ function ImpactPage() {
       <section className="section-space">
         <div className="container">
           <SectionIntro
-            eyebrow="Impact Statistics"
-            title="Key indicators of the foundation's work."
-            text="These figures provide a simple snapshot of the foundation's growing reach and delivery across youth development, mentoring, and community engagement."
+            eyebrow="Our Reach"
+            title="Measurable indicators of reach and program delivery."
+            text="These figures provide a count-based snapshot of how the foundation is showing up across youth engagement, community reach, and structured delivery."
             centered
           />
-          <div className="metric-grid impact-metric-grid">
-            {impactMetrics.map((item) => (
-              <article key={item.label} className="metric-card">
-                <strong>{item.value}</strong>
-                <span className="metric-label">{item.label}</span>
+          <div className="impact-data-layout">
+            <div className="metric-grid impact-metric-grid">
+              {impactMetrics.map((item) => (
+                <article key={item.label} className="metric-card">
+                  <strong>{item.value}</strong>
+                  <span className="metric-label">{item.label}</span>
+                  <p>{item.detail}</p>
+                </article>
+              ))}
+            </div>
+            <article className="impact-chart-panel">
+              <p className="program-tag">Evidence Snapshot</p>
+              <h3>Visual overview of current reach</h3>
+              <div className="impact-chart-list">
+                {impactMetrics.map((item) => (
+                  <div key={item.label} className="impact-chart-row">
+                    <div className="impact-chart-copy">
+                      <span>{item.label}</span>
+                      <strong>{item.value}</strong>
+                    </div>
+                    <div className="impact-chart-track" aria-hidden="true">
+                      <span style={{ width: `${item.chartValue}%` }}></span>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section className="section-space section-alt">
+        <div className="container">
+          <SectionIntro
+            eyebrow="What Changed"
+            title="Outcome areas the foundation is working to strengthen."
+            text="Beyond reach numbers, the foundation tracks change through the kinds of outcomes its programs are designed to produce in young people."
+            centered
+          />
+          <div className="impact-outcomes-grid">
+            {impactOutcomes.map((item) => (
+              <article key={item.title} className="impact-outcome-card">
+                <h3>{item.title}</h3>
                 <p>{item.detail}</p>
               </article>
             ))}
@@ -36,7 +81,7 @@ function ImpactPage() {
         </div>
       </section>
 
-      <section className="section-space section-alt">
+      <section className="section-space">
         <div className="container">
           <SectionIntro
             eyebrow="Case Studies"
@@ -55,7 +100,7 @@ function ImpactPage() {
         </div>
       </section>
 
-      <section className="section-space">
+      <section className="section-space section-alt">
         <div className="container">
           <SectionIntro
             eyebrow="Photo and Video Gallery"
@@ -85,7 +130,7 @@ function ImpactPage() {
         </div>
       </section>
 
-      <section className="section-space section-alt">
+      <section className="section-space">
         <div className="container">
           <SectionIntro
             eyebrow="Reports"
