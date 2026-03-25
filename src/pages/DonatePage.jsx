@@ -34,7 +34,7 @@ function DonatePage() {
       amount: effectiveAmount,
     });
     window.alert(
-      `Secure payment integration placeholder. ${billingMode === 'recurring' ? 'Monthly' : 'One-time'} gift: ${formatNaira(
+      `Secure payment integration placeholder. ${billingMode === 'monthly' ? 'Monthly' : 'One-time'} donation: ${formatNaira(
         effectiveAmount || 0,
       )}`,
     );
@@ -44,8 +44,8 @@ function DonatePage() {
     <main>
       <PageHero
         eyebrow="Donate"
-        title="Give with confidence and help expand real opportunity."
-        subtitle="A strong donation page should make generosity feel safe, clear, and meaningful."
+        title="Your support creates real change"
+        subtitle="This giving page is designed to make donating simple, clear, and trustworthy for every supporter."
         image="/media/program-certificate.jpeg"
       />
 
@@ -53,25 +53,25 @@ function DonatePage() {
         <div className="container donate-page-layout">
           <div>
             <SectionIntro
-              eyebrow="Support the Mission"
-              title="Choose an amount and see what your giving can make possible."
-              text="Your donation helps fund sports access, education support, mentorship, and practical community-based outreach."
+              eyebrow="Give Today"
+              title="Choose how you want to support the mission."
+              text="Your gift helps the foundation respond to practical needs through youth support, educational access, mentoring, and development initiatives."
             />
 
-            <div className="billing-toggle">
+            <div className="billing-toggle" aria-label="Donation frequency">
               <button
                 type="button"
                 className={billingMode === 'one-time' ? 'billing-active' : ''}
                 onClick={() => setBillingMode('one-time')}
               >
-                One-time
+                One-time donation
               </button>
               <button
                 type="button"
-                className={billingMode === 'recurring' ? 'billing-active' : ''}
-                onClick={() => setBillingMode('recurring')}
+                className={billingMode === 'monthly' ? 'billing-active' : ''}
+                onClick={() => setBillingMode('monthly')}
               >
-                Monthly
+                Monthly donation
               </button>
             </div>
 
@@ -93,25 +93,30 @@ function DonatePage() {
             </div>
 
             <label className="custom-amount-field donate-custom-field">
-              <span className="custom-amount-prefix">₦</span>
+              <span className="custom-amount-prefix">N</span>
               <input
                 type="number"
                 min="0"
                 placeholder="Enter custom amount"
                 value={customAmount}
                 onChange={(event) => setCustomAmount(event.target.value)}
+                aria-label="Custom donation amount"
               />
             </label>
 
-            <button type="button" className="button button-accent donate-submit-button" onClick={handleDonate}>
-              Give {effectiveAmount ? formatNaira(effectiveAmount) : 'Now'}
+            <button
+              type="button"
+              className="button button-accent donate-submit-button"
+              onClick={handleDonate}
+            >
+              Donate {effectiveAmount ? formatNaira(effectiveAmount) : 'Now'}
             </button>
 
             <div className="secure-payment-box">
-              <strong>Secure payment integration placeholder</strong>
+              <strong>Payment integration placeholder</strong>
               <p>
-                Paystack or Flutterwave can be connected here for secure one-time and
-                recurring giving.
+                Paystack or Flutterwave can be connected here for secure one-time and monthly
+                donations.
               </p>
             </div>
           </div>
@@ -119,33 +124,48 @@ function DonatePage() {
           <div className="donation-side-stack">
             <article className="info-panel">
               <p className="program-tag">Transparency</p>
-              <h2>How funds are used</h2>
+              <h2>Where your money goes</h2>
               <p>
-                Donations help the foundation deliver basketball clinics, education support,
-                mentorship, outreach initiatives, and focused opportunities for the girl
-                child. We are committed to using resources responsibly and in line with the
-                mission.
+                Donations help fund direct youth support, educational materials, mentoring
+                activities, outreach delivery, and practical development programs.
               </p>
               <ul className="opportunity-list">
-                <li>Sports access and youth development activities</li>
-                <li>Learning materials and scholarship-related support</li>
-                <li>Mentorship, outreach, and community engagement</li>
-                <li>Program delivery with accountability and stewardship</li>
+                <li>Basic needs and direct support for children and youth</li>
+                <li>Educational materials and learning resources</li>
+                <li>Mentorship sessions and life-skills engagement</li>
+                <li>Youth development initiatives and program delivery</li>
               </ul>
             </article>
 
             <article className="info-panel">
-              <p className="program-tag">Donor Reassurance</p>
-              <h2>Clear, secure, and trustworthy giving.</h2>
+              <p className="program-tag">Accountability</p>
+              <h2>Giving should feel clear and trustworthy.</h2>
               <p>
-                We want every supporter to feel confident in their decision to give. This
-                donation flow is being designed for clarity, transparency, and future secure
-                payment integration.
+                The foundation is committed to responsible stewardship, clear communication, and
+                transparent use of resources so supporters can give with confidence.
               </p>
               <p className="micro-note">
                 Payment gateway placeholder: Paystack / Flutterwave
               </p>
             </article>
+          </div>
+        </div>
+      </section>
+
+      <section className="section-space section-accent-band">
+        <div className="container cta-band">
+          <div>
+            <p className="eyebrow">Donate</p>
+            <h2>Your support creates real change</h2>
+            <p>
+              Every donation helps extend opportunity, guidance, and practical support to young
+              people who need it most.
+            </p>
+          </div>
+          <div className="cta-band-actions">
+            <button type="button" className="button button-accent" onClick={handleDonate}>
+              Give Now
+            </button>
           </div>
         </div>
       </section>

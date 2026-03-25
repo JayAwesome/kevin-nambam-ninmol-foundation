@@ -388,28 +388,111 @@ export const programCategories = [
   },
 ];
 
+export const donorProgramCategories = [
+  {
+    slug: 'youth-empowerment-through-basketball',
+    title: 'Youth Empowerment Through Basketball',
+    image: '/media/hero-court.jpeg',
+    purpose:
+      'To use basketball as a structured pathway for discipline, confidence, teamwork, leadership, and positive decision-making among young people.',
+    activities: [
+      'Basketball clinics and skill-development sessions for boys and girls',
+      'Mindset and resilience talks woven into sports participation',
+      'Coaching that reinforces discipline, teamwork, and leadership',
+      'Safe, structured environments where young people can learn and grow',
+    ],
+    impact: [
+      'Improved confidence and participation among young people',
+      'Stronger teamwork, discipline, and coachability',
+      'Positive youth engagement through sport-based mentoring',
+    ],
+    support: [
+      'Sponsor a clinic session, training camp, or local tournament',
+      'Provide basketballs, kits, shoes, bibs, and training equipment',
+      'Support transportation, venue costs, and youth participation access',
+    ],
+  },
+  {
+    slug: 'education-support',
+    title: 'Education Support',
+    image: '/media/program-certificate.jpeg',
+    purpose:
+      'To reduce barriers to learning by connecting children and young people with educational materials, encouragement, and scholarship support.',
+    activities: [
+      'Scholarship identification and education support referrals',
+      'Provision of books, school materials, and learning resources',
+      'Academic encouragement and mentoring for students',
+      'Support that helps young people remain engaged in school and personal growth',
+    ],
+    impact: [
+      'Greater access to learning tools and educational support',
+      'More confidence for students pursuing academic progress',
+      'Practical pathways for underserved youth to stay connected to opportunity',
+    ],
+    support: [
+      'Fund school materials, book packs, and learning resources',
+      'Support scholarships and educational assistance for vulnerable students',
+      'Partner with the foundation to expand access to school-based support',
+    ],
+  },
+  {
+    slug: 'mentorship-and-life-skills-development',
+    title: 'Mentorship and Life Skills Development',
+    image: '/media/outreach-school.jpeg',
+    purpose:
+      'To help young people build character, emotional resilience, communication skills, and the confidence to make responsible life choices.',
+    activities: [
+      'Mentorship sessions with positive role models and coaches',
+      'Workshops on communication, teamwork, and problem-solving',
+      'Guidance on emotional well-being and healthy coping mechanisms',
+      'Practical life-skills support for youth navigating daily challenges',
+    ],
+    impact: [
+      'Stronger decision-making and social confidence among participants',
+      'Healthier emotional responses to pressure and uncertainty',
+      'A more supportive environment for youth growth beyond the basketball court',
+    ],
+    support: [
+      'Sponsor mentorship sessions, workshops, and youth gatherings',
+      'Support volunteer mentors, facilitators, and life-skills materials',
+      'Partner with the foundation to scale mentoring in schools and communities',
+    ],
+  },
+];
+
 export const impactMetrics = [
-  { label: 'Young people reached through direct engagement', value: '2,500+' },
-  { label: 'Communities and institutions reached', value: '20+' },
-  { label: 'Programs, clinics, and outreach activities executed', value: '40+' },
-  { label: 'Education support and scholarship actions delivered', value: '18+' },
+  {
+    label: 'Youth impacted',
+    value: '2,500+',
+    detail: 'Young people reached through direct engagement, mentoring, clinics, and outreach.',
+  },
+  {
+    label: 'Communities reached',
+    value: '20+',
+    detail: 'Communities, schools, and institutions engaged through foundation activity.',
+  },
+  {
+    label: 'Programs delivered',
+    value: '40+',
+    detail: 'Programs, basketball clinics, mentoring sessions, and outreach activities executed.',
+  },
 ];
 
 export const caseStudies = [
   {
-    title: 'Confidence through consistent coaching',
+    title: 'Amina: from hesitation to participation',
     summary:
-      'One clinic participant arrived withdrawn and hesitant to take part. Through repeated training sessions, encouragement, and peer support, that young person began to show more confidence, greater consistency, and stronger participation both on the court and in school settings.',
+      'Amina arrived at a youth session unsure of herself and reluctant to participate. Through coaching, encouragement, and repeated support, she became more willing to engage, more confident in group settings, and more hopeful about her own potential.',
   },
   {
-    title: 'Support beyond the basketball court',
+    title: 'Daniel: support beyond the court',
     summary:
-      'During community outreach, the foundation paired sports engagement with practical assistance for vulnerable families. The result was not just a one-time intervention, but stronger trust with caregivers, schools, and local partners who now see the foundation as a dependable presence.',
+      'Daniel first connected with the foundation through basketball, but the support extended beyond sport. Mentoring and structured guidance helped him develop greater discipline, stronger confidence, and a clearer sense of direction in daily life.',
   },
   {
-    title: 'Girls choosing visibility and leadership',
+    title: 'Grace: confidence through encouragement',
     summary:
-      'Girl Child Initiative sessions created a safe environment for girls to participate, speak up, and be seen. Participants showed greater willingness to engage in sport, ask questions, and imagine themselves as leaders rather than observers.',
+      'Grace took part in a girl-focused support session that encouraged her to engage more boldly. With steady affirmation and mentoring, she became more visible, more confident, and more willing to see herself as someone with leadership potential.',
   },
 ];
 
@@ -441,17 +524,7 @@ export const reports = [
   {
     title: 'Annual Impact Report 2025',
     description:
-      'A placeholder for the foundation’s annual summary of programs, outputs, partnerships, and lessons learned.',
-  },
-  {
-    title: 'Program and Outreach Summary',
-    description:
-      'A placeholder for a concise donor-facing document covering clinics, outreach efforts, and education support activity.',
-  },
-  {
-    title: 'Governance and Accountability Brief',
-    description:
-      'A placeholder for governance, stewardship, and organizational credibility materials for partners and institutions.',
+      'A downloadable placeholder for the foundation\'s annual report covering activities, outputs, partnerships, and key learning points.',
   },
 ];
 
@@ -485,19 +558,19 @@ export const mediaVideos = [
 export const donateOptions = [
   {
     amount: 5000,
-    label: 'Provides learning and activity support for a child',
+    label: 'Supports basic needs for a child',
   },
   {
     amount: 10000,
-    label: 'Supports a week of mentorship and youth engagement',
+    label: 'Provides educational materials',
   },
   {
     amount: 25000,
-    label: 'Provides books, materials, and scholarship support resources',
+    label: 'Supports mentorship programs',
   },
   {
     amount: 50000,
-    label: 'Helps sponsor a Girl Child Initiative workshop or clinic session',
+    label: 'Sponsors a youth development initiative',
   },
 ];
 
@@ -506,6 +579,20 @@ export const sponsorOptions = [
   'Education and scholarship support',
   'In-kind donations of books, gear, or supplies',
   'Strategic partnerships with schools and institutions',
+];
+
+export const involvementBenefits = [
+  'Support young people with time, skills, funding, or institutional partnership',
+  'Help expand practical programs in education, mentoring, and youth development',
+  'Contribute to a mission rooted in visible community engagement and long-term growth',
+  'Become part of a network committed to hope, courage, and positive youth outcomes',
+];
+
+export const internshipOpportunities = [
+  'Program support and youth engagement assistance',
+  'Communications, storytelling, and media support',
+  'Event coordination and logistics support',
+  'Research, administration, and partnership support',
 ];
 
 export const blogPosts = [

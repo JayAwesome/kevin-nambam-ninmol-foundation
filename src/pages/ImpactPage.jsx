@@ -2,14 +2,7 @@ import PageHero from '../components/PageHero';
 import NewsletterSection from '../components/NewsletterSection';
 import SectionIntro from '../components/SectionIntro';
 import usePageTitle from '../hooks/usePageTitle';
-import {
-  caseStudies,
-  impactMetrics,
-  mediaGallery,
-  mediaVideos,
-  reports,
-  transformationStories,
-} from '../siteData';
+import { caseStudies, impactMetrics, mediaGallery, mediaVideos, reports } from '../siteData';
 
 function ImpactPage() {
   usePageTitle('Impact');
@@ -18,24 +11,25 @@ function ImpactPage() {
     <main>
       <PageHero
         eyebrow="Impact"
-        title="Proof of work that is clear, human, and accountable."
-        subtitle="This page is designed to help donors, partners, and institutions understand both the scale and the sincerity of the foundation’s work."
+        title="Impact that is visible, honest, and community-rooted."
+        subtitle="This page highlights the foundation's reach, selected case stories, visual evidence, and reporting placeholders in a clear and accountable format."
         image="/media/outreach-school.jpeg"
       />
 
       <section className="section-space">
         <div className="container">
           <SectionIntro
-            eyebrow="Statistics"
-            title="Key indicators of reach, program activity, and direct support."
-            text="These figures are presented to show the direction and scale of the foundation’s work in a clear and accessible way."
+            eyebrow="Impact Statistics"
+            title="Key indicators of the foundation's work."
+            text="These figures provide a simple snapshot of the foundation's growing reach and delivery across youth development, mentoring, and community engagement."
             centered
           />
-          <div className="metric-grid">
+          <div className="metric-grid impact-metric-grid">
             {impactMetrics.map((item) => (
               <article key={item.label} className="metric-card">
                 <strong>{item.value}</strong>
-                <span>{item.label}</span>
+                <span className="metric-label">{item.label}</span>
+                <p>{item.detail}</p>
               </article>
             ))}
           </div>
@@ -46,8 +40,8 @@ function ImpactPage() {
         <div className="container">
           <SectionIntro
             eyebrow="Case Studies"
-            title="Short stories that show what the work looks like in real life."
-            text="Evidence matters, but impact becomes more meaningful when it is connected to human experience."
+            title="Stories that help explain the change behind the numbers."
+            text="These examples are written in a real-life style to show the kind of transformation the foundation is working to make possible."
             centered
           />
           <div className="case-study-grid">
@@ -64,65 +58,9 @@ function ImpactPage() {
       <section className="section-space">
         <div className="container">
           <SectionIntro
-            eyebrow="Before and After"
-            title="Transformation is often visible in confidence, access, and participation."
-            text="These examples describe the kind of change the foundation seeks to make through sustained support."
-            centered
-          />
-          <div className="transformation-grid">
-            {transformationStories.map((story) => (
-              <article key={story.title} className="transformation-card">
-                <h3>{story.title}</h3>
-                <div className="transformation-columns">
-                  <div>
-                    <p className="program-tag">Before</p>
-                    <p>{story.before}</p>
-                  </div>
-                  <div>
-                    <p className="program-tag">After</p>
-                    <p>{story.after}</p>
-                  </div>
-                </div>
-              </article>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      <section className="section-space section-alt">
-        <div className="container">
-          <SectionIntro
-            eyebrow="Reports"
-            title="Downloadable reports and accountability materials."
-            text="Formal reports can be added here for partners, grantmakers, and institutional review."
-            centered
-          />
-          <div className="reports-grid">
-            {reports.map((report) => (
-              <article key={report.title} className="news-card">
-                <h3>{report.title}</h3>
-                <p>{report.description}</p>
-                <button
-                  type="button"
-                  className="button button-ghost report-button"
-                  onClick={() => {
-                    console.log('Report download placeholder', report.title);
-                    window.alert(`Download placeholder for "${report.title}"`);
-                  }}
-                >
-                  Download Placeholder
-                </button>
-              </article>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      <section className="section-space">
-        <div className="container">
-          <SectionIntro
-            eyebrow="Gallery"
-            title="Photo and video documentation of programs, outreach, and participation."
+            eyebrow="Photo and Video Gallery"
+            title="Visual documentation from programs, outreach, and participation."
+            text="Real images and videos help partners and donors see how the foundation shows up in community spaces and youth-centered activities."
             centered
           />
           <div className="gallery-grid">
@@ -141,6 +79,35 @@ function ImpactPage() {
                 <div className="video-card-body">
                   <strong>{video.title}</strong>
                 </div>
+              </article>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="section-space section-alt">
+        <div className="container">
+          <SectionIntro
+            eyebrow="Reports"
+            title="Annual reporting placeholder"
+            text="A formal annual report can be made available here for donors, partners, and institutions that require a consolidated overview of activities and results."
+            centered
+          />
+          <div className="reports-grid">
+            {reports.map((report) => (
+              <article key={report.title} className="news-card">
+                <h3>{report.title}</h3>
+                <p>{report.description}</p>
+                <button
+                  type="button"
+                  className="button button-ghost report-button"
+                  onClick={() => {
+                    console.log('Report download placeholder', report.title);
+                    window.alert(`Download placeholder for "${report.title}"`);
+                  }}
+                >
+                  Download Report Placeholder
+                </button>
               </article>
             ))}
           </div>

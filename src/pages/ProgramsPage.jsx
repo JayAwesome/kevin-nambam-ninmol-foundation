@@ -3,7 +3,7 @@ import PageHero from '../components/PageHero';
 import NewsletterSection from '../components/NewsletterSection';
 import SectionIntro from '../components/SectionIntro';
 import usePageTitle from '../hooks/usePageTitle';
-import { programCategories } from '../siteData';
+import { donorProgramCategories } from '../siteData';
 
 function ProgramsPage() {
   usePageTitle('Programs');
@@ -12,8 +12,8 @@ function ProgramsPage() {
     <main>
       <PageHero
         eyebrow="Programs"
-        title="Programs designed for growth, courage, and long-term opportunity."
-        subtitle="Each initiative responds to a real need and is built for practical, measurable impact."
+        title="Programs designed to create clear, practical impact for young people."
+        subtitle="These program areas help donors and partners understand exactly what the foundation does and what their support can make possible."
         image="/media/hero-court.jpeg"
       />
 
@@ -21,65 +21,70 @@ function ProgramsPage() {
         <div className="container">
           <SectionIntro
             eyebrow="Program Areas"
-            title="Our programs are designed to meet practical needs while building confidence, opportunity, and long-term resilience."
-            description="Each initiative is structured around a clear purpose, hands-on activities, and visible impact so that supporters can understand exactly how the foundation serves young people and communities."
+            title="Our work is structured around three clear areas of support."
+            description="Each program category below explains its purpose, key activities, expected impact, and how donors can help strengthen the work."
             centered
           />
           <div className="program-category-stack">
-            {programCategories.map((category) => (
-              <section key={category.title} className="program-category-panel">
+            {donorProgramCategories.map((program) => (
+              <section key={program.slug} className="program-category-panel">
                 <div className="program-category-heading">
-                  <p className="program-tag">{category.title}</p>
-                  <h2>{category.title}</h2>
-                  <p>{category.description}</p>
+                  <p className="program-tag">Program Category</p>
+                  <h2>{program.title}</h2>
                 </div>
 
-                <div className="program-list-grid">
-                  {category.programs.map((program) => (
-                    <article key={program.slug} className="program-portfolio-card">
-                      <div className="program-portfolio-media">
-                        <img
-                          src={program.image}
-                          alt={program.title}
-                          loading="lazy"
-                          decoding="async"
-                        />
-                      </div>
+                <article className="program-portfolio-card program-portfolio-card-wide">
+                  <div className="program-portfolio-media">
+                    <img
+                      src={program.image}
+                      alt={program.title}
+                      loading="lazy"
+                      decoding="async"
+                    />
+                  </div>
 
-                      <div className="program-portfolio-body">
-                        <h3>{program.title}</h3>
-                        <p className="program-summary">{program.summary}</p>
+                  <div className="program-portfolio-body">
+                    <div className="program-detail-block">
+                      <h4>Purpose</h4>
+                      <p>{program.purpose}</p>
+                    </div>
 
-                        <div className="program-detail-block">
-                          <h4>Purpose</h4>
-                          <p>{program.purpose}</p>
-                        </div>
+                    <div className="program-detail-block">
+                      <h4>Key Activities</h4>
+                      <ul className="program-bullet-list">
+                        {program.activities.map((activity) => (
+                          <li key={activity}>{activity}</li>
+                        ))}
+                      </ul>
+                    </div>
 
-                        <div className="program-detail-block">
-                          <h4>Activities</h4>
-                          <ul className="program-bullet-list">
-                            {program.activities.map((activity) => (
-                              <li key={activity}>{activity}</li>
-                            ))}
-                          </ul>
-                        </div>
+                    <div className="program-detail-block">
+                      <h4>Expected Impact</h4>
+                      <ul className="program-bullet-list">
+                        {program.impact.map((item) => (
+                          <li key={item}>{item}</li>
+                        ))}
+                      </ul>
+                    </div>
 
-                        <div className="program-detail-block">
-                          <h4>Impact</h4>
-                          <ul className="program-bullet-list">
-                            {program.impact.map((item) => (
-                              <li key={item}>{item}</li>
-                            ))}
-                          </ul>
-                        </div>
-
-                        <Link to={`/programs/${program.slug}`} className="text-link">
-                          View program page
+                    <div className="program-support-panel">
+                      <h4>How You Can Support This Program</h4>
+                      <ul className="program-bullet-list">
+                        {program.support.map((item) => (
+                          <li key={item}>{item}</li>
+                        ))}
+                      </ul>
+                      <div className="program-support-actions">
+                        <Link to="/donate" className="button button-accent">
+                          Support This Program
+                        </Link>
+                        <Link to="/get-involved" className="button button-ghost">
+                          Partner or Volunteer
                         </Link>
                       </div>
-                    </article>
-                  ))}
-                </div>
+                    </div>
+                  </div>
+                </article>
               </section>
             ))}
           </div>

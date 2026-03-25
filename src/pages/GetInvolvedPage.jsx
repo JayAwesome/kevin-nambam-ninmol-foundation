@@ -1,16 +1,15 @@
-import { useState } from 'react';
 import PageHero from '../components/PageHero';
 import NewsletterSection from '../components/NewsletterSection';
+import SectionIntro from '../components/SectionIntro';
 import usePageTitle from '../hooks/usePageTitle';
-import { donateOptions, sponsorOptions } from '../siteData';
+import {
+  internshipOpportunities,
+  involvementBenefits,
+  sponsorOptions,
+} from '../siteData';
 
 function GetInvolvedPage() {
   usePageTitle('Get Involved');
-
-  const [selectedAmount, setSelectedAmount] = useState(donateOptions[2].amount);
-  const [customAmount, setCustomAmount] = useState('');
-
-  const amount = customAmount ? Number(customAmount) || 0 : selectedAmount;
 
   const showComingSoon = (message, payload) => {
     console.log(message, payload);
@@ -21,95 +20,95 @@ function GetInvolvedPage() {
     <main>
       <PageHero
         eyebrow="Get Involved"
-        title="Your impact starts here."
-        subtitle="Support the mission through giving, volunteering, partnerships, and sponsorship."
+        title="Turn your support into active impact."
+        subtitle="This page is designed to help visitors move from interest to action through volunteering, partnership, sponsorship, and internship opportunities."
         image="/media/community-group.jpeg"
       />
 
       <section className="section-space">
+        <div className="container">
+          <SectionIntro
+            eyebrow="Why Get Involved"
+            title="There are meaningful ways to contribute at every level."
+            text="Whether you are an individual, student, organization, or sponsor, getting involved helps expand the foundation's reach and strengthens support for young people."
+            centered
+          />
+          <div className="values-grid">
+            {involvementBenefits.map((item) => (
+              <article key={item} className="value-card">
+                <p>{item}</p>
+              </article>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="section-space section-alt">
+        <div className="container contact-page-grid">
+          <div>
+            <SectionIntro
+              eyebrow="Volunteer"
+              title="Volunteer signup form"
+              text="Give your time, skills, and heart to support youth development, outreach activities, mentoring, and events."
+            />
+            <form
+              className="event-form-panel contact-form-panel"
+              onSubmit={(event) => {
+                event.preventDefault();
+                showComingSoon('Volunteer signup integration coming soon.');
+              }}
+            >
+              <input type="text" placeholder="Full name" aria-label="Full name" />
+              <input type="email" placeholder="Email address" aria-label="Email address" />
+              <input type="tel" placeholder="Phone number" aria-label="Phone number" />
+              <input type="text" placeholder="Area of interest" aria-label="Area of interest" />
+              <textarea
+                rows="5"
+                placeholder="Tell us how you would like to help"
+                aria-label="Tell us how you would like to help"
+              />
+              <button type="submit" className="button button-accent">
+                Submit Volunteer Interest
+              </button>
+            </form>
+          </div>
+
+          <div className="contact-aside-stack">
+            <article className="info-panel">
+              <p className="program-tag">Volunteer Benefits</p>
+              <h2>Why volunteer with us?</h2>
+              <ul className="opportunity-list">
+                <li>Support real programs that directly serve young people</li>
+                <li>Use your skills in a meaningful, community-rooted setting</li>
+                <li>Contribute to a mission centered on hope and opportunity</li>
+              </ul>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section className="section-space">
         <div className="container action-grid">
           <article className="action-card">
-            <p className="program-tag">Donate</p>
-            <h2>Make a Donation</h2>
-            <p className="action-copy">Every dollar directly funds our programs.</p>
-            <div className="donation-preset-grid">
-              {donateOptions.map((option) => (
-                <button
-                  key={option.amount}
-                  type="button"
-                  className={`donation-option ${selectedAmount === option.amount && !customAmount ? 'donation-option-selected' : ''}`}
-                  onClick={() => {
-                    setSelectedAmount(option.amount);
-                    setCustomAmount('');
-                  }}
-                >
-                  <strong>${option.amount}</strong>
-                  <span>{option.label}</span>
-                </button>
-              ))}
-            </div>
-            <label className="custom-amount-field">
-              <span className="custom-amount-prefix">$</span>
-              <input
-                type="number"
-                placeholder="Enter custom amount"
-                value={customAmount}
-                onChange={(event) => setCustomAmount(event.target.value)}
-              />
-            </label>
-            <button
-              type="button"
-              className="button button-accent action-button"
-              onClick={() =>
-                showComingSoon(`Donation integration coming soon. Selected amount: $${amount || 0}`, {
-                  amount,
-                })
-              }
-            >
-              Donate Now
-            </button>
-            <p className="micro-note">Paystack or Stripe integration placeholder for now.</p>
-          </article>
-
-          <article className="action-card">
-            <p className="program-tag">Volunteer</p>
-            <h2>Volunteer</h2>
-            <p className="action-copy">Lend your time, skills, and heart.</p>
+            <p className="program-tag">Partnership Opportunities</p>
+            <h2>Partner with the foundation</h2>
             <p>
-              From coaching basketball clinics to mentoring youth, your time makes a lasting
-              impact. We&apos;re looking for passionate individuals who believe every child
-              deserves a shot at greatness.
+              We welcome partnerships with organizations, schools, institutions, and community
+              groups that want to support youth development through sports, education, and
+              mentoring.
             </p>
-            <div className="action-media">
-              <img
-                src="/media/hero-court.jpeg"
-                alt="Founder coaching young players"
-                className="media-focus-center"
-                loading="lazy"
-                decoding="async"
-              />
-            </div>
             <button
               type="button"
-              className="button button-ghost action-button"
-              onClick={() => showComingSoon('Volunteer form integration coming soon.')}
+              className="button button-accent"
+              onClick={() => showComingSoon('Partnership contact integration coming soon.')}
             >
-              Become a Volunteer
+              Explore Partnership
             </button>
           </article>
 
           <article className="action-card">
-            <p className="program-tag">Partner With Us</p>
-            <h2>Partner With Us</h2>
-            <p className="action-copy">
-              We partner with corporations, foundations, and organizations that share our
-              vision. Together, we amplify impact.
-            </p>
-            <p>
-              If your organization wants to support education, sports, or the girl child
-              initiative, let&apos;s talk. We&apos;re open to sponsorships, in-kind donations, and
-              collaborative programs.
-            </p>
+            <p className="program-tag">Sponsorship Options</p>
+            <h2>Sponsor a program or initiative</h2>
             <ul className="opportunity-list">
               {sponsorOptions.map((item) => (
                 <li key={item}>{item}</li>
@@ -117,10 +116,27 @@ function GetInvolvedPage() {
             </ul>
             <button
               type="button"
-              className="button button-accent action-button"
-              onClick={() => showComingSoon('Partnership contact integration coming soon.')}
+              className="button button-ghost"
+              onClick={() => showComingSoon('Sponsorship enquiry integration coming soon.')}
             >
-              Partner With Us
+              Become a Sponsor
+            </button>
+          </article>
+
+          <article className="action-card">
+            <p className="program-tag">Internship Opportunities</p>
+            <h2>Learn while contributing</h2>
+            <ul className="opportunity-list">
+              {internshipOpportunities.map((item) => (
+                <li key={item}>{item}</li>
+              ))}
+            </ul>
+            <button
+              type="button"
+              className="button button-accent"
+              onClick={() => showComingSoon('Internship application integration coming soon.')}
+            >
+              Apply for Internship
             </button>
           </article>
         </div>
