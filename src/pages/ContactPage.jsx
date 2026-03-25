@@ -18,7 +18,7 @@ function ContactPage() {
       <PageHero
         eyebrow="Contact Us"
         title="We would love to hear from you."
-        subtitle="Whether you want to partner, volunteer, donate, or learn more about the foundation, we are ready to connect."
+        subtitle="Whether you want to partner, volunteer, donate, or learn more about the foundation, this page makes it easy to reach a real team."
         image="/media/outreach-school.jpeg"
       />
 
@@ -27,7 +27,7 @@ function ContactPage() {
           <SectionIntro
             eyebrow="Get In Touch"
             title="Simple, direct ways to reach the foundation."
-            text="We welcome messages from supporters, partners, schools, media, and community members. Choose the contact option that works best for you."
+            text="We welcome messages from supporters, partners, schools, media, and community members. Every contact point below is designed to make the organization feel accessible, responsive, and trustworthy."
           />
 
           <div className="contact-channel-grid">
@@ -35,6 +35,7 @@ function ContactPage() {
               <p className="program-tag">Office Address</p>
               <h3>Visit or write to us</h3>
               <p>{siteContact.address}</p>
+              <p className="micro-note">Office visits can be coordinated through phone, email, or WhatsApp.</p>
             </article>
 
             <article className="info-panel contact-channel-card">
@@ -46,6 +47,7 @@ function ContactPage() {
               <p>
                 <a href={`mailto:${siteContact.email}`}>{siteContact.email}</a>
               </p>
+              <p className="micro-note">For partnerships, sponsorships, and media enquiries, email is recommended.</p>
             </article>
 
             <article className="info-panel contact-channel-card contact-whatsapp-card">
@@ -74,7 +76,7 @@ function ContactPage() {
             <SectionIntro
               eyebrow="Contact Form"
               title="Send us a message."
-              text="Use the form to share an enquiry, partnership request, media question, or general message. We appreciate every contact."
+              text="Use the form to share an enquiry, partnership request, media question, or general message. We appreciate every contact and aim to respond clearly."
             />
 
             <form className="event-form-panel contact-form-panel" onSubmit={handleSubmit}>
@@ -113,6 +115,14 @@ function ContactPage() {
                 For partnership, sponsorship, and program-related enquiries, please include as much
                 detail as possible so we can direct your message appropriately.
               </p>
+              <a
+                href={siteContact.whatsapp}
+                className="button button-ghost"
+                target="_blank"
+                rel="noreferrer"
+              >
+                Chat on WhatsApp
+              </a>
             </article>
           </div>
         </div>
@@ -123,7 +133,7 @@ function ContactPage() {
           <SectionIntro
             eyebrow="Find Us"
             title="Location map"
-            text="Use the map below as a location reference for the foundation office."
+            text="Use the map below as a placeholder location reference for the foundation office."
           />
           <div className="map-panel contact-map-panel">
             <iframe
