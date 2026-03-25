@@ -1,6 +1,7 @@
 export const navItems = [
   { label: 'Home', to: '/' },
   { label: 'About', to: '/about' },
+  { label: 'Leadership', to: '/leadership-governance' },
   { label: 'Programs', to: '/programs' },
   { label: 'Impact', to: '/impact' },
   { label: 'Get Involved', to: '/get-involved' },
@@ -214,6 +215,55 @@ export const leadershipTeam = [
     role: 'Institutional engagement, school partnerships, and stakeholder collaboration',
     image: '/media/outreach-school.jpeg',
   },
+];
+
+export const boardOfTrustees = [
+  {
+    name: 'Dr. Rebecca Danjuma',
+    role: 'Chairman, Board of Trustees',
+    image: '/media/founder-national.jpeg',
+    bio: 'A governance-focused nonprofit leader with experience in education, social impact strategy, and institutional stewardship.',
+  },
+  {
+    name: 'Barr. Samuel Oche',
+    role: 'Secretary, Board of Trustees',
+    image: '/media/community-group.jpeg',
+    bio: 'A legal and compliance professional supporting governance processes, record-keeping, and accountability structures for mission-driven organizations.',
+  },
+  {
+    name: 'Mrs. Lydia Pam',
+    role: 'Treasurer, Board of Trustees',
+    image: '/media/outreach-school.jpeg',
+    bio: 'A finance and administration practitioner with a focus on responsible resource management, reporting, and operational oversight.',
+  },
+];
+
+export const managementProfiles = [
+  {
+    name: 'Kevin Nambam Ninmol',
+    role: 'Founder and Executive Director',
+    image: '/media/founder-national.jpeg',
+    bio: 'Provides strategic leadership, program direction, and public representation for the foundation, grounded in lived experience and youth development through sport.',
+  },
+  {
+    name: 'Programs and Outreach Team',
+    role: 'Program Implementation',
+    image: '/media/community-group.jpeg',
+    bio: 'Supports delivery of clinics, mentoring sessions, outreach engagement, and coordination with local communities and schools.',
+  },
+  {
+    name: 'Volunteers and Support Staff',
+    role: 'Operations and Field Support',
+    image: '/media/outreach-school.jpeg',
+    bio: 'Assists with logistics, participant support, communications, and day-to-day coordination that help programs run responsibly and effectively.',
+  },
+];
+
+export const governanceStatement = [
+  'The foundation is guided by a governance structure that separates strategic oversight from daily management responsibilities.',
+  'The Board of Trustees provides direction, accountability oversight, and stewardship guidance, while the management team leads implementation, coordination, and day-to-day execution.',
+  'Key decisions are informed through responsible consultation, mission alignment, and a commitment to transparency, ethical conduct, and the best interests of the young people and communities served.',
+  'The foundation is committed to accountability in reporting, responsible use of funds, and clear communication with donors, partners, and institutional stakeholders.',
 ];
 
 export const legalCredibility = [
