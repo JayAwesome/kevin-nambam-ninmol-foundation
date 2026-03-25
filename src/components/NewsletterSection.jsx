@@ -1,14 +1,16 @@
 import { useState } from 'react';
+import { useLanguage } from '../context/LanguageContext';
 
 function NewsletterSection() {
   const [email, setEmail] = useState('');
   const [isSubscribed, setIsSubscribed] = useState(false);
+  const { t } = useLanguage();
 
   const handleSubscribe = (event) => {
     event.preventDefault();
 
     if (!email.trim()) {
-      window.alert('Please enter your email address.');
+      window.alert(t('newsletter.empty'));
       return;
     }
 
@@ -21,37 +23,26 @@ function NewsletterSection() {
     <section className="newsletter-band">
       <div className="container newsletter-layout">
         <div>
-          <p className="eyebrow">Newsletter</p>
-          <h2>Stay updated on our impact.</h2>
-          <p>
-            Join our email list to receive stories, program updates, recent activities, and
-            opportunities to support the foundation’s work.
-          </p>
-          <p className="micro-note">
-            Build with us over the long term through updates that show where support is making a
-            difference.
-          </p>
+          <p className="eyebrow">{t('newsletter.eyebrow')}</p>
+          <h2>{t('newsletter.title')}</h2>
+          <p>{t('newsletter.body')}</p>
+          <p className="micro-note">{t('newsletter.note')}</p>
         </div>
 
         <form className="newsletter-form" onSubmit={handleSubscribe}>
           <input
             type="email"
-            placeholder="Enter your email address"
-            aria-label="Email address"
+            placeholder={t('newsletter.placeholder')}
+            aria-label={t('newsletter.emailLabel')}
             value={email}
             onChange={(event) => setEmail(event.target.value)}
           />
           <button type="submit" className="button button-accent">
-            Subscribe
+            {t('newsletter.subscribe')}
           </button>
         </form>
 
-        {isSubscribed ? (
-          <p className="newsletter-success">
-            Thank you. Your newsletter signup has been captured in this placeholder flow and is
-            ready to be connected to a live mailing system.
-          </p>
-        ) : null}
+        {isSubscribed ? <p className="newsletter-success">{t('newsletter.success')}</p> : null}
       </div>
     </section>
   );

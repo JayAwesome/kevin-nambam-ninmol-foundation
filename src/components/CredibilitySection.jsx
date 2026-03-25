@@ -1,21 +1,18 @@
 import { Link } from 'react-router-dom';
+import { useLanguage } from '../context/LanguageContext';
 import { sitewideCredibility } from '../siteData';
 
 function CredibilitySection() {
+  const { t } = useLanguage();
+
   return (
     <section className="site-credibility-band">
       <div className="container">
         <div className="site-credibility-header">
-          <p className="eyebrow">Credibility and Transparency</p>
-          <h2>Built to inspire confidence among donors, partners, and institutions.</h2>
-          <p>
-            The foundation is committed to transparency, accountability, ethical stewardship, and
-            responsible safeguarding practices as its work continues to grow.
-          </p>
-          <p className="credibility-trust-line">
-            Trusted by communities and strengthened through visible service, practical
-            partnerships, and responsible stewardship.
-          </p>
+          <p className="eyebrow">{t('credibility.eyebrow')}</p>
+          <h2>{t('credibility.title')}</h2>
+          <p>{t('credibility.body')}</p>
+          <p className="credibility-trust-line">{t('credibility.trust')}</p>
         </div>
 
         <div className="values-grid">
@@ -29,7 +26,7 @@ function CredibilitySection() {
 
         <div className="section-cta-center">
           <Link to="/about" className="button button-ghost">
-            Learn More About Our Governance
+            {t('credibility.cta')}
           </Link>
         </div>
       </div>

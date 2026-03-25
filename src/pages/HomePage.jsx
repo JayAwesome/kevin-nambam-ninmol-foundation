@@ -2,6 +2,7 @@ import { Link } from 'react-router-dom';
 import LiveCounter from '../components/LiveCounter';
 import NewsletterSection from '../components/NewsletterSection';
 import SectionIntro from '../components/SectionIntro';
+import { useLanguage } from '../context/LanguageContext';
 import usePageTitle from '../hooks/usePageTitle';
 import {
   heroStats,
@@ -15,29 +16,25 @@ import {
 } from '../siteData';
 
 function HomePage() {
-  usePageTitle('Home');
+  const { t } = useLanguage();
+  const translatedTrustSignals = t('home.heroTrustSignals');
+  usePageTitle(t('home.title'));
 
   return (
     <main>
       <section className="home-hero">
         <div className="container home-hero-layout">
           <div className="home-hero-copy">
-            <p className="eyebrow">Kevin Nambam Ninmol Foundation</p>
-            <h1>Empowering Youth Through Basketball, Education, and Mentorship</h1>
-            <p className="home-hero-text">
-              We help young people choose hope over fear by opening pathways to growth,
-              confidence, and opportunity through sport, learning, and guidance.
-            </p>
-            <p className="home-hero-support">
-              Founded from lived experience and grounded in practical service, the foundation
-              exists to help children and youth rise above limitation and pursue brighter futures.
-            </p>
+            <p className="eyebrow">{t('home.heroEyebrow')}</p>
+            <h1>{t('home.heroTitle')}</h1>
+            <p className="home-hero-text">{t('home.heroText')}</p>
+            <p className="home-hero-support">{t('home.heroSupport')}</p>
             <div className="hero-actions">
               <Link to="/donate" className="button button-accent">
-                Donate Now
+                {t('home.donateNow')}
               </Link>
               <Link to="/get-involved" className="button button-ghost">
-                Join Us
+                {t('home.joinUs')}
               </Link>
             </div>
           </div>
@@ -49,13 +46,10 @@ function HomePage() {
               className="media-focus-center"
             />
             <div className="home-hero-badge">
-              <strong>Trust through action</strong>
-              <p>
-                Rooted in lived experience, youth mentorship, and visible community engagement in
-                Jos and beyond.
-              </p>
+              <strong>{t('home.trustAction')}</strong>
+              <p>{t('home.trustBody')}</p>
               <div className="hero-trust-list">
-                {homepageTrustSignals.map((item) => (
+                {(Array.isArray(translatedTrustSignals) ? translatedTrustSignals : homepageTrustSignals).map((item) => (
                   <span key={item} className="hero-trust-pill">
                     {item}
                   </span>
@@ -68,11 +62,7 @@ function HomePage() {
 
       <section className="section-space">
         <div className="container">
-          <SectionIntro
-            eyebrow="Impact Snapshot"
-            title="A growing record of visible, community-rooted impact."
-            text="We believe trust is built through measurable work, clear purpose, and consistent presence in the lives of young people."
-          />
+          <SectionIntro eyebrow={t('home.impactEyebrow')} title={t('home.impactTitle')} text={t('home.impactText')} />
           <div className="metric-grid">
             {heroStats.map((item) => (
               <article key={item.label} className="metric-card">
@@ -91,18 +81,10 @@ function HomePage() {
       <section className="section-space">
         <div className="container split-panel">
           <div>
-            <SectionIntro
-              eyebrow="About Preview"
-              title="A personal story transformed into a public mission."
-              text="Kevin Nambam Ninmol Foundation grew from a journey marked by hardship, resilience, and the life-changing power of opportunity."
-            />
-            <p className="detail-copy">
-              From a difficult beginning to national and international basketball opportunities,
-              Kevin's experience now fuels a foundation committed to helping young people find
-              hope, structure, and support for the future.
-            </p>
+            <SectionIntro eyebrow={t('home.aboutEyebrow')} title={t('home.aboutTitle')} text={t('home.aboutText')} />
+            <p className="detail-copy">{t('home.aboutCopy')}</p>
             <Link to="/about" className="button button-accent">
-              Learn More About Us
+              {t('home.aboutCta')}
             </Link>
           </div>
 
@@ -120,11 +102,7 @@ function HomePage() {
 
       <section className="section-space section-alt">
         <div className="container">
-          <SectionIntro
-            eyebrow="Programs"
-            title="Focused programs that support learning, guidance, and youth development."
-            text="Each program area is designed to respond to real needs with practical support and long-term encouragement."
-          />
+          <SectionIntro eyebrow={t('home.programsEyebrow')} title={t('home.programsTitle')} text={t('home.programsText')} />
           <div className="program-preview-grid">
             {homepagePrograms.map((program) => (
               <article key={program.slug} className="feature-card">
@@ -134,7 +112,7 @@ function HomePage() {
                   <h3>{program.title}</h3>
                   <p>{program.excerpt}</p>
                   <Link to={`/programs/${program.slug}`} className="text-link">
-                    Learn more
+                    {t('home.programLearnMore')}
                   </Link>
                 </div>
               </article>
@@ -142,7 +120,7 @@ function HomePage() {
           </div>
           <div className="section-cta-center">
             <Link to="/programs" className="button button-ghost">
-              Explore All Programs
+              {t('home.programsCta')}
             </Link>
           </div>
         </div>
@@ -151,11 +129,7 @@ function HomePage() {
       <section className="section-space section-alt">
         <div className="container split-panel media-highlight-panel">
           <div>
-            <SectionIntro
-              eyebrow="Featured Video"
-              title="See the mission in motion."
-              text="Real footage from clinics and outreach helps supporters understand that the foundation's work is active, personal, and rooted in the community."
-            />
+            <SectionIntro eyebrow={t('home.featuredEyebrow')} title={t('home.featuredTitle')} text={t('home.featuredText')} />
           </div>
           <div className="video-card">
             <video controls preload="metadata" poster={mediaVideos[0].poster}>
@@ -171,9 +145,9 @@ function HomePage() {
       <section className="section-space section-dark">
         <div className="container">
           <SectionIntro
-            eyebrow="Testimonials"
-            title="Stories that reflect hope, growth, and real support."
-            text="These short beneficiary-style stories help visitors understand how the foundation is experienced on the ground."
+            eyebrow={t('home.testimonialsEyebrow')}
+            title={t('home.testimonialsTitle')}
+            text={t('home.testimonialsText')}
           />
           <div className="testimonial-grid">
             {testimonials.map((item) => (
@@ -190,9 +164,9 @@ function HomePage() {
       <section className="section-space">
         <div className="container">
           <SectionIntro
-            eyebrow="Partners & Supporters"
-            title="Working together to expand our impact"
-            text="The foundation grows through collaboration with schools, communities, organizations, and supporters who help make youth-focused change more practical and sustainable."
+            eyebrow={t('home.partnersEyebrow')}
+            title={t('home.partnersTitle')}
+            text={t('home.partnersText')}
             centered
           />
           <div className="partners-grid">
@@ -212,19 +186,16 @@ function HomePage() {
       <section className="section-space section-accent-band">
         <div className="container cta-band">
           <div>
-            <p className="eyebrow">Take Action</p>
-            <h2>Partner with us to expand hope, opportunity, and youth development.</h2>
-            <p>
-              Your donations, partnerships, and support help strengthen education access,
-              mentoring, and practical development opportunities for young people.
-            </p>
+            <p className="eyebrow">{t('home.actionEyebrow')}</p>
+            <h2>{t('home.actionTitle')}</h2>
+            <p>{t('home.actionText')}</p>
           </div>
           <div className="cta-band-actions">
             <Link to="/donate" className="button button-accent">
-              Donate Now
+              {t('home.donateNow')}
             </Link>
             <Link to="/get-involved" className="button button-ghost">
-              Join Us
+              {t('home.joinUs')}
             </Link>
           </div>
         </div>
@@ -233,9 +204,9 @@ function HomePage() {
       <section className="section-space">
         <div className="container">
           <SectionIntro
-            eyebrow="Latest Activities"
-            title="Live updates from outreach, mentoring, and community work."
-            text="These recent activity snapshots show that the foundation is active, consistent, and present in the lives of the young people it serves."
+            eyebrow={t('home.latestActivitiesEyebrow')}
+            title={t('home.latestActivitiesTitle')}
+            text={t('home.latestActivitiesText')}
           />
           <div className="activity-grid">
             {latestActivities.map((item) => (
@@ -256,9 +227,9 @@ function HomePage() {
       <section className="section-space section-alt">
         <div className="container">
           <SectionIntro
-            eyebrow="Latest Updates"
-            title="Recent activities and updates from the field."
-            text="Current updates help donors, partners, and visitors see that the work is active, transparent, and ongoing."
+            eyebrow={t('home.latestUpdatesEyebrow')}
+            title={t('home.latestUpdatesTitle')}
+            text={t('home.latestUpdatesText')}
           />
           <div className="news-grid">
             {latestNews.map((item) => (
@@ -272,7 +243,7 @@ function HomePage() {
           </div>
           <div className="section-cta-center">
             <Link to="/news" className="button button-ghost">
-              Visit News Page
+              {t('home.newsCta')}
             </Link>
           </div>
         </div>

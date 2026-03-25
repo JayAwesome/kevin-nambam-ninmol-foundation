@@ -265,6 +265,44 @@ p {
   font-weight: 700;
 }
 
+.language-toggle {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  min-height: 44px;
+  padding: 0.25rem;
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  background: var(--surface);
+}
+
+.language-toggle button {
+  min-height: 36px;
+  padding: 0 0.8rem;
+  border: 0;
+  border-radius: 999px;
+  background: transparent;
+  color: var(--ink-soft);
+  font-size: 0.82rem;
+  font-weight: 800;
+  cursor: pointer;
+  transition: background-color 180ms ease, color 180ms ease;
+}
+
+.language-toggle .language-active {
+  background: rgba(16, 36, 61, 0.08);
+  color: var(--blue-900);
+}
+
+[data-theme='dark'] .language-toggle {
+  background: var(--surface);
+}
+
+[data-theme='dark'] .language-toggle .language-active {
+  background: rgba(255, 255, 255, 0.1);
+  color: var(--ink);
+}
+
 .theme-toggle {
   display: inline-flex;
   align-items: center;
@@ -2257,6 +2295,11 @@ p {
 
   .theme-toggle {
     width: 100%;
+  }
+
+  .language-toggle {
+    width: 100%;
+    justify-content: space-between;
   }
 
   .header-donate {

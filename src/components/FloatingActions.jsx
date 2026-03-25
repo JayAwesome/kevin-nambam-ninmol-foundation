@@ -1,9 +1,11 @@
 import { useEffect, useMemo, useRef, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import { useLanguage } from '../context/LanguageContext';
 import { assistantTopics, faqs, siteContact } from '../siteData';
 
 function FloatingActions() {
   const navigate = useNavigate();
+  const { language, t } = useLanguage();
   const [isChatOpen, setIsChatOpen] = useState(false);
   const [query, setQuery] = useState('');
   const chatCardRef = useRef(null);
@@ -11,17 +13,38 @@ function FloatingActions() {
   const [messages, setMessages] = useState([
     {
       role: 'assistant',
-      text: 'Hello. I can help with what the foundation does, how to donate, how to volunteer, and other common questions.',
+      text: t('floating.greeting'),
     },
   ]);
+
+  useEffect(() => {
+    setMessages([
+      {
+        role: 'assistant',
+        text: t('floating.greeting'),
+      },
+    ]);
+  }, [language, t]);
+
+  const topicLabels = useMemo(
+    () => ({
+      'what-we-do': t('floating.topicWhatWeDo'),
+      donate: t('floating.topicDonate'),
+      volunteer: t('floating.topicVolunteer'),
+      contact: t('floating.topicContact'),
+      faq: t('floating.topicFaq'),
+    }),
+    [t],
+  );
 
   const normalizedTopics = useMemo(
     () =>
       assistantTopics.map((topic) => ({
         ...topic,
+        label: topicLabels[topic.id] || topic.label,
         keywords: topic.keywords.map((keyword) => keyword.toLowerCase()),
       })),
-    []
+    [topicLabels],
   );
 
   useEffect(() => {
@@ -65,40 +88,60 @@ function FloatingActions() {
   const findReply = (input) => {
     const text = input.trim().toLowerCase();
 
-    const topic = normalizedTopics.find((item) =>
-      item.keywords.some((keyword) => text.includes(keyword))
-    );
+    const topic = normalizedTopics.find((item) => item.keywords.some((keyword) => text.includes(keyword)));
 
     if (topic) {
+      const translatedReplies = {
+        'what-we-do': {
+          text: t('floating.responseWhatWeDo'),
+          actionLabel: t('floating.viewPrograms'),
+        },
+        donate: {
+          text: t('floating.responseDonate'),
+          actionLabel: t('floating.goToDonate'),
+        },
+        volunteer: {
+          text: t('floating.responseVolunteer'),
+          actionLabel: t('floating.getInvolved'),
+        },
+        contact: {
+          text: t('floating.responseContact'),
+          actionLabel: t('floating.contactUs'),
+        },
+        faq: {
+          text: t('floating.responseFaq'),
+          actionLabel: t('floating.openWhatsapp'),
+        },
+      };
+
       return {
-        text: topic.response,
-        actionLabel: topic.actionLabel,
+        text: translatedReplies[topic.id]?.text || topic.response,
+        actionLabel: translatedReplies[topic.id]?.actionLabel || topic.actionLabel,
         actionHref: topic.actionHref,
       };
     }
 
     const faq = faqs.find(
       (item) =>
-        item.question.toLowerCase().includes(text) || item.answer.toLowerCase().includes(text)
+        item.question.toLowerCase().includes(text) || item.answer.toLowerCase().includes(text),
     );
 
     if (faq) {
       return {
         text: faq.answer,
-        actionLabel: 'Contact the Foundation',
+        actionLabel: t('floating.contactFoundation'),
         actionHref: '/contact',
       };
     }
 
     return {
-      text:
-        'I do not have a precise answer for that yet, but I can guide you to the right page or help you contact the foundation directly on WhatsApp.',
-      actionLabel: 'Open WhatsApp',
+      text: t('floating.fallback'),
+      actionLabel: t('floating.openWhatsapp'),
       actionHref: siteContact.whatsapp,
     };
   };
 
-  const submitQuestion = (input) => {
+  const submitQuestion = (input, displayText = input) => {
     const trimmed = input.trim();
 
     if (!trimmed) {
@@ -109,7 +152,7 @@ function FloatingActions() {
 
     setMessages((current) => [
       ...current,
-      { role: 'user', text: trimmed },
+      { role: 'user', text: displayText.trim() },
       {
         role: 'assistant',
         text: reply.text,
@@ -127,9 +170,9 @@ function FloatingActions() {
         className="floating-whatsapp"
         target="_blank"
         rel="noreferrer"
-        aria-label="Chat with Kevin Nambam Ninmol Foundation on WhatsApp"
+        aria-label={t('floating.whatsappAria')}
       >
-        WhatsApp Chat
+        {t('floating.whatsapp')}
       </a>
 
       <button
@@ -140,7 +183,7 @@ function FloatingActions() {
         aria-expanded={isChatOpen}
         aria-controls="foundation-assistant"
       >
-        FAQ Assistant
+        {t('floating.faq')}
       </button>
 
       {isChatOpen ? (
@@ -149,26 +192,27 @@ function FloatingActions() {
           id="foundation-assistant"
           className="chatbot-card"
           role="dialog"
-          aria-label="Foundation assistant"
+          aria-label={t('floating.assistantTitle')}
         >
           <div className="chatbot-header">
             <div>
-              <strong>Foundation Assistant</strong>
-              <p className="chatbot-status">Online for quick guidance</p>
+              <strong>{t('floating.assistantTitle')}</strong>
+              <p className="chatbot-status">{t('floating.assistantStatus')}</p>
             </div>
-            <button type="button" onClick={() => setIsChatOpen(false)} aria-label="Close assistant">
+            <button type="button" onClick={() => setIsChatOpen(false)} aria-label={t('floating.assistantClose')}>
               x
             </button>
           </div>
 
-          <p className="chatbot-copy">
-            Ask what the foundation does, how to donate, how to volunteer, or use one of the quick
-            topic buttons below.
-          </p>
+          <p className="chatbot-copy">{t('floating.assistantCopy')}</p>
 
           <div className="chatbot-quick-actions">
-            {assistantTopics.map((topic) => (
-              <button key={topic.id} type="button" onClick={() => submitQuestion(topic.label)}>
+            {normalizedTopics.map((topic) => (
+              <button
+                key={topic.id}
+                type="button"
+                onClick={() => submitQuestion(topic.keywords[0], topic.label)}
+              >
                 {topic.label}
               </button>
             ))}
@@ -182,7 +226,11 @@ function FloatingActions() {
               >
                 <p>{message.text}</p>
                 {message.actionLabel && message.actionHref ? (
-                  <button type="button" className="chatbot-message-action" onClick={() => goToAction(message.actionHref)}>
+                  <button
+                    type="button"
+                    className="chatbot-message-action"
+                    onClick={() => goToAction(message.actionHref)}
+                  >
                     {message.actionLabel}
                   </button>
                 ) : null}
@@ -201,10 +249,10 @@ function FloatingActions() {
               type="text"
               value={query}
               onChange={(event) => setQuery(event.target.value)}
-              placeholder="Ask a question..."
-              aria-label="Ask the foundation assistant a question"
+              placeholder={t('floating.assistantInput')}
+              aria-label={t('floating.assistantInputLabel')}
             />
-            <button type="submit">Send</button>
+            <button type="submit">{t('floating.send')}</button>
           </form>
         </div>
       ) : null}
