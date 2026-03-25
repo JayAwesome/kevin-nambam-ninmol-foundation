@@ -361,7 +361,9 @@ p {
 .inspiration-grid,
 .gallery-grid,
 .case-study-grid,
-.impact-points-grid {
+.impact-points-grid,
+.transformation-grid,
+.reports-grid {
   display: grid;
   gap: 1rem;
 }
@@ -377,7 +379,8 @@ p {
 .values-grid,
 .team-grid,
 .inspiration-grid,
-.case-study-grid {
+.case-study-grid,
+.reports-grid {
   grid-template-columns: repeat(3, minmax(0, 1fr));
 }
 
@@ -541,6 +544,40 @@ p {
 
 .gallery-grid {
   grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.transformation-grid {
+  grid-template-columns: 1fr;
+}
+
+.transformation-card {
+  padding: 1.5rem;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  background: var(--surface);
+  box-shadow: var(--shadow);
+}
+
+.transformation-card h3 {
+  color: var(--blue-900);
+  margin-bottom: 1rem;
+}
+
+.transformation-columns {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1rem;
+}
+
+.transformation-columns > div {
+  padding: 1rem;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  background: rgba(16, 36, 61, 0.03);
+}
+
+.report-button {
+  margin-top: 1rem;
 }
 
 .video-gallery-grid {
@@ -899,6 +936,7 @@ p {
   .team-grid,
   .inspiration-grid,
   .case-study-grid,
+  .reports-grid,
   .gallery-grid,
   .video-gallery-grid,
   .action-grid {
@@ -983,8 +1021,13 @@ p {
   .gallery-grid,
   .video-gallery-grid,
   .case-study-grid,
+  .reports-grid,
   .action-grid,
   .impact-points-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .transformation-columns {
     grid-template-columns: 1fr;
   }
 

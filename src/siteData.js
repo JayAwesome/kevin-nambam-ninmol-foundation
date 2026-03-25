@@ -256,27 +256,69 @@ export const programs = [
 ];
 
 export const impactMetrics = [
-  { label: 'Youth reached through direct engagement', value: '2,500+' },
-  { label: 'Sports and mentorship events facilitated', value: '40+' },
-  { label: 'Partner schools and community institutions', value: '20+' },
-  { label: 'Scholarships and education support actions', value: '18+' },
+  { label: 'Young people reached through direct engagement', value: '2,500+' },
+  { label: 'Communities and institutions reached', value: '20+' },
+  { label: 'Programs, clinics, and outreach activities executed', value: '40+' },
+  { label: 'Education support and scholarship actions delivered', value: '18+' },
 ];
 
 export const caseStudies = [
   {
-    title: 'Confidence through coaching',
+    title: 'Confidence through consistent coaching',
     summary:
-      'A youth clinic participant developed confidence, consistency, and improved school engagement through repeated mentorship and basketball training.',
+      'One clinic participant arrived withdrawn and hesitant to take part. Through repeated training sessions, encouragement, and peer support, that young person began to show more confidence, greater consistency, and stronger participation both on the court and in school settings.',
   },
   {
-    title: 'Support beyond the court',
+    title: 'Support beyond the basketball court',
     summary:
-      'Community outreach connected vulnerable families with material support while building longer-term trust with local schools and caregivers.',
+      'During community outreach, the foundation paired sports engagement with practical assistance for vulnerable families. The result was not just a one-time intervention, but stronger trust with caregivers, schools, and local partners who now see the foundation as a dependable presence.',
   },
   {
-    title: 'Girls choosing visibility',
+    title: 'Girls choosing visibility and leadership',
     summary:
-      'Girl Child sessions encouraged participants to see leadership, education, and sports participation as places where they belong.',
+      'Girl Child Initiative sessions created a safe environment for girls to participate, speak up, and be seen. Participants showed greater willingness to engage in sport, ask questions, and imagine themselves as leaders rather than observers.',
+  },
+];
+
+export const transformationStories = [
+  {
+    title: 'Before and after: from hesitation to participation',
+    before:
+      'Some young people arrive unsure of themselves, reluctant to participate, and uncertain whether they belong in a structured sports or mentoring environment.',
+    after:
+      'After exposure to coaching, encouragement, and consistent support, they begin to take initiative, work with others, and engage with greater confidence.',
+  },
+  {
+    title: 'Before and after: from limited access to visible support',
+    before:
+      'Families and communities facing pressure often have limited access to educational materials, safe youth programming, and positive role models.',
+    after:
+      'Through outreach, school engagement, and practical support, the foundation helps create visible pathways to encouragement, participation, and community trust.',
+  },
+  {
+    title: 'Before and after: from silence to self-belief',
+    before:
+      'Many girls are socialized to remain in the background, even when they have ability, ambition, and leadership potential.',
+    after:
+      'With focused mentoring and sports participation, they begin to speak with confidence, take space, and see their future as something they can influence.',
+  },
+];
+
+export const reports = [
+  {
+    title: 'Annual Impact Report 2025',
+    description:
+      'A placeholder for the foundation’s annual summary of programs, outputs, partnerships, and lessons learned.',
+  },
+  {
+    title: 'Program and Outreach Summary',
+    description:
+      'A placeholder for a concise donor-facing document covering clinics, outreach efforts, and education support activity.',
+  },
+  {
+    title: 'Governance and Accountability Brief',
+    description:
+      'A placeholder for governance, stewardship, and organizational credibility materials for partners and institutions.',
   },
 ];
 
