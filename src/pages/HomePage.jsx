@@ -1,8 +1,16 @@
 import { Link } from 'react-router-dom';
+import LiveCounter from '../components/LiveCounter';
 import NewsletterSection from '../components/NewsletterSection';
 import SectionIntro from '../components/SectionIntro';
 import usePageTitle from '../hooks/usePageTitle';
-import { heroStats, homepagePrograms, latestNews, mediaVideos, testimonials } from '../siteData';
+import {
+  heroStats,
+  homepagePrograms,
+  latestNews,
+  mediaVideos,
+  partnerSupporters,
+  testimonials,
+} from '../siteData';
 
 function HomePage() {
   usePageTitle('Home');
@@ -62,7 +70,7 @@ function HomePage() {
                 <span className="metric-icon" aria-hidden="true">
                   {item.icon}
                 </span>
-                <strong>{item.value}</strong>
+                <LiveCounter countTo={item.countTo} suffix={item.suffix} className="metric-counter" />
                 <span className="metric-label">{item.label}</span>
                 <p>{item.detail}</p>
               </article>
@@ -164,6 +172,28 @@ function HomePage() {
                 <p>"{item.quote}"</p>
                 <strong>{item.name}</strong>
                 <span>{item.role}</span>
+              </article>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="section-space">
+        <div className="container">
+          <SectionIntro
+            eyebrow="Partners & Supporters"
+            title="Working together to expand our impact"
+            text="The foundation grows through collaboration with schools, communities, organizations, and supporters who help make youth-focused change more practical and sustainable."
+            centered
+          />
+          <div className="partners-grid">
+            {partnerSupporters.map((partner) => (
+              <article key={partner.name} className="partner-card">
+                <div className="partner-mark" aria-hidden="true">
+                  {partner.mark}
+                </div>
+                <h3>{partner.name}</h3>
+                <p>{partner.description}</p>
               </article>
             ))}
           </div>

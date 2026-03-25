@@ -3,12 +3,18 @@ import PageHero from '../components/PageHero';
 import NewsletterSection from '../components/NewsletterSection';
 import SectionIntro from '../components/SectionIntro';
 import usePageTitle from '../hooks/usePageTitle';
-import { donateOptions } from '../siteData';
+import {
+  donationBreakdown,
+  donationCurrencies,
+  donationTrustSignals,
+  donateOptions,
+  internationalPaymentOptions,
+} from '../siteData';
 
-function formatNaira(amount) {
-  return new Intl.NumberFormat('en-NG', {
+function formatCurrency(amount, currencyCode, locale) {
+  return new Intl.NumberFormat(locale, {
     style: 'currency',
-    currency: 'NGN',
+    currency: currencyCode,
     maximumFractionDigits: 0,
   }).format(amount);
 }
@@ -17,26 +23,42 @@ function DonatePage() {
   usePageTitle('Donate');
 
   const [billingMode, setBillingMode] = useState('one-time');
+  const [currencyCode, setCurrencyCode] = useState('NGN');
   const [selectedAmount, setSelectedAmount] = useState(donateOptions[1].amount);
   const [customAmount, setCustomAmount] = useState('');
 
-  const effectiveAmount = useMemo(() => {
+  const selectedCurrency = useMemo(
+    () => donationCurrencies.find((currency) => currency.code === currencyCode) || donationCurrencies[0],
+    [currencyCode],
+  );
+
+  const effectiveBaseAmount = useMemo(() => {
     if (customAmount) {
-      return Number(customAmount) || 0;
+      const parsed = Number(customAmount) || 0;
+      return Math.round(parsed / selectedCurrency.rate);
     }
     return selectedAmount;
-  }, [customAmount, selectedAmount]);
+  }, [customAmount, selectedAmount, selectedCurrency.rate]);
+
+  const convertedAmount = useMemo(
+    () => Math.round((effectiveBaseAmount || 0) * selectedCurrency.rate),
+    [effectiveBaseAmount, selectedCurrency.rate],
+  );
 
   const handleDonate = () => {
     console.log('Payment integration placeholder', {
       provider: 'Paystack/Flutterwave',
       billingMode,
-      amount: effectiveAmount,
+      baseAmountNgn: effectiveBaseAmount,
+      currency: selectedCurrency.code,
+      convertedAmount,
     });
     window.alert(
-      `Secure payment integration placeholder. ${billingMode === 'monthly' ? 'Monthly' : 'One-time'} donation: ${formatNaira(
-        effectiveAmount || 0,
-      )}`,
+      `Secure payment integration placeholder. ${billingMode === 'monthly' ? 'Monthly' : 'One-time'} donation: ${formatCurrency(
+        convertedAmount || 0,
+        selectedCurrency.code,
+        selectedCurrency.locale,
+      )} (${formatCurrency(effectiveBaseAmount || 0, 'NGN', 'en-NG')} base amount)`,
     );
   };
 
@@ -55,7 +77,7 @@ function DonatePage() {
             <SectionIntro
               eyebrow="Give Today"
               title="Choose how you want to support the mission."
-              text="Your gift helps the foundation respond to practical needs through youth support, educational access, mentoring, and development initiatives."
+              text="Your gift helps the foundation respond to practical needs through youth support, educational access, mentoring, and development initiatives across local and international giving options."
             />
 
             <div className="billing-toggle" aria-label="Donation frequency">
@@ -75,6 +97,25 @@ function DonatePage() {
               </button>
             </div>
 
+            <div className="currency-panel">
+              <div className="currency-panel-copy">
+                <strong>Choose your currency</strong>
+                <p>Base donation amounts are set in NGN and displayed automatically in your selected currency.</p>
+              </div>
+              <div className="currency-toggle" aria-label="Donation currency">
+                {donationCurrencies.map((currency) => (
+                  <button
+                    key={currency.code}
+                    type="button"
+                    className={currencyCode === currency.code ? 'currency-active' : ''}
+                    onClick={() => setCurrencyCode(currency.code)}
+                  >
+                    {currency.code}
+                  </button>
+                ))}
+              </div>
+            </div>
+
             <div className="donation-preset-grid donation-preset-grid-large">
               {donateOptions.map((option) => (
                 <button
@@ -86,14 +127,15 @@ function DonatePage() {
                     setCustomAmount('');
                   }}
                 >
-                  <strong>{formatNaira(option.amount)}</strong>
+                  <strong>{formatCurrency(option.amount * selectedCurrency.rate, selectedCurrency.code, selectedCurrency.locale)}</strong>
+                  <small>{formatCurrency(option.amount, 'NGN', 'en-NG')}</small>
                   <span>{option.label}</span>
                 </button>
               ))}
             </div>
 
             <label className="custom-amount-field donate-custom-field">
-              <span className="custom-amount-prefix">N</span>
+              <span className="custom-amount-prefix">{selectedCurrency.symbol}</span>
               <input
                 type="number"
                 min="0"
@@ -109,8 +151,13 @@ function DonatePage() {
               className="button button-accent donate-submit-button"
               onClick={handleDonate}
             >
-              Donate {effectiveAmount ? formatNaira(effectiveAmount) : 'Now'}
+              Donate {effectiveBaseAmount ? formatCurrency(convertedAmount, selectedCurrency.code, selectedCurrency.locale) : 'Now'}
             </button>
+
+            <p className="currency-conversion-note">
+              Approximate conversion: {formatCurrency(effectiveBaseAmount || 0, 'NGN', 'en-NG')} ={' '}
+              {formatCurrency(convertedAmount || 0, selectedCurrency.code, selectedCurrency.locale)}
+            </p>
 
             <div className="secure-payment-box">
               <strong>Payment integration placeholder</strong>
@@ -118,6 +165,13 @@ function DonatePage() {
                 Paystack or Flutterwave can be connected here for secure one-time and monthly
                 donations.
               </p>
+              <div className="trust-badge-row">
+                {donationTrustSignals.map((item) => (
+                  <span key={item} className="trust-badge">
+                    {item}
+                  </span>
+                ))}
+              </div>
             </div>
           </div>
 
@@ -126,27 +180,41 @@ function DonatePage() {
               <p className="program-tag">Transparency</p>
               <h2>Where your money goes</h2>
               <p>
-                Donations help fund direct youth support, educational materials, mentoring
-                activities, outreach delivery, and practical development programs.
+                Every contribution is used responsibly to create measurable impact. Donations help
+                fund direct youth support, educational materials, mentoring activities, outreach
+                delivery, and practical development programs.
               </p>
-              <ul className="opportunity-list">
-                <li>Basic needs and direct support for children and youth</li>
-                <li>Educational materials and learning resources</li>
-                <li>Mentorship sessions and life-skills engagement</li>
-                <li>Youth development initiatives and program delivery</li>
-              </ul>
+              <div className="donation-breakdown-list">
+                {donationBreakdown.map((item) => (
+                  <div key={item.title} className="donation-breakdown-item">
+                    <div className="donation-breakdown-header">
+                      <h3>{item.title}</h3>
+                      <strong>{item.share}</strong>
+                    </div>
+                    <p>{item.detail}</p>
+                  </div>
+                ))}
+              </div>
             </article>
 
             <article className="info-panel">
-              <p className="program-tag">Accountability</p>
-              <h2>Giving should feel clear and trustworthy.</h2>
+              <p className="program-tag">Donor Assurance</p>
+              <h2>Giving should feel clear, secure, and trustworthy.</h2>
               <p>
                 The foundation is committed to responsible stewardship, clear communication, and
                 transparent use of resources so supporters can give with confidence.
               </p>
+              <p className="donor-reassurance">
+                Every contribution is used responsibly to create measurable impact.
+              </p>
               <p className="micro-note">
                 Payment gateway placeholder: Paystack / Flutterwave
               </p>
+              <ul className="opportunity-list">
+                {internationalPaymentOptions.map((item) => (
+                  <li key={item}>{item}</li>
+                ))}
+              </ul>
             </article>
           </div>
         </div>

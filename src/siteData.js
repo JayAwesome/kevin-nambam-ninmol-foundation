@@ -24,24 +24,32 @@ export const siteContact = {
 export const heroStats = [
   {
     value: '2,500+',
+    countTo: 2500,
+    suffix: '+',
     label: 'Youth reached',
     detail: 'Young people reached through clinics, mentoring, and outreach',
     icon: 'Y',
   },
   {
     value: '40+',
+    countTo: 40,
+    suffix: '+',
     label: 'Programs conducted',
     detail: 'Programs, clinics, and outreach activities delivered',
     icon: 'P',
   },
   {
     value: '20+',
+    countTo: 20,
+    suffix: '+',
     label: 'Communities impacted',
     detail: 'Communities and institutions engaged through direct support',
     icon: 'C',
   },
   {
     value: '18+',
+    countTo: 18,
+    suffix: '+',
     label: 'Education actions',
     detail: 'Education support and scholarship actions provided',
     icon: 'E',
@@ -120,6 +128,33 @@ export const latestNews = [
     category: 'Impact',
     excerpt:
       'Volunteers and partners helped deliver materials and support through one of the foundation’s local outreach efforts.',
+  },
+];
+
+export const partnerSupporters = [
+  {
+    name: 'Partner Schools',
+    mark: 'PS',
+    description:
+      'Schools provide access to young people, safe learning environments, and collaboration for mentoring, education support, and youth development sessions.',
+  },
+  {
+    name: 'Community Leaders',
+    mark: 'CL',
+    description:
+      'Community stakeholders help the foundation build trust, identify needs, and strengthen local participation in outreach and youth engagement activities.',
+  },
+  {
+    name: 'Youth Organizations',
+    mark: 'YO',
+    description:
+      'Youth-focused groups and clubs create opportunities for shared programming, wider reach, and stronger support systems for participants.',
+  },
+  {
+    name: 'Support Organizations',
+    mark: 'SO',
+    description:
+      'Organizations and supporters contribute resources, visibility, and partnership opportunities that help the foundation expand its impact responsibly.',
   },
 ];
 
@@ -721,6 +756,67 @@ export const donateOptions = [
     amount: 50000,
     label: 'Sponsors a youth development initiative',
   },
+];
+
+export const donationCurrencies = [
+  {
+    code: 'NGN',
+    label: 'Nigerian Naira',
+    locale: 'en-NG',
+    rate: 1,
+    symbol: 'N',
+  },
+  {
+    code: 'USD',
+    label: 'US Dollar',
+    locale: 'en-US',
+    rate: 0.00064,
+    symbol: '$',
+  },
+  {
+    code: 'GBP',
+    label: 'British Pound',
+    locale: 'en-GB',
+    rate: 0.0005,
+    symbol: '£',
+  },
+  {
+    code: 'EUR',
+    label: 'Euro',
+    locale: 'en-IE',
+    rate: 0.00059,
+    symbol: '€',
+  },
+];
+
+export const donationBreakdown = [
+  {
+    title: 'Program delivery',
+    share: '60%',
+    detail: 'Supports youth programs, basketball clinics, mentoring sessions, and direct engagement activities.',
+  },
+  {
+    title: 'Education support',
+    share: '25%',
+    detail: 'Funds learning materials, academic assistance, and scholarship-related support for young people.',
+  },
+  {
+    title: 'Operations and accountability',
+    share: '15%',
+    detail: 'Covers responsible coordination, safeguarding, communication, and reporting needed to deliver programs well.',
+  },
+];
+
+export const donationTrustSignals = [
+  'Secure payment gateway placeholder: Paystack / Flutterwave',
+  'Transparent stewardship and responsible fund use',
+  'Mission-aligned giving for measurable youth impact',
+];
+
+export const internationalPaymentOptions = [
+  'NGN donors: local transfer or Paystack integration placeholder',
+  'USD, GBP, and EUR donors: international card or Flutterwave gateway placeholder',
+  'Currency conversion shown on the page is indicative and can be updated when live gateway rates are connected',
 ];
 
 export const sponsorOptions = [
