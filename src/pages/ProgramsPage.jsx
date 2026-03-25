@@ -27,7 +27,7 @@ function ProgramsPage() {
           <div className="program-list-grid">
             {programs.map((program) => (
               <article key={program.slug} className="feature-card">
-                <img src={program.image} alt={program.title} />
+                <img src={program.image} alt={program.title} loading="lazy" decoding="async" />
                 <div className="feature-card-body">
                   <p className="program-tag">{program.category}</p>
                   <h3>{program.title}</h3>

@@ -45,7 +45,7 @@ function ProgramDetailPage() {
             </Link>
           </div>
           <div className="split-panel-media">
-            <img src={program.image} alt={program.title} />
+            <img src={program.image} alt={program.title} loading="lazy" decoding="async" />
           </div>
         </div>
       </section>

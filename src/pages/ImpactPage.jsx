@@ -2,7 +2,7 @@ import PageHero from '../components/PageHero';
 import NewsletterSection from '../components/NewsletterSection';
 import SectionIntro from '../components/SectionIntro';
 import usePageTitle from '../hooks/usePageTitle';
-import { caseStudies, impactMetrics, mediaGallery } from '../siteData';
+import { caseStudies, impactMetrics, mediaGallery, mediaVideos } from '../siteData';
 
 function ImpactPage() {
   usePageTitle('Impact');
@@ -62,13 +62,21 @@ function ImpactPage() {
           <div className="gallery-grid">
             {mediaGallery.map((item) => (
               <div key={item} className="gallery-card">
-                <img src={item} alt="Foundation impact gallery" />
+                <img src={item} alt="Foundation impact gallery" loading="lazy" decoding="async" />
               </div>
             ))}
           </div>
-          <div className="video-placeholder">
-            <strong>Video Gallery Placeholder</strong>
-            <p>Embed YouTube, Vimeo, or self-hosted story videos here later.</p>
+          <div className="video-gallery-grid">
+            {mediaVideos.map((video) => (
+              <article key={video.src} className="video-card">
+                <video controls preload="metadata" poster={video.poster}>
+                  <source src={video.src} type="video/mp4" />
+                </video>
+                <div className="video-card-body">
+                  <strong>{video.title}</strong>
+                </div>
+              </article>
+            ))}
           </div>
         </div>
       </section>

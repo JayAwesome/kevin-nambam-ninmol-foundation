@@ -2,7 +2,7 @@ import PageHero from '../components/PageHero';
 import NewsletterSection from '../components/NewsletterSection';
 import SectionIntro from '../components/SectionIntro';
 import usePageTitle from '../hooks/usePageTitle';
-import { aboutStory, coreValues, founderMessage, leadershipTeam, visionMission } from '../siteData';
+import { aboutStory, coreValues, founderMessage, inspirations, leadershipTeam, visionMission } from '../siteData';
 
 function AboutPage() {
   usePageTitle('About');
@@ -31,7 +31,13 @@ function AboutPage() {
             </div>
           </div>
           <div className="split-panel-media">
-            <img src="/media/founder-action.jpeg" alt="Founder training on a basketball court" />
+            <img
+              src="/media/founder-action.jpeg"
+              alt="Founder training on a basketball court"
+              className="media-focus-center"
+              loading="lazy"
+              decoding="async"
+            />
           </div>
         </div>
       </section>
@@ -99,6 +105,32 @@ function AboutPage() {
                 <div className="team-card-body">
                   <h3>{person.name}</h3>
                   <p>{person.role}</p>
+                </div>
+              </article>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="section-space section-alt">
+        <div className="container">
+          <SectionIntro
+            eyebrow="Those Who Inspired Him"
+            title="Basketball leaders and mentors who helped shape the founder’s vision."
+            text="This project did not grow in isolation. It was influenced by coaches, administrators, and continental basketball leaders whose work showed what sport can do for young people."
+            centered
+          />
+          <div className="inspiration-grid">
+            {inspirations.map((person) => (
+              <article key={person.name} className="team-card inspiration-card">
+                <img src={person.image} alt={person.name} loading="lazy" decoding="async" />
+                <div className="team-card-body">
+                  <h3>{person.name}</h3>
+                  <p className="inspiration-role">{person.role}</p>
+                  <p>{person.summary}</p>
+                  <a href={person.sourceUrl} target="_blank" rel="noreferrer" className="text-link">
+                    {person.sourceLabel}
+                  </a>
                 </div>
               </article>
             ))}

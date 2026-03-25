@@ -43,6 +43,8 @@ a {
 img {
   display: block;
   width: 100%;
+  height: auto;
+  image-rendering: auto;
 }
 
 button,
@@ -259,6 +261,7 @@ p {
 .home-hero-visual img {
   height: 100%;
   object-fit: cover;
+  object-position: center 24%;
 }
 
 .home-hero-badge {
@@ -355,6 +358,7 @@ p {
 .testimonial-grid,
 .values-grid,
 .team-grid,
+.inspiration-grid,
 .gallery-grid,
 .case-study-grid,
 .impact-points-grid {
@@ -372,6 +376,7 @@ p {
 .testimonial-grid,
 .values-grid,
 .team-grid,
+.inspiration-grid,
 .case-study-grid {
   grid-template-columns: repeat(3, minmax(0, 1fr));
 }
@@ -397,6 +402,7 @@ p {
 .event-form-panel,
 .action-card,
 .gallery-card,
+.video-card,
 .video-placeholder,
 .quote-panel,
 .map-panel,
@@ -433,6 +439,36 @@ p {
 .gallery-card img {
   height: 240px;
   object-fit: cover;
+  object-position: center;
+}
+
+.inspiration-role {
+  margin-bottom: 0.7rem;
+  color: var(--gold);
+  font-size: 0.82rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.video-card {
+  overflow: hidden;
+}
+
+.video-card video {
+  display: block;
+  width: 100%;
+  height: 320px;
+  background: #000;
+  object-fit: cover;
+}
+
+.video-card-body {
+  padding: 1rem 1.2rem 1.2rem;
+}
+
+.video-card-body strong {
+  color: var(--blue-900);
 }
 
 .feature-card-body,
@@ -458,6 +494,7 @@ p {
 .split-panel-media img {
   min-height: 440px;
   object-fit: cover;
+  object-position: center 22%;
 }
 
 .section-alt {
@@ -506,6 +543,13 @@ p {
   grid-template-columns: repeat(3, minmax(0, 1fr));
 }
 
+.video-gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
 .gallery-card {
   overflow: hidden;
 }
@@ -544,6 +588,15 @@ p {
 .action-media img {
   height: 220px;
   object-fit: cover;
+  object-position: center;
+}
+
+.media-focus-center {
+  object-position: center;
+}
+
+.media-focus-top {
+  object-position: center top;
 }
 
 .event-form-panel input,
@@ -844,8 +897,10 @@ p {
   .testimonial-grid,
   .values-grid,
   .team-grid,
+  .inspiration-grid,
   .case-study-grid,
   .gallery-grid,
+  .video-gallery-grid,
   .action-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
@@ -924,7 +979,9 @@ p {
   .testimonial-grid,
   .values-grid,
   .team-grid,
+  .inspiration-grid,
   .gallery-grid,
+  .video-gallery-grid,
   .case-study-grid,
   .action-grid,
   .impact-points-grid {

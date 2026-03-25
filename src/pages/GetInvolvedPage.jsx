@@ -81,7 +81,13 @@ function GetInvolvedPage() {
               deserves a shot at greatness.
             </p>
             <div className="action-media">
-              <img src="/media/hero-court.jpeg" alt="Founder coaching young players" />
+              <img
+                src="/media/hero-court.jpeg"
+                alt="Founder coaching young players"
+                className="media-focus-center"
+                loading="lazy"
+                decoding="async"
+              />
             </div>
             <button
               type="button"

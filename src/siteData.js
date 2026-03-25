@@ -12,11 +12,11 @@ export const navItems = [
 
 export const siteContact = {
   email: 'info@kevinnanbamfoundation.org',
-  phone: '+234 000 000 0000',
-  address: 'Jos, Plateau State, Nigeria',
-  whatsapp: 'https://wa.me/2340000000000',
+  phone: '+234 803 784 0841',
+  address: 'Peter Anikwe Estate, Block B, Flat 3, Rantya, Jos, Plateau State, Nigeria',
+  whatsapp: 'https://wa.me/2348037840841',
   mapEmbed:
-    'https://www.google.com/maps?q=Jos,%20Plateau%20State,%20Nigeria&output=embed',
+    'https://www.google.com/maps?q=Peter%20Anikwe%20Estate%20Block%20B%20Flat%203%20Rantya%20Jos%20Plateau%20State%20Nigeria&output=embed',
 };
 
 export const heroStats = [
@@ -162,6 +162,45 @@ export const leadershipTeam = [
   },
 ];
 
+export const inspirations = [
+  {
+    name: 'Masai Ujiri',
+    role: 'Giants of Africa co-founder and global basketball leader',
+    image: '/media/inspired-masai.jpeg',
+    summary:
+      'Masai Ujiri’s work across basketball and youth development showed how the game can become a vehicle for confidence, leadership, and continental impact.',
+    sourceLabel: 'Giants of Africa profile',
+    sourceUrl: 'https://giantsofafrica.org/about/our-team/',
+  },
+  {
+    name: 'Coach Michael Akuboh',
+    role: 'Nigerian basketball coach and development mentor',
+    image: '/media/inspired-akuboh.jpeg',
+    summary:
+      'Public basketball coverage connects Michael Akuboh to Ahmadu Bello University coaching and youth development camps, reflecting the kind of technical guidance and grassroots commitment that shaped Kevin’s journey.',
+    sourceLabel: 'FIBA report',
+    sourceUrl: 'https://www.fiba.basketball/en/news/ngr-abu-coach-akuboh-laud-nigeria-big-man-camp',
+  },
+  {
+    name: 'Coach Oliver B. Johnson',
+    role: 'Respected ABU basketball coach',
+    image: '/media/inspired-obj.jpeg',
+    summary:
+      'Ahmadu Bello University described Oliver B. Johnson, also known as OBJ, as one of the notable coaches involved in a major international basketball workshop for coaches in Nigeria.',
+    sourceLabel: 'ABU article',
+    sourceUrl: 'https://abu.edu.ng/abu-hosts-first-international-basketball-workshop-for-coaches/',
+  },
+  {
+    name: 'Colonel Samuel Amedu (Rtd.)',
+    role: 'FIBA Africa Zone 3 president and basketball administrator',
+    image: '/media/inspired-amedu.jpeg',
+    summary:
+      'Recent basketball reporting identifies Colonel Samuel Amedu as President of FIBA Africa Zone 3 and a Nigerian basketball stakeholder active in clinics, administration, and grassroots development.',
+    sourceLabel: 'Sports report',
+    sourceUrl: 'https://triumphnewspapers.ng/nssf-holds-basketball-clinic-semi-finals-set-forednesday-showdown/',
+  },
+];
+
 export const programs = [
   {
     slug: 'scholars-of-tomorrow',
@@ -241,6 +280,24 @@ export const mediaGallery = [
   '/media/outreach-school.jpeg',
   '/media/indoor-clinic.jpeg',
   '/media/program-certificate.jpeg',
+];
+
+export const mediaVideos = [
+  {
+    src: '/media/featured-story.mp4',
+    title: 'Founder story reel',
+    poster: '/media/founder-action.jpeg',
+  },
+  {
+    src: '/media/clinic-reel.mp4',
+    title: 'Clinic highlights',
+    poster: '/media/hero-court.jpeg',
+  },
+  {
+    src: '/media/community-reel.mp4',
+    title: 'Community engagement reel',
+    poster: '/media/community-group.jpeg',
+  },
 ];
 
 export const donateOptions = [

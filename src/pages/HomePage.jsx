@@ -2,7 +2,7 @@ import { Link } from 'react-router-dom';
 import NewsletterSection from '../components/NewsletterSection';
 import SectionIntro from '../components/SectionIntro';
 import usePageTitle from '../hooks/usePageTitle';
-import { heroStats, homepagePrograms, latestNews, testimonials } from '../siteData';
+import { heroStats, homepagePrograms, latestNews, mediaVideos, testimonials } from '../siteData';
 
 function HomePage() {
   usePageTitle('Home');
@@ -30,7 +30,11 @@ function HomePage() {
           </div>
 
           <div className="home-hero-visual">
-            <img src="/media/founder-action.jpeg" alt="Founder Kevin training with basketballs" />
+            <img
+              src="/media/founder-action.jpeg"
+              alt="Founder Kevin training with basketballs"
+              className="media-focus-center"
+            />
             <div className="home-hero-badge">
               <strong>Trust through action</strong>
               <p>Rooted in lived experience, youth mentorship, and visible community engagement.</p>
@@ -96,7 +100,33 @@ function HomePage() {
           </div>
 
           <div className="split-panel-media">
-            <img src="/media/founder-portrait.jpeg" alt="Founder in Nigeria national basketball kit" />
+            <img
+              src="/media/founder-portrait.jpeg"
+              alt="Founder in Nigeria national basketball kit"
+              className="media-focus-center"
+              loading="lazy"
+              decoding="async"
+            />
+          </div>
+        </div>
+      </section>
+
+      <section className="section-space section-alt">
+        <div className="container split-panel media-highlight-panel">
+          <div>
+            <SectionIntro
+              eyebrow="Featured Video"
+              title="Real footage makes the work feel immediate, trustworthy, and alive."
+              text="Using your own videos helps the site feel authentic to donors, partners, and visitors who want to see the mission in motion."
+            />
+          </div>
+          <div className="video-card">
+            <video controls preload="metadata" poster={mediaVideos[0].poster}>
+              <source src={mediaVideos[0].src} type="video/mp4" />
+            </video>
+            <div className="video-card-body">
+              <strong>{mediaVideos[0].title}</strong>
+            </div>
           </div>
         </div>
       </section>
