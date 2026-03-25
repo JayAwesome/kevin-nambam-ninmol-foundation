@@ -608,6 +608,7 @@ p {
 .program-preview-grid,
 .program-list-grid,
 .news-grid,
+.activity-grid,
 .testimonial-grid,
 .partners-grid,
 .values-grid,
@@ -635,6 +636,7 @@ p {
 .program-preview-grid,
 .program-list-grid,
 .news-grid,
+.activity-grid,
 .testimonial-grid,
 .partners-grid,
 .values-grid,
@@ -1080,6 +1082,10 @@ p {
   font-size: 1.1rem;
   font-weight: 800;
   box-shadow: var(--shadow-soft);
+}
+
+.activity-card .meta-line {
+  margin-top: 0.6rem;
 }
 
 .feature-card {

@@ -131,6 +131,36 @@ export const latestNews = [
   },
 ];
 
+export const latestActivities = [
+  {
+    slug: 'jos-clinic-mentoring-session',
+    title: 'Basketball clinic and mentoring session in Jos',
+    category: 'Youth Outreach',
+    timestamp: 'March 22, 2026 · 4:30 PM',
+    image: '/media/hero-court.jpeg',
+    update:
+      'Young people took part in court drills, teamwork exercises, and short mentoring conversations focused on confidence and discipline.',
+  },
+  {
+    slug: 'school-outreach-support-visit',
+    title: 'School outreach visit with practical support distribution',
+    category: 'Community Visit',
+    timestamp: 'March 16, 2026 · 11:00 AM',
+    image: '/media/outreach-school.jpeg',
+    update:
+      'The foundation engaged children, staff, and community members while delivering support materials and reinforcing hope-centered encouragement.',
+  },
+  {
+    slug: 'girls-development-activity-day',
+    title: 'Girls-focused development activity and encouragement session',
+    category: 'Girl Child Initiative',
+    timestamp: 'March 9, 2026 · 2:15 PM',
+    image: '/media/community-group.jpeg',
+    update:
+      'Participants joined a confidence-building activity that combined mentoring, group interaction, and visible support for girls to grow boldly.',
+  },
+];
+
 export const partnerSupporters = [
   {
     name: 'Partner Schools',

@@ -5,6 +5,7 @@ import SectionIntro from '../components/SectionIntro';
 import usePageTitle from '../hooks/usePageTitle';
 import {
   heroStats,
+  latestActivities,
   homepagePrograms,
   latestNews,
   mediaVideos,
@@ -222,6 +223,29 @@ function HomePage() {
       </section>
 
       <section className="section-space">
+        <div className="container">
+          <SectionIntro
+            eyebrow="Latest Activities"
+            title="Live updates from outreach, mentoring, and community work."
+            text="These recent activity snapshots show that the foundation is active, consistent, and present in the lives of the young people it serves."
+          />
+          <div className="activity-grid">
+            {latestActivities.map((item) => (
+              <article key={item.slug} className="feature-card activity-card">
+                <img src={item.image} alt={item.title} loading="lazy" decoding="async" />
+                <div className="feature-card-body">
+                  <p className="program-tag">{item.category}</p>
+                  <h3>{item.title}</h3>
+                  <p>{item.update}</p>
+                  <span className="meta-line">{item.timestamp}</span>
+                </div>
+              </article>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="section-space section-alt">
         <div className="container">
           <SectionIntro
             eyebrow="Latest Updates"
