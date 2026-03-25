@@ -39,6 +39,10 @@ function ProgramDetailPage() {
           <div>
             <p className="program-tag">Overview</p>
             <h2>{program.summary}</h2>
+            <div className="program-detail-block">
+              <h4>Purpose</h4>
+              <p className="detail-copy">{program.purpose}</p>
+            </div>
             <p className="detail-copy">{program.description}</p>
             <Link to="/get-involved" className="button button-accent">
               Support This Program
@@ -51,6 +55,20 @@ function ProgramDetailPage() {
       </section>
 
       <section className="section-space section-alt">
+        <div className="container">
+          <h2 className="section-title-simple">Program activities</h2>
+          <div className="impact-points-grid">
+            {program.activities.map((activity) => (
+              <article key={activity} className="impact-point-card">
+                <span className="objective-marker" />
+                <p>{activity}</p>
+              </article>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="section-space">
         <div className="container">
           <h2 className="section-title-simple">Program impact</h2>
           <div className="impact-points-grid">

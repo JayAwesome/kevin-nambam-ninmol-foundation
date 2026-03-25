@@ -20,10 +20,10 @@ export const siteContact = {
 };
 
 export const heroStats = [
-  { value: '12+', label: 'Active outreach communities' },
-  { value: '2,500+', label: 'Young people reached' },
-  { value: '150+', label: 'Athletes mentored' },
-  { value: '18', label: 'Scholarship and learning support awards' },
+  { value: '2,500+', label: 'Young people reached through clinics, mentoring, and outreach' },
+  { value: '20+', label: 'Communities and institutions engaged' },
+  { value: '40+', label: 'Programs, clinics, and outreach activities delivered' },
+  { value: '18+', label: 'Education support and scholarship actions provided' },
 ];
 
 export const homepagePrograms = [
@@ -212,46 +212,115 @@ export const programs = [
   {
     slug: 'scholars-of-tomorrow',
     title: 'Scholars of Tomorrow',
-    category: 'Education and Scholarships',
+    category: 'Education Support',
     image: '/media/program-certificate.jpeg',
     summary:
       'An education support initiative that helps underserved youth access school materials, mentoring, and scholarship opportunities.',
+    purpose:
+      'To reduce educational barriers for children and young people by connecting academic encouragement with practical support.',
+    activities: [
+      'Scholarship identification and referral support',
+      'Books, learning materials, and school resource assistance',
+      'Academic mentoring and encouragement for students',
+      'Guidance for persistence, discipline, and long-term educational planning',
+    ],
     description:
       'Scholars of Tomorrow supports children and adolescents who need practical academic assistance and sustained encouragement. The program combines scholarship support, educational resources, mentorship, and guidance for students who may otherwise be left behind.',
-    impact: ['Scholarship support pathways', 'Mentoring for academic persistence', 'Book and materials assistance'],
+    impact: [
+      'Improved access to learning materials and school support',
+      'Greater confidence for students working toward educational progress',
+      'Practical scholarship and mentoring pathways for underserved youth',
+    ],
   },
   {
     slug: 'fear-no-fear-clinics',
     title: 'Fear No Fear Basketball Clinics',
-    category: 'Sports and Youth Empowerment',
+    category: 'Youth Empowerment',
     image: '/media/hero-court.jpeg',
     summary:
       'Basketball-based youth engagement that teaches confidence, discipline, leadership, and teamwork.',
+    purpose:
+      'To use basketball as a tool for discipline, resilience, leadership, and positive decision-making among young people.',
+    activities: [
+      'Basketball coaching clinics and skill-development sessions',
+      'Mindset talks on courage, hope, and personal responsibility',
+      'Mentorship moments woven into sports training',
+      'Team-building activities that strengthen discipline and communication',
+    ],
     description:
       'Fear No Fear Basketball Clinics create safe, inspiring environments where young people can train, grow, and learn. The clinics blend sports fundamentals with encouragement, coaching, life lessons, and a mindset built around resilience and positive decision-making.',
-    impact: ['Structured sports development', 'Confidence-building for boys and girls', 'Positive mentorship through coaching'],
+    impact: [
+      'Structured sports participation for boys and girls',
+      'Stronger confidence, teamwork, and coachability',
+      'Positive mentoring relationships built through consistent engagement',
+    ],
   },
   {
     slug: 'girl-child-initiative',
     title: 'The Girl Child Initiative',
-    category: 'Girls Empowerment',
+    category: 'Youth Empowerment',
     image: '/media/indoor-clinic.jpeg',
     summary:
       'A focused initiative that affirms girls, builds confidence, and creates supportive pathways for leadership and growth.',
+    purpose:
+      'To help girls recognize their potential, build confidence, and engage opportunities in education, sport, and leadership without limitation.',
+    activities: [
+      'Mentoring sessions focused on confidence and self-worth',
+      'Leadership conversations and encouragement circles for girls',
+      'Support for girls participating in sports and learning programs',
+      'Practical guidance that reinforces dignity, ambition, and voice',
+    ],
     description:
       'The Girl Child Initiative helps girls understand that their gender is not a disadvantage. Through mentoring, sports participation, leadership conversations, and access to support, the initiative encourages girls to dream boldly and contribute meaningfully to their communities.',
-    impact: ['Girl-centered encouragement and leadership', 'Mentorship and confidence support', 'Increased participation in sports and learning'],
+    impact: [
+      'Greater visibility and confidence for girls in community spaces',
+      'Mentorship that encourages self-belief and leadership',
+      'Increased participation in sports, learning, and personal development',
+    ],
   },
   {
     slug: 'game-plan-for-life',
     title: 'Game Plan for Life',
-    category: 'Mentorship and Life Skills',
+    category: 'Community Development',
     image: '/media/outreach-school.jpeg',
     summary:
       'A practical life-skills and mentoring track that prepares youth for challenges beyond the court.',
+    purpose:
+      'To strengthen young people and the communities around them through life-skills development, mentoring, and positive social support.',
+    activities: [
+      'Workshops on communication, problem-solving, and teamwork',
+      'Mentorship on emotional well-being and responsible choices',
+      'Community-based sessions with schools, families, and youth groups',
+      'Guidance that connects personal growth with community responsibility',
+    ],
     description:
       'Game Plan for Life equips young people with the mental and relational tools needed to grow into responsible adults. The program covers emotional well-being, communication, teamwork, problem-solving, and positive life choices.',
-    impact: ['Emotional well-being support', 'Life-skills workshops', 'Mentorship for responsible choices'],
+    impact: [
+      'Stronger life skills for everyday decision-making',
+      'Improved emotional resilience and social confidence',
+      'More supportive relationships between youth, mentors, and communities',
+    ],
+  },
+];
+
+export const programCategories = [
+  {
+    title: 'Education Support',
+    description:
+      'Programs in this category help young people stay connected to school, learning resources, and the encouragement needed to keep moving forward.',
+    programs: programs.filter((program) => program.category === 'Education Support'),
+  },
+  {
+    title: 'Youth Empowerment',
+    description:
+      'These initiatives develop confidence, leadership, discipline, and hope through mentoring, sport, and practical personal development.',
+    programs: programs.filter((program) => program.category === 'Youth Empowerment'),
+  },
+  {
+    title: 'Community Development',
+    description:
+      'This category focuses on strengthening the wider support system around young people through mentoring, outreach, and community-based engagement.',
+    programs: programs.filter((program) => program.category === 'Community Development'),
   },
 ];
 
@@ -350,10 +419,22 @@ export const mediaVideos = [
 ];
 
 export const donateOptions = [
-  { amount: 25, label: 'Funds a basketball for a youth' },
-  { amount: 50, label: 'Supports a week of mentorship' },
-  { amount: 100, label: 'Provides a scholarship book pack' },
-  { amount: 250, label: 'Sponsors a girl child initiative workshop' },
+  {
+    amount: 5000,
+    label: 'Provides learning and activity support for a child',
+  },
+  {
+    amount: 10000,
+    label: 'Supports a week of mentorship and youth engagement',
+  },
+  {
+    amount: 25000,
+    label: 'Provides books, materials, and scholarship support resources',
+  },
+  {
+    amount: 50000,
+    label: 'Helps sponsor a Girl Child Initiative workshop or clinic session',
+  },
 ];
 
 export const sponsorOptions = [
@@ -437,5 +518,53 @@ export const faqs = [
     question: 'Can organizations partner with the foundation?',
     answer:
       'Yes. We welcome partnerships with schools, companies, foundations, and community institutions.',
+    },
+];
+
+export const assistantTopics = [
+  {
+    id: 'what-we-do',
+    label: 'What we do',
+    keywords: ['what do you do', 'what the foundation does', 'programs', 'mission', 'about'],
+    response:
+      'Kevin Nambam Ninmol Foundation uses basketball, mentorship, education support, and community outreach to help children and young people build confidence, make positive choices, and access opportunity.',
+    actionLabel: 'View Programs',
+    actionHref: '/programs',
+  },
+  {
+    id: 'donate',
+    label: 'How to donate',
+    keywords: ['donate', 'donation', 'give', 'support financially', 'payment'],
+    response:
+      'You can support the foundation through one-time or monthly giving. The Donate page explains giving tiers, what each amount supports, and the payment placeholder that can later be connected to Paystack or Flutterwave.',
+    actionLabel: 'Go to Donate',
+    actionHref: '/donate',
+  },
+  {
+    id: 'volunteer',
+    label: 'How to volunteer',
+    keywords: ['volunteer', 'join', 'help out', 'mentor', 'coaching'],
+    response:
+      'Volunteers can support clinics, mentoring, outreach, and partnership activities. The Get Involved page explains where your time and skills can help, and gives a direct route to connect with the team.',
+    actionLabel: 'Get Involved',
+    actionHref: '/get-involved',
+  },
+  {
+    id: 'contact',
+    label: 'Contact details',
+    keywords: ['contact', 'phone', 'email', 'address', 'office', 'location', 'map'],
+    response:
+      'You can reach the foundation by phone, email, WhatsApp, or through the Contact page. The site also includes the office address and an embedded map to make the location easier to find.',
+    actionLabel: 'Contact Us',
+    actionHref: '/contact',
+  },
+  {
+    id: 'faq',
+    label: 'General FAQs',
+    keywords: ['faq', 'questions', 'help', 'support', 'partner'],
+    response:
+      'Common questions include how to support the foundation, whether organizations can partner, and how programs go beyond basketball into education, mentoring, and outreach.',
+    actionLabel: 'Open WhatsApp',
+    actionHref: 'https://wa.me/2348037840841',
   },
 ];

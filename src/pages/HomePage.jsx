@@ -12,19 +12,26 @@ function HomePage() {
       <section className="home-hero">
         <div className="container home-hero-layout">
           <div className="home-hero-copy">
-            <p className="eyebrow">Global-standard youth development and humanitarian impact</p>
-            <h1>Fear No Fear. Building futures through sports, education, and opportunity.</h1>
+            <p className="eyebrow">Kevin Nambam Ninmol Foundation</p>
+            <h1>Fear No Fear. Helping young people choose hope, courage, and opportunity.</h1>
             <p className="home-hero-text">
-              Kevin Nambam Ninmol Foundation equips young people with hope, structure,
-              confidence, and practical support so they can rise above limitation and pursue
-              their full potential.
+              We use basketball, mentorship, education support, and community outreach to help
+              children and young people rise above limitation, make positive choices, and build
+              lives of purpose.
+            </p>
+            <p className="home-hero-support">
+              Founded from lived experience and grounded in visible community action, the
+              foundation exists to make opportunity more accessible for the next generation.
             </p>
             <div className="hero-actions">
               <Link to="/donate" className="button button-accent">
-                Donate
+                Donate Now
               </Link>
               <Link to="/get-involved" className="button button-ghost">
                 Volunteer
+              </Link>
+              <Link to="/about" className="button button-ghost button-inline-light">
+                Read Our Story
               </Link>
             </div>
           </div>
@@ -37,7 +44,10 @@ function HomePage() {
             />
             <div className="home-hero-badge">
               <strong>Trust through action</strong>
-              <p>Rooted in lived experience, youth mentorship, and visible community engagement.</p>
+              <p>
+                Rooted in lived experience, youth mentorship, and visible community engagement in
+                Jos and beyond.
+              </p>
             </div>
           </div>
         </div>
@@ -47,8 +57,8 @@ function HomePage() {
         <div className="container">
           <SectionIntro
             eyebrow="Impact Snapshot"
-            title="Credibility, care, and measurable youth-centered action."
-            text="The foundation is designed to look and operate like a serious mission-driven institution that can speak to communities, partners, and international donors alike."
+            title="Visible work. Practical support. A growing record of youth-centered impact."
+            text="Our approach combines measurable action with personal presence, helping donors and partners quickly understand the scale and seriousness of the work."
           />
           <div className="metric-grid">
             {heroStats.map((item) => (
@@ -65,13 +75,13 @@ function HomePage() {
         <div className="container">
           <SectionIntro
             eyebrow="Programs"
-            title="Focused initiatives that meet young people where they are."
-            text="Our work is practical, personal, and rooted in long-term development."
+            title="Programs that meet urgent needs while building long-term growth."
+            text="Our initiatives are designed to support learning, strengthen confidence, and create real pathways for young people to thrive."
           />
           <div className="program-preview-grid">
-            {homepagePrograms.map((program) => (
+            {homepagePrograms.slice(0, 3).map((program) => (
               <article key={program.slug} className="feature-card">
-                <img src={program.image} alt={program.title} />
+                <img src={program.image} alt={program.title} loading="lazy" decoding="async" />
                 <div className="feature-card-body">
                   <p className="program-tag">{program.subtitle}</p>
                   <h3>{program.title}</h3>
@@ -83,6 +93,11 @@ function HomePage() {
               </article>
             ))}
           </div>
+          <div className="section-cta-center">
+            <Link to="/programs" className="button button-ghost">
+              Explore All Programs
+            </Link>
+          </div>
         </div>
       </section>
 
@@ -91,9 +106,14 @@ function HomePage() {
           <div>
             <SectionIntro
               eyebrow="About the Foundation"
-              title="A personal story transformed into a public mission."
-              text="From a struggling background to national and international basketball levels, Kevin’s journey now fuels a foundation committed to courage, dignity, and access for the next generation."
+              title="A personal journey transformed into a public mission of service."
+              text="From a difficult beginning to national and international basketball opportunities, Kevin Nambam Ninmol's story is now being translated into a foundation that helps young people discover dignity, structure, and hope."
             />
+            <p className="detail-copy">
+              The foundation exists to show that background does not have to determine destiny.
+              Through sport, mentoring, education support, and community outreach, it creates the
+              kind of encouragement and access that can change a life.
+            </p>
             <Link to="/about" className="button button-accent">
               Read Our Story
             </Link>
@@ -116,8 +136,8 @@ function HomePage() {
           <div>
             <SectionIntro
               eyebrow="Featured Video"
-              title="Real footage makes the work feel immediate, trustworthy, and alive."
-              text="Using your own videos helps the site feel authentic to donors, partners, and visitors who want to see the mission in motion."
+              title="See the mission in motion."
+              text="Real footage from clinics and outreach helps supporters understand that the foundation's work is active, personal, and rooted in the community."
             />
           </div>
           <div className="video-card">
@@ -135,8 +155,8 @@ function HomePage() {
         <div className="container">
           <SectionIntro
             eyebrow="Testimonials"
-            title="Voices from the people and communities we serve."
-            text="The most trusted organizations are remembered for the change they create in real lives."
+            title="Trust is built through real experiences and real relationships."
+            text="These voices reflect how the foundation is experienced by participants, families, and local partners."
           />
           <div className="testimonial-grid">
             {testimonials.map((item) => (
@@ -150,12 +170,33 @@ function HomePage() {
         </div>
       </section>
 
+      <section className="section-space section-accent-band">
+        <div className="container cta-band">
+          <div>
+            <p className="eyebrow">Take Action</p>
+            <h2>Stand with a foundation helping young people fear less and aim higher.</h2>
+            <p>
+              Whether you give, volunteer, or partner with us, your support helps create safer
+              spaces, stronger mentoring, and more opportunity for children and youth.
+            </p>
+          </div>
+          <div className="cta-band-actions">
+            <Link to="/donate" className="button button-accent">
+              Donate
+            </Link>
+            <Link to="/get-involved" className="button button-ghost">
+              Volunteer
+            </Link>
+          </div>
+        </div>
+      </section>
+
       <section className="section-space">
         <div className="container">
           <SectionIntro
-            eyebrow="Latest News"
-            title="Updates, announcements, and stories from the field."
-            text="A clean news section gives donors and partners confidence that the work is active, current, and transparent."
+            eyebrow="Latest Updates"
+            title="Recent news and field updates from the foundation."
+            text="Fresh updates help donors, partners, and communities see that the work is current, transparent, and active."
           />
           <div className="news-grid">
             {latestNews.map((item) => (
