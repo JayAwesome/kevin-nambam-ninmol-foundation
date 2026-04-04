@@ -6,12 +6,20 @@ import { useLanguage } from '../context/LanguageContext';
 function SiteHeader() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [isMoreOpen, setIsMoreOpen] = useState(false);
   const [theme, setTheme] = useState(() => localStorage.getItem('theme') || 'light');
   const { language, setLanguage, t } = useLanguage();
   const location = useLocation();
+  const primaryNavItems = navItems.filter((item) =>
+    ['home', 'about', 'programs', 'impact', 'getInvolved', 'contact'].includes(item.labelKey),
+  );
+  const secondaryNavItems = navItems.filter(
+    (item) => !['home', 'about', 'programs', 'impact', 'getInvolved', 'contact', 'donate'].includes(item.labelKey),
+  );
 
   const handleNavClick = () => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
+    setIsMoreOpen(false);
   };
 
   useEffect(() => {
@@ -23,6 +31,7 @@ function SiteHeader() {
 
   useEffect(() => {
     setIsMenuOpen(false);
+    setIsMoreOpen(false);
   }, [location.pathname, location.hash]);
 
   useEffect(() => {
@@ -53,7 +62,7 @@ function SiteHeader() {
           className={`site-nav ${isMenuOpen ? 'site-nav-open' : ''}`}
           aria-label="Primary navigation"
         >
-          {navItems.map((item) => (
+          {primaryNavItems.map((item) => (
             <NavLink
               key={item.to}
               to={item.to}
@@ -63,6 +72,28 @@ function SiteHeader() {
               {t(`nav.${item.labelKey}`)}
             </NavLink>
           ))}
+          <div className={`more-nav ${isMoreOpen ? 'more-nav-open' : ''}`}>
+            <button
+              type="button"
+              className="more-nav-trigger"
+              aria-expanded={isMoreOpen}
+              onClick={() => setIsMoreOpen((current) => !current)}
+            >
+              {t('ui.more')}
+            </button>
+            <div className="more-nav-menu">
+              {secondaryNavItems.map((item) => (
+                <NavLink
+                  key={item.to}
+                  to={item.to}
+                  onClick={handleNavClick}
+                  className={({ isActive }) => (isActive ? 'nav-link-active' : undefined)}
+                >
+                  {t(`nav.${item.labelKey}`)}
+                </NavLink>
+              ))}
+            </div>
+          </div>
           <div className="language-toggle" aria-label="Language switcher">
             <button
               type="button"

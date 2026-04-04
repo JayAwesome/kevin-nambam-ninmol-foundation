@@ -13,7 +13,7 @@ export const navItems = [
 ];
 
 export const siteContact = {
-  email: 'info@kevinnanbamfoundation.org',
+  email: 'info@kevinnanbamninmolfoundation.com.ng',
   phone: '+234 803 784 0841',
   address: 'Peter Anikwe Estate, Block B, Flat 3, Rantya, Jos, Plateau State, Nigeria',
   whatsapp: 'https://wa.me/2348037840841',

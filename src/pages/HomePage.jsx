@@ -127,16 +127,35 @@ function HomePage() {
       </section>
 
       <section className="section-space section-alt">
-        <div className="container split-panel media-highlight-panel">
-          <div>
-            <SectionIntro eyebrow={t('home.featuredEyebrow')} title={t('home.featuredTitle')} text={t('home.featuredText')} />
-          </div>
-          <div className="video-card">
-            <video controls preload="metadata" poster={mediaVideos[0].poster}>
-              <source src={mediaVideos[0].src} type="video/mp4" />
-            </video>
-            <div className="video-card-body">
-              <strong>{mediaVideos[0].title}</strong>
+        <div className="container">
+          <SectionIntro eyebrow={t('home.featuredEyebrow')} title={t('home.featuredTitle')} text={t('home.featuredText')} />
+          <div className="home-video-layout">
+            <div className="video-card video-card-featured">
+              <video controls preload="metadata" poster={mediaVideos[0].poster}>
+                <source src={mediaVideos[0].src} type="video/mp4" />
+              </video>
+              <div className="video-card-body">
+                <p className="program-tag">{t('home.videoStoryLabel')}</p>
+                <strong>{mediaVideos[0].title}</strong>
+              </div>
+            </div>
+            <div className="video-clip-stack">
+              <div className="video-clip-intro">
+                <h3>{t('home.videoClipsTitle')}</h3>
+                <p>{t('home.videoClipsText')}</p>
+              </div>
+              <div className="video-clip-grid">
+                {mediaVideos.slice(1).map((video) => (
+                  <article key={video.src} className="video-card">
+                    <video controls preload="metadata" poster={video.poster}>
+                      <source src={video.src} type="video/mp4" />
+                    </video>
+                    <div className="video-card-body">
+                      <strong>{video.title}</strong>
+                    </div>
+                  </article>
+                ))}
+              </div>
             </div>
           </div>
         </div>
