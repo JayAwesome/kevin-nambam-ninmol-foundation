@@ -34,30 +34,30 @@
 [data-theme='dark'] {
   color-scheme: dark;
   --bg: #0b0f19;
-  --surface: #121826;
-  --surface-alt: #182133;
-  --surface-soft: #0f1624;
-  --ink: #f4f7fb;
-  --ink-soft: #d7e1ec;
-  --muted: #a7b6c7;
+  --surface: #121a28;
+  --surface-alt: #172235;
+  --surface-soft: #0f1725;
+  --ink: #f7fafd;
+  --ink-soft: #dbe6f2;
+  --muted: #b3c0d0;
   --blue-900: #ebf3f8;
   --blue-800: #dce6f1;
-  --blue-700: #5f8fd1;
-  --gold: #ddb566;
-  --gold-soft: rgba(221, 181, 102, 0.18);
-  --border: rgba(244, 247, 251, 0.08);
-  --border-strong: rgba(244, 247, 251, 0.16);
-  --shadow: 0 28px 70px rgba(0, 0, 0, 0.42);
-  --shadow-soft: 0 18px 42px rgba(0, 0, 0, 0.3);
-  --accent-dark: #214a78;
-  --accent-darker: #17385d;
+  --blue-700: #76a6ea;
+  --gold: #e0b968;
+  --gold-soft: rgba(224, 185, 104, 0.22);
+  --border: rgba(244, 247, 251, 0.1);
+  --border-strong: rgba(244, 247, 251, 0.2);
+  --shadow: 0 28px 70px rgba(0, 0, 0, 0.5);
+  --shadow-soft: 0 18px 42px rgba(0, 0, 0, 0.34);
+  --accent-dark: #2a5f9b;
+  --accent-darker: #1d436f;
   --page-bg:
-    radial-gradient(circle at top left, rgba(46, 86, 149, 0.18), transparent 24%),
-    radial-gradient(circle at top right, rgba(221, 181, 102, 0.08), transparent 22%),
-    linear-gradient(180deg, #0b0f19 0%, #101726 100%);
-  --header-bg: rgba(11, 15, 25, 0.88);
+    radial-gradient(circle at top left, rgba(65, 115, 192, 0.2), transparent 24%),
+    radial-gradient(circle at top right, rgba(224, 185, 104, 0.08), transparent 22%),
+    linear-gradient(180deg, #0b0f19 0%, #101826 100%);
+  --header-bg: rgba(10, 14, 23, 0.9);
   --footer-bg: #080d15;
-  --toggle-bg: rgba(244, 247, 251, 0.14);
+  --toggle-bg: rgba(244, 247, 251, 0.16);
 }
 
 * {
@@ -76,7 +76,10 @@ body {
   font-family: var(--font-sans);
   -webkit-font-smoothing: antialiased;
   text-rendering: optimizeLegibility;
-  transition: background 220ms ease, color 220ms ease;
+  transition:
+    background 260ms ease,
+    color 220ms ease,
+    background-color 220ms ease;
 }
 
 ::selection {
@@ -87,6 +90,7 @@ body {
 a {
   color: inherit;
   text-decoration: none;
+  transition: color 180ms ease, opacity 180ms ease;
 }
 
 img {
@@ -101,6 +105,12 @@ input,
 select,
 textarea {
   font: inherit;
+  transition:
+    background-color 220ms ease,
+    color 220ms ease,
+    border-color 220ms ease,
+    box-shadow 220ms ease,
+    transform 180ms ease;
 }
 
 h1,
@@ -370,8 +380,8 @@ p {
   min-height: 44px;
   padding: 0.45rem 0.9rem 0.45rem 0.55rem;
   border: 1px solid var(--border);
-  border-radius: 14px;
-  background: var(--surface);
+  border-radius: 999px;
+  background: color-mix(in srgb, var(--surface) 88%, transparent);
   color: var(--ink);
   font-size: 0.86rem;
   font-weight: 700;
@@ -390,31 +400,39 @@ p {
 }
 
 [data-theme='dark'] .theme-toggle {
-  background: var(--surface);
+  background: rgba(255, 255, 255, 0.04);
+  border-color: rgba(224, 185, 104, 0.18);
 }
 
 .theme-toggle-track {
   position: relative;
-  width: 42px;
-  height: 24px;
+  width: 46px;
+  height: 26px;
   border-radius: 999px;
-  background: var(--toggle-bg);
+  background: linear-gradient(135deg, var(--toggle-bg), rgba(255, 255, 255, 0.04));
   flex: 0 0 auto;
+  box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.12);
 }
 
 .theme-toggle-thumb {
   position: absolute;
   top: 3px;
   left: 3px;
-  width: 18px;
-  height: 18px;
+  width: 20px;
+  height: 20px;
   border-radius: 50%;
-  background: linear-gradient(135deg, var(--gold), var(--blue-700));
-  transition: transform 220ms ease;
+  background: linear-gradient(135deg, #fff4d7, var(--gold));
+  box-shadow: 0 4px 10px rgba(13, 39, 68, 0.2);
+  transition:
+    transform 220ms ease,
+    background 220ms ease,
+    box-shadow 220ms ease;
 }
 
 [data-theme='dark'] .theme-toggle-thumb {
-  transform: translateX(18px);
+  transform: translateX(20px);
+  background: linear-gradient(135deg, var(--gold), var(--blue-700));
+  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.34);
 }
 
 .theme-toggle-label {
@@ -452,8 +470,10 @@ p {
 
 [data-theme='dark'] .button-accent {
   color: #fff;
-  background: linear-gradient(135deg, var(--accent-darker), var(--accent-dark));
-  box-shadow: 0 16px 36px rgba(0, 0, 0, 0.36);
+  background: linear-gradient(135deg, var(--accent-darker), var(--blue-700));
+  box-shadow:
+    0 18px 38px rgba(0, 0, 0, 0.42),
+    0 0 0 1px rgba(224, 185, 104, 0.12);
 }
 
 .button-ghost {
@@ -464,8 +484,14 @@ p {
 
 [data-theme='dark'] .button-ghost {
   color: var(--ink);
-  border-color: var(--border-strong);
-  background: rgba(255, 255, 255, 0.05);
+  border-color: rgba(224, 185, 104, 0.22);
+  background: rgba(255, 255, 255, 0.06);
+}
+
+[data-theme='dark'] .button-ghost:hover,
+[data-theme='dark'] .button-ghost:focus-visible {
+  background: rgba(224, 185, 104, 0.12);
+  border-color: rgba(224, 185, 104, 0.34);
 }
 
 .home-hero {
@@ -560,7 +586,7 @@ p {
 [data-theme='dark'] .gallery-card img,
 [data-theme='dark'] .program-portfolio-media img,
 [data-theme='dark'] .action-media img {
-  filter: saturate(1.04) contrast(1.06) brightness(0.98);
+  filter: saturate(1.02) contrast(1.08) brightness(0.96);
 }
 
 .home-hero-badge {
@@ -660,7 +686,9 @@ p {
 }
 
 [data-theme='dark'] .cta-band {
-  background: linear-gradient(180deg, rgba(18, 24, 38, 0.96), rgba(15, 22, 36, 0.99));
+  background:
+    linear-gradient(180deg, rgba(18, 26, 40, 0.98), rgba(13, 20, 31, 0.99)),
+    radial-gradient(circle at top right, rgba(224, 185, 104, 0.08), transparent 32%);
 }
 
 .cta-band h2 {
@@ -1032,7 +1060,9 @@ p {
 [data-theme='dark'] .donation-breakdown-item,
 [data-theme='dark'] .secure-payment-box {
   border-color: var(--border);
-  background: linear-gradient(180deg, rgba(18, 24, 38, 0.98), rgba(15, 22, 36, 0.99));
+  background:
+    linear-gradient(180deg, rgba(18, 26, 40, 0.99), rgba(13, 20, 31, 0.99)),
+    radial-gradient(circle at top right, rgba(118, 166, 234, 0.06), transparent 32%);
 }
 
 .approach-step-card {
@@ -1574,8 +1604,9 @@ p {
 [data-theme='dark'] .newsletter-form input,
 [data-theme='dark'] .custom-amount-field input,
 [data-theme='dark'] .chatbot-form input {
-  background: rgba(255, 255, 255, 0.05);
+  background: rgba(255, 255, 255, 0.06);
   color: var(--ink);
+  border-color: rgba(244, 247, 251, 0.12);
 }
 
 [data-theme='dark'] .event-form-panel input::placeholder,
@@ -1610,7 +1641,9 @@ p {
 }
 
 [data-theme='dark'] .newsletter-layout {
-  background: linear-gradient(135deg, rgba(221, 181, 102, 0.1), rgba(18, 24, 38, 0.98));
+  background:
+    linear-gradient(135deg, rgba(224, 185, 104, 0.1), rgba(18, 26, 40, 0.98)),
+    radial-gradient(circle at top right, rgba(118, 166, 234, 0.08), transparent 34%);
 }
 
 .newsletter-form {
@@ -1679,12 +1712,14 @@ p {
 }
 
 [data-theme='dark'] .donation-option {
-  background: rgba(221, 181, 102, 0.08);
+  background: rgba(224, 185, 104, 0.08);
+  border-color: rgba(244, 247, 251, 0.1);
 }
 
 [data-theme='dark'] .donation-option-selected,
 [data-theme='dark'] .donation-option:hover {
-  background: rgba(221, 181, 102, 0.16);
+  background: rgba(224, 185, 104, 0.16);
+  border-color: rgba(224, 185, 104, 0.32);
 }
 
 .custom-amount-field {
@@ -1938,7 +1973,8 @@ p {
 
 [data-theme='dark'] .trust-badge {
   color: var(--ink);
-  background: rgba(213, 171, 87, 0.12);
+  border-color: rgba(224, 185, 104, 0.24);
+  background: rgba(224, 185, 104, 0.12);
 }
 
 .donation-breakdown-list {
@@ -1999,7 +2035,7 @@ p {
 }
 
 [data-theme='dark'] .donor-reassurance {
-  background: linear-gradient(135deg, rgba(213, 171, 87, 0.12), rgba(19, 32, 45, 0.96));
+  background: linear-gradient(135deg, rgba(224, 185, 104, 0.14), rgba(19, 32, 45, 0.96));
   color: var(--ink);
 }
 
@@ -2130,6 +2166,18 @@ p {
   color: rgba(255, 255, 255, 0.72);
 }
 
+[data-theme='dark'] .footer-text,
+[data-theme='dark'] .footer-links a,
+[data-theme='dark'] .site-footer .brand-subtitle {
+  color: rgba(244, 247, 251, 0.78);
+}
+
+[data-theme='dark'] .footer-links a:hover,
+[data-theme='dark'] .footer-links a:focus-visible,
+[data-theme='dark'] .social-link:hover {
+  color: #fff;
+}
+
 .social-row {
   display: flex;
   gap: 0.8rem;
@@ -2218,7 +2266,10 @@ p {
 }
 
 [data-theme='dark'] .floating-chat-trigger {
-  background: var(--accent-darker);
+  background: linear-gradient(135deg, var(--accent-darker), var(--blue-700));
+  box-shadow:
+    0 18px 34px rgba(0, 0, 0, 0.42),
+    0 0 0 1px rgba(224, 185, 104, 0.14);
 }
 
 .chatbot-card {
@@ -2235,15 +2286,17 @@ p {
 }
 
 [data-theme='dark'] .chatbot-message-assistant {
-  background: rgba(255, 255, 255, 0.07);
+  background: rgba(255, 255, 255, 0.08);
 }
 
 [data-theme='dark'] .chatbot-card {
-  background: linear-gradient(180deg, rgba(18, 24, 38, 0.99), rgba(15, 22, 36, 0.99));
+  background:
+    linear-gradient(180deg, rgba(18, 26, 40, 0.99), rgba(13, 20, 31, 0.99)),
+    radial-gradient(circle at top right, rgba(118, 166, 234, 0.08), transparent 34%);
 }
 
 [data-theme='dark'] .chatbot-quick-actions button {
-  background: rgba(255, 255, 255, 0.06);
+  background: rgba(255, 255, 255, 0.07);
   color: var(--ink);
 }
 
@@ -2347,7 +2400,7 @@ p {
 }
 
 [data-theme='dark'] .chatbot-form button {
-  background: var(--accent-dark);
+  background: linear-gradient(135deg, var(--accent-darker), var(--blue-700));
 }
 
 [data-theme='dark'] .impact-chart-track {
@@ -2362,6 +2415,59 @@ p {
 .chatbot-faq p {
   color: var(--ink-soft);
   font-size: 0.9rem;
+}
+
+[data-theme='dark'] .feature-card p,
+[data-theme='dark'] .value-card p,
+[data-theme='dark'] .news-card p,
+[data-theme='dark'] .event-card p,
+[data-theme='dark'] .event-form-panel p,
+[data-theme='dark'] .action-card p,
+[data-theme='dark'] .newsletter-layout p,
+[data-theme='dark'] .chatbot-copy,
+[data-theme='dark'] .chatbot-faq p,
+[data-theme='dark'] .program-summary,
+[data-theme='dark'] .program-bullet-list,
+[data-theme='dark'] .detail-copy,
+[data-theme='dark'] .micro-note,
+[data-theme='dark'] .meta-line,
+[data-theme='dark'] .site-credibility-header p:last-child {
+  color: var(--ink-soft);
+}
+
+[data-theme='dark'] .metric-label,
+[data-theme='dark'] .partner-card h3,
+[data-theme='dark'] .approach-step-card h3,
+[data-theme='dark'] .site-credibility-header h2,
+[data-theme='dark'] .credibility-trust-line,
+[data-theme='dark'] .secure-payment-box strong,
+[data-theme='dark'] .donation-breakdown-header h3,
+[data-theme='dark'] .transparency-statement,
+[data-theme='dark'] .theme-toggle-label {
+  color: var(--ink);
+}
+
+[data-theme='dark'] .contact-whatsapp-card,
+[data-theme='dark'] .transparency-statement,
+[data-theme='dark'] .secure-payment-box,
+[data-theme='dark'] .donation-breakdown-item,
+[data-theme='dark'] .newsletter-success,
+[data-theme='dark'] .chatbot-message-action {
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.02);
+}
+
+[data-theme='dark'] .contact-whatsapp-card {
+  background: linear-gradient(135deg, rgba(224, 185, 104, 0.14), rgba(18, 26, 40, 0.98));
+}
+
+[data-theme='dark'] .newsletter-success {
+  background: rgba(224, 185, 104, 0.12);
+  color: var(--ink);
+}
+
+[data-theme='dark'] .chatbot-message-action {
+  background: rgba(224, 185, 104, 0.2);
+  color: var(--ink);
 }
 
 @media (max-width: 1080px) {
