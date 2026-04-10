@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import { Link, NavLink, useLocation } from 'react-router-dom';
+import { languageOptions, useLanguage } from '../context/LanguageContext';
 import { navItems } from '../siteData';
-import { useLanguage } from '../context/LanguageContext';
 
 function SiteHeader() {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -94,22 +94,16 @@ function SiteHeader() {
               ))}
             </div>
           </div>
-          <div className="language-toggle" aria-label="Language switcher">
-            <button
-              type="button"
-              className={language === 'en' ? 'language-active' : ''}
-              onClick={() => setLanguage('en')}
-            >
-              {t('ui.english')}
-            </button>
-            <button
-              type="button"
-              className={language === 'fr' ? 'language-active' : ''}
-              onClick={() => setLanguage('fr')}
-            >
-              {t('ui.french')}
-            </button>
-          </div>
+          <label className="language-toggle" aria-label="Language switcher">
+            <span className="sr-only">{t('ui.language')}</span>
+            <select value={language} onChange={(event) => setLanguage(event.target.value)}>
+              {languageOptions.map((option) => (
+                <option key={option.code} value={option.code}>
+                  {t(option.labelKey)}
+                </option>
+              ))}
+            </select>
+          </label>
           <button
             type="button"
             className="theme-toggle"
