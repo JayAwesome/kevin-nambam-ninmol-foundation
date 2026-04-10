@@ -667,10 +667,16 @@ export const impactMetrics = [
     chartValue: 52,
   },
   {
-    label: 'Programs delivered',
+    label: 'Programs completed',
     value: '40+',
     detail: 'Programs, basketball clinics, mentoring sessions, and outreach activities executed.',
     chartValue: 68,
+  },
+  {
+    label: 'Education support actions',
+    value: '18+',
+    detail: 'Education support and scholarship-related actions delivered across the foundation’s work.',
+    chartValue: 38,
   },
 ];
 
@@ -694,19 +700,52 @@ export const impactOutcomes = [
 
 export const caseStudies = [
   {
-    title: 'Amina: from hesitation to participation',
+    title: 'Amina found confidence through participation',
     summary:
       'Amina arrived at a youth session unsure of herself and reluctant to participate. Through coaching, encouragement, and repeated support, she became more willing to engage, more confident in group settings, and more hopeful about her own potential.',
   },
   {
-    title: 'Daniel: support beyond the court',
+    title: 'Daniel gained direction beyond the court',
     summary:
       'Daniel first connected with the foundation through basketball, but the support extended beyond sport. Mentoring and structured guidance helped him develop greater discipline, stronger confidence, and a clearer sense of direction in daily life.',
   },
   {
-    title: 'Grace: confidence through encouragement',
+    title: 'Grace stepped forward with new self-belief',
     summary:
       'Grace took part in a girl-focused support session that encouraged her to engage more boldly. With steady affirmation and mentoring, she became more visible, more confident, and more willing to see herself as someone with leadership potential.',
+  },
+];
+
+export const impactGalleryHighlights = [
+  {
+    image: '/media/founder-action.jpeg',
+    title: 'Founder-led skills development',
+    detail: 'Basketball sessions combine practical drills with visible mentorship and encouragement.',
+  },
+  {
+    image: '/media/hero-court.jpeg',
+    title: 'Structured youth participation',
+    detail: 'Young people are engaged in disciplined activity that builds teamwork, confidence, and focus.',
+  },
+  {
+    image: '/media/community-group.jpeg',
+    title: 'Community-centered outreach',
+    detail: 'Programs bring together children, families, schools, and volunteers in shared support spaces.',
+  },
+  {
+    image: '/media/outreach-school.jpeg',
+    title: 'School and outreach engagement',
+    detail: 'The foundation shows up where young people already gather, making support easier to access.',
+  },
+  {
+    image: '/media/indoor-clinic.jpeg',
+    title: 'Coaching in action',
+    detail: 'Indoor and organized settings help reinforce discipline, repetition, and personal growth.',
+  },
+  {
+    image: '/media/program-certificate.jpeg',
+    title: 'Recognition and educational progress',
+    detail: 'Images of achievement help show how sport, learning, and encouragement are connected.',
   },
 ];
 

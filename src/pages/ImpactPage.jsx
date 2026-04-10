@@ -4,11 +4,12 @@ import SectionIntro from '../components/SectionIntro';
 import usePageTitle from '../hooks/usePageTitle';
 import {
   caseStudies,
+  impactGalleryHighlights,
   impactMetrics,
   impactOutcomes,
-  mediaGallery,
   mediaVideos,
   reports,
+  transformationStories,
 } from '../siteData';
 
 function ImpactPage() {
@@ -28,7 +29,7 @@ function ImpactPage() {
           <SectionIntro
             eyebrow="Our Reach"
             title="Measurable indicators of reach and program delivery."
-            text="These figures provide a count-based snapshot of how the foundation is showing up across youth engagement, community reach, and structured delivery."
+            text="These figures provide a count-based snapshot of how the foundation is showing up across youth engagement, community reach, education support, and structured program delivery."
             centered
           />
           <div className="impact-data-layout">
@@ -43,7 +44,7 @@ function ImpactPage() {
             </div>
             <article className="impact-chart-panel">
               <p className="program-tag">Evidence Snapshot</p>
-              <h3>Visual overview of current reach</h3>
+              <h3>Visual overview of current reach and delivery</h3>
               <div className="impact-chart-list">
                 {impactMetrics.map((item) => (
                   <div key={item.label} className="impact-chart-row">
@@ -66,8 +67,8 @@ function ImpactPage() {
         <div className="container">
           <SectionIntro
             eyebrow="What Changed"
-            title="Outcome areas the foundation is working to strengthen."
-            text="Beyond reach numbers, the foundation tracks change through the kinds of outcomes its programs are designed to produce in young people."
+            title="Outcome areas that show how participation is translating into change."
+            text="Beyond reach numbers, the foundation looks for visible shifts in confidence, decision-making, and practical life skills among participants."
             centered
           />
           <div className="impact-outcomes-grid">
@@ -85,8 +86,8 @@ function ImpactPage() {
         <div className="container">
           <SectionIntro
             eyebrow="Case Studies"
-            title="Stories that help explain the change behind the numbers."
-            text="These examples are written in a real-life style to show the kind of transformation the foundation is working to make possible."
+            title="Simple real-life stories that help explain the change behind the numbers."
+            text="These stories are presented in a grounded, realistic way to show how support, encouragement, and structure can shift a young person’s outlook."
             centered
           />
           <div className="case-study-grid">
@@ -103,16 +104,48 @@ function ImpactPage() {
       <section className="section-space section-alt">
         <div className="container">
           <SectionIntro
+            eyebrow="What Has Changed"
+            title="Before-and-after patterns that the work is designed to influence."
+            text="These examples show the kinds of changes the foundation works toward over time through sport, mentoring, and practical support."
+            centered
+          />
+          <div className="transformation-grid">
+            {transformationStories.map((item) => (
+              <article key={item.title} className="transformation-card">
+                <h3>{item.title}</h3>
+                <div className="transformation-columns">
+                  <div>
+                    <p className="program-tag">Before</p>
+                    <p>{item.before}</p>
+                  </div>
+                  <div>
+                    <p className="program-tag">What changed</p>
+                    <p>{item.after}</p>
+                  </div>
+                </div>
+              </article>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="section-space section-alt">
+        <div className="container">
+          <SectionIntro
             eyebrow="Photo and Video Gallery"
-            title="Visual documentation from programs, outreach, and participation."
-            text="Real images and videos help partners and donors see how the foundation shows up in community spaces and youth-centered activities."
+            title="Visual proof from programs, outreach, and youth participation."
+            text="Real images and videos help partners and donors see how the foundation shows up in community spaces, sports settings, and encouragement-focused activities."
             centered
           />
           <div className="gallery-grid">
-            {mediaGallery.map((item) => (
-              <div key={item} className="gallery-card">
-                <img src={item} alt="Foundation impact gallery" loading="lazy" decoding="async" />
-              </div>
+            {impactGalleryHighlights.map((item) => (
+              <article key={item.image + item.title} className="gallery-card">
+                <img src={item.image} alt={item.title} loading="lazy" decoding="async" />
+                <div className="feature-card-body">
+                  <h3>{item.title}</h3>
+                  <p>{item.detail}</p>
+                </div>
+              </article>
             ))}
           </div>
           <div className="video-gallery-grid">
