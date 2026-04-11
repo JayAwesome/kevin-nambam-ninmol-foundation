@@ -1,6 +1,5 @@
 import { useMemo, useState } from 'react';
 import PageHero from '../components/PageHero';
-import NewsletterSection from '../components/NewsletterSection';
 import SectionIntro from '../components/SectionIntro';
 import { useLanguage } from '../context/LanguageContext';
 import usePageTitle from '../hooks/usePageTitle';
@@ -80,7 +79,7 @@ function DonatePage() {
               eyebrow={t('donatePage.giveEyebrow')}
               title={t('donatePage.giveTitle')}
               text="Choose an amount, select a giving frequency, and support the foundation with confidence."
-              ctaLabel="Read more on Impact"
+              ctaLabel="See Impact"
               ctaTo="/impact"
             />
 
@@ -226,25 +225,6 @@ function DonatePage() {
         </div>
       </section>
 
-      <section className="section-space section-accent-band">
-        <div className="container cta-band">
-          <div>
-            <p className="eyebrow">{t('donatePage.ctaEyebrow')}</p>
-            <h2>Your support creates real change</h2>
-            <p>
-              Give today to help the foundation keep showing up with mentoring, education support,
-              and youth development opportunities that young people can feel directly.
-            </p>
-          </div>
-          <div className="cta-band-actions">
-            <button type="button" className="button button-accent" onClick={handleDonate}>
-              {t('donatePage.giveNow')}
-            </button>
-          </div>
-        </div>
-      </section>
-
-      <NewsletterSection />
     </main>
   );
 }

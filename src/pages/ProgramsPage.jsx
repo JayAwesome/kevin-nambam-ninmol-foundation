@@ -1,6 +1,5 @@
 import { Link } from 'react-router-dom';
 import PageHero from '../components/PageHero';
-import NewsletterSection from '../components/NewsletterSection';
 import SectionIntro from '../components/SectionIntro';
 import usePageTitle from '../hooks/usePageTitle';
 import { donorProgramCategories } from '../siteData';
@@ -22,9 +21,9 @@ function ProgramsPage() {
           <SectionIntro
             eyebrow="Program Areas"
             title="Our work is structured around three clear areas of support."
-            description="Each program below shows its purpose, key activities, expected impact, and how donors can support it."
+            description="Each program below shows its purpose, key activities, and the practical change it is designed to create."
             centered
-            ctaLabel="Read more on Impact"
+            ctaLabel="See Impact"
             ctaTo="/impact"
           />
           <div className="program-category-stack">
@@ -68,23 +67,6 @@ function ProgramsPage() {
                         ))}
                       </ul>
                     </div>
-
-                    <div className="program-support-panel">
-                      <h4>How You Can Support This Program</h4>
-                      <ul className="program-bullet-list">
-                        {program.support.map((item) => (
-                          <li key={item}>{item}</li>
-                        ))}
-                      </ul>
-                      <div className="program-support-actions">
-                        <Link to="/donate" className="button button-accent">
-                          Support This Program
-                        </Link>
-                        <Link to="/get-involved" className="button button-ghost">
-                          Partner or Volunteer
-                        </Link>
-                      </div>
-                    </div>
                   </div>
                 </article>
               </section>
@@ -107,14 +89,9 @@ function ProgramsPage() {
             <Link to="/impact" className="button button-accent">
               View Impact
             </Link>
-            <Link to="/donate" className="button button-ghost">
-              Support the Work
-            </Link>
           </div>
         </div>
       </section>
-
-      <NewsletterSection />
     </main>
   );
 }

@@ -12,7 +12,7 @@ function BlogPage() {
       <PageHero
         eyebrow="News and Stories"
         title="Articles, updates, and thought leadership."
-        subtitle="A clean blog and news page helps the foundation feel active, transparent, and globally credible."
+        subtitle="Short updates and stories from the foundation's work."
         image="/media/community-group.jpeg"
       />
 
@@ -20,7 +20,8 @@ function BlogPage() {
         <div className="container">
           <SectionIntro
             eyebrow="Blog and Updates"
-            title="A simple, modern card layout for news and storytelling."
+            title="Recent news and updates"
+            text="Use this page to follow stories, field updates, and foundation news."
             centered
           />
           <div className="news-grid">

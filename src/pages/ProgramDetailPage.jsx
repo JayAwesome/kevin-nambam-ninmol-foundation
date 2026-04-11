@@ -44,8 +44,8 @@ function ProgramDetailPage() {
               <p className="detail-copy">{program.purpose}</p>
             </div>
             <p className="detail-copy">{program.description}</p>
-            <Link to="/get-involved" className="button button-accent">
-              Support This Program
+            <Link to="/impact" className="text-link">
+              Learn more through the Impact page
             </Link>
           </div>
           <div className="split-panel-media">

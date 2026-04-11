@@ -12,7 +12,7 @@ function LeadershipGovernancePage() {
       <PageHero
         eyebrow="Leadership & Governance"
         title="Leadership and governance structured for trust and accountability."
-        subtitle="This page presents the foundation's oversight and management structure in a clear, professional format for donors, partners, and institutions."
+        subtitle="Meet the people and structures responsible for oversight and delivery."
         image="/media/founder-national.jpeg"
       />
 
@@ -21,7 +21,7 @@ function LeadershipGovernancePage() {
           <SectionIntro
             eyebrow="Board of Trustees"
             title="Board of Trustees"
-            text="The Board of Trustees provides oversight, stewardship, and high-level guidance to help ensure the foundation remains mission-aligned and responsibly governed."
+            text="The board provides oversight, stewardship, and high-level guidance."
             centered
           />
           <div className="team-grid">
@@ -44,7 +44,7 @@ function LeadershipGovernancePage() {
           <SectionIntro
             eyebrow="Management Team"
             title="Management team"
-            text="The management structure supports implementation, field coordination, communications, and program delivery across the foundation's work."
+            text="The management team supports implementation, coordination, and delivery."
             centered
           />
           <div className="team-grid">
@@ -67,7 +67,7 @@ function LeadershipGovernancePage() {
           <SectionIntro
             eyebrow="Governance Statement"
             title="How decisions are made"
-            text="The foundation is committed to decision-making that reflects mission alignment, accountability, and transparent stewardship."
+            text="Decision-making is guided by mission alignment, accountability, and transparent stewardship."
           />
           <div className="objectives-panel">
             <ol className="objectives-list">

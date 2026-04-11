@@ -1,6 +1,5 @@
 import { Link } from 'react-router-dom';
 import PageHero from '../components/PageHero';
-import NewsletterSection from '../components/NewsletterSection';
 import SectionIntro from '../components/SectionIntro';
 import usePageTitle from '../hooks/usePageTitle';
 import {
@@ -32,7 +31,7 @@ function ImpactPage() {
             title="Measurable indicators of reach and program delivery."
             text="These figures provide a simple snapshot of current reach, delivery, and engagement."
             centered
-            ctaLabel="Read more on Donate"
+            ctaLabel="Support This Impact"
             ctaTo="/donate"
           />
           <div className="impact-data-layout">
@@ -139,6 +138,8 @@ function ImpactPage() {
             title="Visual proof from programs, outreach, and youth participation."
             text="Real images and videos help donors and partners see the work in action."
             centered
+            ctaLabel="Read More on Donate"
+            ctaTo="/donate"
           />
           <div className="gallery-grid">
             {impactGalleryHighlights.map((item) => (
@@ -173,8 +174,6 @@ function ImpactPage() {
             title="Reporting materials that support transparency and professionalism."
             text="These placeholders show the reporting structure used for annual communication, financial transparency, and program documentation."
             centered
-            ctaLabel="Read more on Policies"
-            ctaTo="/policies-safeguarding"
           />
           <div className="reports-grid">
             {reports.map((report) => (
@@ -216,14 +215,9 @@ function ImpactPage() {
             <Link to="/donate" className="button button-accent">
               Donate
             </Link>
-            <Link to="/get-involved" className="button button-ghost">
-              Get Involved
-            </Link>
           </div>
         </div>
       </section>
-
-      <NewsletterSection />
     </main>
   );
 }

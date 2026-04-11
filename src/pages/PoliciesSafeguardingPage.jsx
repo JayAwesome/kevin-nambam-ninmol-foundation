@@ -12,7 +12,7 @@ function PoliciesSafeguardingPage() {
       <PageHero
         eyebrow="Policies & Safeguarding"
         title="Policies and safeguarding standards that support trust."
-        subtitle="This page outlines the foundation’s current policy commitments in a clear and reassuring format for donors, partners, institutions, and community stakeholders."
+        subtitle="A simple overview of the standards that guide safe and responsible work."
         image="/media/community-group.jpeg"
       />
 
@@ -21,7 +21,7 @@ function PoliciesSafeguardingPage() {
           <SectionIntro
             eyebrow="Compliance Overview"
             title="Professional standards for responsible service"
-            text="Kevin Nambam Ninmol Foundation is committed to operating with care, accountability, and respect for the dignity and safety of the young people and communities it serves."
+            text="The foundation is committed to safe, respectful, and accountable practice."
             centered
           />
           <div className="values-grid">
@@ -44,19 +44,17 @@ function PoliciesSafeguardingPage() {
         <div className="container dual-card-grid">
           <article className="info-panel">
             <p className="program-tag">Professional Assurance</p>
-            <h2>Built to meet donor and institutional expectations</h2>
+            <h2>Built to support trust</h2>
             <p className="detail-copy">
-              These policy summaries reflect the foundation’s commitment to safe engagement,
-              ethical operations, transparent stewardship, and responsible handling of
-              information as the organization continues to grow.
+              These summaries reflect the foundation&apos;s commitment to safe engagement, ethical
+              operations, and transparent stewardship.
             </p>
           </article>
           <article className="info-panel">
             <p className="program-tag">Good Governance</p>
             <p className="detail-copy">
-              The foundation intends to strengthen documentation, internal processes, and
-              oversight practices so that programs remain compliant, community-centered, and
-              accountable to supporters and beneficiaries alike.
+              Documentation, internal processes, and oversight practices will continue to be
+              strengthened as the organization grows.
             </p>
           </article>
         </div>
