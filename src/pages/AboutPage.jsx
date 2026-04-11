@@ -24,7 +24,7 @@ function AboutPage() {
       <PageHero
         eyebrow="About Us"
         title="About Us"
-        subtitle="Our Story, Mission, and Commitment to Youth Development"
+        subtitle="Our story, identity, and commitment to youth development."
         image="/media/founder-national.jpeg"
       />
 
@@ -76,7 +76,7 @@ function AboutPage() {
           <SectionIntro
             eyebrow="Why It Matters"
             title="Why this work matters"
-            text="The foundation exists in response to real barriers that affect how young people see themselves, the choices available to them, and the futures they believe they can reach."
+            text="The foundation exists because many young people face limited opportunity, weak support systems, and environments that discourage growth."
             centered
           />
           <div className="values-grid">
@@ -95,7 +95,7 @@ function AboutPage() {
           <SectionIntro
             eyebrow="Our Approach"
             title="How the foundation creates change"
-            text="Our approach is simple, practical, and structured around how support translates into visible change for young people."
+            text="Our approach shows how support moves from need to action, and from action to visible change."
             centered
           />
           <div className="approach-flow-grid">
@@ -126,7 +126,7 @@ function AboutPage() {
           <SectionIntro
             eyebrow="Our Goals"
             title="Our Goals"
-            text="These priorities shape how the foundation supports young people in practical, long-term ways."
+            text="These priorities shape the kind of change the foundation is working toward."
             centered
           />
           <div className="values-grid">
@@ -148,7 +148,7 @@ function AboutPage() {
           <SectionIntro
             eyebrow="Our Objectives"
             title="Our Objectives"
-            text="Our objectives keep the work clear, measurable, and grounded in the real needs of young people and communities."
+            text="These objectives keep the work focused, practical, and measurable."
           />
           <div className="objectives-panel">
             <ol className="objectives-list">
@@ -229,20 +229,19 @@ function AboutPage() {
       <section className="section-space section-accent-band">
         <div className="container cta-band">
           <div>
-            <p className="eyebrow">Take Action</p>
-            <h2>Partner with us to shape the future of young people</h2>
+            <p className="eyebrow">Next Step</p>
+            <h2>See how the foundation turns its mission into practical programs</h2>
             <p>
-              Your support helps the foundation expand mentoring, education support, youth
-              development, and practical community-based opportunities with greater reach and
-              long-term impact.
+              Explore the program areas to understand what the foundation does on the ground and
+              how support translates into real opportunities for young people.
             </p>
           </div>
           <div className="cta-band-actions">
-            <Link to="/donate" className="button button-accent">
-              Donate
+            <Link to="/programs" className="button button-accent">
+              View Programs
             </Link>
-            <Link to="/get-involved" className="button button-ghost">
-              Partner With Us
+            <Link to="/leadership-governance" className="button button-ghost">
+              Leadership & Governance
             </Link>
           </div>
         </div>

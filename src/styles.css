@@ -1240,6 +1240,39 @@ p {
   margin-top: 0.6rem;
 }
 
+.activity-card-media {
+  position: relative;
+}
+
+.activity-date-badge {
+  position: absolute;
+  left: 1rem;
+  bottom: 1rem;
+  display: inline-flex;
+  align-items: center;
+  min-height: 34px;
+  padding: 0 0.85rem;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 999px;
+  background: rgba(13, 39, 68, 0.84);
+  color: #fff;
+  font-size: 0.78rem;
+  font-weight: 800;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.activity-caption {
+  margin-top: 0.2rem;
+  color: var(--ink-soft);
+  font-size: 0.92rem;
+}
+
+[data-theme='dark'] .activity-date-badge {
+  background: rgba(10, 14, 23, 0.86);
+  border-color: rgba(224, 185, 104, 0.22);
+}
+
 .feature-card {
   overflow: hidden;
 }

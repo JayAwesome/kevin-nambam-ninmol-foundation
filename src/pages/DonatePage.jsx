@@ -69,14 +69,18 @@ function DonatePage() {
       <PageHero
         eyebrow={t('donatePage.heroEyebrow')}
         title={t('donatePage.heroTitle')}
-        subtitle={t('donatePage.heroSubtitle')}
+        subtitle="Support the work through clear, responsible giving."
         image="/media/program-certificate.jpeg"
       />
 
       <section className="section-space">
         <div className="container donate-page-layout">
           <div>
-            <SectionIntro eyebrow={t('donatePage.giveEyebrow')} title={t('donatePage.giveTitle')} text={t('donatePage.giveText')} />
+            <SectionIntro
+              eyebrow={t('donatePage.giveEyebrow')}
+              title={t('donatePage.giveTitle')}
+              text="Choose an amount, select a giving frequency, and support the foundation with confidence."
+            />
 
             <div className="billing-toggle" aria-label="Donation frequency">
               <button
@@ -172,7 +176,7 @@ function DonatePage() {
             <article className="info-panel">
               <p className="program-tag">{t('donatePage.transparencyEyebrow')}</p>
               <h2>{t('donatePage.transparencyTitle')}</h2>
-              <p>{t('donatePage.transparencyBody')}</p>
+              <p>Every contribution is directed toward mission-aligned youth programs, education support, and responsible delivery.</p>
               <p className="transparency-statement">{t('donatePage.transparencyStatement')}</p>
               <div className="donation-breakdown-list">
                 {donationBreakdown.map((item) => (
@@ -190,7 +194,7 @@ function DonatePage() {
             <article className="info-panel">
               <p className="program-tag">{t('donatePage.donorEyebrow')}</p>
               <h2>{t('donatePage.donorTitle')}</h2>
-              <p>{t('donatePage.donorBody')}</p>
+              <p>Giving is designed to be simple, secure, and clear for both local and international supporters.</p>
               <p className="donor-reassurance">{t('donatePage.donorReassurance')}</p>
               <p className="micro-note">{t('donatePage.paymentNote')}</p>
               <ul className="opportunity-list">

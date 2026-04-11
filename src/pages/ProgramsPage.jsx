@@ -13,7 +13,7 @@ function ProgramsPage() {
       <PageHero
         eyebrow="Programs"
         title="Programs designed to create clear, practical impact for young people."
-        subtitle="These program areas help donors and partners understand exactly what the foundation does and what their support can make possible."
+        subtitle="This page explains what the foundation does, how each program works, and what support makes possible."
         image="/media/hero-court.jpeg"
       />
 
@@ -22,7 +22,7 @@ function ProgramsPage() {
           <SectionIntro
             eyebrow="Program Areas"
             title="Our work is structured around three clear areas of support."
-            description="Each program category below explains its purpose, key activities, expected impact, and how donors can help strengthen the work."
+            description="Each program below shows its purpose, key activities, expected impact, and how donors can support it."
             centered
           />
           <div className="program-category-stack">
@@ -87,6 +87,27 @@ function ProgramsPage() {
                 </article>
               </section>
             ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="section-space section-accent-band">
+        <div className="container cta-band">
+          <div>
+            <p className="eyebrow">Next Step</p>
+            <h2>See the evidence behind the work</h2>
+            <p>
+              Visit the Impact page to see measurable reach, case stories, activity visuals, and
+              reporting placeholders that show how the work is being delivered.
+            </p>
+          </div>
+          <div className="cta-band-actions">
+            <Link to="/impact" className="button button-accent">
+              View Impact
+            </Link>
+            <Link to="/donate" className="button button-ghost">
+              Support the Work
+            </Link>
           </div>
         </div>
       </section>

@@ -7,7 +7,7 @@ import usePageTitle from '../hooks/usePageTitle';
 import {
   heroStats,
   homepageTrustSignals,
-  latestActivities,
+  latestActivityFeed,
   homepagePrograms,
   latestNews,
   mediaVideos,
@@ -81,8 +81,11 @@ function HomePage() {
       <section className="section-space">
         <div className="container split-panel">
           <div>
-            <SectionIntro eyebrow={t('home.aboutEyebrow')} title={t('home.aboutTitle')} text={t('home.aboutText')} />
-            <p className="detail-copy">{t('home.aboutCopy')}</p>
+            <SectionIntro eyebrow={t('home.aboutEyebrow')} title={t('home.aboutTitle')} text="A brief introduction to who we are and why this work exists." />
+            <p className="detail-copy">
+              The foundation uses sport, education support, and mentoring to help young people
+              build confidence, make positive choices, and access opportunity.
+            </p>
             <Link to="/about" className="button button-accent">
               {t('home.aboutCta')}
             </Link>
@@ -228,13 +231,17 @@ function HomePage() {
             text={t('home.latestActivitiesText')}
           />
           <div className="activity-grid">
-            {latestActivities.map((item) => (
+            {latestActivityFeed.map((item) => (
               <article key={item.slug} className="feature-card activity-card">
-                <img src={item.image} alt={item.title} loading="lazy" decoding="async" />
+                <div className="activity-card-media">
+                  <img src={item.image} alt={item.title} loading="lazy" decoding="async" />
+                  <span className="activity-date-badge">{item.date}</span>
+                </div>
                 <div className="feature-card-body">
                   <p className="program-tag">{item.category}</p>
                   <h3>{item.title}</h3>
                   <p>{item.update}</p>
+                  <p className="activity-caption">{item.caption}</p>
                   <span className="meta-line">{item.timestamp}</span>
                 </div>
               </article>

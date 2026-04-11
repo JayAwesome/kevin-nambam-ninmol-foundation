@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import PageHero from '../components/PageHero';
 import NewsletterSection from '../components/NewsletterSection';
 import SectionIntro from '../components/SectionIntro';
@@ -20,7 +21,7 @@ function ImpactPage() {
       <PageHero
         eyebrow="Impact"
         title="Impact that is visible, honest, and community-rooted."
-        subtitle="This page highlights the foundation's reach, selected case stories, visual evidence, and reporting placeholders in a clear and accountable format."
+        subtitle="This page focuses on results, evidence, and the visible outcomes of the foundation's work."
         image="/media/outreach-school.jpeg"
       />
 
@@ -29,7 +30,7 @@ function ImpactPage() {
           <SectionIntro
             eyebrow="Our Reach"
             title="Measurable indicators of reach and program delivery."
-            text="These figures provide a count-based snapshot of how the foundation is showing up across youth engagement, community reach, education support, and structured program delivery."
+            text="These figures provide a simple snapshot of current reach, delivery, and engagement."
             centered
           />
           <div className="impact-data-layout">
@@ -68,7 +69,7 @@ function ImpactPage() {
           <SectionIntro
             eyebrow="What Changed"
             title="Outcome areas that show how participation is translating into change."
-            text="Beyond reach numbers, the foundation looks for visible shifts in confidence, decision-making, and practical life skills among participants."
+            text="Beyond the numbers, the foundation looks for visible shifts in confidence, decisions, and life skills."
             centered
           />
           <div className="impact-outcomes-grid">
@@ -106,7 +107,7 @@ function ImpactPage() {
           <SectionIntro
             eyebrow="What Has Changed"
             title="Before-and-after patterns that the work is designed to influence."
-            text="These examples show the kinds of changes the foundation works toward over time through sport, mentoring, and practical support."
+            text="These examples show the kinds of changes the foundation works toward through sport, mentoring, and practical support."
             centered
           />
           <div className="transformation-grid">
@@ -134,7 +135,7 @@ function ImpactPage() {
           <SectionIntro
             eyebrow="Photo and Video Gallery"
             title="Visual proof from programs, outreach, and youth participation."
-            text="Real images and videos help partners and donors see how the foundation shows up in community spaces, sports settings, and encouragement-focused activities."
+            text="Real images and videos help donors and partners see the work in action."
             centered
           />
           <div className="gallery-grid">
@@ -168,7 +169,7 @@ function ImpactPage() {
           <SectionIntro
             eyebrow="Reports & Documents"
             title="Reporting materials that support transparency and professionalism."
-            text="These document placeholders show the reporting structure the foundation can use for annual communication, financial transparency, and program documentation."
+            text="These placeholders show the reporting structure used for annual communication, financial transparency, and program documentation."
             centered
           />
           <div className="reports-grid">
@@ -193,6 +194,27 @@ function ImpactPage() {
                 </button>
               </article>
             ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="section-space section-accent-band">
+        <div className="container cta-band">
+          <div>
+            <p className="eyebrow">Next Step</p>
+            <h2>Help turn measurable impact into sustained support</h2>
+            <p>
+              If this work aligns with your values, the Donate page shows giving options, fund-use
+              priorities, and clear ways to support the foundation responsibly.
+            </p>
+          </div>
+          <div className="cta-band-actions">
+            <Link to="/donate" className="button button-accent">
+              Donate
+            </Link>
+            <Link to="/get-involved" className="button button-ghost">
+              Get Involved
+            </Link>
           </div>
         </div>
       </section>

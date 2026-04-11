@@ -161,6 +161,53 @@ export const latestActivities = [
   },
 ];
 
+export const latestActivityFeed = [
+  {
+    slug: 'jos-clinic-mentoring-session',
+    title: 'Basketball clinic and mentoring session in Jos',
+    category: 'Youth Outreach',
+    date: 'March 22, 2026',
+    timestamp: 'March 22, 2026 · 4:30 PM',
+    image: '/media/hero-court.jpeg',
+    caption: 'Youth athletes during a guided outdoor clinic session focused on teamwork and discipline.',
+    update:
+      'Young people took part in court drills, teamwork exercises, and short mentoring conversations focused on confidence and discipline.',
+  },
+  {
+    slug: 'school-outreach-support-visit',
+    title: 'School outreach visit with practical support distribution',
+    category: 'Community Visit',
+    date: 'March 16, 2026',
+    timestamp: 'March 16, 2026 · 11:00 AM',
+    image: '/media/outreach-school.jpeg',
+    caption: 'Foundation outreach with children and school staff during a direct support visit.',
+    update:
+      'The foundation engaged children, staff, and community members while delivering support materials and reinforcing hope-centered encouragement.',
+  },
+  {
+    slug: 'girls-development-activity-day',
+    title: 'Girls-focused development activity and encouragement session',
+    category: 'Girl Child Initiative',
+    date: 'March 9, 2026',
+    timestamp: 'March 9, 2026 · 2:15 PM',
+    image: '/media/community-group.jpeg',
+    caption: 'A girls-centered encouragement session highlighting visibility, self-belief, and participation.',
+    update:
+      'Participants joined a confidence-building activity that combined mentoring, group interaction, and visible support for girls to grow boldly.',
+  },
+  {
+    slug: 'indoor-training-and-coaching-day',
+    title: 'Indoor training and coaching development session',
+    category: 'Skills Development',
+    date: 'February 28, 2026',
+    timestamp: 'February 28, 2026 · 9:45 AM',
+    image: '/media/indoor-clinic.jpeg',
+    caption: 'A structured indoor coaching session focused on repetition, form, and growth in confidence.',
+    update:
+      'Participants worked through guided drills, listened to coaching feedback, and built discipline through a more structured training environment.',
+  },
+];
+
 export const partnerSupporters = [
   {
     name: 'Partner Schools',
