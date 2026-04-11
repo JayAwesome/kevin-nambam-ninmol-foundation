@@ -78,6 +78,8 @@ function AboutPage() {
             title="Why this work matters"
             text="The foundation exists because many young people face limited opportunity, weak support systems, and environments that discourage growth."
             centered
+            ctaLabel="Read more on Programs"
+            ctaTo="/programs"
           />
           <div className="values-grid">
             {whyItMatters.map((item) => (
@@ -97,6 +99,8 @@ function AboutPage() {
             title="How the foundation creates change"
             text="Our approach shows how support moves from need to action, and from action to visible change."
             centered
+            ctaLabel="Read more on Impact"
+            ctaTo="/impact"
           />
           <div className="approach-flow-grid">
             {theoryOfChange.map((step, index) => (
@@ -206,6 +210,8 @@ function AboutPage() {
             eyebrow="Credibility"
             title="Legal and organizational credibility"
             text="We understand that trust matters. The foundation is being structured to meet the expectations of donors, institutions, and long-term partners."
+            ctaLabel="Read more on Leadership & Governance"
+            ctaTo="/leadership-governance"
           />
           <div className="dual-card-grid">
             {credibilityHighlights.map((item) => (

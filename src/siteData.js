@@ -878,18 +878,22 @@ export const donateOptions = [
   {
     amount: 5000,
     label: 'Supports basic needs for a child',
+    impact: 'Helps cover practical support that keeps a child connected to a safe, encouraging program environment.',
   },
   {
     amount: 10000,
     label: 'Provides educational materials',
+    impact: 'Helps provide books, learning materials, and simple tools that support educational progress.',
   },
   {
     amount: 25000,
     label: 'Supports mentorship programs',
+    impact: 'Helps fund mentoring sessions, life-skills conversations, and structured youth guidance activities.',
   },
   {
     amount: 50000,
     label: 'Sponsors a youth development initiative',
+    impact: 'Helps sustain a full youth development activity through sport, mentorship, and coordinated support.',
   },
 ];
 

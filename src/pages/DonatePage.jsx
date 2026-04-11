@@ -80,6 +80,8 @@ function DonatePage() {
               eyebrow={t('donatePage.giveEyebrow')}
               title={t('donatePage.giveTitle')}
               text="Choose an amount, select a giving frequency, and support the foundation with confidence."
+              ctaLabel="Read more on Impact"
+              ctaTo="/impact"
             />
 
             <div className="billing-toggle" aria-label="Donation frequency">
@@ -132,6 +134,7 @@ function DonatePage() {
                   <strong>{formatCurrency(option.amount * selectedCurrency.rate, selectedCurrency.code, selectedCurrency.locale)}</strong>
                   <small>{formatCurrency(option.amount, 'NGN', 'en-NG')}</small>
                   <span>{option.label}</span>
+                  <p className="donation-option-impact">{option.impact}</p>
                 </button>
               ))}
             </div>
@@ -154,6 +157,11 @@ function DonatePage() {
                 : t('donatePage.donateNow')}
             </button>
 
+            <p className="donation-cta-copy">
+              Your support creates real change by helping young people access guidance, confidence,
+              and practical opportunity.
+            </p>
+
             <p className="currency-conversion-note">
               {t('donatePage.conversionNote')} {formatCurrency(effectiveBaseAmount || 0, 'NGN', 'en-NG')} ={' '}
               {formatCurrency(convertedAmount || 0, selectedCurrency.code, selectedCurrency.locale)}
@@ -162,6 +170,10 @@ function DonatePage() {
             <div className="secure-payment-box">
               <strong>{t('donatePage.secureTitle')}</strong>
               <p>{t('donatePage.secureText')}</p>
+              <p className="micro-note">
+                Every contribution is handled with the intention of supporting mission-aligned
+                youth programs, education support, and accountable program delivery.
+              </p>
               <div className="trust-badge-row">
                 {donationTrustSignals.map((item) => (
                   <span key={item} className="trust-badge">
@@ -178,6 +190,10 @@ function DonatePage() {
               <h2>{t('donatePage.transparencyTitle')}</h2>
               <p>Every contribution is directed toward mission-aligned youth programs, education support, and responsible delivery.</p>
               <p className="transparency-statement">{t('donatePage.transparencyStatement')}</p>
+              <p className="micro-note">
+                Funds are allocated to direct program delivery, education support, and the basic
+                coordination required to run activities responsibly.
+              </p>
               <div className="donation-breakdown-list">
                 {donationBreakdown.map((item) => (
                   <div key={item.title} className="donation-breakdown-item">
@@ -196,6 +212,9 @@ function DonatePage() {
               <h2>{t('donatePage.donorTitle')}</h2>
               <p>Giving is designed to be simple, secure, and clear for both local and international supporters.</p>
               <p className="donor-reassurance">{t('donatePage.donorReassurance')}</p>
+              <p className="donation-assurance">
+                Every contribution is used responsibly to create measurable impact.
+              </p>
               <p className="micro-note">{t('donatePage.paymentNote')}</p>
               <ul className="opportunity-list">
                 {internationalPaymentOptions.map((item) => (
@@ -211,8 +230,11 @@ function DonatePage() {
         <div className="container cta-band">
           <div>
             <p className="eyebrow">{t('donatePage.ctaEyebrow')}</p>
-            <h2>{t('donatePage.ctaTitle')}</h2>
-            <p>{t('donatePage.ctaText')}</p>
+            <h2>Your support creates real change</h2>
+            <p>
+              Give today to help the foundation keep showing up with mentoring, education support,
+              and youth development opportunities that young people can feel directly.
+            </p>
           </div>
           <div className="cta-band-actions">
             <button type="button" className="button button-accent" onClick={handleDonate}>

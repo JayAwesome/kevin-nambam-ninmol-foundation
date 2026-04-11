@@ -24,6 +24,8 @@ function ProgramsPage() {
             title="Our work is structured around three clear areas of support."
             description="Each program below shows its purpose, key activities, expected impact, and how donors can support it."
             centered
+            ctaLabel="Read more on Impact"
+            ctaTo="/impact"
           />
           <div className="program-category-stack">
             {donorProgramCategories.map((program) => (

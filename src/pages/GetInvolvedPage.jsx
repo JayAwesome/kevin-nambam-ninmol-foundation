@@ -32,6 +32,8 @@ function GetInvolvedPage() {
             title="There are meaningful ways to contribute at every level."
             text="Whether you are an individual, student, organization, or sponsor, getting involved helps expand the foundation's reach and strengthens support for young people."
             centered
+            ctaLabel="Read more on Programs"
+            ctaTo="/programs"
           />
           <div className="values-grid">
             {involvementBenefits.map((item) => (
@@ -50,6 +52,8 @@ function GetInvolvedPage() {
               eyebrow="Volunteer"
               title="Volunteer signup form"
               text="Give your time, skills, and heart to support youth development, outreach activities, mentoring, and events."
+              ctaLabel="Read more on Impact"
+              ctaTo="/impact"
             />
             <form
               className="event-form-panel contact-form-panel"

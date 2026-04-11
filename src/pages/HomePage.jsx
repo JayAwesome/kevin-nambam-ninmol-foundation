@@ -62,7 +62,13 @@ function HomePage() {
 
       <section className="section-space">
         <div className="container">
-          <SectionIntro eyebrow={t('home.impactEyebrow')} title={t('home.impactTitle')} text={t('home.impactText')} />
+          <SectionIntro
+            eyebrow={t('home.impactEyebrow')}
+            title={t('home.impactTitle')}
+            text="A quick snapshot of the foundation's reach, delivery, and community presence."
+            ctaLabel="Read more on Impact"
+            ctaTo="/impact"
+          />
           <div className="metric-grid">
             {heroStats.map((item) => (
               <article key={item.label} className="metric-card">
@@ -81,7 +87,13 @@ function HomePage() {
       <section className="section-space">
         <div className="container split-panel">
           <div>
-            <SectionIntro eyebrow={t('home.aboutEyebrow')} title={t('home.aboutTitle')} text="A brief introduction to who we are and why this work exists." />
+            <SectionIntro
+              eyebrow={t('home.aboutEyebrow')}
+              title={t('home.aboutTitle')}
+              text="A brief introduction to who we are and why this work exists."
+              ctaLabel="Read more About Us"
+              ctaTo="/about"
+            />
             <p className="detail-copy">
               The foundation uses sport, education support, and mentoring to help young people
               build confidence, make positive choices, and access opportunity.
@@ -105,7 +117,13 @@ function HomePage() {
 
       <section className="section-space section-alt">
         <div className="container">
-          <SectionIntro eyebrow={t('home.programsEyebrow')} title={t('home.programsTitle')} text={t('home.programsText')} />
+          <SectionIntro
+            eyebrow={t('home.programsEyebrow')}
+            title={t('home.programsTitle')}
+            text="A quick look at the foundation's main program areas."
+            ctaLabel="Read more on Programs"
+            ctaTo="/programs"
+          />
           <div className="program-preview-grid">
             {homepagePrograms.map((program) => (
               <article key={program.slug} className="feature-card">
@@ -228,7 +246,9 @@ function HomePage() {
           <SectionIntro
             eyebrow={t('home.latestActivitiesEyebrow')}
             title={t('home.latestActivitiesTitle')}
-            text={t('home.latestActivitiesText')}
+            text="A short activity feed showing recent outreach, mentoring, and youth engagement moments."
+            ctaLabel="Read more on Impact"
+            ctaTo="/impact"
           />
           <div className="activity-grid">
             {latestActivityFeed.map((item) => (
@@ -255,7 +275,9 @@ function HomePage() {
           <SectionIntro
             eyebrow={t('home.latestUpdatesEyebrow')}
             title={t('home.latestUpdatesTitle')}
-            text={t('home.latestUpdatesText')}
+            text="Recent stories and updates from the foundation's work."
+            ctaLabel="Read more News"
+            ctaTo="/news"
           />
           <div className="news-grid">
             {latestNews.map((item) => (

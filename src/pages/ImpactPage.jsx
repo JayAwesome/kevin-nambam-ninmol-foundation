@@ -32,6 +32,8 @@ function ImpactPage() {
             title="Measurable indicators of reach and program delivery."
             text="These figures provide a simple snapshot of current reach, delivery, and engagement."
             centered
+            ctaLabel="Read more on Donate"
+            ctaTo="/donate"
           />
           <div className="impact-data-layout">
             <div className="metric-grid impact-metric-grid">
@@ -171,6 +173,8 @@ function ImpactPage() {
             title="Reporting materials that support transparency and professionalism."
             text="These placeholders show the reporting structure used for annual communication, financial transparency, and program documentation."
             centered
+            ctaLabel="Read more on Policies"
+            ctaTo="/policies-safeguarding"
           />
           <div className="reports-grid">
             {reports.map((report) => (

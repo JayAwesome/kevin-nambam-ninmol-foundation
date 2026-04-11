@@ -27,7 +27,9 @@ function ContactPage() {
           <SectionIntro
             eyebrow="Get In Touch"
             title="Simple, direct ways to reach the foundation."
-            text="We welcome messages from supporters, partners, schools, media, and community members. Every contact point below is designed to make the organization feel accessible, responsive, and trustworthy."
+            text="We welcome messages from supporters, partners, schools, media, and community members."
+            ctaLabel="Read more About Us"
+            ctaTo="/about"
           />
 
           <div className="contact-channel-grid">
@@ -76,7 +78,9 @@ function ContactPage() {
             <SectionIntro
               eyebrow="Contact Form"
               title="Send us a message."
-              text="Use the form to share an enquiry, partnership request, media question, or general message. We appreciate every contact and aim to respond clearly."
+              text="Use the form for enquiries, partnership requests, media questions, or general messages."
+              ctaLabel="Read more on Get Involved"
+              ctaTo="/get-involved"
             />
 
             <form className="event-form-panel contact-form-panel" onSubmit={handleSubmit}>
@@ -133,7 +137,7 @@ function ContactPage() {
           <SectionIntro
             eyebrow="Find Us"
             title="Location map"
-            text="Use the map below as a placeholder location reference for the foundation office."
+            text="Use the map below as a placeholder reference for the foundation office."
           />
           <div className="map-panel contact-map-panel">
             <iframe

@@ -750,6 +750,30 @@ p {
   color: var(--ink-soft);
 }
 
+.section-intro-link {
+  display: inline-flex;
+  align-items: center;
+  margin-top: 1rem;
+  color: var(--blue-700);
+  font-size: 0.92rem;
+  font-weight: 800;
+}
+
+.section-intro-link::after {
+  content: '→';
+  margin-left: 0.45rem;
+  transition: transform 180ms ease;
+}
+
+.section-intro-link:hover::after,
+.section-intro-link:focus-visible::after {
+  transform: translateX(3px);
+}
+
+[data-theme='dark'] .section-intro-link {
+  color: var(--gold);
+}
+
 .metric-grid,
 .program-preview-grid,
 .program-list-grid,
@@ -1738,6 +1762,12 @@ p {
   font-weight: 700;
 }
 
+.donation-option-impact {
+  color: var(--ink-soft);
+  font-size: 0.88rem;
+  line-height: 1.55;
+}
+
 .donation-option-selected,
 .donation-option:hover {
   border-color: rgba(217, 164, 65, 0.55);
@@ -1922,6 +1952,13 @@ p {
   margin-top: 1rem;
 }
 
+.donation-cta-copy {
+  margin-top: 0.9rem;
+  color: var(--blue-900);
+  font-size: 0.98rem;
+  font-weight: 700;
+}
+
 .currency-panel {
   display: grid;
   gap: 0.85rem;
@@ -2070,6 +2107,12 @@ p {
 [data-theme='dark'] .donor-reassurance {
   background: linear-gradient(135deg, rgba(224, 185, 104, 0.14), rgba(19, 32, 45, 0.96));
   color: var(--ink);
+}
+
+.donation-assurance {
+  margin-top: 0.75rem;
+  color: var(--blue-900);
+  font-weight: 800;
 }
 
 .donation-side-stack {
@@ -2478,6 +2521,12 @@ p {
 [data-theme='dark'] .transparency-statement,
 [data-theme='dark'] .theme-toggle-label {
   color: var(--ink);
+}
+
+[data-theme='dark'] .donation-option-impact,
+[data-theme='dark'] .donation-cta-copy,
+[data-theme='dark'] .donation-assurance {
+  color: var(--ink-soft);
 }
 
 [data-theme='dark'] .contact-whatsapp-card,
