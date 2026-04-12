@@ -29,7 +29,7 @@ function ImpactPage() {
           <SectionIntro
             eyebrow="Our Reach"
             title="Measurable indicators of reach and program delivery."
-            text="These figures provide a simple snapshot of current reach, delivery, and engagement."
+            text="These figures show the scale of current youth engagement, community reach, and program delivery."
             centered
             ctaLabel="Support This Impact"
             ctaTo="/donate"
@@ -70,7 +70,7 @@ function ImpactPage() {
           <SectionIntro
             eyebrow="What Changed"
             title="Outcome areas that show how participation is translating into change."
-            text="Beyond the numbers, the foundation looks for visible shifts in confidence, decisions, and life skills."
+            text="Beyond the numbers, the foundation looks for visible changes in confidence, participation, and decision-making."
             centered
           />
           <div className="impact-outcomes-grid">
@@ -88,8 +88,8 @@ function ImpactPage() {
         <div className="container">
           <SectionIntro
             eyebrow="Case Studies"
-            title="Simple real-life stories that help explain the change behind the numbers."
-            text="These stories are presented in a grounded, realistic way to show how support, encouragement, and structure can shift a young person’s outlook."
+            title="Short stories that help explain the change behind the numbers."
+            text="These stories show how support, encouragement, and structure can shift a young person's outlook."
             centered
           />
           <div className="case-study-grid">
@@ -107,8 +107,8 @@ function ImpactPage() {
         <div className="container">
           <SectionIntro
             eyebrow="What Has Changed"
-            title="Before-and-after patterns that the work is designed to influence."
-            text="These examples show the kinds of changes the foundation works toward through sport, mentoring, and practical support."
+            title="What has changed"
+            text="These before-and-after examples show the kind of progress the foundation is working to support."
             centered
           />
           <div className="transformation-grid">
@@ -135,8 +135,8 @@ function ImpactPage() {
         <div className="container">
           <SectionIntro
             eyebrow="Photo and Video Gallery"
-            title="Visual proof from programs, outreach, and youth participation."
-            text="Real images and videos help donors and partners see the work in action."
+            title="Real photos and videos from activities"
+            text="These images and clips show the foundation's work in real community and youth settings."
             centered
             ctaLabel="Read More on Donate"
             ctaTo="/donate"
