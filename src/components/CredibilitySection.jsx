@@ -20,6 +20,7 @@ function CredibilitySection() {
 
         <div className="credibility-layout">
           <div className="credibility-main">
+            <SectionLabel title="Leadership Profiles" />
             <div className="team-grid">
               {managementProfiles.map((member) => (
                 <article key={member.name + member.role} className="team-card governance-card">
@@ -34,6 +35,7 @@ function CredibilitySection() {
               ))}
             </div>
 
+            <SectionLabel title="Registration and Legal Information" />
             <div className="values-grid credibility-card-grid">
               {registrationItems.map((item) => (
                 <article key={item.title} className="value-card">
@@ -46,11 +48,11 @@ function CredibilitySection() {
 
           <aside className="credibility-aside">
             <article className="info-panel credibility-panel">
-              <p className="program-tag">Transparency</p>
+              <p className="program-tag">Transparency Statement</p>
               <h3>How accountability is practiced</h3>
               <p>
-                The foundation is building the kind of governance, reporting, and stewardship
-                structures that international donors and institutional partners expect.
+                The foundation is committed to honest stewardship, responsible use of funds, and
+                clear communication with donors, partners, and communities.
               </p>
               <ul className="opportunity-list">
                 {transparencyItems.map((item) => (
@@ -85,6 +87,10 @@ function CredibilitySection() {
       </div>
     </section>
   );
+}
+
+function SectionLabel({ title }) {
+  return <p className="credibility-section-label">{title}</p>;
 }
 
 export default CredibilitySection;

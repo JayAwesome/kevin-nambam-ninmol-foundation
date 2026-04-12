@@ -2204,6 +2204,15 @@ p {
   grid-template-columns: repeat(3, minmax(0, 1fr));
 }
 
+.credibility-section-label {
+  margin: 0 0 0.85rem;
+  color: var(--gold);
+  font-size: 0.82rem;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
 .credibility-panel {
   padding: 1.4rem;
 }

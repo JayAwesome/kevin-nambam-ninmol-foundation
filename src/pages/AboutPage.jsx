@@ -4,12 +4,10 @@ import SectionIntro from '../components/SectionIntro';
 import usePageTitle from '../hooks/usePageTitle';
 import {
   aboutStory,
-  credibilityHighlights,
   foundationGoals,
   foundationObjectives,
   founderMessage,
   leadershipTeam,
-  legalCredibility,
   visionMission,
 } from '../siteData';
 
@@ -146,32 +144,6 @@ function AboutPage() {
                   <h3>{person.name}</h3>
                   <p>{person.role}</p>
                 </div>
-              </article>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      <section className="section-space">
-        <div className="container">
-          <SectionIntro
-            eyebrow="Credibility"
-            title="Legal and organizational credibility"
-            text="We understand that trust matters. The foundation is being structured to meet the expectations of donors, institutions, and long-term partners."
-          />
-          <div className="dual-card-grid">
-            {credibilityHighlights.map((item) => (
-              <article key={item.title} className="info-panel">
-                <p className="program-tag">{item.title}</p>
-                <p className="detail-copy">{item.text}</p>
-              </article>
-            ))}
-          </div>
-          <div className="section-spacer-sm" />
-          <div className="values-grid">
-            {legalCredibility.map((item) => (
-              <article key={item} className="value-card">
-                <p>{item}</p>
               </article>
             ))}
           </div>

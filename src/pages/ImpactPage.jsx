@@ -171,8 +171,8 @@ function ImpactPage() {
         <div className="container">
           <SectionIntro
             eyebrow="Reports & Documents"
-            title="Reporting materials that support transparency and professionalism."
-            text="These placeholders show the reporting structure used for annual communication, financial transparency, and program documentation."
+            title="Reporting materials that support professionalism."
+            text="These placeholders show the reporting structure used for annual communication, fund summaries, and program documentation."
             centered
           />
           <div className="reports-grid">

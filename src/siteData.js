@@ -703,27 +703,27 @@ export const donorProgramCategories = [
 export const impactMetrics = [
   {
     label: 'Youth impacted',
-    value: '2,500+',
-    detail: 'Young people reached through direct engagement, mentoring, clinics, and outreach.',
+    value: '150+',
+    detail: 'Young people engaged through clinics, mentoring, and outreach sessions.',
     chartValue: 100,
   },
   {
     label: 'Communities reached',
-    value: '20+',
-    detail: 'Communities, schools, and institutions engaged through foundation activity.',
-    chartValue: 52,
+    value: '5',
+    detail: 'Communities and school environments reached through direct engagement.',
+    chartValue: 40,
   },
   {
     label: 'Programs completed',
-    value: '40+',
-    detail: 'Programs, basketball clinics, mentoring sessions, and outreach activities executed.',
-    chartValue: 68,
+    value: '10',
+    detail: 'Basketball clinics, mentoring sessions, and outreach activities delivered.',
+    chartValue: 62,
   },
   {
     label: 'Education support actions',
-    value: '18+',
+    value: '12',
     detail: 'Education support and scholarship-related actions delivered across the foundation’s work.',
-    chartValue: 38,
+    chartValue: 34,
   },
 ];
 
@@ -747,19 +747,14 @@ export const impactOutcomes = [
 
 export const caseStudies = [
   {
-    title: 'Amina found confidence through participation',
+    title: 'Amina became more confident in group participation',
     summary:
-      'Amina arrived at a youth session unsure of herself and reluctant to participate. Through coaching, encouragement, and repeated support, she became more willing to engage, more confident in group settings, and more hopeful about her own potential.',
+      'Amina arrived at a youth session unsure of herself and hesitant to join activities. With repeated encouragement and participation in drills and group sessions, she became more willing to speak up, join in, and believe in her own ability.',
   },
   {
-    title: 'Daniel gained direction beyond the court',
+    title: 'Daniel gained direction beyond the basketball court',
     summary:
-      'Daniel first connected with the foundation through basketball, but the support extended beyond sport. Mentoring and structured guidance helped him develop greater discipline, stronger confidence, and a clearer sense of direction in daily life.',
-  },
-  {
-    title: 'Grace stepped forward with new self-belief',
-    summary:
-      'Grace took part in a girl-focused support session that encouraged her to engage more boldly. With steady affirmation and mentoring, she became more visible, more confident, and more willing to see herself as someone with leadership potential.',
+      'Daniel first connected with the foundation through basketball. Over time, mentoring and structured guidance helped him build more discipline, improve decision-making, and develop a clearer sense of direction in daily life.',
   },
 ];
 
@@ -798,25 +793,18 @@ export const impactGalleryHighlights = [
 
 export const transformationStories = [
   {
-    title: 'Before and after: from hesitation to participation',
+    title: 'From hesitation to participation',
     before:
-      'Some young people arrive unsure of themselves, reluctant to participate, and uncertain whether they belong in a structured sports or mentoring environment.',
+      'Some young people arrive unsure of themselves, reluctant to participate, and uncertain whether they belong in a structured setting.',
     after:
-      'After exposure to coaching, encouragement, and consistent support, they begin to take initiative, work with others, and engage with greater confidence.',
+      'With coaching, encouragement, and consistent support, they begin to take initiative, work with others, and engage with greater confidence.',
   },
   {
-    title: 'Before and after: from limited access to visible support',
+    title: 'From limited access to visible support',
     before:
-      'Families and communities facing pressure often have limited access to educational materials, safe youth programming, and positive role models.',
+      'Families and communities facing pressure often have limited access to learning materials, safe youth programming, and positive role models.',
     after:
-      'Through outreach, school engagement, and practical support, the foundation helps create visible pathways to encouragement, participation, and community trust.',
-  },
-  {
-    title: 'Before and after: from silence to self-belief',
-    before:
-      'Many girls are socialized to remain in the background, even when they have ability, ambition, and leadership potential.',
-    after:
-      'With focused mentoring and sports participation, they begin to speak with confidence, take space, and see their future as something they can influence.',
+      'Through outreach, school engagement, and practical support, the foundation helps create visible pathways to participation, encouragement, and trust.',
   },
 ];
 

@@ -185,10 +185,9 @@ function DonatePage() {
 
           <div className="donation-side-stack">
             <article className="info-panel">
-              <p className="program-tag">{t('donatePage.transparencyEyebrow')}</p>
-              <h2>{t('donatePage.transparencyTitle')}</h2>
-              <p>Every contribution is directed toward mission-aligned youth programs, education support, and responsible delivery.</p>
-              <p className="transparency-statement">{t('donatePage.transparencyStatement')}</p>
+              <p className="program-tag">Fund Use</p>
+              <h2>Where your support goes</h2>
+              <p>Every contribution is directed toward youth programs, education support, and responsible delivery.</p>
               <p className="micro-note">
                 Funds are allocated to direct program delivery, education support, and the basic
                 coordination required to run activities responsibly.
