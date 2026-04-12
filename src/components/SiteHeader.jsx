@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { Link, NavLink, useLocation } from 'react-router-dom';
 import { languageOptions, useLanguage } from '../context/LanguageContext';
 import { navItems } from '../siteData';
@@ -8,6 +8,7 @@ function SiteHeader() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isMoreOpen, setIsMoreOpen] = useState(false);
   const [theme, setTheme] = useState(() => localStorage.getItem('theme') || 'light');
+  const themeTransitionTimeoutRef = useRef(null);
   const { language, setLanguage, t } = useLanguage();
   const location = useLocation();
   const primaryNavItems = navItems.filter((item) =>
@@ -35,8 +36,21 @@ function SiteHeader() {
   }, [location.pathname, location.hash]);
 
   useEffect(() => {
+    document.documentElement.classList.add('theme-switching');
     document.documentElement.setAttribute('data-theme', theme);
+    document.documentElement.style.colorScheme = theme;
     localStorage.setItem('theme', theme);
+    if (themeTransitionTimeoutRef.current) {
+      window.clearTimeout(themeTransitionTimeoutRef.current);
+    }
+    themeTransitionTimeoutRef.current = window.setTimeout(() => {
+      document.documentElement.classList.remove('theme-switching');
+    }, 280);
+    return () => {
+      if (themeTransitionTimeoutRef.current) {
+        window.clearTimeout(themeTransitionTimeoutRef.current);
+      }
+    };
   }, [theme]);
 
   return (
