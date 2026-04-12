@@ -1771,6 +1771,16 @@ p {
   grid-template-columns: repeat(2, minmax(0, 1fr));
 }
 
+.donation-tier-intro {
+  display: grid;
+  gap: 0.35rem;
+  margin: 1.15rem 0 0.85rem;
+}
+
+.donation-tier-intro p:last-child {
+  color: var(--ink-soft);
+}
+
 .action-grid {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
@@ -2000,6 +2010,16 @@ p {
   margin-top: 0.9rem;
   color: var(--blue-900);
   font-size: 0.98rem;
+  font-weight: 700;
+}
+
+.donation-fund-note {
+  margin-top: 0.75rem;
+  padding: 0.85rem 1rem;
+  border-left: 4px solid var(--gold);
+  border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+  background: rgba(217, 164, 65, 0.08);
+  color: var(--blue-900);
   font-weight: 700;
 }
 
@@ -2594,6 +2614,11 @@ p {
 [data-theme='dark'] .donation-cta-copy,
 [data-theme='dark'] .donation-assurance {
   color: var(--ink-soft);
+}
+
+[data-theme='dark'] .donation-fund-note {
+  background: rgba(224, 185, 104, 0.08);
+  color: var(--ink);
 }
 
 [data-theme='dark'] .contact-whatsapp-card,

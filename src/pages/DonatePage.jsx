@@ -119,6 +119,14 @@ function DonatePage() {
               </div>
             </div>
 
+            <div className="donation-tier-intro">
+              <p className="program-tag">What your gift makes possible</p>
+              <p>
+                Each amount below is linked to a practical outcome so donors can understand what
+                their support helps make possible.
+              </p>
+            </div>
+
             <div className="donation-preset-grid donation-preset-grid-large">
               {donateOptions.map((option) => (
                 <button
@@ -157,8 +165,8 @@ function DonatePage() {
             </button>
 
             <p className="donation-cta-copy">
-              Your support creates real change by helping young people access guidance, confidence,
-              and practical opportunity.
+              Give today to help more young people access guidance, confidence, and practical
+              opportunity through the foundation&apos;s work.
             </p>
 
             <p className="currency-conversion-note">
@@ -188,6 +196,10 @@ function DonatePage() {
               <p className="program-tag">Fund Use</p>
               <h2>Where your support goes</h2>
               <p>Every contribution is directed toward youth programs, education support, and responsible delivery.</p>
+              <p className="donation-fund-note">
+                Donations are intended for mission-aligned activities that directly support young
+                people and the safe delivery of programs.
+              </p>
               <p className="micro-note">
                 Funds are allocated to direct program delivery, education support, and the basic
                 coordination required to run activities responsibly.
