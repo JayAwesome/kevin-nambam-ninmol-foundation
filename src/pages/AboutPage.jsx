@@ -4,10 +4,6 @@ import SectionIntro from '../components/SectionIntro';
 import { useLanguage } from '../context/LanguageContext';
 import usePageTitle from '../hooks/usePageTitle';
 import {
-  aboutStory,
-  foundationGoals,
-  foundationObjectives,
-  founderMessage,
   leadershipTeam,
   visionMission,
 } from '../siteData';
@@ -15,6 +11,10 @@ import {
 function AboutPage() {
   const { t } = useLanguage();
   usePageTitle(t('aboutPage.title'));
+  const localizedStory = t('content.aboutStory');
+  const localizedGoals = t('content.foundationGoals');
+  const localizedObjectives = t('content.foundationObjectives');
+  const localizedFounderMessage = t('content.founderMessage');
 
   return (
     <main>
@@ -31,10 +31,10 @@ function AboutPage() {
             <SectionIntro
               eyebrow={t('aboutPage.storyEyebrow')}
               title={t('aboutPage.storyTitle')}
-              text={aboutStory[0]}
+              text={localizedStory[0]}
             />
             <div className="stacked-copy">
-              {aboutStory.slice(1).map((paragraph) => (
+              {localizedStory.slice(1).map((paragraph) => (
                 <p key={paragraph}>{paragraph}</p>
               ))}
             </div>
@@ -80,7 +80,7 @@ function AboutPage() {
             centered
           />
           <div className="values-grid">
-            {foundationGoals.map((goal, index) => (
+            {localizedGoals.map((goal, index) => (
               <article key={goal.title} className="value-card goal-card">
                 <span className="goal-icon" aria-hidden="true">
                   {index + 1}
@@ -102,7 +102,7 @@ function AboutPage() {
           />
           <div className="objectives-panel">
             <ol className="objectives-list">
-              {foundationObjectives.map((objective, index) => (
+              {localizedObjectives.map((objective, index) => (
                 <li key={objective} className="objective-item">
                   <span className="objective-icon" aria-hidden="true">
                     {index + 1}
@@ -123,7 +123,7 @@ function AboutPage() {
           </article>
           <article className="info-panel">
             <p className="program-tag">{t('aboutPage.founderMessageTag')}</p>
-            <p className="detail-copy">{founderMessage}</p>
+            <p className="detail-copy">{localizedFounderMessage}</p>
           </article>
         </div>
       </section>

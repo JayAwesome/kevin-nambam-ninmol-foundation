@@ -8,6 +8,9 @@ import { boardOfTrustees, governanceStatement, managementProfiles } from '../sit
 function LeadershipGovernancePage() {
   const { t } = useLanguage();
   usePageTitle(t('leadershipPage.title'));
+  const localizedBoard = t('content.boardOfTrustees');
+  const localizedManagement = t('content.managementProfiles');
+  const localizedGovernance = t('content.governanceStatement');
 
   return (
     <main>
@@ -27,13 +30,13 @@ function LeadershipGovernancePage() {
             centered
           />
           <div className="team-grid">
-            {boardOfTrustees.map((person) => (
+            {boardOfTrustees.map((person, index) => (
               <article key={person.name} className="team-card governance-card">
                 <img src={person.image} alt={person.name} loading="lazy" decoding="async" />
                 <div className="team-card-body">
-                  <p className="program-tag">{person.role}</p>
+                  <p className="program-tag">{localizedBoard[index]?.role ?? person.role}</p>
                   <h3>{person.name}</h3>
-                  <p>{person.bio}</p>
+                  <p>{localizedBoard[index]?.bio ?? person.bio}</p>
                 </div>
               </article>
             ))}
@@ -50,13 +53,13 @@ function LeadershipGovernancePage() {
             centered
           />
           <div className="team-grid">
-            {managementProfiles.map((person) => (
+            {managementProfiles.map((person, index) => (
               <article key={person.name} className="team-card governance-card">
                 <img src={person.image} alt={person.name} loading="lazy" decoding="async" />
                 <div className="team-card-body">
-                  <p className="program-tag">{person.role}</p>
+                  <p className="program-tag">{localizedManagement[index]?.role ?? person.role}</p>
                   <h3>{person.name}</h3>
-                  <p>{person.bio}</p>
+                  <p>{localizedManagement[index]?.bio ?? person.bio}</p>
                 </div>
               </article>
             ))}
@@ -73,7 +76,7 @@ function LeadershipGovernancePage() {
           />
           <div className="objectives-panel">
             <ol className="objectives-list">
-              {governanceStatement.map((item, index) => (
+              {localizedGovernance.map((item, index) => (
                 <li key={item} className="objective-item">
                   <span className="objective-icon" aria-hidden="true">
                     {index + 1}

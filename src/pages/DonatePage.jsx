@@ -22,6 +22,9 @@ function formatCurrency(amount, currencyCode, locale) {
 function DonatePage() {
   const { t } = useLanguage();
   usePageTitle(t('donatePage.title'));
+  const localizedBreakdown = t('content.donationBreakdown');
+  const localizedTrustSignals = t('content.donationTrustSignals');
+  const localizedPaymentOptions = t('content.internationalPaymentOptions');
 
   const [billingMode, setBillingMode] = useState('one-time');
   const [currencyCode, setCurrencyCode] = useState('NGN');
@@ -175,7 +178,7 @@ function DonatePage() {
               <p>{t('donatePage.secureText')}</p>
               <p className="micro-note">{t('donatePage.secureNote')}</p>
               <div className="trust-badge-row">
-                {donationTrustSignals.map((item) => (
+                {localizedTrustSignals.map((item) => (
                   <span key={item} className="trust-badge">
                     {item}
                   </span>
@@ -194,13 +197,13 @@ function DonatePage() {
               </p>
               <p className="micro-note">{t('donatePage.fundUseMicro')}</p>
               <div className="donation-breakdown-list">
-                {donationBreakdown.map((item) => (
+                {donationBreakdown.map((item, index) => (
                   <div key={item.title} className="donation-breakdown-item">
                     <div className="donation-breakdown-header">
-                      <h3>{item.title}</h3>
+                      <h3>{localizedBreakdown[index]?.title ?? item.title}</h3>
                       <strong>{item.share}</strong>
                     </div>
-                    <p>{item.detail}</p>
+                    <p>{localizedBreakdown[index]?.detail ?? item.detail}</p>
                   </div>
                 ))}
               </div>
@@ -214,7 +217,7 @@ function DonatePage() {
               <p className="donation-assurance">{t('donatePage.donorAssurance')}</p>
               <p className="micro-note">{t('donatePage.paymentNote')}</p>
               <ul className="opportunity-list">
-                {internationalPaymentOptions.map((item) => (
+                {localizedPaymentOptions.map((item) => (
                   <li key={item}>{item}</li>
                 ))}
               </ul>

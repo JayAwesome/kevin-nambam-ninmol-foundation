@@ -1,10 +1,13 @@
 import PageHero from '../components/PageHero';
 import NewsletterSection from '../components/NewsletterSection';
+import { useLanguage } from '../context/LanguageContext';
 import usePageTitle from '../hooks/usePageTitle';
 import { upcomingEvents } from '../siteData';
 
 function EventsPage() {
-  usePageTitle('Events');
+  const { t } = useLanguage();
+  const localizedEvents = t('content.upcomingEvents');
+  usePageTitle(t('nav.events'));
 
   const handleRegister = (title) => {
     console.log('Event registration placeholder', { title });
@@ -14,23 +17,23 @@ function EventsPage() {
   return (
     <main>
       <PageHero
-        eyebrow="Events"
-        title="Upcoming events that bring community, partners, and youth together."
-        subtitle="A globally credible NGO website should make participation easy."
+        eyebrow={t('nav.events')}
+        title={t('eventsPage.heroTitle')}
+        subtitle={t('eventsPage.heroSubtitle')}
         image="/media/hero-court.jpeg"
       />
 
       <section className="section-space">
         <div className="container events-grid">
           <div className="events-list">
-            {upcomingEvents.map((event) => (
+            {upcomingEvents.map((event, index) => (
               <article key={event.title} className="event-card">
-                <p className="program-tag">{event.location}</p>
-                <h3>{event.title}</h3>
-                <p>{event.description}</p>
+                <p className="program-tag">{localizedEvents[index]?.location ?? event.location}</p>
+                <h3>{localizedEvents[index]?.title ?? event.title}</h3>
+                <p>{localizedEvents[index]?.description ?? event.description}</p>
                 <span className="meta-line">{event.date}</span>
-                <button type="button" className="button button-ghost" onClick={() => handleRegister(event.title)}>
-                  Register Interest
+                <button type="button" className="button button-ghost" onClick={() => handleRegister(localizedEvents[index]?.title ?? event.title)}>
+                  {t('eventsPage.registerInterest')}
                 </button>
               </article>
             ))}
@@ -40,25 +43,25 @@ function EventsPage() {
             className="event-form-panel"
             onSubmit={(event) => {
               event.preventDefault();
-              handleRegister('General Event Registration');
+              handleRegister(t('eventsPage.generalRegistration'));
             }}
           >
-            <p className="program-tag">Registration Form</p>
-            <h2>Register for upcoming events.</h2>
-            <input type="text" placeholder="Full Name" />
-            <input type="email" placeholder="Email Address" />
-            <input type="text" placeholder="Organization (optional)" />
+            <p className="program-tag">{t('eventsPage.formTag')}</p>
+            <h2>{t('eventsPage.formTitle')}</h2>
+            <input type="text" placeholder={t('getInvolvedPage.fullName')} />
+            <input type="email" placeholder={t('getInvolvedPage.email')} />
+            <input type="text" placeholder={t('eventsPage.organization')} />
             <select defaultValue="">
               <option value="" disabled>
-                Select an event
+                {t('eventsPage.selectEvent')}
               </option>
-              {upcomingEvents.map((event) => (
-                <option key={event.title}>{event.title}</option>
+              {upcomingEvents.map((event, index) => (
+                <option key={event.title}>{localizedEvents[index]?.title ?? event.title}</option>
               ))}
             </select>
-            <textarea rows="4" placeholder="Any questions or notes?" />
+            <textarea rows="4" placeholder={t('eventsPage.notes')} />
             <button type="submit" className="button button-accent">
-              Submit Registration
+              {t('eventsPage.submit')}
             </button>
           </form>
         </div>

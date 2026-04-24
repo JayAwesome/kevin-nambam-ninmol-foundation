@@ -8,6 +8,7 @@ import { policySections } from '../siteData';
 function PoliciesSafeguardingPage() {
   const { t } = useLanguage();
   usePageTitle(t('policiesPage.title'));
+  const localizedPolicies = t('content.policySections');
 
   return (
     <main>
@@ -27,7 +28,7 @@ function PoliciesSafeguardingPage() {
             centered
           />
           <div className="values-grid">
-            {policySections.map((section) => (
+            {localizedPolicies.map((section) => (
               <article key={section.title} className="value-card policy-card">
                 <h3>{section.title}</h3>
                 <p>{section.summary}</p>

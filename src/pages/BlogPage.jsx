@@ -8,6 +8,7 @@ import { blogPosts } from '../siteData';
 function BlogPage() {
   const { t } = useLanguage();
   usePageTitle(t('newsPage.title'));
+  const localizedPosts = t('content.blogPosts');
 
   return (
     <main>
@@ -27,11 +28,11 @@ function BlogPage() {
             centered
           />
           <div className="news-grid">
-            {blogPosts.map((post) => (
+            {blogPosts.map((post, index) => (
               <article key={post.slug} className="news-card">
-                <p className="program-tag">{post.category}</p>
-                <h3>{post.title}</h3>
-                <p>{post.excerpt}</p>
+                <p className="program-tag">{localizedPosts[index]?.category ?? post.category}</p>
+                <h3>{localizedPosts[index]?.title ?? post.title}</h3>
+                <p>{localizedPosts[index]?.excerpt ?? post.excerpt}</p>
                 <span className="meta-line">{post.date}</span>
               </article>
             ))}

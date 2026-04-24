@@ -8,6 +8,7 @@ import { donorProgramCategories } from '../siteData';
 function ProgramsPage() {
   const { t } = useLanguage();
   usePageTitle(t('programsPage.title'));
+  const localizedPrograms = t('content.donorProgramCategories');
 
   return (
     <main>
@@ -29,18 +30,18 @@ function ProgramsPage() {
             ctaTo="/impact"
           />
           <div className="program-category-stack">
-            {donorProgramCategories.map((program) => (
+            {donorProgramCategories.map((program, index) => (
               <section key={program.slug} className="program-category-panel">
                 <div className="program-category-heading">
                   <p className="program-tag">{t('programsPage.categoryTag')}</p>
-                  <h2>{program.title}</h2>
+                  <h2>{localizedPrograms[index]?.title ?? program.title}</h2>
                 </div>
 
                 <article className="program-portfolio-card program-portfolio-card-wide">
                   <div className="program-portfolio-media">
                     <img
                       src={program.image}
-                      alt={program.title}
+                      alt={localizedPrograms[index]?.title ?? program.title}
                       loading="lazy"
                       decoding="async"
                     />
@@ -49,13 +50,13 @@ function ProgramsPage() {
                   <div className="program-portfolio-body">
                     <div className="program-detail-block">
                       <h4>{t('programsPage.purpose')}</h4>
-                      <p>{program.purpose}</p>
+                      <p>{localizedPrograms[index]?.purpose ?? program.purpose}</p>
                     </div>
 
                     <div className="program-detail-block">
                       <h4>{t('programsPage.activities')}</h4>
                       <ul className="program-bullet-list">
-                        {program.activities.map((activity) => (
+                        {(localizedPrograms[index]?.activities ?? program.activities).map((activity) => (
                           <li key={activity}>{activity}</li>
                         ))}
                       </ul>
@@ -64,7 +65,7 @@ function ProgramsPage() {
                     <div className="program-detail-block">
                       <h4>{t('programsPage.expectedImpact')}</h4>
                       <ul className="program-bullet-list">
-                        {program.impact.map((item) => (
+                        {(localizedPrograms[index]?.impact ?? program.impact).map((item) => (
                           <li key={item}>{item}</li>
                         ))}
                       </ul>

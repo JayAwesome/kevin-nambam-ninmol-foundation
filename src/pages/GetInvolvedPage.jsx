@@ -12,6 +12,9 @@ import {
 function GetInvolvedPage() {
   const { t } = useLanguage();
   usePageTitle(t('getInvolvedPage.title'));
+  const localizedBenefits = t('content.involvementBenefits');
+  const localizedSponsors = t('content.sponsorOptions');
+  const localizedInternships = t('content.internshipOpportunities');
 
   const showComingSoon = (message, payload) => {
     console.log(message, payload);
@@ -38,7 +41,7 @@ function GetInvolvedPage() {
             ctaTo="/programs"
           />
           <div className="values-grid">
-            {involvementBenefits.map((item) => (
+            {localizedBenefits.map((item) => (
               <article key={item} className="value-card">
                 <p>{item}</p>
               </article>
@@ -112,7 +115,7 @@ function GetInvolvedPage() {
             <p className="program-tag">{t('getInvolvedPage.sponsorTag')}</p>
             <h2>{t('getInvolvedPage.sponsorTitle')}</h2>
             <ul className="opportunity-list">
-              {sponsorOptions.map((item) => (
+              {localizedSponsors.map((item) => (
                 <li key={item}>{item}</li>
               ))}
             </ul>
@@ -129,7 +132,7 @@ function GetInvolvedPage() {
             <p className="program-tag">{t('getInvolvedPage.internshipTag')}</p>
             <h2>{t('getInvolvedPage.internshipTitle')}</h2>
             <ul className="opportunity-list">
-              {internshipOpportunities.map((item) => (
+              {localizedInternships.map((item) => (
                 <li key={item}>{item}</li>
               ))}
             </ul>

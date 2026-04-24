@@ -16,6 +16,13 @@ import {
 function ImpactPage() {
   const { t } = useLanguage();
   usePageTitle(t('impactPage.title'));
+  const localizedMetrics = t('content.impactMetrics');
+  const localizedOutcomes = t('content.impactOutcomes');
+  const localizedCaseStudies = t('content.caseStudies');
+  const localizedTransformations = t('content.transformationStories');
+  const localizedGallery = t('content.impactGalleryHighlights');
+  const localizedReports = t('content.reports');
+  const localizedVideos = t('content.mediaVideos');
 
   return (
     <main>
@@ -38,11 +45,11 @@ function ImpactPage() {
           />
           <div className="impact-data-layout">
             <div className="metric-grid impact-metric-grid">
-              {impactMetrics.map((item) => (
+              {impactMetrics.map((item, index) => (
                 <article key={item.label} className="metric-card">
                   <strong>{item.value}</strong>
-                  <span className="metric-label">{item.label}</span>
-                  <p>{item.detail}</p>
+                  <span className="metric-label">{localizedMetrics[index]?.label ?? item.label}</span>
+                  <p>{localizedMetrics[index]?.detail ?? item.detail}</p>
                 </article>
               ))}
             </div>
@@ -50,10 +57,10 @@ function ImpactPage() {
               <p className="program-tag">{t('impactPage.evidenceTag')}</p>
               <h3>{t('impactPage.evidenceTitle')}</h3>
               <div className="impact-chart-list">
-                {impactMetrics.map((item) => (
+                {impactMetrics.map((item, index) => (
                   <div key={item.label} className="impact-chart-row">
                     <div className="impact-chart-copy">
-                      <span>{item.label}</span>
+                      <span>{localizedMetrics[index]?.label ?? item.label}</span>
                       <strong>{item.value}</strong>
                     </div>
                     <div className="impact-chart-track" aria-hidden="true">
@@ -76,10 +83,10 @@ function ImpactPage() {
             centered
           />
           <div className="impact-outcomes-grid">
-            {impactOutcomes.map((item) => (
+            {impactOutcomes.map((item, index) => (
               <article key={item.title} className="impact-outcome-card">
-                <h3>{item.title}</h3>
-                <p>{item.detail}</p>
+                <h3>{localizedOutcomes[index]?.title ?? item.title}</h3>
+                <p>{localizedOutcomes[index]?.detail ?? item.detail}</p>
               </article>
             ))}
           </div>
@@ -95,10 +102,10 @@ function ImpactPage() {
             centered
           />
           <div className="case-study-grid">
-            {caseStudies.map((item) => (
+            {caseStudies.map((item, index) => (
               <article key={item.title} className="value-card">
-                <h3>{item.title}</h3>
-                <p>{item.summary}</p>
+                <h3>{localizedCaseStudies[index]?.title ?? item.title}</h3>
+                <p>{localizedCaseStudies[index]?.summary ?? item.summary}</p>
               </article>
             ))}
           </div>
@@ -114,17 +121,17 @@ function ImpactPage() {
             centered
           />
           <div className="transformation-grid">
-            {transformationStories.map((item) => (
+            {transformationStories.map((item, index) => (
               <article key={item.title} className="transformation-card">
-                <h3>{item.title}</h3>
+                <h3>{localizedTransformations[index]?.title ?? item.title}</h3>
                 <div className="transformation-columns">
                   <div>
                     <p className="program-tag">{t('impactPage.before')}</p>
-                    <p>{item.before}</p>
+                    <p>{localizedTransformations[index]?.before ?? item.before}</p>
                   </div>
                   <div>
                     <p className="program-tag">{t('impactPage.after')}</p>
-                    <p>{item.after}</p>
+                    <p>{localizedTransformations[index]?.after ?? item.after}</p>
                   </div>
                 </div>
               </article>
@@ -144,24 +151,24 @@ function ImpactPage() {
             ctaTo="/donate"
           />
           <div className="gallery-grid">
-            {impactGalleryHighlights.map((item) => (
+            {impactGalleryHighlights.map((item, index) => (
               <article key={item.image + item.title} className="gallery-card">
-                <img src={item.image} alt={item.title} loading="lazy" decoding="async" />
+                <img src={item.image} alt={localizedGallery[index]?.title ?? item.title} loading="lazy" decoding="async" />
                 <div className="feature-card-body">
-                  <h3>{item.title}</h3>
-                  <p>{item.detail}</p>
+                  <h3>{localizedGallery[index]?.title ?? item.title}</h3>
+                  <p>{localizedGallery[index]?.detail ?? item.detail}</p>
                 </div>
               </article>
             ))}
           </div>
           <div className="video-gallery-grid">
-            {mediaVideos.map((video) => (
+            {mediaVideos.map((video, index) => (
               <article key={video.src} className="video-card">
                 <video controls preload="metadata" poster={video.poster}>
                   <source src={video.src} type="video/mp4" />
                 </video>
                 <div className="video-card-body">
-                  <strong>{video.title}</strong>
+                  <strong>{localizedVideos[index]?.title ?? video.title}</strong>
                 </div>
               </article>
             ))}
@@ -178,21 +185,22 @@ function ImpactPage() {
             centered
           />
           <div className="reports-grid">
-            {reports.map((report) => (
+            {reports.map((report, index) => (
               <article key={report.title} className="report-card">
                 <div className="report-card-top">
                   <span className="report-format-badge">{report.format}</span>
                   <span className="meta-line">{report.date}</span>
                 </div>
-                <p className="program-tag">{report.type}</p>
-                <h3>{report.title}</h3>
-                <p>{report.description}</p>
+                <p className="program-tag">{localizedReports[index]?.type ?? report.type}</p>
+                <h3>{localizedReports[index]?.title ?? report.title}</h3>
+                <p>{localizedReports[index]?.description ?? report.description}</p>
                 <button
                   type="button"
                   className="button button-ghost report-button"
                   onClick={() => {
-                    console.log('Report download placeholder', report.title);
-                    window.alert(`Download placeholder for "${report.title}"`);
+                    const reportTitle = localizedReports[index]?.title ?? report.title;
+                    console.log('Report download placeholder', reportTitle);
+                    window.alert(`Download placeholder for "${reportTitle}"`);
                   }}
                 >
                   {t('impactPage.downloadPlaceholder')}

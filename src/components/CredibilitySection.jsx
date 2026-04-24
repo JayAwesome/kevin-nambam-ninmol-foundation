@@ -4,9 +4,12 @@ import { managementProfiles, policySections, sitewideCredibility } from '../site
 
 function CredibilitySection() {
   const { t } = useLanguage();
-  const registrationItems = sitewideCredibility.slice(0, 3);
-  const transparencyItems = sitewideCredibility.slice(3, 6);
-  const safeguardingSummary = policySections.find((section) => section.title === 'Child Protection Policy');
+  const localizedCredibility = t('content.sitewideCredibility');
+  const localizedManagement = t('content.managementProfiles');
+  const localizedPolicies = t('content.policySections');
+  const registrationItems = localizedCredibility.slice(0, 3);
+  const transparencyItems = localizedCredibility.slice(3, 6);
+  const safeguardingSummary = localizedPolicies[0] ?? policySections[0];
 
   return (
     <section className="site-credibility-band">
@@ -22,14 +25,14 @@ function CredibilitySection() {
           <div className="credibility-main">
             <SectionLabel title="Leadership Profiles" />
             <div className="team-grid">
-              {managementProfiles.map((member) => (
+              {managementProfiles.map((member, index) => (
                 <article key={member.name + member.role} className="team-card governance-card">
                   <img src={member.image} alt={member.name} loading="lazy" decoding="async" />
                   <div className="team-card-body">
                     <p className="program-tag">Leadership</p>
                     <h3>{member.name}</h3>
-                    <strong>{member.role}</strong>
-                    <p>{member.bio}</p>
+                    <strong>{localizedManagement[index]?.role ?? member.role}</strong>
+                    <p>{localizedManagement[index]?.bio ?? member.bio}</p>
                   </div>
                 </article>
               ))}

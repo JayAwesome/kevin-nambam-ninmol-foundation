@@ -407,6 +407,18 @@ const en = {
     introTitle: 'Recent news and updates',
     introText: 'Use this page to follow stories, field updates, and foundation news.',
   },
+  eventsPage: {
+    heroTitle: 'Upcoming events that bring community, partners, and youth together.',
+    heroSubtitle: 'A globally credible NGO website should make participation easy.',
+    registerInterest: 'Register Interest',
+    generalRegistration: 'General Event Registration',
+    formTag: 'Registration Form',
+    formTitle: 'Register for upcoming events.',
+    organization: 'Organization (optional)',
+    selectEvent: 'Select an event',
+    notes: 'Any questions or notes?',
+    submit: 'Submit Registration',
+  },
   programDetailPage: {
     titleFallback: 'Program',
     notFound: 'Program not found',
@@ -417,6 +429,419 @@ const en = {
     impactPageLink: 'Learn more through the Impact page',
     activitiesTitle: 'Program activities',
     impactTitle: 'Program impact',
+  },
+  content: {
+    aboutStory: [
+      'Kevin Nambam Ninmol Foundation was born from a personal journey marked by hardship, resilience, and the life-changing power of opportunity.',
+      'Kevin grew up in a challenging environment where the future did not always appear clear. Basketball became more than a sport. It gave him direction, discipline, and access to education. Education, in turn, opened the way to leadership, service, and a wider sense of responsibility.',
+      "What began as one young man's breakthrough has now become a public mission. The foundation exists to help children and young people, especially those facing social or economic limitation, discover that fear does not have to define their future.",
+      'Through sports, mentorship, education support, and community-based outreach, the foundation works to build confidence, expand opportunity, and help young people make positive choices with lasting impact.',
+    ],
+    founderMessage:
+      'Fear No Fear is not simply a slogan. It is a conviction born from experience. I know what it means to come from difficulty and to be changed by one real opportunity. This foundation was created so that more young people can receive guidance, support, and belief at the moment they need it most.',
+    foundationGoals: [
+      {
+        title: 'Growth Mindset Development',
+        text: 'Encourage young people to view challenges as opportunities for growth, resilience, and personal development.',
+      },
+      {
+        title: 'Life Skills Empowerment',
+        text: 'Equip young people with practical skills such as problem-solving, communication, teamwork, and responsible decision-making.',
+      },
+      {
+        title: 'Mentorship and Guidance',
+        text: 'Provide positive role models, encouragement, and personal guidance that help young people build confidence and direction.',
+      },
+      {
+        title: 'Emotional Well-being',
+        text: 'Promote healthy coping mechanisms and emotional support so young people can manage pressure and respond to life with strength.',
+      },
+    ],
+    foundationObjectives: [
+      'Establish and strengthen programs that promote emotional well-being, resilience, and life-skills development.',
+      'Build partnerships with schools, communities, organizations, and businesses to expand reach and provide meaningful support.',
+      'Train staff and volunteers so they are equipped to support young people effectively and responsibly.',
+      'Evaluate and improve programs and services to ensure they continue to meet the real needs of young people.',
+    ],
+    heroStats: [
+      {
+        label: 'Youth reached',
+        detail: 'Young people reached through clinics, mentoring, and outreach.',
+      },
+      {
+        label: 'Programs conducted',
+        detail: 'Programs, clinics, and outreach activities delivered.',
+      },
+      {
+        label: 'Communities impacted',
+        detail: 'Communities and institutions engaged through direct support.',
+      },
+      {
+        label: 'Education actions',
+        detail: 'Education support and scholarship actions provided.',
+      },
+    ],
+    homepagePrograms: [
+      {
+        title: 'Education Support',
+        subtitle: 'Learning access and scholarship pathways',
+        excerpt:
+          'Academic support, school materials, and scholarship pathways that help underserved students remain connected to opportunity.',
+      },
+      {
+        title: 'Youth Development',
+        subtitle: 'Sports, discipline, and confidence building',
+        excerpt:
+          'Basketball clinics and mindset coaching that build discipline, resilience, teamwork, and leadership in boys and girls.',
+      },
+      {
+        title: 'Mentorship',
+        subtitle: 'Guidance, life skills, and emotional support',
+        excerpt:
+          'Mentorship that strengthens communication, emotional well-being, decision-making, and practical life direction.',
+      },
+    ],
+    donorProgramCategories: [
+      {
+        title: 'Youth Empowerment Through Basketball',
+        purpose:
+          'Use basketball as a structured pathway for discipline, confidence, teamwork, leadership, and positive decision-making.',
+        activities: [
+          'Basketball clinics and skill-development sessions for boys and girls',
+          'Mindset and resilience talks woven into sports participation',
+          'Coaching that reinforces discipline, teamwork, and leadership',
+          'Safe, structured environments where young people can learn and grow',
+        ],
+        impact: [
+          'Improved confidence and participation among young people',
+          'Stronger teamwork, discipline, and coachability',
+          'Positive youth engagement through sport-based mentoring',
+        ],
+      },
+      {
+        title: 'Education Support',
+        purpose:
+          'Reduce barriers to learning by connecting children and young people with educational materials, encouragement, and scholarship support.',
+        activities: [
+          'Scholarship identification and education support referrals',
+          'Provision of books, school materials, and learning resources',
+          'Academic encouragement and mentoring for students',
+          'Support that helps young people remain engaged in school and growth',
+        ],
+        impact: [
+          'Greater access to learning tools and educational support',
+          'More confidence for students pursuing academic progress',
+          'Practical pathways for underserved youth to stay connected to opportunity',
+        ],
+      },
+      {
+        title: 'Mentorship and Life Skills Development',
+        purpose:
+          'Help young people build character, emotional resilience, communication skills, and the confidence to make responsible life choices.',
+        activities: [
+          'Mentorship sessions with positive role models and coaches',
+          'Workshops on communication, teamwork, and problem-solving',
+          'Guidance on emotional well-being and healthy coping mechanisms',
+          'Practical life-skills support for youth navigating daily challenges',
+        ],
+        impact: [
+          'Stronger decision-making and social confidence among participants',
+          'Healthier emotional responses to pressure and uncertainty',
+          'A more supportive environment for youth growth beyond the basketball court',
+        ],
+      },
+    ],
+    involvementBenefits: [
+      'Support young people with time, skills, funding, or institutional partnership',
+      'Help expand practical programs in education, mentoring, and youth development',
+      'Contribute to a mission rooted in visible community engagement and long-term growth',
+      'Become part of a network committed to hope, courage, and positive youth outcomes',
+    ],
+    sponsorOptions: [
+      'Program sponsorship for clinics and camps',
+      'Education and scholarship support',
+      'In-kind donations of books, gear, or supplies',
+      'Strategic partnerships with schools and institutions',
+    ],
+    internshipOpportunities: [
+      'Program support and youth engagement assistance',
+      'Communications, storytelling, and media support',
+      'Event coordination and logistics support',
+      'Research, administration, and partnership support',
+    ],
+    impactMetrics: [
+      {
+        label: 'Youth impacted',
+        detail: 'Young people engaged through clinics, mentoring, and outreach sessions.',
+      },
+      {
+        label: 'Communities reached',
+        detail: 'Communities and school environments reached through direct engagement.',
+      },
+      {
+        label: 'Programs completed',
+        detail: 'Basketball clinics, mentoring sessions, and outreach activities delivered.',
+      },
+      {
+        label: 'Education support actions',
+        detail: 'Education support and scholarship-related actions delivered.',
+      },
+    ],
+    impactOutcomes: [
+      {
+        title: 'Improved confidence',
+        detail:
+          'Young people are given visible opportunities to participate, be encouraged, and build belief in their own ability.',
+      },
+      {
+        title: 'Better decision-making',
+        detail:
+          'Mentorship, coaching, and guided conversations help participants make healthier and more responsible life choices.',
+      },
+      {
+        title: 'Life skills development',
+        detail:
+          'Programs reinforce teamwork, communication, discipline, emotional resilience, and positive social behavior.',
+      },
+    ],
+    caseStudies: [
+      {
+        title: 'Amina became more confident in group participation',
+        summary:
+          'Amina arrived at a youth session unsure of herself and hesitant to join activities. With repeated encouragement and structured participation, she became more willing to speak up and believe in her ability.',
+      },
+      {
+        title: 'Daniel gained direction beyond the basketball court',
+        summary:
+          'Daniel first connected with the foundation through basketball. Over time, mentoring and guidance helped him build more discipline, improve decision-making, and develop a clearer direction in daily life.',
+      },
+    ],
+    transformationStories: [
+      {
+        title: 'From hesitation to participation',
+        before:
+          'Some young people arrive unsure of themselves, reluctant to participate, and uncertain whether they belong in a structured setting.',
+        after:
+          'With coaching, encouragement, and consistent support, they begin to take initiative, work with others, and engage with greater confidence.',
+      },
+      {
+        title: 'From limited access to visible support',
+        before:
+          'Families and communities facing pressure often have limited access to learning materials, safe youth programming, and positive role models.',
+        after:
+          'Through outreach, school engagement, and practical support, the foundation helps create visible pathways to participation, encouragement, and trust.',
+      },
+    ],
+    donationBreakdown: [
+      {
+        title: 'Program delivery',
+        detail: 'Supports youth programs, basketball clinics, mentoring sessions, and direct engagement activities.',
+      },
+      {
+        title: 'Education support',
+        detail: 'Funds learning materials, academic assistance, and scholarship-related support for young people.',
+      },
+      {
+        title: 'Operations and accountability',
+        detail: 'Covers responsible coordination, safeguarding, communication, and reporting needed to deliver programs well.',
+      },
+    ],
+    donationTrustSignals: [
+      'Secure checkout placeholder',
+      'Paystack / Flutterwave ready',
+      'Transparent stewardship and responsible fund use',
+      'Mission-aligned giving for measurable youth impact',
+    ],
+    internationalPaymentOptions: [
+      'NGN donors: local transfer or Paystack integration placeholder',
+      'USD, GBP, and EUR donors: international card or Flutterwave gateway placeholder',
+      'Currency conversion shown on the page is indicative and can be updated when live gateway rates are connected',
+    ],
+    sitewideCredibility: [
+      {
+        title: 'Country of Registration',
+        text: 'Nigeria. Formal registration references and the official registration number can be published here once approved for public release.',
+      },
+      {
+        title: 'Registration Number',
+        text: 'Registration number placeholder: to be inserted as soon as the foundation legal number is ready for publication.',
+      },
+      {
+        title: 'Legal Compliance',
+        text: 'Kevin Nambam Ninmol Foundation operates in accordance with applicable laws and is committed to transparency and accountability.',
+      },
+      {
+        title: 'Transparency',
+        text: 'The foundation is committed to honest stewardship and clear communication with donors, partners, and communities.',
+      },
+      {
+        title: 'Responsible Use of Funds',
+        text: 'Resources are intended for mission-aligned programs, education support, community outreach, and responsible operations.',
+      },
+      {
+        title: 'Accountability',
+        text: 'The organization continues to strengthen reporting, oversight, and governance practices as it grows.',
+      },
+    ],
+    managementProfiles: [
+      {
+        role: 'Founder and Executive Director',
+        bio: 'Provides strategic leadership, program direction, and public representation for the foundation, grounded in lived experience and youth development through sport.',
+      },
+      {
+        role: 'Program Implementation',
+        bio: 'Supports delivery of clinics, mentoring sessions, outreach engagement, and coordination with local communities and schools.',
+      },
+      {
+        role: 'Operations and Field Support',
+        bio: 'Assists with logistics, participant support, communications, and day-to-day coordination that help programs run responsibly and effectively.',
+      },
+    ],
+    boardOfTrustees: [
+      {
+        role: 'Chairman, Board of Trustees',
+        bio: 'A governance-focused nonprofit leader with experience in education, social impact strategy, and institutional stewardship.',
+      },
+      {
+        role: 'Secretary, Board of Trustees',
+        bio: 'A legal and compliance professional supporting governance processes, record-keeping, and accountability structures for mission-driven organizations.',
+      },
+      {
+        role: 'Treasurer, Board of Trustees',
+        bio: 'A finance and administration practitioner with a focus on responsible resource management, reporting, and operational oversight.',
+      },
+    ],
+    governanceStatement: [
+      'The foundation is guided by a governance structure that separates strategic oversight from daily management responsibilities.',
+      'The Board of Trustees provides direction, accountability oversight, and stewardship guidance, while the management team leads implementation, coordination, and day-to-day execution.',
+      'Key decisions are informed through responsible consultation, mission alignment, and a commitment to transparency, ethical conduct, and the best interests of the young people and communities served.',
+      'The foundation is committed to accountability in reporting, responsible use of funds, and clear communication with donors, partners, and institutional stakeholders.',
+    ],
+    policySections: [
+      {
+        title: 'Child Protection Policy',
+        summary: 'The foundation is committed to creating safe environments for children and young people in all programs, outreach activities, and community engagements.',
+        points: [
+          'Children and young people must be treated with dignity, respect, and age-appropriate care at all times.',
+          'Staff, volunteers, and partners are expected to avoid any conduct that could place a child at risk of harm, exploitation, neglect, or abuse.',
+          'Safeguarding concerns are expected to be reported responsibly and responded to in a timely and protective manner.',
+        ],
+      },
+      {
+        title: 'Code of Conduct',
+        summary: 'All representatives of the foundation are expected to act professionally, respectfully, and in a way that protects trust in the organization.',
+        points: [
+          'Behave with integrity, fairness, and respect toward beneficiaries, colleagues, donors, and partners.',
+          'Avoid abusive, discriminatory, exploitative, or inappropriate conduct in any setting connected to the foundation.',
+          'Uphold responsible behavior in communication, program delivery, financial handling, and representation of the foundation.',
+        ],
+      },
+      {
+        title: 'Transparency and Accountability',
+        summary: 'The foundation is committed to responsible stewardship, transparent communication, and accountable decision-making.',
+        points: [
+          'Funds are intended for mission-aligned programs, operations, and activities that directly support the foundation work.',
+          'The foundation aims to communicate honestly with donors, partners, and communities about its work, growth, and limitations.',
+          'Governance, reporting, and oversight processes are being strengthened to reflect international nonprofit expectations.',
+        ],
+      },
+      {
+        title: 'Data Privacy Assurance',
+        summary: 'The foundation respects the privacy of supporters, partners, and participants and is committed to handling personal information with care.',
+        points: [
+          'Personal details collected through forms or communications are intended only for legitimate foundation purposes.',
+          'Information will not be shared irresponsibly and should be handled in a way that protects confidentiality and trust.',
+          'As systems grow, data handling practices will continue to align with good governance, security, and lawful record management.',
+        ],
+      },
+    ],
+    reports: [
+      {
+        title: 'Annual Impact Report 2025',
+        type: 'Annual Report',
+        description: 'A downloadable placeholder for the foundation annual report covering activities, outputs, partnerships, and key learning points.',
+      },
+      {
+        title: 'Financial Summary 2025',
+        type: 'Financial Summary',
+        description: 'A concise placeholder summary of income, expenditure priorities, and stewardship commitments for donor and institutional review.',
+      },
+      {
+        title: 'Program Delivery Report',
+        type: 'Program Report',
+        description: 'A placeholder program report highlighting delivery areas, activities completed, and practical lessons from outreach, mentoring, and youth engagement.',
+      },
+    ],
+    impactGalleryHighlights: [
+      {
+        title: 'Founder-led skills development',
+        detail: 'Basketball sessions combine practical drills with visible mentorship and encouragement.',
+      },
+      {
+        title: 'Structured youth participation',
+        detail: 'Young people are engaged in disciplined activity that builds teamwork, confidence, and focus.',
+      },
+      {
+        title: 'Community-centered outreach',
+        detail: 'Programs bring together children, families, schools, and volunteers in shared support spaces.',
+      },
+      {
+        title: 'School and outreach engagement',
+        detail: 'The foundation shows up where young people already gather, making support easier to access.',
+      },
+      {
+        title: 'Coaching in action',
+        detail: 'Indoor and organized settings help reinforce discipline, repetition, and personal growth.',
+      },
+      {
+        title: 'Recognition and educational progress',
+        detail: 'Images of achievement help show how sport, learning, and encouragement are connected.',
+      },
+    ],
+    mediaVideos: [
+      { title: 'Founder story reel' },
+      { title: 'Clinic highlights' },
+      { title: 'Community engagement reel' },
+    ],
+    blogPosts: [
+      {
+        title: 'Building confidence through sport',
+        excerpt: 'How basketball becomes a tool for resilience, discipline, and long-term mindset growth.',
+        category: 'Insights',
+      },
+      {
+        title: 'Why girls need more visible opportunity',
+        excerpt: 'The Girl Child Initiative is about practical support, self-belief, and space to lead.',
+        category: 'Girl Child Initiative',
+      },
+      {
+        title: 'Community outreach is more than a single event',
+        excerpt: 'What long-term trust-building looks like when outreach is rooted in dignity and presence.',
+        category: 'Community',
+      },
+      {
+        title: 'Education opens the second door',
+        excerpt: 'Why scholarship support matters just as much as sports access in changing a young persons future.',
+        category: 'Education',
+      },
+    ],
+    upcomingEvents: [
+      {
+        title: 'Fear No Fear Community Clinic',
+        location: 'Jos, Plateau State',
+        description: 'A youth basketball clinic with mindset coaching, mentoring, and community engagement.',
+      },
+      {
+        title: 'Girl Child Leadership Workshop',
+        location: 'Partner School Hall',
+        description: 'A focused session on confidence, opportunity, and practical leadership for girls.',
+      },
+      {
+        title: 'Community Partners Breakfast',
+        location: 'Jos Civic Center',
+        description: 'A donor and partner engagement event for institutions, supporters, and strategic collaborators.',
+      },
+    ],
   },
 };
 
@@ -436,7 +861,19 @@ const fr = {
   leadershipPage: { ...en.leadershipPage, heroTitle: 'Leadership et gouvernance structures pour la confiance et la responsabilite.', heroSubtitle: 'Rencontrez les personnes et les structures responsables de la supervision et de la mise en oeuvre.', boardText: 'Le conseil assure supervision, gestion et orientation de haut niveau.', managementTitle: 'Equipe de direction', managementText: "L'equipe de direction soutient la mise en oeuvre, la coordination et la livraison.", governanceTitle: 'Comment les decisions sont prises' },
   policiesPage: { ...en.policiesPage, heroTitle: 'Des politiques et des normes de sauvegarde qui soutiennent la confiance.', heroSubtitle: 'Un apercu simple des normes qui guident un travail sur et responsable.', introEyebrow: 'Apercu de la conformite', introTitle: 'Des normes professionnelles pour un service responsable', assuranceTag: 'Assurance professionnelle', assuranceTitle: 'Construit pour soutenir la confiance', governanceTag: 'Bonne gouvernance' },
   newsPage: { ...en.newsPage, heroEyebrow: 'Actualites et histoires', heroTitle: 'Articles, mises a jour et reflexions.', heroSubtitle: 'De courtes mises a jour et histoires sur le travail de la fondation.', introEyebrow: 'Blog et mises a jour', introTitle: 'Actualites recentes et mises a jour' },
+  eventsPage: { ...en.eventsPage, heroTitle: 'Evenements a venir qui reunissent communaute, partenaires et jeunes.', heroSubtitle: 'Un site ONG credible doit rendre la participation simple.', registerInterest: "Exprimer son interet", generalRegistration: 'Inscription generale aux evenements', formTag: "Formulaire d'inscription", formTitle: 'Inscrivez-vous aux evenements a venir.', organization: 'Organisation (optionnel)', selectEvent: 'Choisir un evenement', notes: 'Questions ou remarques ?', submit: "Envoyer l'inscription" },
   programDetailPage: { ...en.programDetailPage, titleFallback: 'Programme', notFound: 'Programme introuvable', backToPrograms: 'Retour aux programmes', heroEyebrow: 'Details du programme', overviewTag: 'Apercu', impactPageLink: "En savoir plus via la page Impact", activitiesTitle: 'Activites du programme', impactTitle: 'Impact du programme' },
+  content: {
+    ...en.content,
+    aboutStory: [
+      'Kevin Nambam Ninmol Foundation est nee dun parcours personnel marque par les difficultes, la resilience et le pouvoir transformateur dune veritable opportunite.',
+      'Kevin a grandi dans un environnement difficile ou l avenir semblait souvent incertain. Le basketball est devenu plus quun sport. Il lui a donne une direction, de la discipline et un acces a leducation.',
+      'Ce qui a commence comme la percee dun jeune homme est devenu une mission publique. La fondation aide les enfants et les jeunes, en particulier ceux qui font face a des limites sociales ou economiques, a comprendre que la peur ne doit pas definir leur avenir.',
+      'Par le sport, le mentorat, le soutien educatif et les actions communautaires, la fondation cherche a renforcer la confiance, elargir les opportunites et aider les jeunes a faire de meilleurs choix.',
+    ],
+    founderMessage:
+      'Fear No Fear nest pas seulement un slogan. Cest une conviction nee de lexperience. Je sais ce que signifie venir de la difficulte et etre transforme par une seule vraie opportunite.',
+  },
 };
 
 const ha = {
@@ -455,7 +892,19 @@ const ha = {
   leadershipPage: { ...en.leadershipPage, heroTitle: 'Jagoranci da tsarin mulki da aka tsara don amana da rikon amana.', heroSubtitle: 'Ku sadu da mutanen da tsare-tsaren da ke da alhakin kulawa da aiwatarwa.', boardText: 'Kwamitin yana bada kulawa, rikon amana, da jagora a mataki na sama.', managementTitle: 'Tawagar gudanarwa', managementText: 'Tawagar gudanarwa tana tallafa wa aiwatarwa, hadin kai, da isar da aiki.', governanceTitle: 'Yadda ake yanke shawara' },
   policiesPage: { ...en.policiesPage, heroSubtitle: 'Takaitaccen bayani game da ka idoji da ke jagorantar aiki mai aminci da alhaki.', introEyebrow: 'Takaitaccen biyayya', introTitle: 'Ka idoji na kwarewa don hidima mai alhaki', assuranceTag: 'Tabbacin kwarewa', assuranceTitle: 'An gina shi don karfafa amana', governanceTag: 'Kyakykyawan shugabanci' },
   newsPage: { ...en.newsPage, heroEyebrow: 'Labarai da tatsuniyoyi', heroTitle: 'Makaloli, sabbin bayanai, da tunani masu jagoranci.', heroSubtitle: 'Takaitattun bayanai da labarai daga aikin gidauniyar.', introEyebrow: 'Blog da sabuntawa', introTitle: 'Sabbin labarai da bayanai' },
+  eventsPage: { ...en.eventsPage, heroTitle: 'Taro masu zuwa da ke hada al umma, abokan hulda, da matasa.', heroSubtitle: 'Shafin NGO mai kima ya kamata ya saukaka shiga.', registerInterest: 'Nuna sha awa', generalRegistration: 'Rijistar taro gaba daya', formTag: 'Fom din rijista', formTitle: 'Yi rijista don taro masu zuwa.', organization: 'Kungiya (ba dole ba)', selectEvent: 'Zabi taro', notes: 'Tambayoyi ko bayanai?', submit: 'Aika rijista' },
   programDetailPage: { ...en.programDetailPage, titleFallback: 'Shiri', notFound: 'Ba a samu shirin ba', backToPrograms: 'Komawa shirye-shirye', heroEyebrow: 'Cikakken bayani kan shiri', overviewTag: 'Takaitaccen bayani', impactPageLink: 'Kara sani ta shafin Tasiri', activitiesTitle: 'Ayyukan shiri', impactTitle: 'Tasirin shiri' },
+  content: {
+    ...en.content,
+    aboutStory: [
+      'Kevin Nambam Ninmol Foundation ta samo asali ne daga tafiyar rayuwa mai cike da kalubale, juriya, da damar da ta canza rayuwa.',
+      'Kevin ya taso a yanayi mai wahala inda makoma ba ta bayyana a sarari ba. Kwallon kwando ta zamo fiye da wasa. Ta ba shi hanya, ladabi, da damar ilimi.',
+      'Abin da ya fara a matsayin nasarar mutum daya yanzu ya zama manufa ta jama a. Gidauniyar tana taimaka wa yara da matasa, musamman masu fuskantar takura ta zamantakewa ko tattalin arziki, su gane cewa tsoro bai kamata ya ayyana makomarsu ba.',
+      'Ta hanyar wasanni, jagoranci, tallafin ilimi, da ayyukan al umma, gidauniyar tana kokarin gina kwarin gwiwa, fadada dama, da taimaka wa matasa su yi zabin kirki.',
+    ],
+    founderMessage:
+      'Fear No Fear ba kawai taken magana ba ne. Imani ne da aka haifa daga kwarewa. Na san yadda wahala take da yadda dama guda daya za ta iya sauya rayuwa.',
+  },
 };
 
 const yo = {
@@ -474,7 +923,19 @@ const yo = {
   leadershipPage: { ...en.leadershipPage, heroTitle: 'Asiwaju ati isakoso ti a seto fun igbekele ati ojuse.', heroSubtitle: 'Pade awon eniyan ati eto ti o ni ojuse fun abojuto ati imuse.', boardText: 'Igbimo n pese abojuto, itoju, ati itonisona ipele giga.', managementTitle: 'Egbe isakoso', managementText: 'Egbe isakoso n se atileyin imuse, isokan, ati gbigbe ise.', governanceTitle: 'Bawo ni a se n se ipinnu' },
   policiesPage: { ...en.policiesPage, heroSubtitle: 'Akotan ti o rọrun nipa awon boṣewa ti o n dari ise ailewu ati ojuse.', introEyebrow: 'Akotan ibamu', introTitle: 'Awon boṣewa ojoogbon fun ise lododo', assuranceTag: 'Idaniloju ojoogbon', assuranceTitle: 'A ko o lati se atileyin igbekele', governanceTag: 'Isakoso to dara' },
   newsPage: { ...en.newsPage, heroEyebrow: 'Iroyin ati awon itan', heroTitle: 'Awon apeleko, imudojuiwon, ati ero amoja.', heroSubtitle: 'Awon imudojuiwon kukuru ati itan lati inu ise idasile naa.', introEyebrow: 'Bulogi ati imudojuiwon', introTitle: 'Iroyin ati imudojuiwon tuntun' },
+  eventsPage: { ...en.eventsPage, heroTitle: 'Awon isele to n bo ti n ko agbegbe, alabaṣiṣẹpọ, ati odo jo.', heroSubtitle: 'Oju-iwe NGO to ni igbẹkẹle gbodo je ki ikopa rorun.', registerInterest: 'Foruko ife han', generalRegistration: 'Iforuko gbogbogbo fun isele', formTag: 'Foomu iforuko', formTitle: 'Foruko sile fun awon isele to n bo.', organization: 'Ajo (ayanfẹ)', selectEvent: 'Yan isele kan', notes: 'Ibeere tabi alaye kankan?', submit: 'Fi iforuko ranse' },
   programDetailPage: { ...en.programDetailPage, titleFallback: 'Eto', notFound: 'A ko ri eto naa', backToPrograms: 'Pada si Programs', heroEyebrow: 'Alaye eto', overviewTag: 'Akotan', impactPageLink: 'Ka sii nipa re lori oju-iwe Impact', activitiesTitle: 'Awon ise eto', impactTitle: 'Ipa eto' },
+  content: {
+    ...en.content,
+    aboutStory: [
+      'Kevin Nambam Ninmol Foundation jade lati inu irin-ajo igbesi aye ti o kun fun ipenija, suuru, ati agbara anfaani gidi lati yi aye pada.',
+      'Kevin dagba ni agbegbe ti o nira nibiti ojo iwaju ko fi han gedegbe. Basketball di nkan ju ere lo. O fun ni itosona, ibawi, ati ona si eko.',
+      'Ohun ti o bere gege bi isegun eniyan kan ti di ise ti gbogbo eniyan. Idasile naa n ran awon omode ati odo lowo, paapaa awon to n koju idena awujo tabi oro aje, lati mo pe iberu ko gbodo pinnu ojo iwaju won.',
+      'Nipase ere idaraya, itoju, atileyin eko, ati ise agbegbe, idasile naa n sise lati ko igboya, fa anfaani sii, ati ran awon odo lowo lati se yiyan to dara.',
+    ],
+    founderMessage:
+      'Fear No Fear kii se oro asan. Igbagbo ni ti iriri bi. Mo mo ohun ti o je lati wa lati inu isoro ati lati yi aye pada nipase anfaani gidi kan.',
+  },
 };
 
 const ig = {
@@ -493,7 +954,19 @@ const ig = {
   leadershipPage: { ...en.leadershipPage, heroTitle: 'Ndu na nhazi e wuru maka ntukwasi obi na ibu oru.', heroSubtitle: 'Zute ndi mmadu na usoro na ahu maka nlekota na mmezu.', boardText: 'Boodu ahu na enye nlekota, nlekota ego, na nduzi di elu.', managementTitle: 'Otu njikwa', managementText: 'Otu njikwa na-akwado mmejuputa, nhazi, na nnyefe oru.', governanceTitle: 'Otu esi eme mkpebi' },
   policiesPage: { ...en.policiesPage, heroSubtitle: 'Nleba anya di mfe banyere ukpuru na-eduzi oru nchekwa na oru nwere ibu oru.', introEyebrow: 'Nchịkọtakwa nnabata', introTitle: 'Ukpuru ọkachamara maka oru nwere ibu oru', assuranceTag: 'Nkwenye ọkachamara', assuranceTitle: 'E wuru ya iji kwado ntụkwasị obi', governanceTag: 'Nlekọta oma' },
   newsPage: { ...en.newsPage, heroEyebrow: 'Akuko na akuko ndu', heroTitle: 'Edemede, mmelite, na echiche ndu.', heroSubtitle: 'Mmelite mkpirikpi na akuko sitere na oru ntolala.', introEyebrow: 'Blog na mmelite', introTitle: 'Akuko na mmelite ohuru' },
+  eventsPage: { ...en.eventsPage, heroTitle: 'Ihe omume na-abia nke na-ejikota obodo, ndi mmekorita, na ndi ntorobia.', heroSubtitle: 'Weebusaiti NGO kwesiri ntụkwasị obi ga-eme ka isonye di mfe.', registerInterest: 'Debanye mmasi', generalRegistration: 'Ndebanye aha izugbe', formTag: 'Fom ndebanye aha', formTitle: 'Debanye aha maka ihe omume na-abia.', organization: 'Organisation (nhọrọ)', selectEvent: 'Horo ihe omume', notes: 'Ajụjụ ma obu nkowa?', submit: 'Zipu ndebanye aha' },
   programDetailPage: { ...en.programDetailPage, titleFallback: 'Mmemme', notFound: 'Ahughi mmemme a', backToPrograms: 'Laghachi na Programs', heroEyebrow: 'Nkọwa mmemme', overviewTag: 'Nchịkọta', impactPageLink: 'Mutakwuo site na ibe Impact', activitiesTitle: 'Oru mmemme', impactTitle: 'Mmetuta mmemme' },
+  content: {
+    ...en.content,
+    aboutStory: [
+      'Kevin Nambam Ninmol Foundation sitere na njem ndu nke juru na nsogbu, ntachi obi, na ike nke ezi ohere iji gbanwee ndu.',
+      'Kevin toro n gburugburu siri ike ebe odi nihu adighi mgbe nile doo anya. Basketball ghoro ihe kariri egwuregwu. O nyere ya nduzi, ndidi, na uzo gara akwukwo.',
+      'Ihe bidoro dika mmeri nke otu nwoke ghoro ozi obodo. Ntolala a na enyere umuaka na ndi ntorobia, karisia ndi na-eche ihu oke mgbochi obodo ma obu aku na uba, ka ha mara na egwu ekwesighi ikowa odi nihu ha.',
+      'Site na egwuregwu, nduzi, nkwado akwukwo, na oru obodo, ntolala a na aru oru iwulite obi ike, igbasa ohere, na inyere ndi ntorobia ime mkpebi ka mma.',
+    ],
+    founderMessage:
+      'Fear No Fear abughi nani okwu. O bu nkwenye amuru site na ahuhu ndu. Ama m ihe o putara isi na nsogbu bia na otu ezi ohere gbanwee ndu mmadu.',
+  },
 };
 
 const translations = { en, fr, ha, yo, ig };

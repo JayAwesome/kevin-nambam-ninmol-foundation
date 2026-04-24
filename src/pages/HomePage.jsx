@@ -11,6 +11,8 @@ import {
 function HomePage() {
   const { t } = useLanguage();
   usePageTitle(t('home.title'));
+  const localizedStats = t('content.heroStats');
+  const localizedPrograms = t('content.homepagePrograms');
 
   return (
     <main>
@@ -54,14 +56,14 @@ function HomePage() {
             ctaTo="/impact"
           />
           <div className="metric-grid">
-            {heroStats.map((item) => (
+            {heroStats.map((item, index) => (
               <article key={item.label} className="metric-card">
                 <span className="metric-icon" aria-hidden="true">
                   {item.icon}
                 </span>
                 <LiveCounter countTo={item.countTo} suffix={item.suffix} className="metric-counter" />
-                <span className="metric-label">{item.label}</span>
-                <p>{item.detail}</p>
+                <span className="metric-label">{localizedStats[index]?.label ?? item.label}</span>
+                <p>{localizedStats[index]?.detail ?? item.detail}</p>
               </article>
             ))}
           </div>
@@ -106,13 +108,18 @@ function HomePage() {
               ctaTo="/programs"
             />
           <div className="program-preview-grid">
-            {homepagePrograms.map((program) => (
+            {homepagePrograms.map((program, index) => (
               <article key={program.slug} className="feature-card">
-                <img src={program.image} alt={program.title} loading="lazy" decoding="async" />
+                <img
+                  src={program.image}
+                  alt={localizedPrograms[index]?.title ?? program.title}
+                  loading="lazy"
+                  decoding="async"
+                />
                 <div className="feature-card-body">
-                  <p className="program-tag">{program.subtitle}</p>
-                  <h3>{program.title}</h3>
-                  <p>{program.excerpt}</p>
+                  <p className="program-tag">{localizedPrograms[index]?.subtitle ?? program.subtitle}</p>
+                  <h3>{localizedPrograms[index]?.title ?? program.title}</h3>
+                  <p>{localizedPrograms[index]?.excerpt ?? program.excerpt}</p>
                   <Link to={`/programs/${program.slug}`} className="text-link">
                     {t('home.programLearnMore')}
                   </Link>
