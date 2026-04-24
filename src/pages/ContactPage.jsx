@@ -1,71 +1,70 @@
 import PageHero from '../components/PageHero';
 import NewsletterSection from '../components/NewsletterSection';
 import SectionIntro from '../components/SectionIntro';
+import { useLanguage } from '../context/LanguageContext';
 import usePageTitle from '../hooks/usePageTitle';
 import { siteContact } from '../siteData';
 
 function ContactPage() {
-  usePageTitle('Contact');
+  const { t } = useLanguage();
+  usePageTitle(t('contactPage.title'));
 
   const handleSubmit = (event) => {
     event.preventDefault();
     console.log('Contact form integration coming soon');
-    window.alert('Thank you for reaching out. Contact form integration is coming soon.');
+    window.alert(t('contactPage.thankYou'));
   };
 
   return (
     <main>
       <PageHero
-        eyebrow="Contact Us"
-        title="We would love to hear from you."
-        subtitle="Whether you want to partner, volunteer, donate, or learn more about the foundation, this page makes it easy to reach a real team."
+        eyebrow={t('contactPage.heroEyebrow')}
+        title={t('contactPage.heroTitle')}
+        subtitle={t('contactPage.heroSubtitle')}
         image="/media/outreach-school.jpeg"
       />
 
       <section className="section-space">
         <div className="container">
           <SectionIntro
-            eyebrow="Get In Touch"
-            title="Simple, direct ways to reach the foundation."
-            text="We welcome messages from supporters, partners, schools, media, and community members."
-            ctaLabel="Read more About Us"
+            eyebrow={t('contactPage.introEyebrow')}
+            title={t('contactPage.introTitle')}
+            text={t('contactPage.introText')}
+            ctaLabel={t('contactPage.readAbout')}
             ctaTo="/about"
           />
 
           <div className="contact-channel-grid">
             <article className="info-panel contact-channel-card">
-              <p className="program-tag">Office Address</p>
-              <h3>Visit or write to us</h3>
+              <p className="program-tag">{t('contactPage.officeTag')}</p>
+              <h3>{t('contactPage.officeTitle')}</h3>
               <p>{siteContact.address}</p>
-              <p className="micro-note">Office visits can be coordinated through phone, email, or WhatsApp.</p>
+              <p className="micro-note">{t('contactPage.officeNote')}</p>
             </article>
 
             <article className="info-panel contact-channel-card">
-              <p className="program-tag">Phone and Email</p>
-              <h3>Speak with the team</h3>
+              <p className="program-tag">{t('contactPage.phoneTag')}</p>
+              <h3>{t('contactPage.phoneTitle')}</h3>
               <p>
                 <a href={`tel:${siteContact.phone.replace(/\s+/g, '')}`}>{siteContact.phone}</a>
               </p>
               <p>
                 <a href={`mailto:${siteContact.email}`}>{siteContact.email}</a>
               </p>
-              <p className="micro-note">For partnerships, sponsorships, and media enquiries, email is recommended.</p>
+              <p className="micro-note">{t('contactPage.phoneNote')}</p>
             </article>
 
             <article className="info-panel contact-channel-card contact-whatsapp-card">
-              <p className="program-tag">WhatsApp</p>
-              <h3>Chat with us directly</h3>
-              <p>
-                If WhatsApp is easier for you, send us a message and we will respond as soon as
-                possible.
-              </p>
+              <p className="program-tag">{t('contactPage.whatsappTag')}</p>
+              <h3>{t('contactPage.whatsappTitle')}</h3>
+              <p>{t('contactPage.whatsappText')}</p>
               <a
                 href={siteContact.whatsapp}
                 className="button button-accent"
                 target="_blank"
                 rel="noreferrer"
               >
-                Start WhatsApp Chat
+                {t('contactPage.startWhatsapp')}
               </a>
             </article>
           </div>
@@ -76,33 +75,30 @@ function ContactPage() {
         <div className="container contact-page-grid">
           <div className="contact-details-panel">
             <SectionIntro
-              eyebrow="Contact Form"
-              title="Send us a message."
-              text="Use the form for enquiries, partnership requests, media questions, or general messages."
-              ctaLabel="Read more on Get Involved"
+              eyebrow={t('contactPage.formEyebrow')}
+              title={t('contactPage.formTitle')}
+              text={t('contactPage.formText')}
+              ctaLabel={t('contactPage.readInvolved')}
               ctaTo="/get-involved"
             />
 
             <form className="event-form-panel contact-form-panel" onSubmit={handleSubmit}>
-              <input type="text" placeholder="Full name" aria-label="Full name" />
-              <input type="email" placeholder="Email address" aria-label="Email address" />
-              <input type="tel" placeholder="Phone number" aria-label="Phone number" />
-              <input type="text" placeholder="Subject" aria-label="Subject" />
-              <textarea rows="6" placeholder="Your message" aria-label="Your message" />
+              <input type="text" placeholder={t('getInvolvedPage.fullName')} aria-label={t('getInvolvedPage.fullName')} />
+              <input type="email" placeholder={t('getInvolvedPage.email')} aria-label={t('getInvolvedPage.email')} />
+              <input type="tel" placeholder={t('getInvolvedPage.phone')} aria-label={t('getInvolvedPage.phone')} />
+              <input type="text" placeholder={t('contactPage.subject')} aria-label={t('contactPage.subject')} />
+              <textarea rows="6" placeholder={t('contactPage.yourMessage')} aria-label={t('contactPage.yourMessage')} />
               <button type="submit" className="button button-accent">
-                Send Message
+                {t('contactPage.sendMessage')}
               </button>
-              <p className="micro-note">
-                This form is currently a placeholder and will be connected to the foundation&apos;s
-                email workflow soon.
-              </p>
+              <p className="micro-note">{t('contactPage.formNote')}</p>
             </form>
           </div>
 
           <div className="contact-aside-stack">
             <article className="info-panel">
-              <p className="program-tag">Office Information</p>
-              <h2>Contact details</h2>
+              <p className="program-tag">{t('contactPage.officeInfoTag')}</p>
+              <h2>{t('contactPage.officeInfoTitle')}</h2>
               <p>{siteContact.address}</p>
               <p>
                 Phone: <a href={`tel:${siteContact.phone.replace(/\s+/g, '')}`}>{siteContact.phone}</a>
@@ -113,19 +109,16 @@ function ContactPage() {
             </article>
 
             <article className="info-panel">
-              <p className="program-tag">Response</p>
-              <h2>We aim to respond clearly and promptly.</h2>
-              <p>
-                For partnership, sponsorship, and program-related enquiries, please include as much
-                detail as possible so we can direct your message appropriately.
-              </p>
+              <p className="program-tag">{t('contactPage.responseTag')}</p>
+              <h2>{t('contactPage.responseTitle')}</h2>
+              <p>{t('contactPage.responseText')}</p>
               <a
                 href={siteContact.whatsapp}
                 className="button button-ghost"
                 target="_blank"
                 rel="noreferrer"
               >
-                Chat on WhatsApp
+                {t('contactPage.chatWhatsapp')}
               </a>
             </article>
           </div>
@@ -135,14 +128,14 @@ function ContactPage() {
       <section className="section-space">
         <div className="container">
           <SectionIntro
-            eyebrow="Find Us"
-            title="Location map"
-            text="Use the map below as a placeholder reference for the foundation office."
+            eyebrow={t('contactPage.findUsEyebrow')}
+            title={t('contactPage.findUsTitle')}
+            text={t('contactPage.findUsText')}
           />
           <div className="map-panel contact-map-panel">
             <iframe
               src={siteContact.mapEmbed}
-              title="Kevin Nambam Ninmol Foundation office location"
+              title={t('contactPage.mapTitle')}
               loading="lazy"
               referrerPolicy="no-referrer-when-downgrade"
             />

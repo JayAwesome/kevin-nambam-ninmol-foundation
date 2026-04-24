@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom';
 import PageHero from '../components/PageHero';
 import SectionIntro from '../components/SectionIntro';
+import { useLanguage } from '../context/LanguageContext';
 import usePageTitle from '../hooks/usePageTitle';
 import {
   aboutStory,
@@ -12,14 +13,15 @@ import {
 } from '../siteData';
 
 function AboutPage() {
-  usePageTitle('About');
+  const { t } = useLanguage();
+  usePageTitle(t('aboutPage.title'));
 
   return (
     <main>
       <PageHero
-        eyebrow="About Us"
-        title="About Us"
-        subtitle="Our story, identity, and commitment to youth development."
+        eyebrow={t('aboutPage.heroEyebrow')}
+        title={t('aboutPage.heroTitle')}
+        subtitle={t('aboutPage.heroSubtitle')}
         image="/media/founder-national.jpeg"
       />
 
@@ -27,8 +29,8 @@ function AboutPage() {
         <div className="container split-panel">
           <div>
             <SectionIntro
-              eyebrow="Founder&apos;s Story"
-              title="Founder&apos;s Story"
+              eyebrow={t('aboutPage.storyEyebrow')}
+              title={t('aboutPage.storyTitle')}
               text={aboutStory[0]}
             />
             <div className="stacked-copy">
@@ -37,7 +39,7 @@ function AboutPage() {
               ))}
             </div>
             <blockquote className="about-story-quote">
-              <p>"Your beginning does not determine your end."</p>
+              <p>"{t('aboutPage.quote')}"</p>
             </blockquote>
           </div>
 
@@ -56,11 +58,11 @@ function AboutPage() {
       <section className="section-space section-alt">
         <div className="container">
           <SectionIntro
-            eyebrow="Our Mission"
-            title="Our Mission"
-            text="The mission defines why the foundation exists and how it serves young people."
+            eyebrow={t('aboutPage.missionEyebrow')}
+            title={t('aboutPage.missionTitle')}
+            text={t('aboutPage.missionText')}
             centered
-            ctaLabel="Read More on Programs"
+            ctaLabel={t('aboutPage.readPrograms')}
             ctaTo="/programs"
           />
           <article className="mission-highlight-panel">
@@ -72,9 +74,9 @@ function AboutPage() {
       <section className="section-space">
         <div className="container">
           <SectionIntro
-            eyebrow="Our Goals"
-            title="Our Goals"
-            text="These priorities shape the kind of change the foundation is working toward."
+            eyebrow={t('aboutPage.goalsEyebrow')}
+            title={t('aboutPage.goalsTitle')}
+            text={t('aboutPage.goalsText')}
             centered
           />
           <div className="values-grid">
@@ -94,9 +96,9 @@ function AboutPage() {
       <section className="section-space section-alt">
         <div className="container">
           <SectionIntro
-            eyebrow="Our Objectives"
-            title="Our Objectives"
-            text="These objectives keep the work focused, practical, and measurable."
+            eyebrow={t('aboutPage.objectivesEyebrow')}
+            title={t('aboutPage.objectivesTitle')}
+            text={t('aboutPage.objectivesText')}
           />
           <div className="objectives-panel">
             <ol className="objectives-list">
@@ -116,11 +118,11 @@ function AboutPage() {
       <section className="section-space">
         <div className="container dual-card-grid">
           <article className="info-panel">
-            <p className="program-tag">Vision</p>
+            <p className="program-tag">{t('aboutPage.visionTag')}</p>
             <h2>{visionMission.vision}</h2>
           </article>
           <article className="info-panel">
-            <p className="program-tag">Founder&apos;s Message</p>
+            <p className="program-tag">{t('aboutPage.founderMessageTag')}</p>
             <p className="detail-copy">{founderMessage}</p>
           </article>
         </div>
@@ -129,11 +131,11 @@ function AboutPage() {
       <section className="section-space">
         <div className="container">
           <SectionIntro
-            eyebrow="Leadership"
-            title="Leadership and stewardship"
-            text="The foundation is led with a commitment to service, credibility, and responsible community impact."
+            eyebrow={t('aboutPage.leadershipEyebrow')}
+            title={t('aboutPage.leadershipTitle')}
+            text={t('aboutPage.leadershipText')}
             centered
-            ctaLabel="Read More on Leadership"
+            ctaLabel={t('aboutPage.readLeadership')}
             ctaTo="/leadership-governance"
           />
           <div className="team-grid">
@@ -153,16 +155,13 @@ function AboutPage() {
       <section className="section-space section-accent-band">
         <div className="container cta-band">
           <div>
-            <p className="eyebrow">Next Step</p>
-            <h2>See how the foundation turns its mission into practical programs</h2>
-            <p>
-              Explore the program areas to understand what the foundation does on the ground and
-              how support translates into real opportunities for young people.
-            </p>
+            <p className="eyebrow">{t('aboutPage.nextEyebrow')}</p>
+            <h2>{t('aboutPage.nextTitle')}</h2>
+            <p>{t('aboutPage.nextText')}</p>
           </div>
           <div className="cta-band-actions">
             <Link to="/programs" className="button button-accent">
-              View Programs
+              {t('aboutPage.viewPrograms')}
             </Link>
           </div>
         </div>

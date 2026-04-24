@@ -68,7 +68,7 @@ function DonatePage() {
       <PageHero
         eyebrow={t('donatePage.heroEyebrow')}
         title={t('donatePage.heroTitle')}
-        subtitle="Support the work through clear, responsible giving."
+        subtitle={t('donatePage.subtitle')}
         image="/media/program-certificate.jpeg"
       />
 
@@ -78,8 +78,8 @@ function DonatePage() {
             <SectionIntro
               eyebrow={t('donatePage.giveEyebrow')}
               title={t('donatePage.giveTitle')}
-              text="Choose an amount, select a giving frequency, and support the foundation with confidence."
-              ctaLabel="See Impact"
+              text={t('donatePage.chooseText')}
+              ctaLabel={t('ui.seeImpact')}
               ctaTo="/impact"
             />
 
@@ -120,11 +120,8 @@ function DonatePage() {
             </div>
 
             <div className="donation-tier-intro">
-              <p className="program-tag">What your gift makes possible</p>
-              <p>
-                Each amount below is linked to a practical outcome so donors can understand what
-                their support helps make possible.
-              </p>
+              <p className="program-tag">{t('donatePage.impactIntroTag')}</p>
+              <p>{t('donatePage.impactIntroText')}</p>
             </div>
 
             <div className="donation-preset-grid donation-preset-grid-large">
@@ -165,8 +162,7 @@ function DonatePage() {
             </button>
 
             <p className="donation-cta-copy">
-              Give today to help more young people access guidance, confidence, and practical
-              opportunity through the foundation&apos;s work.
+              {t('donatePage.ctaCopy')}
             </p>
 
             <p className="currency-conversion-note">
@@ -177,10 +173,7 @@ function DonatePage() {
             <div className="secure-payment-box">
               <strong>{t('donatePage.secureTitle')}</strong>
               <p>{t('donatePage.secureText')}</p>
-              <p className="micro-note">
-                Every contribution is handled with the intention of supporting mission-aligned
-                youth programs, education support, and accountable program delivery.
-              </p>
+              <p className="micro-note">{t('donatePage.secureNote')}</p>
               <div className="trust-badge-row">
                 {donationTrustSignals.map((item) => (
                   <span key={item} className="trust-badge">
@@ -193,17 +186,13 @@ function DonatePage() {
 
           <div className="donation-side-stack">
             <article className="info-panel">
-              <p className="program-tag">Fund Use</p>
-              <h2>Where your support goes</h2>
-              <p>Every contribution is directed toward youth programs, education support, and responsible delivery.</p>
+              <p className="program-tag">{t('donatePage.fundUseTag')}</p>
+              <h2>{t('donatePage.fundUseTitle')}</h2>
+              <p>{t('donatePage.fundUseText')}</p>
               <p className="donation-fund-note">
-                Donations are intended for mission-aligned activities that directly support young
-                people and the safe delivery of programs.
+                {t('donatePage.fundUseNote')}
               </p>
-              <p className="micro-note">
-                Funds are allocated to direct program delivery, education support, and the basic
-                coordination required to run activities responsibly.
-              </p>
+              <p className="micro-note">{t('donatePage.fundUseMicro')}</p>
               <div className="donation-breakdown-list">
                 {donationBreakdown.map((item) => (
                   <div key={item.title} className="donation-breakdown-item">
@@ -220,11 +209,9 @@ function DonatePage() {
             <article className="info-panel">
               <p className="program-tag">{t('donatePage.donorEyebrow')}</p>
               <h2>{t('donatePage.donorTitle')}</h2>
-              <p>Giving is designed to be simple, secure, and clear for both local and international supporters.</p>
+              <p>{t('donatePage.donorIntro')}</p>
               <p className="donor-reassurance">{t('donatePage.donorReassurance')}</p>
-              <p className="donation-assurance">
-                Every contribution is used responsibly to create measurable impact.
-              </p>
+              <p className="donation-assurance">{t('donatePage.donorAssurance')}</p>
               <p className="micro-note">{t('donatePage.paymentNote')}</p>
               <ul className="opportunity-list">
                 {internationalPaymentOptions.map((item) => (

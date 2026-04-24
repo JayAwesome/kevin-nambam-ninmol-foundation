@@ -21,11 +21,11 @@ function HomePage() {
             <h1>{t('home.heroTitle')}</h1>
             <p className="home-hero-text">{t('home.heroText')}</p>
             <p className="home-hero-support">
-              The foundation helps young people grow through basketball, education support, and mentorship.
+              {t('home.heroSupport')}
             </p>
             <div className="hero-actions">
               <Link to="/about" className="button button-accent">
-                Learn About Us
+                {t('home.aboutCta')}
               </Link>
             </div>
           </div>
@@ -38,7 +38,7 @@ function HomePage() {
             />
             <div className="home-hero-badge">
               <strong>Fear No Fear</strong>
-              <p>Helping young people move from limitation to opportunity.</p>
+              <p>{t('home.trustBody')}</p>
             </div>
           </div>
         </div>
@@ -49,8 +49,8 @@ function HomePage() {
           <SectionIntro
             eyebrow={t('home.impactEyebrow')}
             title={t('home.impactTitle')}
-            text="A quick snapshot of the foundation's reach, delivery, and community presence."
-            ctaLabel="See Impact"
+            text={t('home.impactText')}
+            ctaLabel={t('ui.seeImpact')}
             ctaTo="/impact"
           />
           <div className="metric-grid">
@@ -74,16 +74,13 @@ function HomePage() {
             <SectionIntro
               eyebrow={t('home.aboutEyebrow')}
               title={t('home.aboutTitle')}
-              text="A brief introduction to who we are and why this work exists."
-              ctaLabel="Read More"
+              text={t('home.aboutText')}
+              ctaLabel={t('ui.readMore')}
               ctaTo="/about"
             />
-            <p className="detail-copy">
-              The foundation uses sport, education support, and mentoring to help young people
-              build confidence, make positive choices, and access opportunity.
-            </p>
+            <p className="detail-copy">{t('home.aboutCopy')}</p>
             <Link to="/about" className="text-link">
-              Read more About Us
+              {t('home.aboutCta')}
             </Link>
           </div>
 
@@ -104,8 +101,8 @@ function HomePage() {
             <SectionIntro
               eyebrow={t('home.programsEyebrow')}
               title={t('home.programsTitle')}
-              text="A quick look at the foundation's main program areas."
-              ctaLabel="Read More"
+              text={t('home.programsText')}
+              ctaLabel={t('ui.readMore')}
               ctaTo="/programs"
             />
           <div className="program-preview-grid">
@@ -125,7 +122,7 @@ function HomePage() {
           </div>
           <div className="section-cta-center">
             <Link to="/programs" className="text-link">
-              Read more on Programs
+              {t('home.programsCta')}
             </Link>
           </div>
         </div>

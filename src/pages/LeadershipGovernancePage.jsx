@@ -1,27 +1,29 @@
 import PageHero from '../components/PageHero';
 import NewsletterSection from '../components/NewsletterSection';
 import SectionIntro from '../components/SectionIntro';
+import { useLanguage } from '../context/LanguageContext';
 import usePageTitle from '../hooks/usePageTitle';
 import { boardOfTrustees, governanceStatement, managementProfiles } from '../siteData';
 
 function LeadershipGovernancePage() {
-  usePageTitle('Leadership & Governance');
+  const { t } = useLanguage();
+  usePageTitle(t('leadershipPage.title'));
 
   return (
     <main>
       <PageHero
-        eyebrow="Leadership & Governance"
-        title="Leadership and governance structured for trust and accountability."
-        subtitle="Meet the people and structures responsible for oversight and delivery."
+        eyebrow={t('leadershipPage.heroEyebrow')}
+        title={t('leadershipPage.heroTitle')}
+        subtitle={t('leadershipPage.heroSubtitle')}
         image="/media/founder-national.jpeg"
       />
 
       <section className="section-space">
         <div className="container">
           <SectionIntro
-            eyebrow="Board of Trustees"
-            title="Board of Trustees"
-            text="The board provides oversight, stewardship, and high-level guidance."
+            eyebrow={t('leadershipPage.boardEyebrow')}
+            title={t('leadershipPage.boardTitle')}
+            text={t('leadershipPage.boardText')}
             centered
           />
           <div className="team-grid">
@@ -42,9 +44,9 @@ function LeadershipGovernancePage() {
       <section className="section-space section-alt">
         <div className="container">
           <SectionIntro
-            eyebrow="Management Team"
-            title="Management team"
-            text="The management team supports implementation, coordination, and delivery."
+            eyebrow={t('leadershipPage.managementEyebrow')}
+            title={t('leadershipPage.managementTitle')}
+            text={t('leadershipPage.managementText')}
             centered
           />
           <div className="team-grid">
@@ -65,9 +67,9 @@ function LeadershipGovernancePage() {
       <section className="section-space">
         <div className="container">
           <SectionIntro
-            eyebrow="Governance Statement"
-            title="How decisions are made"
-            text="Decision-making is guided by mission alignment, accountability, and transparent stewardship."
+            eyebrow={t('leadershipPage.governanceEyebrow')}
+            title={t('leadershipPage.governanceTitle')}
+            text={t('leadershipPage.governanceText')}
           />
           <div className="objectives-panel">
             <ol className="objectives-list">

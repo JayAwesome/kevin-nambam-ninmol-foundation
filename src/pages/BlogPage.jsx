@@ -1,27 +1,29 @@
 import PageHero from '../components/PageHero';
 import NewsletterSection from '../components/NewsletterSection';
 import SectionIntro from '../components/SectionIntro';
+import { useLanguage } from '../context/LanguageContext';
 import usePageTitle from '../hooks/usePageTitle';
 import { blogPosts } from '../siteData';
 
 function BlogPage() {
-  usePageTitle('News');
+  const { t } = useLanguage();
+  usePageTitle(t('newsPage.title'));
 
   return (
     <main>
       <PageHero
-        eyebrow="News and Stories"
-        title="Articles, updates, and thought leadership."
-        subtitle="Short updates and stories from the foundation's work."
+        eyebrow={t('newsPage.heroEyebrow')}
+        title={t('newsPage.heroTitle')}
+        subtitle={t('newsPage.heroSubtitle')}
         image="/media/community-group.jpeg"
       />
 
       <section className="section-space">
         <div className="container">
           <SectionIntro
-            eyebrow="Blog and Updates"
-            title="Recent news and updates"
-            text="Use this page to follow stories, field updates, and foundation news."
+            eyebrow={t('newsPage.introEyebrow')}
+            title={t('newsPage.introTitle')}
+            text={t('newsPage.introText')}
             centered
           />
           <div className="news-grid">

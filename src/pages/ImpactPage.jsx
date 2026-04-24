@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom';
 import PageHero from '../components/PageHero';
 import SectionIntro from '../components/SectionIntro';
+import { useLanguage } from '../context/LanguageContext';
 import usePageTitle from '../hooks/usePageTitle';
 import {
   caseStudies,
@@ -13,25 +14,26 @@ import {
 } from '../siteData';
 
 function ImpactPage() {
-  usePageTitle('Impact');
+  const { t } = useLanguage();
+  usePageTitle(t('impactPage.title'));
 
   return (
     <main>
       <PageHero
-        eyebrow="Impact"
-        title="Impact that is visible, honest, and community-rooted."
-        subtitle="This page focuses on results, evidence, and the visible outcomes of the foundation's work."
+        eyebrow={t('impactPage.heroEyebrow')}
+        title={t('impactPage.heroTitle')}
+        subtitle={t('impactPage.heroSubtitle')}
         image="/media/outreach-school.jpeg"
       />
 
       <section className="section-space">
         <div className="container">
           <SectionIntro
-            eyebrow="Our Reach"
-            title="Measurable indicators of reach and program delivery."
-            text="These figures show the scale of current youth engagement, community reach, and program delivery."
+            eyebrow={t('impactPage.reachEyebrow')}
+            title={t('impactPage.reachTitle')}
+            text={t('impactPage.reachText')}
             centered
-            ctaLabel="Support This Impact"
+            ctaLabel={t('impactPage.supportImpact')}
             ctaTo="/donate"
           />
           <div className="impact-data-layout">
@@ -45,8 +47,8 @@ function ImpactPage() {
               ))}
             </div>
             <article className="impact-chart-panel">
-              <p className="program-tag">Evidence Snapshot</p>
-              <h3>Visual overview of current reach and delivery</h3>
+              <p className="program-tag">{t('impactPage.evidenceTag')}</p>
+              <h3>{t('impactPage.evidenceTitle')}</h3>
               <div className="impact-chart-list">
                 {impactMetrics.map((item) => (
                   <div key={item.label} className="impact-chart-row">
@@ -68,9 +70,9 @@ function ImpactPage() {
       <section className="section-space section-alt">
         <div className="container">
           <SectionIntro
-            eyebrow="What Changed"
-            title="Outcome areas that show how participation is translating into change."
-            text="Beyond the numbers, the foundation looks for visible changes in confidence, participation, and decision-making."
+            eyebrow={t('impactPage.outcomesEyebrow')}
+            title={t('impactPage.outcomesTitle')}
+            text={t('impactPage.outcomesText')}
             centered
           />
           <div className="impact-outcomes-grid">
@@ -87,9 +89,9 @@ function ImpactPage() {
       <section className="section-space">
         <div className="container">
           <SectionIntro
-            eyebrow="Case Studies"
-            title="Short stories that help explain the change behind the numbers."
-            text="These stories show how support, encouragement, and structure can shift a young person's outlook."
+            eyebrow={t('impactPage.caseEyebrow')}
+            title={t('impactPage.caseTitle')}
+            text={t('impactPage.caseText')}
             centered
           />
           <div className="case-study-grid">
@@ -106,9 +108,9 @@ function ImpactPage() {
       <section className="section-space section-alt">
         <div className="container">
           <SectionIntro
-            eyebrow="What Has Changed"
-            title="What has changed"
-            text="These before-and-after examples show the kind of progress the foundation is working to support."
+            eyebrow={t('impactPage.changedEyebrow')}
+            title={t('impactPage.changedTitle')}
+            text={t('impactPage.changedText')}
             centered
           />
           <div className="transformation-grid">
@@ -117,11 +119,11 @@ function ImpactPage() {
                 <h3>{item.title}</h3>
                 <div className="transformation-columns">
                   <div>
-                    <p className="program-tag">Before</p>
+                    <p className="program-tag">{t('impactPage.before')}</p>
                     <p>{item.before}</p>
                   </div>
                   <div>
-                    <p className="program-tag">What changed</p>
+                    <p className="program-tag">{t('impactPage.after')}</p>
                     <p>{item.after}</p>
                   </div>
                 </div>
@@ -134,11 +136,11 @@ function ImpactPage() {
       <section className="section-space section-alt">
         <div className="container">
           <SectionIntro
-            eyebrow="Photo and Video Gallery"
-            title="Real photos and videos from activities"
-            text="These images and clips show the foundation's work in real community and youth settings."
+            eyebrow={t('impactPage.galleryEyebrow')}
+            title={t('impactPage.galleryTitle')}
+            text={t('impactPage.galleryText')}
             centered
-            ctaLabel="Read More on Donate"
+            ctaLabel={t('impactPage.readDonate')}
             ctaTo="/donate"
           />
           <div className="gallery-grid">
@@ -170,9 +172,9 @@ function ImpactPage() {
       <section className="section-space">
         <div className="container">
           <SectionIntro
-            eyebrow="Reports & Documents"
-            title="Reporting materials that support professionalism."
-            text="These placeholders show the reporting structure used for annual communication, fund summaries, and program documentation."
+            eyebrow={t('impactPage.reportsEyebrow')}
+            title={t('impactPage.reportsTitle')}
+            text={t('impactPage.reportsText')}
             centered
           />
           <div className="reports-grid">
@@ -193,7 +195,7 @@ function ImpactPage() {
                     window.alert(`Download placeholder for "${report.title}"`);
                   }}
                 >
-                  Download Report Placeholder
+                  {t('impactPage.downloadPlaceholder')}
                 </button>
               </article>
             ))}
@@ -204,16 +206,13 @@ function ImpactPage() {
       <section className="section-space section-accent-band">
         <div className="container cta-band">
           <div>
-            <p className="eyebrow">Next Step</p>
-            <h2>Help turn measurable impact into sustained support</h2>
-            <p>
-              If this work aligns with your values, the Donate page shows giving options, fund-use
-              priorities, and clear ways to support the foundation responsibly.
-            </p>
+            <p className="eyebrow">{t('impactPage.nextEyebrow')}</p>
+            <h2>{t('impactPage.nextTitle')}</h2>
+            <p>{t('impactPage.nextText')}</p>
           </div>
           <div className="cta-band-actions">
             <Link to="/donate" className="button button-accent">
-              Donate
+              {t('impactPage.donate')}
             </Link>
           </div>
         </div>
