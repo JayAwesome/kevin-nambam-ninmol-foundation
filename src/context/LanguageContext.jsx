@@ -969,7 +969,258 @@ const ig = {
   },
 };
 
-const translations = { en, fr, ha, yo, ig };
+const bankAccountCopy = {
+  en: {
+    secureBankEyebrow: 'Donate Securely',
+    bankHeading: 'Support the Kevin Nambam Ninmol Foundation',
+    bankIntro:
+      'Your donation helps us provide educational support, healthcare assistance, humanitarian relief, community development, and opportunities for vulnerable individuals and families.',
+    bankChoice: 'Choose your preferred currency below.',
+    bankTabLabel: 'Foundation donation account currencies',
+    bankSelectedLabel: 'Selected account',
+    bankAllAccounts: 'All foundation bank accounts',
+    bankCurrencyLabel: 'Currency',
+    bankAccountNumberLabel: 'Account Number',
+    copyAccountNumber: 'Copy Account Number',
+    copiedButton: 'Copied',
+    copySuccess: 'Account number copied successfully.',
+    copyUnavailable: 'Copy was not available. Please copy the number manually.',
+    bankTrustLabel: 'Foundation donation trust badges',
+    bankNotice:
+      'Every contribution helps us expand our impact and transform lives through sustainable humanitarian initiatives, education, healthcare support, and community empowerment.',
+    foundationBankBadges: [
+      'Secure Donation Badge',
+      'Transparent Financial Stewardship Badge',
+      'Global Impact Badge',
+      'Registered Nonprofit Organization Badge',
+    ],
+    foundationBankAccounts: [
+      {
+        title: 'Nigerian Naira Account',
+        description: 'A trusted local transfer option for supporters giving in Nigerian naira.',
+        donorStyle: 'Best for local donors and community supporters in Nigeria.',
+      },
+      {
+        title: 'United States Dollar Account',
+        description: 'A clear international giving option for supporters donating in US dollars.',
+        donorStyle: 'Best for global donors, institutions, and diaspora supporters.',
+      },
+      {
+        title: 'Euro Account',
+        description: 'A professional giving option for European donors and partner organizations.',
+        donorStyle: 'Best for European supporters and institutional partners.',
+      },
+      {
+        title: 'British Pound Account',
+        description: 'A dedicated option for supporters and partners giving in pound sterling.',
+        donorStyle: 'Best for UK donors, churches, philanthropists, and partners.',
+      },
+    ],
+  },
+  fr: {
+    secureBankEyebrow: 'Don securise',
+    bankHeading: 'Soutenez la Kevin Nambam Ninmol Foundation',
+    bankIntro:
+      'Votre don nous aide a fournir un appui educatif, une assistance de sante, une aide humanitaire, le developpement communautaire et des opportunites aux personnes et familles vulnerables.',
+    bankChoice: 'Choisissez votre devise preferee ci-dessous.',
+    bankTabLabel: 'Devises des comptes de don de la fondation',
+    bankSelectedLabel: 'Compte selectionne',
+    bankAllAccounts: 'Tous les comptes bancaires de la fondation',
+    bankCurrencyLabel: 'Devise',
+    bankAccountNumberLabel: 'Numero de compte',
+    copyAccountNumber: 'Copier le numero de compte',
+    copiedButton: 'Copie',
+    copySuccess: 'Numero de compte copie avec succes.',
+    copyUnavailable: 'La copie nest pas disponible. Veuillez copier le numero manuellement.',
+    bankTrustLabel: 'Badges de confiance pour les dons',
+    bankNotice:
+      'Chaque contribution nous aide a elargir notre impact et a transformer des vies par des initiatives humanitaires durables, leducation, le soutien de sante et lempowerment communautaire.',
+    foundationBankBadges: [
+      'Badge de don securise',
+      'Badge de gestion financiere transparente',
+      'Badge dimpact mondial',
+      'Badge dorganisation a but non lucratif enregistree',
+    ],
+    foundationBankAccounts: [
+      {
+        title: 'Compte en naira nigerian',
+        description: 'Une option de virement local fiable pour les soutiens qui donnent en naira nigerian.',
+        donorStyle: 'Ideal pour les donateurs locaux et les soutiens communautaires au Nigeria.',
+      },
+      {
+        title: 'Compte en dollar americain',
+        description: 'Une option claire de don international pour les soutiens qui donnent en dollars americains.',
+        donorStyle: 'Ideal pour les donateurs mondiaux, les institutions et la diaspora.',
+      },
+      {
+        title: 'Compte en euro',
+        description: 'Une option professionnelle pour les donateurs europeens et les organisations partenaires.',
+        donorStyle: 'Ideal pour les soutiens europeens et les partenaires institutionnels.',
+      },
+      {
+        title: 'Compte en livre sterling',
+        description: 'Une option dediee aux soutiens et partenaires qui donnent en livres sterling.',
+        donorStyle: 'Ideal pour les donateurs du Royaume-Uni, les eglises, philanthropes et partenaires.',
+      },
+    ],
+  },
+  ha: {
+    secureBankEyebrow: 'Ba da gudummawa cikin tsaro',
+    bankHeading: 'Tallafa wa Kevin Nambam Ninmol Foundation',
+    bankIntro:
+      'Gudummawarka na taimaka mana wajen bayar da tallafin ilimi, taimakon lafiya, agajin jin kai, ci gaban al umma, da dama ga mutane da iyalai masu rauni.',
+    bankChoice: 'Zabi kudin da kake so a kasa.',
+    bankTabLabel: 'Kudaden asusun gudummawar gidauniya',
+    bankSelectedLabel: 'Asusun da aka zaba',
+    bankAllAccounts: 'Dukkan asusun bankin gidauniyar',
+    bankCurrencyLabel: 'Kudi',
+    bankAccountNumberLabel: 'Lambar asusu',
+    copyAccountNumber: 'Kwafi lambar asusu',
+    copiedButton: 'An kwafa',
+    copySuccess: 'An kwafi lambar asusu cikin nasara.',
+    copyUnavailable: 'Kwafi bai yiwu ba. Da fatan a kwafi lambar da hannu.',
+    bankTrustLabel: 'Alamomin amincewar gudummawa',
+    bankNotice:
+      'Kowace gudummawa na taimaka mana fadada tasiri da sauya rayuka ta ayyukan jin kai masu dorewa, ilimi, tallafin lafiya, da karfafa al umma.',
+    foundationBankBadges: [
+      'Alamar gudummawa mai tsaro',
+      'Alamar kulawar kudi a bayyane',
+      'Alamar tasirin duniya',
+      'Alamar kungiya mai rijista',
+    ],
+    foundationBankAccounts: [
+      {
+        title: 'Asusun Nigerian Naira',
+        description: 'Hanyar tura kudi ta gida mai aminci ga masu tallafi da suke bayarwa da naira.',
+        donorStyle: 'Ya dace da masu bayarwa na gida da masu tallafin al umma a Nigeria.',
+      },
+      {
+        title: 'Asusun Dollar Amurka',
+        description: 'Hanyar bayarwa ta kasa da kasa ga masu tallafi da suke bayarwa da dollar Amurka.',
+        donorStyle: 'Ya dace da masu bayarwa na duniya, cibiyoyi, da yan diaspora.',
+      },
+      {
+        title: 'Asusun Euro',
+        description: 'Hanyar bayarwa ta kwararru ga masu bayarwa daga Turai da kungiyoyin hadin gwiwa.',
+        donorStyle: 'Ya dace da masu tallafi daga Turai da abokan hulda na hukumomi.',
+      },
+      {
+        title: 'Asusun Pound Britain',
+        description: 'Hanya ta musamman ga masu tallafi da abokan hulda da suke bayarwa da pound.',
+        donorStyle: 'Ya dace da masu bayarwa daga UK, coci-coci, masu taimako, da abokan hulda.',
+      },
+    ],
+  },
+  yo: {
+    secureBankEyebrow: 'Iranlowo to ni aabo',
+    bankHeading: 'Se atileyin fun Kevin Nambam Ninmol Foundation',
+    bankIntro:
+      'Iranlowo re n ran wa lowo lati pese atileyin eko, iranlowo ilera, iranlowo omoniyan, idagbasoke agbegbe, ati anfaani fun awon eniyan ati idile to nilo iranlowo.',
+    bankChoice: 'Yan owo ti o fe lo ni isale.',
+    bankTabLabel: 'Awon owo fun akanti iranlowo idasile',
+    bankSelectedLabel: 'Akanti ti a yan',
+    bankAllAccounts: 'Gbogbo awon akanti banki idasile',
+    bankCurrencyLabel: 'Owo',
+    bankAccountNumberLabel: 'Nomba akanti',
+    copyAccountNumber: 'Da nomba akanti ko',
+    copiedButton: 'Ti da ko',
+    copySuccess: 'Nomba akanti ti da ko ni aseye.',
+    copyUnavailable: 'Didako ko sise. Jowo da nomba naa ko pelu owo.',
+    bankTrustLabel: 'Awon ami igbekele fun iranlowo',
+    bankNotice:
+      'Gbogbo iranlowo n ran wa lowo lati fa ipa wa sii ati yi aye pada nipase awon igbese omoniyan to duro, eko, atileyin ilera, ati agbara agbegbe.',
+    foundationBankBadges: [
+      'Ami iranlowo to ni aabo',
+      'Ami itoju owo to han gbangba',
+      'Ami ipa kariaye',
+      'Ami ajo ti a foruko sile',
+    ],
+    foundationBankAccounts: [
+      {
+        title: 'Akanti Naira Naijiria',
+        description: 'Ona gbigbe owo agbegbe to ni igbekele fun awon ti n fun ni naira.',
+        donorStyle: 'O dara fun awon oluranlowo inu Nigeria ati awon alatilẹyin agbegbe.',
+      },
+      {
+        title: 'Akanti Dollar Amerika',
+        description: 'Ona iranlowo kariaye to yege fun awon ti n fun ni dollar Amerika.',
+        donorStyle: 'O dara fun awon oluranlowo kariaye, ajo, ati awon ara ilu okeere.',
+      },
+      {
+        title: 'Akanti Euro',
+        description: 'Ona iranlowo amose fun awon oluranlowo Europe ati awon ajo alabaṣepọ.',
+        donorStyle: 'O dara fun awon alatilẹyin Europe ati awon alabaṣepọ ajo.',
+      },
+      {
+        title: 'Akanti Pound Britain',
+        description: 'Ona pataki fun awon alatilẹyin ati alabaṣepọ ti n fun ni pound sterling.',
+        donorStyle: 'O dara fun awon oluranlowo UK, ijo, oninure, ati alabaṣepọ.',
+      },
+    ],
+  },
+  ig: {
+    secureBankEyebrow: 'Nye onyinye n nchebe',
+    bankHeading: 'Kwado Kevin Nambam Ninmol Foundation',
+    bankIntro:
+      'Onyinye gi na enyere anyi aka inye nkwado akwukwo, enyemaka ahu ike, enyemaka mmadu, mmepe obodo, na ohere nye ndi mmadu na ezinulo choro nkwado.',
+    bankChoice: 'Horo ego kacha adabara gi n okpuru.',
+    bankTabLabel: 'Udi ego maka akauntu onyinye ntolala',
+    bankSelectedLabel: 'Akauntu ahoputara',
+    bankAllAccounts: 'Akauntu banki niile nke ntolala',
+    bankCurrencyLabel: 'Ego',
+    bankAccountNumberLabel: 'Nomba akauntu',
+    copyAccountNumber: 'Detuo nomba akauntu',
+    copiedButton: 'Edetuola',
+    copySuccess: 'Edetuola nomba akauntu nke oma.',
+    copyUnavailable: 'Detuo akpaghị aka adighi. Biko detuo nomba ahu n aka.',
+    bankTrustLabel: 'Akara ntukwasi obi maka onyinye',
+    bankNotice:
+      'Onyinye obula na enyere anyi aka igbasa mmetuta ma gbanwee ndu site na oru enyemaka mmadu na adigide, akwukwo, nkwado ahu ike, na iwulite obodo.',
+    foundationBankBadges: [
+      'Akara onyinye echekwara',
+      'Akara nlekota ego doro anya',
+      'Akara mmetuta uwa niile',
+      'Akara otu nonprofit edebanyere aha',
+    ],
+    foundationBankAccounts: [
+      {
+        title: 'Akauntu Naira Nigeria',
+        description: 'Uzo mbufe ego obodo nwere ntukwasi obi maka ndi na enye onyinye na naira.',
+        donorStyle: 'Kwesiri ndi onyinye obodo na ndi nkwado obodo na Nigeria.',
+      },
+      {
+        title: 'Akauntu Dollar America',
+        description: 'Uzo onyinye mba uwa maka ndi na enye onyinye na dollar America.',
+        donorStyle: 'Kwesiri ndi onyinye uwa niile, ulo oru, na diaspora.',
+      },
+      {
+        title: 'Akauntu Euro',
+        description: 'Uzo onyinye di nma maka ndi Europe na ndi otu mmekorita.',
+        donorStyle: 'Kwesiri ndi nkwado Europe na ndi mmekorita ulo oru.',
+      },
+      {
+        title: 'Akauntu Pound Britain',
+        description: 'Uzo puru iche maka ndi nkwado na ndi mmekorita na enye na pound sterling.',
+        donorStyle: 'Kwesiri ndi UK, ulo uka, ndi ebere, na ndi mmekorita.',
+      },
+    ],
+  },
+};
+
+const baseTranslations = { en, fr, ha, yo, ig };
+
+const translations = Object.fromEntries(
+  Object.entries(baseTranslations).map(([languageCode, dictionary]) => [
+    languageCode,
+    {
+      ...dictionary,
+      donatePage: {
+        ...dictionary.donatePage,
+        ...bankAccountCopy[languageCode],
+      },
+    },
+  ]),
+);
 
 export const languageOptions = [
   { code: 'en', labelKey: 'ui.english' },

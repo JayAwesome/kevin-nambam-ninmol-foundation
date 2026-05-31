@@ -916,6 +916,37 @@ export const donationCurrencies = [
   },
 ];
 
+export const foundationBankAccounts = [
+  {
+    code: 'NGN',
+    accountNumber: '3003292343',
+    symbol: '\u20A6',
+    flag: '\uD83C\uDDF3\uD83C\uDDEC',
+    tone: 'ngn',
+  },
+  {
+    code: 'USD',
+    accountNumber: '3003292446',
+    symbol: '$',
+    flag: '\uD83C\uDDFA\uD83C\uDDF8',
+    tone: 'usd',
+  },
+  {
+    code: 'EUR',
+    accountNumber: '3003292642',
+    symbol: '\u20AC',
+    flag: '\uD83C\uDDEA\uD83C\uDDFA',
+    tone: 'eur',
+  },
+  {
+    code: 'GBP',
+    accountNumber: '3003292666',
+    symbol: '\u00A3',
+    flag: '\uD83C\uDDEC\uD83C\uDDE7',
+    tone: 'gbp',
+  },
+];
+
 export const donationBreakdown = [
   {
     title: 'Program delivery',
