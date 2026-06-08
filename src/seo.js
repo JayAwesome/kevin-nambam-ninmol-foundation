@@ -1,16 +1,18 @@
 import { programs, siteContact } from './siteData.js';
 
 export const siteUrl = 'https://kevinnanbamninmolfoundation.com.ng';
-export const siteName = 'Kevin NanBam Ninmol Foundation';
+export const siteName = 'Kevin Nambam Ninmol Foundation';
 export const defaultMetaDescription =
   'Fear No Fear – Empowering Youth Through Sports, Education & Opportunity.';
 export const defaultShareImage = '/media/founder-action.jpeg';
+const cleanMetaDescription =
+  'Fear No Fear - Empowering Youth Through Sports, Education & Opportunity.';
 
 const baseRouteMeta = [
   {
     path: '/',
     title: 'Kevin NanBam Ninmol Foundation | Fear No Fear',
-    description: defaultMetaDescription,
+    description: cleanMetaDescription,
     image: '/media/founder-action.jpeg',
   },
   {
@@ -19,20 +21,6 @@ const baseRouteMeta = [
     description:
       'Read the founder story, mission, vision, values, and youth development commitment behind Kevin NanBam Ninmol Foundation.',
     image: '/media/founder-national.jpeg',
-  },
-  {
-    path: '/leadership-governance',
-    title: 'Leadership and Governance | Kevin NanBam Ninmol Foundation',
-    description:
-      'Meet the leadership structure, governance commitments, and accountability practices guiding the foundation.',
-    image: '/media/founder-kids.jpeg',
-  },
-  {
-    path: '/policies-safeguarding',
-    title: 'Policies and Safeguarding | Kevin NanBam Ninmol Foundation',
-    description:
-      'Review child protection, code of conduct, transparency, accountability, and data privacy commitments.',
-    image: '/media/community-group.jpeg',
   },
   {
     path: '/programs',
@@ -57,31 +45,10 @@ const baseRouteMeta = [
   },
   {
     path: '/donate',
-    title: 'Donate | Kevin NanBam Ninmol Foundation',
+    title: 'Donate to Kevin Nambam Ninmol Foundation',
     description:
-      'Support Kevin NanBam Ninmol Foundation through NGN, USD, EUR, or GBP foundation bank accounts.',
+      'Use the GTBank NGN, USD, EUR, and GBP accounts to support Kevin Nambam Ninmol Foundation.',
     image: '/media/program-certificate.jpeg',
-  },
-  {
-    path: '/news',
-    title: 'News and Updates | Kevin NanBam Ninmol Foundation',
-    description:
-      'Read foundation news, activity updates, outreach stories, and reflections from youth development programs.',
-    image: '/media/latest-outreach.jpeg',
-  },
-  {
-    path: '/resources',
-    title: 'Resources | Kevin NanBam Ninmol Foundation',
-    description:
-      'Access foundation reports, financial summaries, news updates, publications, and partner documents.',
-    image: '/media/hero-community.jpeg',
-  },
-  {
-    path: '/events',
-    title: 'Events | Kevin NanBam Ninmol Foundation',
-    description:
-      'View upcoming clinics, workshops, outreach activities, and partner events connected to the foundation.',
-    image: '/media/girls-training.jpeg',
   },
   {
     path: '/contact',
@@ -137,7 +104,7 @@ export function buildStructuredData(pathname = '/') {
         name: siteName,
         alternateName: 'Fear No Fear',
         url: siteUrl,
-        description: defaultMetaDescription,
+        description: cleanMetaDescription,
         email: siteContact.email,
         telephone: siteContact.phone,
         foundingLocation: 'Jos, Plateau State, Nigeria',
@@ -152,7 +119,7 @@ export function buildStructuredData(pathname = '/') {
         },
         founder: {
           '@type': 'Person',
-          name: 'Kevin NanBam Ninmol',
+          name: 'Kevin Nambam Ninmol',
         },
         contactPoint: {
           '@type': 'ContactPoint',

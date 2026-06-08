@@ -3,12 +3,9 @@ export const navItems = [
   { labelKey: 'about', to: '/about' },
   { labelKey: 'programs', to: '/programs' },
   { labelKey: 'impact', to: '/impact' },
-  { labelKey: 'donate', to: '/donate' },
   { labelKey: 'getInvolved', to: '/get-involved' },
-  { labelKey: 'resources', to: '/resources' },
+  { labelKey: 'donate', to: '/donate' },
   { labelKey: 'contact', to: '/contact' },
-  { labelKey: 'leadership', to: '/leadership-governance' },
-  { labelKey: 'policies', to: '/policies-safeguarding' },
 ];
 
 export const siteContact = {

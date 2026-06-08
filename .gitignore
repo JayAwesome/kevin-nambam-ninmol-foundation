@@ -6,3 +6,10 @@ Thumbs.db
 .env
 .env.*
 .vite/
+uploads/
+public/uploads/
+dist.zip
+*.zip
+*.bak
+*.sql
+*.sqlite

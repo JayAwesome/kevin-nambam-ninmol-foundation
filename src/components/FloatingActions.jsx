@@ -2,6 +2,7 @@ import { useEffect, useMemo, useRef, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useLanguage } from '../context/LanguageContext';
 import { assistantTopics, faqs, siteContact } from '../siteData';
+import { sanitizePlainText } from '../utils/formSecurity';
 
 function FloatingActions() {
   const navigate = useNavigate();
@@ -142,7 +143,7 @@ function FloatingActions() {
   };
 
   const submitQuestion = (input, displayText = input) => {
-    const trimmed = input.trim();
+    const trimmed = sanitizePlainText(input, 220);
 
     if (!trimmed) {
       return;
@@ -251,6 +252,8 @@ function FloatingActions() {
               onChange={(event) => setQuery(event.target.value)}
               placeholder={t('floating.assistantInput')}
               aria-label={t('floating.assistantInputLabel')}
+              maxLength="220"
+              autoComplete="off"
             />
             <button type="submit">{t('floating.send')}</button>
           </form>

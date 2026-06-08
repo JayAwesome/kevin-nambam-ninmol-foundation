@@ -101,6 +101,8 @@ ${urls}
 async function writeRobotsTxt() {
   const robots = `User-agent: *
 Allow: /
+Disallow: /upload.php
+Disallow: /uploads/
 
 Sitemap: ${siteUrl}/sitemap.xml
 `;

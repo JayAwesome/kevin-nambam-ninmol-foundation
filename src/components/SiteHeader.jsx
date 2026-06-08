@@ -5,28 +5,27 @@ import { navItems } from '../siteData';
 
 const isBrowser = typeof window !== 'undefined';
 
+function getStoredTheme() {
+  if (!isBrowser) {
+    return 'light';
+  }
+
+  const savedTheme = window.localStorage.getItem('theme');
+  return savedTheme === 'dark' || savedTheme === 'light' ? savedTheme : 'light';
+}
+
 function SiteHeader() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const [isMoreOpen, setIsMoreOpen] = useState(false);
-  const [theme, setTheme] = useState(() =>
-    isBrowser ? window.localStorage.getItem('theme') || 'light' : 'light',
-  );
+  const [theme, setTheme] = useState(getStoredTheme);
   const themeTransitionTimeoutRef = useRef(null);
   const { language, setLanguage, t } = useLanguage();
   const location = useLocation();
-  const primaryNavItems = navItems.filter((item) =>
-    ['home', 'about', 'programs', 'impact', 'donate'].includes(item.labelKey),
-  );
-  const secondaryNavItems = navItems.filter(
-    (item) => !['home', 'about', 'programs', 'impact', 'donate'].includes(item.labelKey),
-  );
 
   const handleNavClick = () => {
     if (isBrowser) {
       window.scrollTo({ top: 0, behavior: 'smooth' });
     }
-    setIsMoreOpen(false);
   };
 
   useEffect(() => {
@@ -38,7 +37,6 @@ function SiteHeader() {
 
   useEffect(() => {
     setIsMenuOpen(false);
-    setIsMoreOpen(false);
   }, [location.pathname, location.hash]);
 
   useEffect(() => {
@@ -82,7 +80,7 @@ function SiteHeader() {
           className={`site-nav ${isMenuOpen ? 'site-nav-open' : ''}`}
           aria-label="Primary navigation"
         >
-          {primaryNavItems.map((item) => (
+          {navItems.map((item) => (
             <NavLink
               key={item.to}
               to={item.to}
@@ -92,28 +90,6 @@ function SiteHeader() {
               {t(`nav.${item.labelKey}`)}
             </NavLink>
           ))}
-          <div className={`more-nav ${isMoreOpen ? 'more-nav-open' : ''}`}>
-            <button
-              type="button"
-              className="more-nav-trigger"
-              aria-expanded={isMoreOpen}
-              onClick={() => setIsMoreOpen((current) => !current)}
-            >
-              {t('ui.more')}
-            </button>
-            <div className="more-nav-menu">
-              {secondaryNavItems.map((item) => (
-                <NavLink
-                  key={item.to}
-                  to={item.to}
-                  onClick={handleNavClick}
-                  className={({ isActive }) => (isActive ? 'nav-link-active' : undefined)}
-                >
-                  {t(`nav.${item.labelKey}`)}
-                </NavLink>
-              ))}
-            </div>
-          </div>
           <label className="language-toggle" aria-label="Language switcher">
             <span className="sr-only">{t('ui.language')}</span>
             <select value={language} onChange={(event) => setLanguage(event.target.value)}>
@@ -136,9 +112,6 @@ function SiteHeader() {
             </span>
             <span className="theme-toggle-label">{theme === 'dark' ? t('ui.lightMode') : t('ui.darkMode')}</span>
           </button>
-          <NavLink to="/donate" className="button button-accent header-donate" onClick={handleNavClick}>
-            {t('ui.donate')}
-          </NavLink>
         </nav>
       </div>
     </header>

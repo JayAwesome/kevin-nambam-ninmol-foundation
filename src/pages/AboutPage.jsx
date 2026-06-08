@@ -93,8 +93,6 @@ function AboutPage() {
             title="Led by lived experience and supported by a growing team."
             text="The foundation is structured around program delivery, partnership building, and responsible stewardship."
             centered
-            ctaLabel="View Governance"
-            ctaTo="/leadership-governance"
           />
           <div className="team-grid">
             {leadershipTeam.map((person) => (

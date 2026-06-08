@@ -1,13 +1,21 @@
+import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import PageHero from '../components/PageHero';
 import SectionIntro from '../components/SectionIntro';
 import { useLanguage } from '../context/LanguageContext';
 import usePageTitle from '../hooks/usePageTitle';
 import { sponsorOptions } from '../siteData';
+import {
+  isValidEmail,
+  sanitizeEmail,
+  sanitizePlainText,
+  validatePublicForm,
+} from '../utils/formSecurity';
 
 function GetInvolvedPage() {
   const { t } = useLanguage();
   usePageTitle(t('getInvolvedPage.title'));
+  const [formStartedAt, setFormStartedAt] = useState(() => Date.now());
 
   const showComingSoon = (message) => {
     console.log(message);
@@ -71,14 +79,82 @@ function GetInvolvedPage() {
               className="event-form-panel contact-form-panel"
               onSubmit={(event) => {
                 event.preventDefault();
+                const form = event.currentTarget;
+                const formData = new FormData(form);
+                const payload = {
+                  name: sanitizePlainText(formData.get('name'), 100),
+                  email: sanitizeEmail(formData.get('email')),
+                  phone: sanitizePlainText(formData.get('phone'), 30),
+                  interest: sanitizePlainText(formData.get('interest'), 140),
+                  message: sanitizePlainText(formData.get('message'), 1000),
+                };
+                const validation = validatePublicForm({
+                  values: payload,
+                  honeypot: sanitizePlainText(formData.get('website'), 100),
+                  startedAt: formStartedAt,
+                });
+
+                if (!validation.ok) {
+                  window.alert(validation.reason);
+                  return;
+                }
+
+                if (!payload.name || !isValidEmail(payload.email) || !payload.message) {
+                  window.alert('Please enter your name, a valid email address, and how you would like to help.');
+                  return;
+                }
+
+                form.reset();
+                setFormStartedAt(Date.now());
                 showComingSoon('Volunteer form integration coming soon.');
               }}
             >
-              <input type="text" placeholder="Full name" aria-label="Full name" />
-              <input type="email" placeholder="Email address" aria-label="Email address" />
-              <input type="tel" placeholder="Phone number" aria-label="Phone number" />
-              <input type="text" placeholder="Area of interest" aria-label="Area of interest" />
-              <textarea rows="5" placeholder="How would you like to help?" aria-label="How would you like to help?" />
+              <label className="form-honeypot">
+                Website
+                <input type="text" name="website" tabIndex="-1" autoComplete="off" />
+              </label>
+              <input
+                type="text"
+                name="name"
+                placeholder="Full name"
+                aria-label="Full name"
+                autoComplete="name"
+                maxLength="100"
+                required
+              />
+              <input
+                type="email"
+                name="email"
+                placeholder="Email address"
+                aria-label="Email address"
+                autoComplete="email"
+                maxLength="120"
+                required
+              />
+              <input
+                type="tel"
+                name="phone"
+                placeholder="Phone number"
+                aria-label="Phone number"
+                autoComplete="tel"
+                inputMode="tel"
+                maxLength="30"
+              />
+              <input
+                type="text"
+                name="interest"
+                placeholder="Area of interest"
+                aria-label="Area of interest"
+                maxLength="140"
+              />
+              <textarea
+                name="message"
+                rows="5"
+                placeholder="How would you like to help?"
+                aria-label="How would you like to help?"
+                maxLength="1000"
+                required
+              />
               <button type="submit" className="button button-accent">
                 Submit Volunteer Interest
               </button>

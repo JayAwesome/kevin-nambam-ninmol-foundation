@@ -1233,15 +1233,25 @@ export const languageOptions = [
 
 const LanguageContext = createContext(null);
 const isBrowser = typeof window !== 'undefined';
+const allowedLanguageCodes = new Set(languageOptions.map((option) => option.code));
 
 function getValue(obj, path) {
   return path.split('.').reduce((current, key) => current?.[key], obj);
 }
 
 export function LanguageProvider({ children }) {
-  const [language, setLanguage] = useState(() =>
-    isBrowser ? window.localStorage.getItem('language') || 'en' : 'en',
-  );
+  const [language, setLanguageState] = useState(() => {
+    if (!isBrowser) {
+      return 'en';
+    }
+
+    const savedLanguage = window.localStorage.getItem('language');
+    return allowedLanguageCodes.has(savedLanguage) ? savedLanguage : 'en';
+  });
+
+  const setLanguage = (nextLanguage) => {
+    setLanguageState(allowedLanguageCodes.has(nextLanguage) ? nextLanguage : 'en');
+  };
 
   useEffect(() => {
     if (!isBrowser) {

@@ -1,17 +1,52 @@
+import { useState } from 'react';
 import PageHero from '../components/PageHero';
 import NewsletterSection from '../components/NewsletterSection';
 import SectionIntro from '../components/SectionIntro';
 import { useLanguage } from '../context/LanguageContext';
 import usePageTitle from '../hooks/usePageTitle';
 import { siteContact } from '../siteData';
+import {
+  isValidEmail,
+  sanitizeEmail,
+  sanitizePlainText,
+  validatePublicForm,
+} from '../utils/formSecurity';
 
 function ContactPage() {
   const { t } = useLanguage();
   usePageTitle(t('contactPage.title'));
+  const [formStartedAt, setFormStartedAt] = useState(() => Date.now());
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    console.log('Contact form integration coming soon');
+    const form = event.currentTarget;
+    const formData = new FormData(form);
+    const payload = {
+      name: sanitizePlainText(formData.get('name'), 100),
+      email: sanitizeEmail(formData.get('email')),
+      phone: sanitizePlainText(formData.get('phone'), 30),
+      subject: sanitizePlainText(formData.get('subject'), 140),
+      message: sanitizePlainText(formData.get('message'), 1000),
+    };
+    const validation = validatePublicForm({
+      values: payload,
+      honeypot: sanitizePlainText(formData.get('website'), 100),
+      startedAt: formStartedAt,
+    });
+
+    if (!validation.ok) {
+      window.alert(validation.reason);
+      return;
+    }
+
+    if (!payload.name || !isValidEmail(payload.email) || !payload.message) {
+      window.alert('Please enter your name, a valid email address, and a message.');
+      return;
+    }
+
+    console.log('Contact form placeholder validated');
+    form.reset();
+    setFormStartedAt(Date.now());
     window.alert(t('contactPage.thankYou'));
   };
 
@@ -83,11 +118,52 @@ function ContactPage() {
             />
 
             <form className="event-form-panel contact-form-panel" onSubmit={handleSubmit}>
-              <input type="text" placeholder={t('getInvolvedPage.fullName')} aria-label={t('getInvolvedPage.fullName')} />
-              <input type="email" placeholder={t('getInvolvedPage.email')} aria-label={t('getInvolvedPage.email')} />
-              <input type="tel" placeholder={t('getInvolvedPage.phone')} aria-label={t('getInvolvedPage.phone')} />
-              <input type="text" placeholder={t('contactPage.subject')} aria-label={t('contactPage.subject')} />
-              <textarea rows="6" placeholder={t('contactPage.yourMessage')} aria-label={t('contactPage.yourMessage')} />
+              <label className="form-honeypot">
+                Website
+                <input type="text" name="website" tabIndex="-1" autoComplete="off" />
+              </label>
+              <input
+                type="text"
+                name="name"
+                placeholder={t('getInvolvedPage.fullName')}
+                aria-label={t('getInvolvedPage.fullName')}
+                autoComplete="name"
+                maxLength="100"
+                required
+              />
+              <input
+                type="email"
+                name="email"
+                placeholder={t('getInvolvedPage.email')}
+                aria-label={t('getInvolvedPage.email')}
+                autoComplete="email"
+                maxLength="120"
+                required
+              />
+              <input
+                type="tel"
+                name="phone"
+                placeholder={t('getInvolvedPage.phone')}
+                aria-label={t('getInvolvedPage.phone')}
+                autoComplete="tel"
+                inputMode="tel"
+                maxLength="30"
+              />
+              <input
+                type="text"
+                name="subject"
+                placeholder={t('contactPage.subject')}
+                aria-label={t('contactPage.subject')}
+                maxLength="140"
+              />
+              <textarea
+                name="message"
+                rows="6"
+                placeholder={t('contactPage.yourMessage')}
+                aria-label={t('contactPage.yourMessage')}
+                maxLength="1000"
+                required
+              />
               <button type="submit" className="button button-accent">
                 {t('contactPage.sendMessage')}
               </button>
@@ -137,7 +213,8 @@ function ContactPage() {
               src={siteContact.mapEmbed}
               title={t('contactPage.mapTitle')}
               loading="lazy"
-              referrerPolicy="no-referrer-when-downgrade"
+              referrerPolicy="no-referrer"
+              sandbox="allow-scripts allow-same-origin allow-popups"
             />
           </div>
         </div>

@@ -4,8 +4,10 @@ import SectionIntro from '../components/SectionIntro';
 import { useLanguage } from '../context/LanguageContext';
 import usePageTitle from '../hooks/usePageTitle';
 import {
+  caseStudies,
   impactGalleryHighlights,
   impactMetrics,
+  impactOutcomes,
   reports,
   testimonials,
 } from '../siteData';
@@ -30,14 +32,31 @@ function ImpactPage() {
             title="Our current reach."
             text="These numbers are intentionally conservative and should be updated as verified reporting grows."
             centered
-            ctaLabel="Donate"
-            ctaTo="/donate"
           />
           <div className="metric-grid impact-metric-grid">
             {impactMetrics.map((item) => (
               <article key={item.label} className="metric-card">
                 <strong>{item.value}</strong>
                 <span className="metric-label">{item.label}</span>
+                <p>{item.detail}</p>
+              </article>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="section-space">
+        <div className="container">
+          <SectionIntro
+            eyebrow="What Changed"
+            title="Outcomes we look for in every activity."
+            text="The foundation tracks practical changes in confidence, decision-making, and life skills as programs grow."
+            centered
+          />
+          <div className="values-grid">
+            {impactOutcomes.map((item) => (
+              <article key={item.title} className="value-card">
+                <h3>{item.title}</h3>
                 <p>{item.detail}</p>
               </article>
             ))}
@@ -82,6 +101,24 @@ function ImpactPage() {
       <section className="section-space">
         <div className="container">
           <SectionIntro
+            eyebrow="Case Summaries"
+            title="Short stories behind the numbers."
+            text="Names are placeholders until beneficiary stories are approved for public use."
+          />
+          <div className="testimonial-grid">
+            {caseStudies.map((story) => (
+              <article key={story.title} className="testimonial-card">
+                <h3>{story.title}</h3>
+                <p>{story.summary}</p>
+              </article>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="section-space section-alt">
+        <div className="container">
+          <SectionIntro
             eyebrow="Testimonials"
             title="Human proof behind the numbers."
             text="Short statements showing how participants and community partners experience the work."
@@ -98,7 +135,7 @@ function ImpactPage() {
         </div>
       </section>
 
-      <section className="section-space section-alt">
+      <section className="section-space">
         <div className="container">
           <SectionIntro
             eyebrow="Gallery"
