@@ -8,7 +8,6 @@ import { donorProgramCategories } from '../siteData';
 function ProgramsPage() {
   const { t } = useLanguage();
   usePageTitle(t('programsPage.title'));
-  const localizedPrograms = t('content.donorProgramCategories');
 
   return (
     <main>
@@ -22,26 +21,26 @@ function ProgramsPage() {
       <section className="section-space">
         <div className="container">
           <SectionIntro
-            eyebrow={t('programsPage.introEyebrow')}
-            title={t('programsPage.introTitle')}
-            description={t('programsPage.introText')}
+            eyebrow="Programs"
+            title="What the foundation does."
+            description="Each program area has a clear purpose, practical activities, and measurable expected outcomes."
             centered
-            ctaLabel={t('programsPage.seeImpact')}
+            ctaLabel="See Impact"
             ctaTo="/impact"
           />
           <div className="program-category-stack">
             {donorProgramCategories.map((program, index) => (
               <section key={program.slug} className="program-category-panel">
                 <div className="program-category-heading">
-                  <p className="program-tag">{t('programsPage.categoryTag')}</p>
-                  <h2>{localizedPrograms[index]?.title ?? program.title}</h2>
+                  <p className="program-tag">Program Area {index + 1}</p>
+                  <h2>{program.title}</h2>
                 </div>
 
                 <article className="program-portfolio-card program-portfolio-card-wide">
                   <div className="program-portfolio-media">
                     <img
                       src={program.image}
-                      alt={localizedPrograms[index]?.title ?? program.title}
+                      alt={program.title}
                       loading="lazy"
                       decoding="async"
                     />
@@ -49,23 +48,23 @@ function ProgramsPage() {
 
                   <div className="program-portfolio-body">
                     <div className="program-detail-block">
-                      <h4>{t('programsPage.purpose')}</h4>
-                      <p>{localizedPrograms[index]?.purpose ?? program.purpose}</p>
+                      <h4>Purpose</h4>
+                      <p>{program.purpose}</p>
                     </div>
 
                     <div className="program-detail-block">
-                      <h4>{t('programsPage.activities')}</h4>
+                      <h4>Activities</h4>
                       <ul className="program-bullet-list">
-                        {(localizedPrograms[index]?.activities ?? program.activities).map((activity) => (
+                        {program.activities.map((activity) => (
                           <li key={activity}>{activity}</li>
                         ))}
                       </ul>
                     </div>
 
                     <div className="program-detail-block">
-                      <h4>{t('programsPage.expectedImpact')}</h4>
+                      <h4>Expected Impact</h4>
                       <ul className="program-bullet-list">
-                        {(localizedPrograms[index]?.impact ?? program.impact).map((item) => (
+                        {program.impact.map((item) => (
                           <li key={item}>{item}</li>
                         ))}
                       </ul>
@@ -81,13 +80,13 @@ function ProgramsPage() {
       <section className="section-space section-accent-band">
         <div className="container cta-band">
           <div>
-            <p className="eyebrow">{t('programsPage.nextEyebrow')}</p>
-            <h2>{t('programsPage.nextTitle')}</h2>
-            <p>{t('programsPage.nextText')}</p>
+            <p className="eyebrow">Next Step</p>
+            <h2>See the evidence behind the work.</h2>
+            <p>Visit the Impact page for statistics, reports, testimonials, and gallery highlights.</p>
           </div>
           <div className="cta-band-actions">
             <Link to="/impact" className="button button-accent">
-              {t('programsPage.viewImpact')}
+              View Impact
             </Link>
           </div>
         </div>

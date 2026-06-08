@@ -4,6 +4,9 @@ import SectionIntro from '../components/SectionIntro';
 import { useLanguage } from '../context/LanguageContext';
 import usePageTitle from '../hooks/usePageTitle';
 import {
+  aboutStory,
+  coreValues,
+  governanceStatement,
   leadershipTeam,
   visionMission,
 } from '../siteData';
@@ -11,17 +14,13 @@ import {
 function AboutPage() {
   const { t } = useLanguage();
   usePageTitle(t('aboutPage.title'));
-  const localizedStory = t('content.aboutStory');
-  const localizedGoals = t('content.foundationGoals');
-  const localizedObjectives = t('content.foundationObjectives');
-  const localizedFounderMessage = t('content.founderMessage');
 
   return (
     <main>
       <PageHero
-        eyebrow={t('aboutPage.heroEyebrow')}
-        title={t('aboutPage.heroTitle')}
-        subtitle={t('aboutPage.heroSubtitle')}
+        eyebrow="About"
+        title="Our story, identity, and commitment."
+        subtitle="A focused look at why the foundation exists and how it is led."
         image="/media/founder-national.jpeg"
       />
 
@@ -29,24 +28,24 @@ function AboutPage() {
         <div className="container split-panel">
           <div>
             <SectionIntro
-              eyebrow={t('aboutPage.storyEyebrow')}
-              title={t('aboutPage.storyTitle')}
-              text={localizedStory[0]}
+              eyebrow="Story"
+              title="A personal journey transformed into public service."
+              text={aboutStory[0]}
             />
             <div className="stacked-copy">
-              {localizedStory.slice(1).map((paragraph) => (
+              {aboutStory.slice(1).map((paragraph) => (
                 <p key={paragraph}>{paragraph}</p>
               ))}
             </div>
             <blockquote className="about-story-quote">
-              <p>"{t('aboutPage.quote')}"</p>
+              <p>"Your beginning does not determine your end."</p>
             </blockquote>
           </div>
 
           <div className="split-panel-media">
             <img
               src="/media/founder-action.jpeg"
-              alt="Founder training on a basketball court"
+              alt="Founder Kevin training on a basketball court"
               className="media-focus-center"
               loading="lazy"
               decoding="async"
@@ -56,17 +55,14 @@ function AboutPage() {
       </section>
 
       <section className="section-space section-alt">
-        <div className="container">
-          <SectionIntro
-            eyebrow={t('aboutPage.missionEyebrow')}
-            title={t('aboutPage.missionTitle')}
-            text={t('aboutPage.missionText')}
-            centered
-            ctaLabel={t('aboutPage.readPrograms')}
-            ctaTo="/programs"
-          />
-          <article className="mission-highlight-panel">
-            <p>{visionMission.mission}</p>
+        <div className="container dual-card-grid">
+          <article className="info-panel">
+            <p className="program-tag">Vision</p>
+            <h2>{visionMission.vision}</h2>
+          </article>
+          <article className="info-panel">
+            <p className="program-tag">Mission</p>
+            <h2>{visionMission.mission}</h2>
           </article>
         </div>
       </section>
@@ -74,19 +70,16 @@ function AboutPage() {
       <section className="section-space">
         <div className="container">
           <SectionIntro
-            eyebrow={t('aboutPage.goalsEyebrow')}
-            title={t('aboutPage.goalsTitle')}
-            text={t('aboutPage.goalsText')}
+            eyebrow="Core Values"
+            title="The standards that guide the work."
+            text="These values shape how the foundation serves communities, partners, donors, and young people."
             centered
           />
           <div className="values-grid">
-            {localizedGoals.map((goal, index) => (
-              <article key={goal.title} className="value-card goal-card">
-                <span className="goal-icon" aria-hidden="true">
-                  {index + 1}
-                </span>
-                <h3>{goal.title}</h3>
-                <p>{goal.text}</p>
+            {coreValues.map((value) => (
+              <article key={value.title} className="value-card">
+                <h3>{value.title}</h3>
+                <p>{value.text}</p>
               </article>
             ))}
           </div>
@@ -96,46 +89,11 @@ function AboutPage() {
       <section className="section-space section-alt">
         <div className="container">
           <SectionIntro
-            eyebrow={t('aboutPage.objectivesEyebrow')}
-            title={t('aboutPage.objectivesTitle')}
-            text={t('aboutPage.objectivesText')}
-          />
-          <div className="objectives-panel">
-            <ol className="objectives-list">
-              {localizedObjectives.map((objective, index) => (
-                <li key={objective} className="objective-item">
-                  <span className="objective-icon" aria-hidden="true">
-                    {index + 1}
-                  </span>
-                  <p>{objective}</p>
-                </li>
-              ))}
-            </ol>
-          </div>
-        </div>
-      </section>
-
-      <section className="section-space">
-        <div className="container dual-card-grid">
-          <article className="info-panel">
-            <p className="program-tag">{t('aboutPage.visionTag')}</p>
-            <h2>{visionMission.vision}</h2>
-          </article>
-          <article className="info-panel">
-            <p className="program-tag">{t('aboutPage.founderMessageTag')}</p>
-            <p className="detail-copy">{localizedFounderMessage}</p>
-          </article>
-        </div>
-      </section>
-
-      <section className="section-space">
-        <div className="container">
-          <SectionIntro
-            eyebrow={t('aboutPage.leadershipEyebrow')}
-            title={t('aboutPage.leadershipTitle')}
-            text={t('aboutPage.leadershipText')}
+            eyebrow="Leadership"
+            title="Led by lived experience and supported by a growing team."
+            text="The foundation is structured around program delivery, partnership building, and responsible stewardship."
             centered
-            ctaLabel={t('aboutPage.readLeadership')}
+            ctaLabel="View Governance"
             ctaTo="/leadership-governance"
           />
           <div className="team-grid">
@@ -152,16 +110,38 @@ function AboutPage() {
         </div>
       </section>
 
+      <section className="section-space">
+        <div className="container">
+          <SectionIntro
+            eyebrow="Governance"
+            title="Accountability is part of the foundation’s growth."
+            text="The organization continues to strengthen oversight, documentation, reporting, and safeguarding practices."
+          />
+          <div className="objectives-panel">
+            <ol className="objectives-list">
+              {governanceStatement.map((item, index) => (
+                <li key={item} className="objective-item">
+                  <span className="objective-icon" aria-hidden="true">
+                    {index + 1}
+                  </span>
+                  <p>{item}</p>
+                </li>
+              ))}
+            </ol>
+          </div>
+        </div>
+      </section>
+
       <section className="section-space section-accent-band">
         <div className="container cta-band">
           <div>
-            <p className="eyebrow">{t('aboutPage.nextEyebrow')}</p>
-            <h2>{t('aboutPage.nextTitle')}</h2>
-            <p>{t('aboutPage.nextText')}</p>
+            <p className="eyebrow">Next Step</p>
+            <h2>See how this mission becomes practical work.</h2>
+            <p>Explore the program areas that translate the foundation’s identity into action.</p>
           </div>
           <div className="cta-band-actions">
             <Link to="/programs" className="button button-accent">
-              {t('aboutPage.viewPrograms')}
+              View Programs
             </Link>
           </div>
         </div>

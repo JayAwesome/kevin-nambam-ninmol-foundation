@@ -1,6 +1,6 @@
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
-import CredibilitySection from './components/CredibilitySection';
 import FloatingActions from './components/FloatingActions';
+import SeoManager from './components/SeoManager';
 import SiteFooter from './components/SiteFooter';
 import SiteHeader from './components/SiteHeader';
 import ScrollManager from './components/ScrollManager';
@@ -17,32 +17,45 @@ import LeadershipGovernancePage from './pages/LeadershipGovernancePage';
 import PoliciesSafeguardingPage from './pages/PoliciesSafeguardingPage';
 import ProgramDetailPage from './pages/ProgramDetailPage';
 import ProgramsPage from './pages/ProgramsPage';
+import ResourcesPage from './pages/ResourcesPage';
+
+export function AppShell() {
+  return (
+    <div className="page-shell">
+      <a href="#main-content" className="skip-link">
+        Skip to main content
+      </a>
+      <SeoManager />
+      <ScrollManager />
+      <SiteHeader />
+      <div id="main-content">
+        <Routes>
+          <Route path="/" element={<HomePage />} />
+          <Route path="/about" element={<AboutPage />} />
+          <Route path="/leadership-governance" element={<LeadershipGovernancePage />} />
+          <Route path="/policies-safeguarding" element={<PoliciesSafeguardingPage />} />
+          <Route path="/programs" element={<ProgramsPage />} />
+          <Route path="/programs/:slug" element={<ProgramDetailPage />} />
+          <Route path="/impact" element={<ImpactPage />} />
+          <Route path="/get-involved" element={<GetInvolvedPage />} />
+          <Route path="/donate" element={<DonatePage />} />
+          <Route path="/news" element={<BlogPage />} />
+          <Route path="/resources" element={<ResourcesPage />} />
+          <Route path="/events" element={<EventsPage />} />
+          <Route path="/contact" element={<ContactPage />} />
+        </Routes>
+      </div>
+      <SiteFooter />
+      <FloatingActions />
+    </div>
+  );
+}
 
 function App() {
   return (
     <LanguageProvider>
       <BrowserRouter>
-        <div className="page-shell">
-          <ScrollManager />
-          <SiteHeader />
-          <Routes>
-            <Route path="/" element={<HomePage />} />
-            <Route path="/about" element={<AboutPage />} />
-            <Route path="/leadership-governance" element={<LeadershipGovernancePage />} />
-            <Route path="/policies-safeguarding" element={<PoliciesSafeguardingPage />} />
-            <Route path="/programs" element={<ProgramsPage />} />
-            <Route path="/programs/:slug" element={<ProgramDetailPage />} />
-            <Route path="/impact" element={<ImpactPage />} />
-            <Route path="/get-involved" element={<GetInvolvedPage />} />
-            <Route path="/donate" element={<DonatePage />} />
-            <Route path="/news" element={<BlogPage />} />
-            <Route path="/events" element={<EventsPage />} />
-            <Route path="/contact" element={<ContactPage />} />
-          </Routes>
-          <CredibilitySection />
-          <SiteFooter />
-          <FloatingActions />
-        </div>
+        <AppShell />
       </BrowserRouter>
     </LanguageProvider>
   );

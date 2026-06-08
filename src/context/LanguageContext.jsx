@@ -10,6 +10,7 @@ const en = {
     impact: 'Impact',
     getInvolved: 'Get Involved',
     donate: 'Donate',
+    resources: 'Resources',
     news: 'News',
     events: 'Events',
     contact: 'Contact',
@@ -847,7 +848,7 @@ const en = {
 
 const fr = {
   ...en,
-  nav: { ...en.nav, home: 'Accueil', about: 'A propos', leadership: 'Direction', policies: 'Politiques', programs: 'Programmes', getInvolved: "S'impliquer", donate: 'Faire un don', news: 'Actualites', events: 'Evenements' },
+  nav: { ...en.nav, home: 'Accueil', about: 'A propos', leadership: 'Direction', policies: 'Politiques', programs: 'Programmes', getInvolved: "S'impliquer", donate: 'Faire un don', resources: 'Ressources', news: 'Actualites', events: 'Evenements' },
   ui: { ...en.ui, more: 'Plus', language: 'Langue', english: 'Anglais', french: 'Francais', hausa: 'Hausa', yoruba: 'Yoruba', igbo: 'Igbo', donate: 'Faire un don', lightMode: 'Mode clair', darkMode: 'Mode sombre', switchToLight: 'Passer au mode clair', switchToDark: 'Passer au mode sombre', readMore: 'En savoir plus', seeImpact: "Voir l'impact" },
   footer: { ...en.footer, text: 'Une fondation tournee vers la jeunesse qui utilise le sport, l education, le mentorat et l appui communautaire pour construire des avenirs courageux.', explore: 'Explorer', phone: 'Telephone', address: 'Adresse', copyright: 'Copyright (c) 2026 Kevin Nambam Ninmol Foundation. Tous droits reserves.' },
   newsletter: { ...en.newsletter, title: 'Restez informe de notre impact.', body: 'Inscrivez-vous a notre liste email pour recevoir des histoires, des mises a jour de programmes, des activites recentes et des occasions de soutenir le travail de la fondation.', note: 'Construisez avec nous sur le long terme grace a des nouvelles qui montrent ou le soutien fait la difference.', placeholder: 'Entrez votre adresse email', subscribe: "S'abonner", emailLabel: 'Adresse email', empty: 'Veuillez entrer votre adresse email.' },
@@ -878,7 +879,7 @@ const fr = {
 
 const ha = {
   ...en,
-  nav: { ...en.nav, home: 'Gida', about: 'Game da mu', leadership: 'Jagoranci', policies: 'Dokoki', programs: 'Shirye-shirye', impact: 'Tasiri', getInvolved: 'Shiga tare da mu', donate: 'Ba da gudummawa', news: 'Labarai', events: 'Taro', contact: 'Tuntube mu' },
+  nav: { ...en.nav, home: 'Gida', about: 'Game da mu', leadership: 'Jagoranci', policies: 'Dokoki', programs: 'Shirye-shirye', impact: 'Tasiri', getInvolved: 'Shiga tare da mu', donate: 'Ba da gudummawa', resources: 'Albarkatu', news: 'Labarai', events: 'Taro', contact: 'Tuntube mu' },
   ui: { ...en.ui, more: 'Kari', language: 'Harshe', english: 'Turanci', french: 'Faransanci', yoruba: 'Yarbanci', donate: 'Ba da gudummawa', lightMode: 'Yanayin haske', darkMode: 'Yanayin duhu', switchToLight: 'Canja zuwa yanayin haske', switchToDark: 'Canja zuwa yanayin duhu', readMore: 'Kara karatu', seeImpact: 'Duba tasiri' },
   footer: { ...en.footer, text: 'Gidauniya ce mai mayar da hankali kan matasa wadda ke amfani da wasanni, ilimi, jagoranci da tallafin al umma domin gina makoma mai karfi.', explore: 'Bincika', phone: 'Waya', address: 'Adireshi' },
   newsletter: { ...en.newsletter, title: 'Kasance da sabbin bayanai kan tasirinmu.', body: 'Shiga jerin email dinmu domin samun labarai, sabbin bayanan shirye-shirye, ayyukan baya-bayan nan da hanyoyin tallafawa aikin gidauniyar.', note: 'Ku gina tare da mu na dogon lokaci ta sabuntawa da ke nuna inda tallafi ke kawo canji.', placeholder: 'Shigar da adireshin email dinka', subscribe: 'Yi rajista', emailLabel: 'Adireshin email', empty: 'Da fatan a shigar da adireshin email dinka.' },
@@ -909,7 +910,7 @@ const ha = {
 
 const yo = {
   ...en,
-  nav: { ...en.nav, home: 'Ile', about: 'Nipa wa', leadership: 'Asiwaju', policies: 'Eto imulo', programs: 'Awon eto', impact: 'Ipa', getInvolved: 'Darapo mo wa', donate: 'Se iranlowo', news: 'Iroyin', events: 'Awon isele', contact: 'Kan si wa' },
+  nav: { ...en.nav, home: 'Ile', about: 'Nipa wa', leadership: 'Asiwaju', policies: 'Eto imulo', programs: 'Awon eto', impact: 'Ipa', getInvolved: 'Darapo mo wa', donate: 'Se iranlowo', resources: 'Oro iranlowo', news: 'Iroyin', events: 'Awon isele', contact: 'Kan si wa' },
   ui: { ...en.ui, more: 'Siwaju sii', language: 'Ede', english: 'Geesi', french: 'Faranse', donate: 'Se iranlowo', lightMode: 'Ipo imole', darkMode: 'Ipo okunkun', switchToLight: 'Yipada si ipo imole', switchToDark: 'Yipada si ipo okunkun', readMore: 'Ka sii', seeImpact: 'Wo ipa' },
   footer: { ...en.footer, text: 'Ajo idasile to dojuko odo ti n lo ere idaraya, eko, itoju ati atileyin agbegbe lati ko ojo iwaju akinkanju.', explore: 'Sawari', phone: 'Foonu', address: 'Adiresi' },
   newsletter: { ...en.newsletter, title: 'Maa mo nipa ipa wa.', body: 'Darapo mo atoko imeeli wa lati gba awon itan, imudojuiwon eto, awon ise to sese waye ati ona lati se atileyin ise idasile naa.', note: 'Ko pelu wa ni igba pipe nipase awon imudojuiwon ti n fi han ibi ti atileyin n mu iyato wa.', placeholder: 'Te adiresi imeeli re sii', subscribe: 'Foruko sile', emailLabel: 'Adiresi imeeli', empty: 'Jowo te adiresi imeeli re sii.' },
@@ -940,7 +941,7 @@ const yo = {
 
 const ig = {
   ...en,
-  nav: { ...en.nav, home: 'Ulo', about: 'Banyere anyi', leadership: 'Ndu', policies: 'Atumatu', programs: 'Mmemme', impact: 'Mmetuta', getInvolved: 'Soro sonye', donate: 'Nye onyinye', news: 'Akuko', events: 'Ihe omume', contact: 'Kpotu anyi' },
+  nav: { ...en.nav, home: 'Ulo', about: 'Banyere anyi', leadership: 'Ndu', policies: 'Atumatu', programs: 'Mmemme', impact: 'Mmetuta', getInvolved: 'Soro sonye', donate: 'Nye onyinye', resources: 'Ihe enyemaka', news: 'Akuko', events: 'Ihe omume', contact: 'Kpotu anyi' },
   ui: { ...en.ui, more: 'Ozo', language: 'Asusu', english: 'Bekee', french: 'French', hausa: 'Hausa', yoruba: 'Yoruba', igbo: 'Igbo', donate: 'Nye onyinye', lightMode: 'Uzo oku', darkMode: 'Uzo ojii', switchToLight: 'Gbanwee na uzo oku', switchToDark: 'Gbanwee na uzo ojii', readMore: 'Mutakwuo', seeImpact: 'Lee mmetuta' },
   footer: { ...en.footer, text: 'Otu ntolala na elekwasi anya n umuaka na ndi ntorobia, na-eji egwuregwu, akwukwo, nduzi na nkwado obodo wuo odi nihu siri ike.', explore: 'Choputa', phone: 'Ekwenti', address: 'Adiresi' },
   newsletter: { ...en.newsletter, title: 'Nara mmelite banyere mmetuta anyi.', body: 'Soro na ndeputa email anyi iji nata akuko, mmelite mmemme, ihe omume ohuru na uzo isi kwado oru ntolala a.', note: 'Wulite na anyi n oge ogologo site na mmelite na-egosi ebe nkwado na-eweta mgbanwe.', placeholder: 'Tinye adreesi email gi', subscribe: 'Debanye aha', emailLabel: 'Adreesi email', empty: 'Biko tinye adreesi email gi.' },
@@ -1231,17 +1232,24 @@ export const languageOptions = [
 ];
 
 const LanguageContext = createContext(null);
+const isBrowser = typeof window !== 'undefined';
 
 function getValue(obj, path) {
   return path.split('.').reduce((current, key) => current?.[key], obj);
 }
 
 export function LanguageProvider({ children }) {
-  const [language, setLanguage] = useState(() => localStorage.getItem('language') || 'en');
+  const [language, setLanguage] = useState(() =>
+    isBrowser ? window.localStorage.getItem('language') || 'en' : 'en',
+  );
 
   useEffect(() => {
+    if (!isBrowser) {
+      return;
+    }
+
     document.documentElement.lang = language;
-    localStorage.setItem('language', language);
+    window.localStorage.setItem('language', language);
   }, [language]);
 
   const value = useMemo(() => {

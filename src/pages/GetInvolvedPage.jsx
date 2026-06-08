@@ -1,52 +1,60 @@
+import { Link } from 'react-router-dom';
 import PageHero from '../components/PageHero';
-import NewsletterSection from '../components/NewsletterSection';
 import SectionIntro from '../components/SectionIntro';
 import { useLanguage } from '../context/LanguageContext';
 import usePageTitle from '../hooks/usePageTitle';
-import {
-  internshipOpportunities,
-  involvementBenefits,
-  sponsorOptions,
-} from '../siteData';
+import { sponsorOptions } from '../siteData';
 
 function GetInvolvedPage() {
   const { t } = useLanguage();
   usePageTitle(t('getInvolvedPage.title'));
-  const localizedBenefits = t('content.involvementBenefits');
-  const localizedSponsors = t('content.sponsorOptions');
-  const localizedInternships = t('content.internshipOpportunities');
 
-  const showComingSoon = (message, payload) => {
-    console.log(message, payload);
+  const showComingSoon = (message) => {
+    console.log(message);
     window.alert(message);
   };
 
   return (
     <main>
       <PageHero
-        eyebrow={t('getInvolvedPage.heroEyebrow')}
-        title={t('getInvolvedPage.heroTitle')}
-        subtitle={t('getInvolvedPage.heroSubtitle')}
+        eyebrow="Get Involved"
+        title="Turn support into action."
+        subtitle="Choose the clearest way to support the foundation: donate, volunteer, partner, or sponsor a project."
         image="/media/community-group.jpeg"
       />
 
       <section className="section-space">
-        <div className="container">
-          <SectionIntro
-            eyebrow={t('getInvolvedPage.whyEyebrow')}
-            title={t('getInvolvedPage.whyTitle')}
-            text={t('getInvolvedPage.whyText')}
-            centered
-            ctaLabel={t('getInvolvedPage.readPrograms')}
-            ctaTo="/programs"
-          />
-          <div className="values-grid">
-            {localizedBenefits.map((item) => (
-              <article key={item} className="value-card">
-                <p>{item}</p>
-              </article>
-            ))}
-          </div>
+        <div className="container action-grid">
+          <article className="action-card">
+            <p className="program-tag">Donate</p>
+            <h2>Give financially.</h2>
+            <p>Support direct outreach, education, relief, and youth empowerment through foundation accounts.</p>
+            <Link to="/donate" className="button button-accent">
+              Donate
+            </Link>
+          </article>
+
+          <article className="action-card">
+            <p className="program-tag">Volunteer</p>
+            <h2>Lend your time.</h2>
+            <p>Help with clinics, mentoring, outreach, communications, logistics, and community engagement.</p>
+            <a href="#volunteer-form" className="button button-ghost">
+              Volunteer
+            </a>
+          </article>
+
+          <article className="action-card">
+            <p className="program-tag">Partner</p>
+            <h2>Collaborate with us.</h2>
+            <p>Schools, organizations, churches, businesses, and institutions can help extend responsible impact.</p>
+            <button
+              type="button"
+              className="button button-accent"
+              onClick={() => showComingSoon('Partnership contact integration coming soon.')}
+            >
+              Partner
+            </button>
+          </article>
         </div>
       </section>
 
@@ -54,100 +62,49 @@ function GetInvolvedPage() {
         <div className="container contact-page-grid">
           <div>
             <SectionIntro
-              eyebrow={t('getInvolvedPage.volunteerEyebrow')}
-              title={t('getInvolvedPage.volunteerTitle')}
-              text={t('getInvolvedPage.volunteerText')}
-              ctaLabel={t('getInvolvedPage.readImpact')}
-              ctaTo="/impact"
+              eyebrow="Volunteer"
+              title="Tell us how you want to help."
+              text="This form is ready to connect to a backend or email workflow when you are ready."
             />
             <form
+              id="volunteer-form"
               className="event-form-panel contact-form-panel"
               onSubmit={(event) => {
                 event.preventDefault();
-                showComingSoon(t('getInvolvedPage.volunteerAlert'));
+                showComingSoon('Volunteer form integration coming soon.');
               }}
             >
-              <input type="text" placeholder={t('getInvolvedPage.fullName')} aria-label={t('getInvolvedPage.fullName')} />
-              <input type="email" placeholder={t('getInvolvedPage.email')} aria-label={t('getInvolvedPage.email')} />
-              <input type="tel" placeholder={t('getInvolvedPage.phone')} aria-label={t('getInvolvedPage.phone')} />
-              <input type="text" placeholder={t('getInvolvedPage.interest')} aria-label={t('getInvolvedPage.interest')} />
-              <textarea
-                rows="5"
-                placeholder={t('getInvolvedPage.helpMessage')}
-                aria-label={t('getInvolvedPage.helpMessage')}
-              />
+              <input type="text" placeholder="Full name" aria-label="Full name" />
+              <input type="email" placeholder="Email address" aria-label="Email address" />
+              <input type="tel" placeholder="Phone number" aria-label="Phone number" />
+              <input type="text" placeholder="Area of interest" aria-label="Area of interest" />
+              <textarea rows="5" placeholder="How would you like to help?" aria-label="How would you like to help?" />
               <button type="submit" className="button button-accent">
-                {t('getInvolvedPage.submitVolunteer')}
+                Submit Volunteer Interest
               </button>
             </form>
           </div>
 
-          <div className="contact-aside-stack">
+          <aside className="contact-aside-stack">
             <article className="info-panel">
-              <p className="program-tag">{t('getInvolvedPage.benefitsTag')}</p>
-              <h2>{t('getInvolvedPage.benefitsTitle')}</h2>
+              <p className="program-tag">Sponsor a Project</p>
+              <h2>Fund a specific area of work.</h2>
               <ul className="opportunity-list">
-                <li>{t('getInvolvedPage.benefit1')}</li>
-                <li>{t('getInvolvedPage.benefit2')}</li>
-                <li>{t('getInvolvedPage.benefit3')}</li>
+                {sponsorOptions.map((item) => (
+                  <li key={item}>{item}</li>
+                ))}
               </ul>
+              <button
+                type="button"
+                className="button button-ghost"
+                onClick={() => showComingSoon('Sponsorship request integration coming soon.')}
+              >
+                Sponsor a Project
+              </button>
             </article>
-          </div>
+          </aside>
         </div>
       </section>
-
-      <section className="section-space">
-        <div className="container action-grid">
-          <article className="action-card">
-            <p className="program-tag">{t('getInvolvedPage.partnerTag')}</p>
-            <h2>{t('getInvolvedPage.partnerTitle')}</h2>
-            <p>{t('getInvolvedPage.partnerText')}</p>
-            <button
-              type="button"
-              className="button button-accent"
-              onClick={() => showComingSoon(t('getInvolvedPage.partnershipAlert'))}
-            >
-              {t('getInvolvedPage.explorePartnership')}
-            </button>
-          </article>
-
-          <article className="action-card">
-            <p className="program-tag">{t('getInvolvedPage.sponsorTag')}</p>
-            <h2>{t('getInvolvedPage.sponsorTitle')}</h2>
-            <ul className="opportunity-list">
-              {localizedSponsors.map((item) => (
-                <li key={item}>{item}</li>
-              ))}
-            </ul>
-            <button
-              type="button"
-              className="button button-ghost"
-              onClick={() => showComingSoon(t('getInvolvedPage.sponsorAlert'))}
-            >
-              {t('getInvolvedPage.becomeSponsor')}
-            </button>
-          </article>
-
-          <article className="action-card">
-            <p className="program-tag">{t('getInvolvedPage.internshipTag')}</p>
-            <h2>{t('getInvolvedPage.internshipTitle')}</h2>
-            <ul className="opportunity-list">
-              {localizedInternships.map((item) => (
-                <li key={item}>{item}</li>
-              ))}
-            </ul>
-            <button
-              type="button"
-              className="button button-accent"
-              onClick={() => showComingSoon(t('getInvolvedPage.internshipAlert'))}
-            >
-              {t('getInvolvedPage.applyInternship')}
-            </button>
-          </article>
-        </div>
-      </section>
-
-      <NewsletterSection />
     </main>
   );
 }

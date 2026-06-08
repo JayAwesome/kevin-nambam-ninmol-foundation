@@ -3,23 +3,29 @@ import { Link, NavLink, useLocation } from 'react-router-dom';
 import { languageOptions, useLanguage } from '../context/LanguageContext';
 import { navItems } from '../siteData';
 
+const isBrowser = typeof window !== 'undefined';
+
 function SiteHeader() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isMoreOpen, setIsMoreOpen] = useState(false);
-  const [theme, setTheme] = useState(() => localStorage.getItem('theme') || 'light');
+  const [theme, setTheme] = useState(() =>
+    isBrowser ? window.localStorage.getItem('theme') || 'light' : 'light',
+  );
   const themeTransitionTimeoutRef = useRef(null);
   const { language, setLanguage, t } = useLanguage();
   const location = useLocation();
   const primaryNavItems = navItems.filter((item) =>
-    ['home', 'about', 'programs', 'impact', 'getInvolved', 'contact'].includes(item.labelKey),
+    ['home', 'about', 'programs', 'impact', 'donate'].includes(item.labelKey),
   );
   const secondaryNavItems = navItems.filter(
-    (item) => !['home', 'about', 'programs', 'impact', 'getInvolved', 'contact', 'donate'].includes(item.labelKey),
+    (item) => !['home', 'about', 'programs', 'impact', 'donate'].includes(item.labelKey),
   );
 
   const handleNavClick = () => {
-    window.scrollTo({ top: 0, behavior: 'smooth' });
+    if (isBrowser) {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
     setIsMoreOpen(false);
   };
 
@@ -39,7 +45,7 @@ function SiteHeader() {
     document.documentElement.classList.add('theme-switching');
     document.documentElement.setAttribute('data-theme', theme);
     document.documentElement.style.colorScheme = theme;
-    localStorage.setItem('theme', theme);
+    window.localStorage.setItem('theme', theme);
     if (themeTransitionTimeoutRef.current) {
       window.clearTimeout(themeTransitionTimeoutRef.current);
     }

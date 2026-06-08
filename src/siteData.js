@@ -1,22 +1,27 @@
 export const navItems = [
   { labelKey: 'home', to: '/' },
   { labelKey: 'about', to: '/about' },
-  { labelKey: 'leadership', to: '/leadership-governance' },
-  { labelKey: 'policies', to: '/policies-safeguarding' },
   { labelKey: 'programs', to: '/programs' },
   { labelKey: 'impact', to: '/impact' },
-  { labelKey: 'getInvolved', to: '/get-involved' },
   { labelKey: 'donate', to: '/donate' },
-  { labelKey: 'news', to: '/news' },
-  { labelKey: 'events', to: '/events' },
+  { labelKey: 'getInvolved', to: '/get-involved' },
+  { labelKey: 'resources', to: '/resources' },
   { labelKey: 'contact', to: '/contact' },
+  { labelKey: 'leadership', to: '/leadership-governance' },
+  { labelKey: 'policies', to: '/policies-safeguarding' },
 ];
 
 export const siteContact = {
   email: 'info@kevinnanbamninmolfoundation.com.ng',
   phone: '+234 803 784 0841',
   address: 'Peter Anikwe Estate, Block B, Flat 3, Rantya, Jos, Plateau State, Nigeria',
+  registration: 'CAC/NGO Registration Number: Pending publication',
   whatsapp: 'https://wa.me/2348037840841',
+  socialLinks: {
+    facebook: 'https://facebook.com',
+    instagram: 'https://instagram.com',
+    x: 'https://x.com',
+  },
   mapEmbed:
     'https://www.google.com/maps?q=Peter%20Anikwe%20Estate%20Block%20B%20Flat%203%20Rantya%20Jos%20Plateau%20State%20Nigeria&output=embed',
 };
@@ -630,72 +635,88 @@ export const programCategories = [
 
 export const donorProgramCategories = [
   {
-    slug: 'youth-empowerment-through-basketball',
-    title: 'Youth Empowerment Through Basketball',
-    image: '/media/hero-court.jpeg',
-    purpose:
-      'To use basketball as a structured pathway for discipline, confidence, teamwork, leadership, and positive decision-making among young people.',
-    activities: [
-      'Basketball clinics and skill-development sessions for boys and girls',
-      'Mindset and resilience talks woven into sports participation',
-      'Coaching that reinforces discipline, teamwork, and leadership',
-      'Safe, structured environments where young people can learn and grow',
-    ],
-    impact: [
-      'Improved confidence and participation among young people',
-      'Stronger teamwork, discipline, and coachability',
-      'Positive youth engagement through sport-based mentoring',
-    ],
-    support: [
-      'Sponsor a clinic session, training camp, or local tournament',
-      'Provide basketballs, kits, shoes, bibs, and training equipment',
-      'Support transportation, venue costs, and youth participation access',
-    ],
-  },
-  {
     slug: 'education-support',
     title: 'Education Support',
     image: '/media/program-certificate.jpeg',
     purpose:
-      'To reduce barriers to learning by connecting children and young people with educational materials, encouragement, and scholarship support.',
+      'Reduce barriers to learning through school materials, encouragement, and scholarship pathways.',
     activities: [
+      'Book packs, school materials, and learning resources',
       'Scholarship identification and education support referrals',
-      'Provision of books, school materials, and learning resources',
-      'Academic encouragement and mentoring for students',
-      'Support that helps young people remain engaged in school and personal growth',
+      'Academic mentoring and student encouragement',
     ],
     impact: [
-      'Greater access to learning tools and educational support',
-      'More confidence for students pursuing academic progress',
-      'Practical pathways for underserved youth to stay connected to opportunity',
-    ],
-    support: [
-      'Fund school materials, book packs, and learning resources',
-      'Support scholarships and educational assistance for vulnerable students',
-      'Partner with the foundation to expand access to school-based support',
+      'More students remain connected to learning',
+      'Families receive practical relief around education needs',
+      'Young people see education as a real pathway forward',
     ],
   },
   {
-    slug: 'mentorship-and-life-skills-development',
-    title: 'Mentorship and Life Skills Development',
-    image: '/media/outreach-school.jpeg',
+    slug: 'healthcare-assistance',
+    title: 'Healthcare Assistance',
+    image: '/media/community-group.jpeg',
     purpose:
-      'To help young people build character, emotional resilience, communication skills, and the confidence to make responsible life choices.',
+      'Support vulnerable children and families with practical health-related outreach and referral support.',
     activities: [
-      'Mentorship sessions with positive role models and coaches',
-      'Workshops on communication, teamwork, and problem-solving',
-      'Guidance on emotional well-being and healthy coping mechanisms',
-      'Practical life-skills support for youth navigating daily challenges',
+      'Health-awareness outreach during community visits',
+      'Basic welfare checks and referral support where needed',
+      'Partnerships with health professionals and local institutions',
     ],
     impact: [
-      'Stronger decision-making and social confidence among participants',
-      'Healthier emotional responses to pressure and uncertainty',
-      'A more supportive environment for youth growth beyond the basketball court',
+      'Families are connected to care pathways earlier',
+      'Community outreach responds to urgent practical needs',
+      'Health concerns are treated as part of holistic youth support',
     ],
-    support: [
-      'Sponsor mentorship sessions, workshops, and youth gatherings',
-      'Support volunteer mentors, facilitators, and life-skills materials',
-      'Partner with the foundation to scale mentoring in schools and communities',
+  },
+  {
+    slug: 'humanitarian-relief',
+    title: 'Humanitarian Relief',
+    image: '/media/outreach-school.jpeg',
+    purpose:
+      'Provide practical relief to vulnerable children, families, and communities during times of need.',
+    activities: [
+      'Distribution of essential support items',
+      'Community outreach and welfare response',
+      'Mobilizing volunteers and partners around urgent needs',
+    ],
+    impact: [
+      'Vulnerable families receive visible practical support',
+      'Communities experience dignity-centered outreach',
+      'Donor support is translated into direct local action',
+    ],
+  },
+  {
+    slug: 'community-development',
+    title: 'Community Development',
+    image: '/media/hero-community.jpeg',
+    purpose:
+      'Strengthen the local support systems around young people through partnerships, outreach, and shared community action.',
+    activities: [
+      'School and community engagement visits',
+      'Partnership-building with leaders and local organizations',
+      'Safe spaces for children, youth, families, and mentors to connect',
+    ],
+    impact: [
+      'More coordinated support around children and youth',
+      'Stronger trust between the foundation and communities',
+      'Local partners become active participants in lasting change',
+    ],
+  },
+  {
+    slug: 'youth-empowerment',
+    title: 'Youth Empowerment',
+    image: '/media/outreach-school.jpeg',
+    purpose:
+      'Build confidence, discipline, leadership, and positive decision-making through sports and mentorship.',
+    activities: [
+      'Basketball clinics and skill-development sessions',
+      'Mentorship and life-skills conversations',
+      'Workshops on teamwork, communication, and resilience',
+    ],
+    impact: [
+      'Young people gain confidence and self-belief',
+      'Participants practice teamwork, discipline, and leadership',
+      'Youth are supported to make positive life choices',
     ],
   },
 ];
@@ -891,7 +912,7 @@ export const donationCurrencies = [
     label: 'Nigerian Naira',
     locale: 'en-NG',
     rate: 1,
-    symbol: 'N',
+    symbol: '\u20A6',
   },
   {
     code: 'USD',

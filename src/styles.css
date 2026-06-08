@@ -105,6 +105,23 @@ a {
   transition: color 180ms ease, opacity 180ms ease;
 }
 
+.skip-link {
+  position: fixed;
+  left: 1rem;
+  top: 1rem;
+  z-index: 100;
+  padding: 0.75rem 1rem;
+  border-radius: 999px;
+  background: var(--gold);
+  color: #10243d;
+  font-weight: 900;
+  transform: translateY(-150%);
+}
+
+.skip-link:focus {
+  transform: translateY(0);
+}
+
 img {
   display: block;
   width: 100%;
@@ -2192,6 +2209,10 @@ p {
 
 .foundation-bank-section {
   padding-top: 0;
+}
+
+.foundation-bank-page-section {
+  padding-top: clamp(5.5rem, 8vw, 7rem);
 }
 
 .foundation-bank-shell {

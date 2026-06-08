@@ -1,9 +1,5 @@
-import { useEffect } from 'react';
-
 function usePageTitle(title) {
-  useEffect(() => {
-    document.title = `${title} | Kevin Nambam Ninmol Foundation`;
-  }, [title]);
+  return title;
 }
 
 export default usePageTitle;
