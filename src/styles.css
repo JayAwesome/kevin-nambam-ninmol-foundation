@@ -2334,6 +2334,7 @@ p {
 
 .inspiration-theme-grid,
 .inspiration-lesson-grid,
+.inspiration-program-grid,
 .inspiration-summary-grid {
   display: grid;
   grid-template-columns: repeat(4, minmax(0, 1fr));
@@ -2341,6 +2342,7 @@ p {
 }
 
 .inspiration-theme-card,
+.inspiration-program-card,
 .inspiration-summary-card {
   padding: 1.5rem;
   border-radius: var(--radius-lg);
@@ -2350,6 +2352,7 @@ p {
 }
 
 .inspiration-theme-card h3,
+.inspiration-program-card h3,
 .inspiration-summary-card h3,
 .inspiration-lesson-item h3 {
   margin: 0 0 0.75rem;
@@ -2357,6 +2360,7 @@ p {
 }
 
 .inspiration-theme-card p,
+.inspiration-program-card p,
 .inspiration-summary-card p,
 .inspiration-lesson-item p {
   margin: 0;
@@ -2402,19 +2406,57 @@ p {
 }
 
 .inspiration-lesson-grid {
-  grid-template-columns: repeat(2, minmax(0, 1fr));
+  grid-template-columns: repeat(4, minmax(0, 1fr));
   margin-top: 1.25rem;
 }
 
 .inspiration-lesson-item {
+  display: flex;
+  min-height: 100%;
+  flex-direction: column;
+  gap: 0.75rem;
   padding: 1.25rem;
-  border-radius: var(--radius-md);
-  background: rgba(13, 27, 42, 0.04);
+  border-radius: var(--radius-lg);
+  background: var(--surface);
+  border: 1px solid rgba(13, 27, 42, 0.1);
+  box-shadow: var(--shadow-soft);
+}
+
+.inspiration-lesson-icon {
+  display: inline-flex;
+  width: 2.75rem;
+  height: 2.75rem;
+  align-items: center;
+  justify-content: center;
+  border-radius: 999px;
+  background: rgba(212, 160, 23, 0.18);
+  color: var(--blue-900);
+  font-size: 0.85rem;
+  font-weight: 900;
+  letter-spacing: 0.02em;
+}
+
+.inspiration-program-grid {
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+}
+
+.inspiration-program-card {
+  position: relative;
+  overflow: hidden;
+}
+
+.inspiration-program-card::before {
+  content: '';
+  position: absolute;
+  inset: 0 auto 0 0;
+  width: 4px;
+  background: linear-gradient(180deg, var(--gold), var(--blue-700));
 }
 
 .inspiration-gallery-grid {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
+  grid-auto-flow: dense;
   gap: 1.5rem;
 }
 
@@ -2426,23 +2468,148 @@ p {
   box-shadow: var(--shadow-soft);
 }
 
+.inspiration-gallery-button {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  flex-direction: column;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  color: inherit;
+  text-align: left;
+  cursor: pointer;
+}
+
+.inspiration-gallery-button:focus-visible,
+.inspiration-lightbox button:focus-visible {
+  outline: 3px solid var(--gold);
+  outline-offset: 4px;
+}
+
+.inspiration-gallery-button:hover img {
+  transform: scale(1.035);
+}
+
 .inspiration-gallery-card img {
   width: 100%;
   aspect-ratio: 4 / 3;
   object-fit: cover;
+  transition: transform 180ms ease;
 }
 
-.inspiration-gallery-card div {
+.inspiration-gallery-card:nth-child(2n) img {
+  aspect-ratio: 3 / 4;
+}
+
+.inspiration-gallery-card:nth-child(3n) img {
+  aspect-ratio: 1 / 1;
+}
+
+.inspiration-gallery-copy {
+  display: grid;
+  gap: 0.5rem;
   padding: 1.25rem;
 }
 
-.inspiration-gallery-card h3 {
+.inspiration-gallery-copy strong {
   margin: 0 0 0.5rem;
+  color: var(--blue-900);
+  font-size: 1.08rem;
+}
+
+.inspiration-gallery-copy span {
+  margin: 0;
+  color: var(--muted);
+  line-height: 1.6;
+}
+
+.inspiration-featured-quote {
+  padding: 2rem;
+  border-radius: var(--radius-lg);
+  background:
+    linear-gradient(135deg, rgba(212, 160, 23, 0.22), rgba(255, 255, 255, 0.94)),
+    var(--surface);
+  border: 1px solid rgba(212, 160, 23, 0.35);
+  box-shadow: var(--shadow-soft);
+}
+
+.inspiration-featured-quote blockquote {
+  margin: 0;
+  color: var(--blue-900);
+  font-family: var(--font-serif);
+  font-size: clamp(1.45rem, 3vw, 2.4rem);
+  font-weight: 800;
+  line-height: 1.15;
+}
+
+.inspiration-lightbox {
+  position: fixed;
+  inset: 0;
+  z-index: 1200;
+  display: grid;
+  place-items: center;
+  padding: 1rem;
+  background: rgba(4, 10, 18, 0.82);
+  backdrop-filter: blur(12px);
+}
+
+.inspiration-lightbox-panel {
+  position: relative;
+  display: grid;
+  width: min(980px, 100%);
+  max-height: 92vh;
+  gap: 1rem;
+  overflow: auto;
+  padding: 1rem;
+  border-radius: var(--radius-lg);
+  background: var(--surface);
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  box-shadow: var(--shadow);
+}
+
+.inspiration-lightbox-panel img {
+  width: 100%;
+  max-height: 68vh;
+  object-fit: contain;
+  border-radius: var(--radius-md);
+  background: #050914;
+}
+
+.inspiration-lightbox-close {
+  justify-self: end;
+}
+
+.inspiration-lightbox-close,
+.inspiration-lightbox-nav button {
+  min-height: 2.75rem;
+  padding: 0.75rem 1rem;
+  border: 1px solid rgba(13, 27, 42, 0.14);
+  border-radius: 999px;
+  background: var(--surface-alt);
+  color: var(--ink);
+  font-weight: 800;
+  cursor: pointer;
+}
+
+.inspiration-lightbox-caption {
+  display: grid;
+  gap: 0.35rem;
+}
+
+.inspiration-lightbox-caption h3,
+.inspiration-lightbox-caption p {
+  margin: 0;
+}
+
+.inspiration-lightbox-caption h3 {
   color: var(--blue-900);
 }
 
-.inspiration-gallery-card p {
-  margin: 0;
+.inspiration-lightbox-nav {
+  display: flex;
+  justify-content: space-between;
+  gap: 0.75rem;
 }
 
 .inspiration-summary-grid {
@@ -2466,7 +2633,11 @@ p {
 
 [data-theme='dark'] .inspiration-pullquote,
 [data-theme='dark'] .inspiration-theme-card,
+[data-theme='dark'] .inspiration-program-card,
 [data-theme='dark'] .inspiration-summary-card,
+[data-theme='dark'] .inspiration-lesson-item,
+[data-theme='dark'] .inspiration-featured-quote,
+[data-theme='dark'] .inspiration-lightbox-panel,
 [data-theme='dark'] .inspiration-person-card,
 [data-theme='dark'] .inspiration-gallery-card {
   background: var(--surface);
@@ -2475,15 +2646,25 @@ p {
 
 [data-theme='dark'] .inspiration-pullquote p,
 [data-theme='dark'] .inspiration-theme-card h3,
+[data-theme='dark'] .inspiration-program-card h3,
 [data-theme='dark'] .inspiration-summary-card h3,
 [data-theme='dark'] .inspiration-lesson-item h3,
+[data-theme='dark'] .inspiration-featured-quote blockquote,
 [data-theme='dark'] .inspiration-person-card h3,
-[data-theme='dark'] .inspiration-gallery-card h3 {
+[data-theme='dark'] .inspiration-gallery-copy strong,
+[data-theme='dark'] .inspiration-lightbox-caption h3 {
   color: var(--ink);
 }
 
-[data-theme='dark'] .inspiration-lesson-item {
-  background: rgba(255, 255, 255, 0.06);
+[data-theme='dark'] .inspiration-lesson-icon {
+  background: rgba(224, 185, 104, 0.18);
+  color: var(--gold);
+}
+
+[data-theme='dark'] .inspiration-lightbox-close,
+[data-theme='dark'] .inspiration-lightbox-nav button {
+  border-color: rgba(255, 255, 255, 0.12);
+  background: var(--surface-soft);
 }
 
 [data-theme='dark'] .inspiration-quote-card {
@@ -2970,6 +3151,7 @@ p {
   }
 
   .inspiration-theme-grid,
+  .inspiration-lesson-grid,
   .inspiration-gallery-grid,
   .inspiration-summary-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -3108,6 +3290,7 @@ p {
 
   .inspiration-theme-grid,
   .inspiration-lesson-grid,
+  .inspiration-program-grid,
   .inspiration-gallery-grid,
   .inspiration-summary-grid {
     grid-template-columns: 1fr;
@@ -3119,6 +3302,19 @@ p {
 
   .inspiration-person-card img {
     max-height: 360px;
+  }
+
+  .inspiration-lightbox {
+    padding: 0.65rem;
+  }
+
+  .inspiration-lightbox-panel {
+    max-height: 94vh;
+    padding: 0.75rem;
+  }
+
+  .inspiration-lightbox-nav {
+    flex-direction: column;
   }
 
   .donation-preset-grid-large {

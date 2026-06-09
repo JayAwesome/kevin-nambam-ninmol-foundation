@@ -1,6 +1,7 @@
 export const navItems = [
   { labelKey: 'home', to: '/' },
   { labelKey: 'about', to: '/about' },
+  { labelKey: 'inspiration', to: '/inspiration' },
   { labelKey: 'programs', to: '/programs' },
   { labelKey: 'impact', to: '/impact' },
   { labelKey: 'getInvolved', to: '/get-involved' },

@@ -1,30 +1,8 @@
+import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import PageHero from '../components/PageHero';
 import SectionIntro from '../components/SectionIntro';
 import usePageTitle from '../hooks/usePageTitle';
-
-const observedThemes = [
-  {
-    title: 'Mentorship that opens doors',
-    text:
-      'The images repeatedly point to coaches, basketball leaders, and trusted figures whose presence helped shape discipline, confidence, and a wider vision of what sport can make possible.',
-  },
-  {
-    title: 'Compassion in difficult places',
-    text:
-      'The outreach images show service among vulnerable families, including people facing displacement and hardship. They reflect a belief that dignity must remain visible even when life is difficult.',
-  },
-  {
-    title: 'Children as the center of purpose',
-    text:
-      'School and community images show children gathered with hope, curiosity, and energy. Their presence gives the mission its urgency and keeps the work focused on the next generation.',
-  },
-  {
-    title: 'Basketball as a bridge',
-    text:
-      'Basketball appears not only as a game, but as a meeting point for mentorship, leadership, education, discipline, and positive identity.',
-  },
-];
 
 const peopleWhoShapedTheVision = [
   {
@@ -32,51 +10,99 @@ const peopleWhoShapedTheVision = [
     role: 'Basketball mentor and development influence',
     image: '/media/inspiration/coach-michael-akuboh.jpeg',
     text:
-      'This image reflects friendship, respect, and the quiet strength of mentorship. It points to the role coaches can play in helping young people see discipline as a pathway to growth.',
+      'A reminder that mentorship can be both personal and practical. Coaches help young people turn discipline, correction, and encouragement into confidence.',
   },
   {
     name: 'Coach Oliver B. Johnson',
     role: 'Respected coach and role model',
     image: '/media/inspiration/coach-oliver-johnson.jpeg',
     text:
-      'The image communicates honor for those who teach, guide, and remain present. It speaks to the kind of leadership that is patient, relational, and deeply formative.',
+      'His influence reflects the value of patient leadership: showing up, guiding others, and helping athletes grow beyond the scoreboard.',
   },
   {
     name: 'Col. Samuel Amedu',
     role: 'Basketball administrator and institutional leader',
     image: '/media/inspiration/col-samuel-amedu.jpeg',
     text:
-      'This image points to organized leadership within African basketball and the importance of structure, governance, and credible institutions in developing young people.',
+      'This inspiration points to the importance of structure, governance, and credible leadership in building programs that can last.',
   },
   {
     name: 'Masai Ujiri',
     role: 'Global basketball and youth-development inspiration',
     image: '/media/inspiration/masai-ujiri.jpeg',
     text:
-      "The image connects the founder's inspiration to a wider African basketball story: one where sport can carry dreams, leadership, education, and continental pride.",
+      'A wider African basketball example showing that sport can carry education, leadership, pride, and opportunity across borders.',
   },
 ];
 
 const lessons = [
   {
-    title: 'Compassion must be practical',
-    text:
-      'Kindness becomes meaningful when it reaches people where they are, whether through encouragement, material support, mentoring, or simple human presence.',
+    icon: 'C',
+    title: 'Compassion',
+    text: 'Service must reach people where they are, especially when hardship has made hope difficult.',
   },
   {
-    title: 'Resilience can be taught',
-    text:
-      'The images show young people and communities facing real challenges, yet still responding to encouragement. That is the soil where resilience grows.',
+    icon: 'S',
+    title: 'Service',
+    text: 'Influence becomes meaningful when it is used to lift children, families, and communities.',
   },
   {
-    title: 'Leadership is service',
-    text:
-      "True leadership is not only position or visibility. It is the willingness to stand with others, guide them, and use one's experience to create opportunity.",
+    icon: 'I',
+    title: 'Integrity',
+    text: 'Trust is built through honesty, consistency, and responsibility in every act of support.',
   },
   {
-    title: 'Hope needs structure',
+    icon: 'L',
+    title: 'Leadership',
+    text: 'Leadership is not only visibility. It is the courage to guide, protect, and create opportunity.',
+  },
+  {
+    icon: 'F',
+    title: 'Faith',
+    text: 'Faith keeps service anchored in purpose, humility, and the belief that lives can change.',
+  },
+  {
+    icon: 'R',
+    title: 'Resilience',
+    text: 'Young people can rise through difficulty when someone helps them see strength within themselves.',
+  },
+  {
+    icon: 'H',
+    title: 'Hope',
+    text: 'Hope becomes powerful when it is paired with mentoring, education, and visible support.',
+  },
+  {
+    icon: 'CR',
+    title: 'Community Responsibility',
+    text: 'A stronger future is built when communities share responsibility for the next generation.',
+  },
+];
+
+const foundationConnections = [
+  {
+    title: 'Education support',
     text:
-      'Hope becomes sustainable when it is supported by programs, mentors, accountable leadership, and pathways that help young people keep moving forward.',
+      'School and orphanage visits revealed how learning support, encouragement, and basic materials can protect a child from being left behind.',
+  },
+  {
+    title: 'Healthcare initiatives',
+    text:
+      'Humanitarian encounters reinforce that wellbeing matters. Families facing vulnerability need care, dignity, and connection to practical support.',
+  },
+  {
+    title: 'Humanitarian assistance',
+    text:
+      'Images from outreach with displaced and vulnerable families show why compassion must become direct action in moments of need.',
+  },
+  {
+    title: 'Community development',
+    text:
+      'The foundation is shaped by communities, schools, and local leaders working together to create safer spaces for growth.',
+  },
+  {
+    title: 'Youth empowerment',
+    text:
+      'Basketball remains a bridge for mentorship, discipline, teamwork, leadership, and positive identity among young people.',
   },
 ];
 
@@ -85,13 +111,19 @@ const galleryImages = [
     image: '/media/inspiration/idp-mangu-service.jpeg',
     title: 'Standing with vulnerable families',
     caption:
-      'A moment of service with displaced families in Mangu, reflecting compassion, dignity, and humanitarian responsibility.',
+      'Service among displaced families in Mangu, reflecting compassion, dignity, and humanitarian responsibility.',
   },
   {
     image: '/media/inspiration/children-duty-aspiration.jpeg',
     title: 'Children who see possibility',
     caption:
-      'A joyful community moment showing how children respond when a visible role model encourages them to dream beyond their circumstances.',
+      'A community moment showing how children respond when a visible role model encourages them to dream beyond their circumstances.',
+  },
+  {
+    image: '/media/inspiration/school-visit-hope.jpeg',
+    title: 'Hope in school communities',
+    caption:
+      'Children gathered with energy and expectation, reflecting why education, mentorship, and community care matter.',
   },
   {
     image: '/media/inspiration/coach-michael-akuboh.jpeg',
@@ -109,7 +141,7 @@ const galleryImages = [
     image: '/media/inspiration/col-samuel-amedu.jpeg',
     title: 'Leadership and structure',
     caption:
-      'An image connected to organized basketball leadership and the value of credible institutions in youth development.',
+      'A moment connected to organized basketball leadership and the value of credible institutions in youth development.',
   },
   {
     image: '/media/inspiration/masai-ujiri.jpeg',
@@ -117,29 +149,67 @@ const galleryImages = [
     caption:
       'A reminder that African basketball can inspire leadership, ambition, and opportunity across communities and nations.',
   },
-  {
-    image: '/media/inspiration/school-visit-hope.jpeg',
-    title: 'Hope in school communities',
-    caption:
-      'Children gathered with energy and expectation, reflecting why education, mentorship, and community care matter.',
-  },
 ];
-
-const websiteSummary =
-  'The inspiration behind the Kevin Nambam Ninmol Foundation is rooted in lived experience, basketball mentorship, community service, and the dignity of vulnerable people. The images that shaped this page reveal a founder influenced by coaches, basketball leaders, children, displaced families, and school communities. They show that service is not abstract; it is found in standing beside families facing hardship, encouraging children to believe in a bigger future, and learning from mentors who used sport to build discipline and leadership. These experiences shaped a worldview centered on compassion, resilience, accountability, and opportunity. The foundation was established to turn those lessons into practical support through education, youth empowerment, humanitarian relief, community development, and mentorship. Its mission continues to be guided by one conviction: every young person deserves hope, dignity, guidance, and the chance to rise beyond fear.';
-
-const homepageSummary =
-  "The foundation was inspired by mentors, children, displaced families, and community moments that revealed the power of sport, education, and compassion. These experiences shaped Kevin's commitment to help young people rise beyond fear, access opportunity, and build lives of dignity, confidence, and hope.";
 
 function InspirationPage() {
   usePageTitle('The Inspiration Behind the Foundation');
+  const [activeImageIndex, setActiveImageIndex] = useState(null);
+  const activeImage = activeImageIndex === null ? null : galleryImages[activeImageIndex];
+
+  useEffect(() => {
+    if (activeImageIndex === null) {
+      return undefined;
+    }
+
+    const previousOverflow = document.body.style.overflow;
+
+    const handleKeyDown = (event) => {
+      if (event.key === 'Escape') {
+        setActiveImageIndex(null);
+      }
+
+      if (event.key === 'ArrowRight') {
+        setActiveImageIndex((currentIndex) =>
+          currentIndex === null ? currentIndex : (currentIndex + 1) % galleryImages.length,
+        );
+      }
+
+      if (event.key === 'ArrowLeft') {
+        setActiveImageIndex((currentIndex) =>
+          currentIndex === null
+            ? currentIndex
+            : (currentIndex - 1 + galleryImages.length) % galleryImages.length,
+        );
+      }
+    };
+
+    document.body.style.overflow = 'hidden';
+    document.addEventListener('keydown', handleKeyDown);
+
+    return () => {
+      document.body.style.overflow = previousOverflow;
+      document.removeEventListener('keydown', handleKeyDown);
+    };
+  }, [activeImageIndex]);
+
+  const showPreviousImage = () => {
+    setActiveImageIndex((currentIndex) =>
+      currentIndex === null ? currentIndex : (currentIndex - 1 + galleryImages.length) % galleryImages.length,
+    );
+  };
+
+  const showNextImage = () => {
+    setActiveImageIndex((currentIndex) =>
+      currentIndex === null ? currentIndex : (currentIndex + 1) % galleryImages.length,
+    );
+  };
 
   return (
     <main>
       <PageHero
         eyebrow="Inspiration"
         title="The Inspiration Behind the Foundation"
-        subtitle="The people, moments, and values that shaped a mission of dignity, service, and opportunity."
+        subtitle="The people, experiences, and values that inspired a lifelong commitment to service."
         image="/media/inspiration/school-visit-hope.jpeg"
       />
 
@@ -149,19 +219,18 @@ function InspirationPage() {
             <SectionIntro
               eyebrow="Opening Reflection"
               title="A mission shaped by people, places, and responsibility."
-              text="The Kevin Nambam Ninmol Foundation did not begin as an abstract idea. It grew from lived experience, from the discipline of basketball, from the influence of mentors, and from direct encounters with children and families who needed encouragement, care, and opportunity."
+              text="The Kevin Nambam Ninmol Foundation grew from lived experience, the discipline of basketball, the influence of mentors, and direct encounters with children and families who needed care, guidance, and opportunity."
             />
             <div className="stacked-copy">
               <p>
-                The images behind this story reveal a founder shaped by more than personal ambition. They show
-                relationships with coaches and basketball leaders, moments of service with vulnerable communities,
-                and school visits where children gathered with hope in their faces. Together, these moments point
-                to a simple but powerful conviction: success becomes meaningful when it helps others rise.
+                The images behind this page show more than memories. They reveal relationships, service moments,
+                school visits, community hardship, and visible examples of leadership. Together, they point to a
+                conviction that personal progress becomes more meaningful when it helps others rise.
               </p>
               <p>
-                Basketball opened doors, but service gave those doors a deeper purpose. The same game that taught
-                discipline, confidence, teamwork, and resilience also became a language for reaching young people
-                who needed guidance and belief.
+                Basketball opened doors, but the people along the journey gave those doors deeper purpose. Coaches
+                taught discipline. Communities revealed need. Children gave the mission urgency. Faith and resilience
+                shaped the belief that fear does not have to define a young person's future.
               </p>
             </div>
           </div>
@@ -177,28 +246,10 @@ function InspirationPage() {
       <section className="section-space section-alt">
         <div className="container">
           <SectionIntro
-            eyebrow="Image Analysis"
-            title="What the inspiration images reveal."
-            text="Across the available images, the same themes return: mentorship, vulnerable communities, children, basketball, leadership, service, faith-shaped resilience, and hope."
-            centered
-          />
-          <div className="inspiration-theme-grid">
-            {observedThemes.map((theme) => (
-              <article key={theme.title} className="inspiration-theme-card">
-                <h3>{theme.title}</h3>
-                <p>{theme.text}</p>
-              </article>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      <section className="section-space">
-        <div className="container">
-          <SectionIntro
             eyebrow="The People Who Shaped the Vision"
             title="Mentors, leaders, communities, and everyday heroes."
-            text="The images identify influential basketball figures and community moments that helped shape the founder's values. Their lesson is not fame, but responsibility: when people invest in you, you become responsible for investing in others."
+            text="The people represented in these images point to the kind of influence that lasts: guidance, example, discipline, courage, and service."
+            centered
           />
           <div className="inspiration-people-grid">
             {peopleWhoShapedTheVision.map((person) => (
@@ -215,67 +266,22 @@ function InspirationPage() {
         </div>
       </section>
 
-      <section className="section-space section-alt">
-        <div className="container inspiration-story-stack">
-          <article className="info-panel">
-            <p className="program-tag">Lessons Learned</p>
-            <h2>What these experiences taught.</h2>
-            <div className="inspiration-lesson-grid">
-              {lessons.map((lesson) => (
-                <div key={lesson.title} className="inspiration-lesson-item">
-                  <h3>{lesson.title}</h3>
-                  <p>{lesson.text}</p>
-                </div>
-              ))}
-            </div>
-          </article>
-
-          <article className="info-panel">
-            <p className="program-tag">Why the Foundation Was Established</p>
-            <h2>To turn personal inspiration into public good.</h2>
-            <div className="stacked-copy">
-              <p>
-                The foundation was established because the founder saw that talent alone is not enough. Young
-                people need encouragement, safe spaces, role models, education support, and people willing to walk
-                with them through difficult seasons.
-              </p>
-              <p>
-                The images of displaced families and school communities make the mission broader than basketball.
-                They show a humanitarian call: to serve with dignity, to respond to hardship with compassion, and
-                to create opportunities that can outlast a single event.
-              </p>
-            </div>
-          </article>
-
-          <article className="info-panel">
-            <p className="program-tag">Looking Ahead</p>
-            <h2>The same inspiration continues to guide the work.</h2>
-            <p>
-              As the foundation grows, these influences remain its compass. Mentors remind the team to lead with
-              discipline. Children remind the team to keep hope practical. Vulnerable communities remind the team
-              to serve with humility. Basketball reminds the team that one opportunity can change the direction
-              of a life.
-            </p>
-          </article>
-        </div>
-      </section>
-
       <section className="section-space">
         <div className="container">
           <SectionIntro
-            eyebrow="Inspiration Gallery Captions"
-            title="Images that carry the story."
-            text="Suggested captions for the inspiration gallery, based on the people, places, and values visible in the images."
+            eyebrow="Lessons That Remain"
+            title="The values that continue to guide the work."
+            text="These lessons connect the founder's journey to the foundation's public mission: serving with dignity, building trust, and creating practical opportunity."
             centered
           />
-          <div className="inspiration-gallery-grid">
-            {galleryImages.map((item) => (
-              <article key={item.image} className="inspiration-gallery-card">
-                <img src={item.image} alt={item.title} loading="lazy" decoding="async" />
-                <div>
-                  <h3>{item.title}</h3>
-                  <p>{item.caption}</p>
-                </div>
+          <div className="inspiration-lesson-grid">
+            {lessons.map((lesson) => (
+              <article key={lesson.title} className="inspiration-lesson-item">
+                <span className="inspiration-lesson-icon" aria-hidden="true">
+                  {lesson.icon}
+                </span>
+                <h3>{lesson.title}</h3>
+                <p>{lesson.text}</p>
               </article>
             ))}
           </div>
@@ -283,55 +289,140 @@ function InspirationPage() {
       </section>
 
       <section className="section-space section-alt">
+        <div className="container inspiration-story-stack">
+          <article className="info-panel">
+            <p className="program-tag">Why the Foundation Was Established</p>
+            <h2>To turn personal inspiration into public good.</h2>
+            <div className="stacked-copy">
+              <p>
+                The foundation was established because talent alone is not enough. Young people need guidance,
+                encouragement, safe spaces, education support, and people willing to walk with them through difficult
+                seasons.
+              </p>
+              <p>
+                The inspiration images show a mission broader than sport. They connect basketball to care, education,
+                humanitarian response, community development, and the belief that every child deserves a real chance
+                to grow.
+              </p>
+            </div>
+          </article>
+
+          <div className="inspiration-program-grid" aria-label="How the inspiration connects to foundation work">
+            {foundationConnections.map((item) => (
+              <article key={item.title} className="inspiration-program-card">
+                <h3>{item.title}</h3>
+                <p>{item.text}</p>
+              </article>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="section-space">
         <div className="container">
           <SectionIntro
-            eyebrow="Additional Story Assets"
-            title="Summary copy for website and homepage use."
-            text="These concise versions can be reused in campaign materials, homepage highlights, donor briefs, or printed communication."
+            eyebrow="Inspiration Gallery"
+            title="Images that carry the story."
+            text="Each image represents a person, place, or lesson that helped shape the foundation's commitment to dignity, service, and opportunity."
+            centered
           />
-          <div className="inspiration-summary-grid">
-            <article className="inspiration-summary-card">
-              <p className="program-tag">Website Summary</p>
-              <h3>150-word introduction</h3>
-              <p>{websiteSummary}</p>
-            </article>
-            <article className="inspiration-summary-card">
-              <p className="program-tag">Homepage Summary</p>
-              <h3>50-word version</h3>
-              <p>{homepageSummary}</p>
-            </article>
-            <article className="inspiration-summary-card inspiration-quote-card">
-              <p className="program-tag">Featured Pull Quote</p>
-              <h3>Quote for page highlight</h3>
-              <p>
-                "The foundation began where inspiration met responsibility: in the faces of children, the wisdom
-                of mentors, and the belief that hope must become action."
-              </p>
-            </article>
+          <div className="inspiration-gallery-grid">
+            {galleryImages.map((item, index) => (
+              <article key={item.image} className="inspiration-gallery-card">
+                <button
+                  type="button"
+                  className="inspiration-gallery-button"
+                  onClick={() => setActiveImageIndex(index)}
+                  aria-label={`Open image: ${item.title}`}
+                >
+                  <img src={item.image} alt={item.title} loading="lazy" decoding="async" />
+                  <span className="inspiration-gallery-copy">
+                    <strong>{item.title}</strong>
+                    <span>{item.caption}</span>
+                  </span>
+                </button>
+              </article>
+            ))}
           </div>
+        </div>
+      </section>
+
+      <section className="section-space section-alt">
+        <div className="container inspiration-story-stack">
+          <article className="info-panel">
+            <p className="program-tag">Looking Ahead</p>
+            <h2>The same inspiration continues to shape the future.</h2>
+            <p>
+              As the foundation grows, these influences remain its compass. Mentors remind the team to lead with
+              discipline. Children remind the team to keep hope practical. Vulnerable communities remind the team to
+              serve with humility. Basketball reminds the team that one opportunity can change the direction of a life.
+            </p>
+          </article>
+
+          <article className="inspiration-featured-quote" aria-label="Featured quote">
+            <p className="program-tag">Featured Quote</p>
+            <blockquote>
+              "When inspiration becomes responsibility, service becomes a legacy that can outlive one person's story."
+            </blockquote>
+          </article>
         </div>
       </section>
 
       <section className="section-space section-accent-band">
         <div className="container cta-band">
           <div>
-            <p className="eyebrow">Closing Message</p>
-            <h2>Hope becomes powerful when it is shared.</h2>
+            <p className="eyebrow">Call to Action</p>
+            <h2>Join Us in Continuing the Legacy</h2>
             <p>
-              The foundation exists so that inspiration does not stop with one life. It becomes service, guidance,
-              opportunity, and lasting impact for young people and communities.
+              Help turn inspiration into practical support for young people, families, and communities.
             </p>
           </div>
           <div className="cta-band-actions">
-            <Link to="/about" className="button button-ghost">
-              Read About Us
-            </Link>
             <Link to="/donate" className="button button-accent">
-              Support the Mission
+              Support Our Work
+            </Link>
+            <Link to="/get-involved#volunteer-form" className="button button-ghost">
+              Become a Volunteer
+            </Link>
+            <Link to="/get-involved" className="button button-ghost">
+              Partner With Us
             </Link>
           </div>
         </div>
       </section>
+
+      {activeImage ? (
+        <div
+          className="inspiration-lightbox"
+          role="dialog"
+          aria-modal="true"
+          aria-label={activeImage.title}
+          onClick={() => setActiveImageIndex(null)}
+        >
+          <div className="inspiration-lightbox-panel" onClick={(event) => event.stopPropagation()}>
+            <button
+              type="button"
+              className="inspiration-lightbox-close"
+              onClick={() => setActiveImageIndex(null)}
+            >
+              Close
+            </button>
+            <img src={activeImage.image} alt={activeImage.title} />
+            <div className="inspiration-lightbox-caption">
+              <h3>{activeImage.title}</h3>
+              <p>{activeImage.caption}</p>
+            </div>
+            <div className="inspiration-lightbox-nav">
+              <button type="button" onClick={showPreviousImage}>
+                Previous
+              </button>
+              <button type="button" onClick={showNextImage}>
+                Next
+              </button>
+            </div>
+          </div>
+        </div>
+      ) : null}
     </main>
   );
 }
