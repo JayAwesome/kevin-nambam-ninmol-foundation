@@ -17,7 +17,7 @@ function GetInvolvedPage() {
   usePageTitle(t('getInvolvedPage.title'));
   const [formStartedAt, setFormStartedAt] = useState(() => Date.now());
 
-  const showComingSoon = (message) => {
+  const showStatusMessage = (message) => {
     console.log(message);
     window.alert(message);
   };
@@ -58,7 +58,7 @@ function GetInvolvedPage() {
             <button
               type="button"
               className="button button-accent"
-              onClick={() => showComingSoon('Partnership contact integration coming soon.')}
+              onClick={() => showStatusMessage('Thank you. Please contact the foundation team to discuss partnership opportunities.')}
             >
               Partner
             </button>
@@ -106,7 +106,7 @@ function GetInvolvedPage() {
 
                 form.reset();
                 setFormStartedAt(Date.now());
-                showComingSoon('Volunteer form integration coming soon.');
+                showStatusMessage('Thank you. Please contact the foundation team to complete your volunteer interest.');
               }}
             >
               <label className="form-honeypot">
@@ -173,7 +173,7 @@ function GetInvolvedPage() {
               <button
                 type="button"
                 className="button button-ghost"
-                onClick={() => showComingSoon('Sponsorship request integration coming soon.')}
+                onClick={() => showStatusMessage('Thank you. Please contact the foundation team to discuss sponsorship opportunities.')}
               >
                 Sponsor a Project
               </button>

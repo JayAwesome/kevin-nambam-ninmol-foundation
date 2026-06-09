@@ -32,6 +32,7 @@ function SiteFooter() {
                 {t(`nav.${item.labelKey}`)}
               </Link>
             ))}
+            <Link to="/inspiration">Inspiration</Link>
           </div>
         </div>
 

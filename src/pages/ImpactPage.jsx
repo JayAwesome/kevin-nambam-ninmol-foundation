@@ -8,7 +8,6 @@ import {
   impactGalleryHighlights,
   impactMetrics,
   impactOutcomes,
-  reports,
   testimonials,
 } from '../siteData';
 
@@ -64,46 +63,12 @@ function ImpactPage() {
         </div>
       </section>
 
-      <section className="section-space section-alt">
-        <div className="container">
-          <SectionIntro
-            eyebrow="Reports"
-            title="Documents that support transparency."
-            text="Downloadable report placeholders are ready for annual reports, financial summaries, and program reports."
-            centered
-          />
-          <div className="reports-grid">
-            {reports.map((report) => (
-              <article key={report.title} className="report-card">
-                <div className="report-card-top">
-                  <span className="report-format-badge">{report.format}</span>
-                  <span className="meta-line">{report.date}</span>
-                </div>
-                <p className="program-tag">{report.type}</p>
-                <h3>{report.title}</h3>
-                <p>{report.description}</p>
-                <button
-                  type="button"
-                  className="button button-ghost report-button"
-                  onClick={() => {
-                    console.log('Report download placeholder', report.title);
-                    window.alert(`Download placeholder for "${report.title}"`);
-                  }}
-                >
-                  Download Placeholder
-                </button>
-              </article>
-            ))}
-          </div>
-        </div>
-      </section>
-
       <section className="section-space">
         <div className="container">
           <SectionIntro
             eyebrow="Case Summaries"
             title="Short stories behind the numbers."
-            text="Names are placeholders until beneficiary stories are approved for public use."
+            text="Names are representative until beneficiary stories are approved for public use."
           />
           <div className="testimonial-grid">
             {caseStudies.map((story) => (

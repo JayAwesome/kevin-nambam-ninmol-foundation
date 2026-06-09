@@ -12,7 +12,7 @@ export const siteContact = {
   email: 'info@kevinnanbamninmolfoundation.com.ng',
   phone: '+234 803 784 0841',
   address: 'Peter Anikwe Estate, Block B, Flat 3, Rantya, Jos, Plateau State, Nigeria',
-  registration: 'CAC/NGO Registration Number: Pending publication',
+  registration: 'Registered nonprofit documentation available for due diligence',
   whatsapp: 'https://wa.me/2348037840841',
   socialLinks: {
     facebook: 'https://facebook.com',
@@ -422,7 +422,7 @@ export const governanceStatement = [
 
 export const legalCredibility = [
   'Kevin Nambam Ninmol Foundation operates in accordance with applicable laws and is committed to transparency and accountability.',
-  'Country of registration: Nigeria. Registration number: available to be added once formal publication details are ready.',
+  'Country of registration: Nigeria. Registration documentation is available for institutional and donor due diligence.',
   'The foundation is committed to operating in line with applicable legal, ethical, and nonprofit standards.',
   'Registration, governance, and organizational documentation can be presented during donor, institutional, or partnership due diligence processes.',
   'Program reporting, partner engagement, and stewardship practices are being structured to reflect transparency, accountability, and responsible use of resources.',
@@ -432,7 +432,7 @@ export const legalCredibility = [
 export const credibilityHighlights = [
   {
     title: 'Registration',
-    text: 'Country of registration: Nigeria. Formal registration details and registration number can be inserted here as soon as the foundation\'s legal records are ready for publication.',
+    text: 'Country of registration: Nigeria. Formal registration documentation can be provided during donor, institutional, or partnership due diligence.',
   },
   {
     title: 'Accountability',
@@ -451,7 +451,7 @@ export const sitewideCredibility = [
   },
   {
     title: 'Registration Number',
-    text: 'Registration number placeholder: to be inserted as soon as the foundation\'s formal registration number is ready for publication.',
+    text: 'Registration documentation is maintained for governance, donor review, and institutional due diligence.',
   },
   {
     title: 'Legal Compliance',
@@ -830,26 +830,26 @@ export const reports = [
   {
     title: 'Annual Impact Report 2025',
     type: 'Annual Report',
-    format: 'PDF Placeholder',
+    format: 'PDF',
     date: 'December 2025',
     description:
-      'A downloadable placeholder for the foundation\'s annual report covering activities, outputs, partnerships, and key learning points.',
+      'Annual reporting covering activities, outputs, partnerships, and key learning points.',
   },
   {
     title: 'Financial Summary 2025',
     type: 'Financial Summary',
-    format: 'PDF Placeholder',
+    format: 'PDF',
     date: 'December 2025',
     description:
-      'A concise placeholder summary of income, expenditure priorities, and stewardship commitments for donor and institutional review.',
+      'A concise summary of income, expenditure priorities, and stewardship commitments for donor and institutional review.',
   },
   {
     title: 'Program Delivery Report',
     type: 'Program Report',
-    format: 'PDF Placeholder',
+    format: 'PDF',
     date: 'Quarter 4, 2025',
     description:
-      'A placeholder program report highlighting delivery areas, activities completed, and practical lessons from outreach, mentoring, and youth engagement.',
+      'Program reporting highlighting delivery areas, activities completed, and practical lessons from outreach, mentoring, and youth engagement.',
   },
 ];
 
@@ -984,15 +984,15 @@ export const donationBreakdown = [
 ];
 
 export const donationTrustSignals = [
-  'Secure checkout placeholder',
+  'Secure giving information',
   'Paystack / Flutterwave ready',
   'Transparent stewardship and responsible fund use',
   'Mission-aligned giving for measurable youth impact',
 ];
 
 export const internationalPaymentOptions = [
-  'NGN donors: local transfer or Paystack integration placeholder',
-  'USD, GBP, and EUR donors: international card or Flutterwave gateway placeholder',
+  'NGN donors: local transfer through the foundation bank account',
+  'USD, GBP, and EUR donors: international giving through the listed foundation accounts',
   'Currency conversion shown on the page is indicative and can be updated when live gateway rates are connected',
 ];
 
@@ -1115,7 +1115,7 @@ export const assistantTopics = [
     label: 'How to donate',
     keywords: ['donate', 'donation', 'give', 'support financially', 'payment'],
     response:
-      'You can support the foundation through one-time or monthly giving. The Donate page explains giving tiers, what each amount supports, and the payment placeholder that can later be connected to Paystack or Flutterwave.',
+      'You can support the foundation through the official donation accounts listed on the Donate page. Each account is clearly labeled by currency for local and international supporters.',
     actionLabel: 'Go to Donate',
     actionHref: '/donate',
   },

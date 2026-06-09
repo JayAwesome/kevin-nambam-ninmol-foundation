@@ -44,7 +44,7 @@ function ContactPage() {
       return;
     }
 
-    console.log('Contact form placeholder validated');
+    console.log('Contact form validated');
     form.reset();
     setFormStartedAt(Date.now());
     window.alert(t('contactPage.thankYou'));

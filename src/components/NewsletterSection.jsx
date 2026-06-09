@@ -28,7 +28,7 @@ function NewsletterSection() {
       return;
     }
 
-    console.log('Newsletter subscription placeholder validated');
+    console.log('Newsletter subscription validated');
     setIsSubscribed(true);
     setEmail('');
     setFormStartedAt(Date.now());

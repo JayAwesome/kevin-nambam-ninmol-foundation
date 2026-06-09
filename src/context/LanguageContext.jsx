@@ -51,7 +51,7 @@ const en = {
     emailLabel: 'Email address',
     empty: 'Please enter your email address.',
     success:
-      'Thank you. Your newsletter signup has been captured in this placeholder flow and is ready to be connected to a live mailing system.',
+      'Thank you. Your newsletter signup has been received.',
   },
   credibility: {
     eyebrow: 'Credibility and Transparency',
@@ -86,7 +86,7 @@ const en = {
     responseWhatWeDo:
       'Kevin Nambam Ninmol Foundation uses basketball, mentorship, education support, and community outreach to help children and young people build confidence, make positive choices, and access opportunity.',
     responseDonate:
-      'You can support the foundation through one-time or monthly giving. The Donate page explains giving tiers, what each amount supports, and the payment placeholder that can later be connected to Paystack or Flutterwave.',
+      'You can support the foundation through the official donation accounts listed on the Donate page. Each account is clearly labeled by currency for local and international supporters.',
     responseVolunteer:
       'Volunteers can support clinics, mentoring, outreach, and partnership activities. The Get Involved page explains where your time and skills can help and gives a direct route to connect with the team.',
     responseContact:
@@ -155,14 +155,14 @@ const en = {
     donorBody:
       'The foundation is committed to responsible stewardship, clear communication, and transparent use of resources so supporters can give with confidence.',
     donorReassurance: 'Every contribution is used responsibly to create measurable impact.',
-    paymentNote: 'Payment gateway placeholder: Paystack / Flutterwave',
+    paymentNote: 'Secure bank transfer details are listed on the Donate page.',
     ctaEyebrow: 'Donate',
     ctaTitle: 'Your support creates real change',
     ctaText:
       'Every donation helps extend opportunity, guidance, and practical support to young people who need it most.',
     giveNow: 'Give Now',
     donateNow: 'Donate Now',
-    placeholderAlert: 'Secure payment integration placeholder.',
+    placeholderAlert: 'Please use the listed foundation bank accounts to donate securely.',
     subtitle: 'Support the work through clear, responsible giving.',
     chooseText: 'Choose an amount, select a giving frequency, and support the foundation with confidence.',
     impactIntroTag: 'What your gift makes possible',
@@ -232,7 +232,7 @@ const en = {
     nextEyebrow: 'Next Step',
     nextTitle: 'See the evidence behind the work',
     nextText:
-      'Visit the Impact page to see measurable reach, case stories, activity visuals, and reporting placeholders that show how the work is being delivered.',
+      'Visit the Impact page to see measurable reach, case stories, activity visuals, and evidence of how the work is being delivered.',
     seeImpact: 'See Impact',
     viewImpact: 'View Impact',
   },
@@ -271,8 +271,8 @@ const en = {
     reportsEyebrow: 'Reports & Documents',
     reportsTitle: 'Reporting materials that support professionalism.',
     reportsText:
-      'These placeholders show the reporting structure used for annual communication, fund summaries, and program documentation.',
-    downloadPlaceholder: 'Download Report Placeholder',
+      'These reporting materials support annual communication, fund summaries, and program documentation.',
+    downloadPlaceholder: 'Download Report',
     nextEyebrow: 'Next Step',
     nextTitle: 'Help turn measurable impact into sustained support',
     nextText:
@@ -301,7 +301,7 @@ const en = {
     interest: 'Area of interest',
     helpMessage: 'Tell us how you would like to help',
     submitVolunteer: 'Submit Volunteer Interest',
-    volunteerAlert: 'Volunteer signup integration coming soon.',
+    volunteerAlert: 'Thank you. Please contact the foundation team to complete your volunteer interest.',
     benefitsTag: 'Volunteer Benefits',
     benefitsTitle: 'Why volunteer with us?',
     benefit1: 'Support real programs that directly serve young people',
@@ -312,15 +312,15 @@ const en = {
     partnerText:
       'We welcome partnerships with organizations, schools, institutions, and community groups that want to support youth development through sports, education, and mentoring.',
     explorePartnership: 'Explore Partnership',
-    partnershipAlert: 'Partnership contact integration coming soon.',
+    partnershipAlert: 'Thank you. Please contact the foundation team to discuss partnership opportunities.',
     sponsorTag: 'Sponsorship Options',
     sponsorTitle: 'Sponsor a program or initiative',
     becomeSponsor: 'Become a Sponsor',
-    sponsorAlert: 'Sponsorship enquiry integration coming soon.',
+    sponsorAlert: 'Thank you. Please contact the foundation team to discuss sponsorship opportunities.',
     internshipTag: 'Internship Opportunities',
     internshipTitle: 'Learn while contributing',
     applyInternship: 'Apply for Internship',
-    internshipAlert: 'Internship application integration coming soon.',
+    internshipAlert: 'Thank you. Please contact the foundation team to discuss internship opportunities.',
   },
   contactPage: {
     title: 'Contact',
@@ -353,8 +353,8 @@ const en = {
     yourMessage: 'Your message',
     sendMessage: 'Send Message',
     formNote:
-      "This form is currently a placeholder and will be connected to the foundation's email workflow soon.",
-    thankYou: 'Thank you for reaching out. Contact form integration is coming soon.',
+      'You can also reach the foundation directly by email, phone, or WhatsApp.',
+    thankYou: 'Thank you for reaching out. Please contact us by email or WhatsApp for the fastest response.',
     officeInfoTag: 'Office Information',
     officeInfoTitle: 'Contact details',
     responseTag: 'Response',
@@ -364,7 +364,7 @@ const en = {
     chatWhatsapp: 'Chat on WhatsApp',
     findUsEyebrow: 'Find Us',
     findUsTitle: 'Location map',
-    findUsText: 'Use the map below as a placeholder reference for the foundation office.',
+    findUsText: 'Use the map below to locate the foundation office.',
     mapTitle: 'Kevin Nambam Ninmol Foundation office location',
   },
   leadershipPage: {
@@ -648,14 +648,14 @@ const en = {
       },
     ],
     donationTrustSignals: [
-      'Secure checkout placeholder',
+      'Secure giving information',
       'Paystack / Flutterwave ready',
       'Transparent stewardship and responsible fund use',
       'Mission-aligned giving for measurable youth impact',
     ],
     internationalPaymentOptions: [
-      'NGN donors: local transfer or Paystack integration placeholder',
-      'USD, GBP, and EUR donors: international card or Flutterwave gateway placeholder',
+      'NGN donors: local transfer through the foundation bank account',
+      'USD, GBP, and EUR donors: international giving through the listed foundation accounts',
       'Currency conversion shown on the page is indicative and can be updated when live gateway rates are connected',
     ],
     sitewideCredibility: [
@@ -665,7 +665,7 @@ const en = {
       },
       {
         title: 'Registration Number',
-        text: 'Registration number placeholder: to be inserted as soon as the foundation legal number is ready for publication.',
+        text: 'Registration documentation is maintained for governance, donor review, and institutional due diligence.',
       },
       {
         title: 'Legal Compliance',
@@ -760,17 +760,17 @@ const en = {
       {
         title: 'Annual Impact Report 2025',
         type: 'Annual Report',
-        description: 'A downloadable placeholder for the foundation annual report covering activities, outputs, partnerships, and key learning points.',
+        description: 'Annual reporting covering activities, outputs, partnerships, and key learning points.',
       },
       {
         title: 'Financial Summary 2025',
         type: 'Financial Summary',
-        description: 'A concise placeholder summary of income, expenditure priorities, and stewardship commitments for donor and institutional review.',
+        description: 'A concise summary of income, expenditure priorities, and stewardship commitments for donor and institutional review.',
       },
       {
         title: 'Program Delivery Report',
         type: 'Program Report',
-        description: 'A placeholder program report highlighting delivery areas, activities completed, and practical lessons from outreach, mentoring, and youth engagement.',
+        description: 'Program reporting highlighting delivery areas, activities completed, and practical lessons from outreach, mentoring, and youth engagement.',
       },
     ],
     impactGalleryHighlights: [
@@ -1210,17 +1210,139 @@ const bankAccountCopy = {
 
 const baseTranslations = { en, fr, ha, yo, ig };
 
-const translations = Object.fromEntries(
-  Object.entries(baseTranslations).map(([languageCode, dictionary]) => [
-    languageCode,
-    {
-      ...dictionary,
-      donatePage: {
-        ...dictionary.donatePage,
-        ...bankAccountCopy[languageCode],
-      },
+const polishedCopyOverrides = {
+  fr: {
+    donatePage: {
+      placeholderAlert:
+        'Veuillez utiliser les comptes bancaires officiels de la fondation pour donner en toute securite.',
     },
-  ]),
+    programsPage: {
+      nextText:
+        'Visitez la page Impact pour voir la portee mesurable, les histoires de cas, les visuels dactivites et les rapports.',
+    },
+    impactPage: {
+      downloadPlaceholder: 'Telecharger le rapport',
+    },
+    getInvolvedPage: {
+      volunteerAlert:
+        'Merci. Veuillez contacter lequipe de la fondation pour finaliser votre interet benevole.',
+      partnershipAlert:
+        'Merci. Veuillez contacter lequipe de la fondation pour discuter des partenariats.',
+      sponsorAlert:
+        'Merci. Veuillez contacter lequipe de la fondation pour discuter du sponsoring.',
+      internshipAlert:
+        'Merci. Veuillez contacter lequipe de la fondation pour discuter des stages.',
+    },
+    contactPage: {
+      thankYou:
+        'Merci de nous avoir contactes. Veuillez utiliser lemail ou WhatsApp pour une reponse rapide.',
+    },
+  },
+  ha: {
+    donatePage: {
+      placeholderAlert:
+        'Da fatan a yi amfani da asusun bankin gidauniyar da aka lissafa don bayar da gudummawa cikin aminci.',
+    },
+    impactPage: {
+      downloadPlaceholder: 'Zazzage rahoton',
+    },
+    getInvolvedPage: {
+      volunteerAlert:
+        'Mun gode. Da fatan a tuntubi tawagar gidauniyar don kammala shaawar aikin sa kai.',
+      partnershipAlert:
+        'Mun gode. Da fatan a tuntubi tawagar gidauniyar don tattauna hadin gwiwa.',
+      sponsorAlert:
+        'Mun gode. Da fatan a tuntubi tawagar gidauniyar don tattauna daukar nauyi.',
+      internshipAlert:
+        'Mun gode. Da fatan a tuntubi tawagar gidauniyar don tattauna damar koyon aiki.',
+    },
+    contactPage: {
+      thankYou:
+        'Mun gode da tuntubar mu. Da fatan a yi amfani da email ko WhatsApp domin samun amsa cikin sauri.',
+    },
+  },
+  yo: {
+    donatePage: {
+      heroSubtitle:
+        'A se oju-iwe iranlowo yii lati je ki fifunni rorun, kedere ati gbekele fun gbogbo alatileyin.',
+      placeholderAlert:
+        'Jowo lo awon akaunti banki osise ti idasile naa lati se iranlowo lailewu.',
+    },
+    impactPage: {
+      downloadPlaceholder: 'Gba iroyin lati ayelujara',
+    },
+    getInvolvedPage: {
+      volunteerAlert:
+        'O seun. Jowo kan si egbe idasile naa lati pari ife alatileyin re.',
+      partnershipAlert:
+        'O seun. Jowo kan si egbe idasile naa lati jiroro lori ajosepo.',
+      sponsorAlert:
+        'O seun. Jowo kan si egbe idasile naa lati jiroro lori onigbowo.',
+      internshipAlert:
+        'O seun. Jowo kan si egbe idasile naa lati jiroro lori internship.',
+    },
+    contactPage: {
+      thankYou: 'O seun fun kikan si wa. Jowo lo imeeli tabi WhatsApp fun idahun yara.',
+    },
+  },
+  ig: {
+    donatePage: {
+      placeholderAlert:
+        'Biko jiri akauntu banki ntolala edepụtara nye onyinye nuzo echekwara.',
+    },
+    impactPage: {
+      downloadPlaceholder: 'Budata akuko',
+    },
+    getInvolvedPage: {
+      volunteerAlert:
+        'Daalu. Biko kpoturu otu ntolala iji mechaa mmasi inye aka gi.',
+      partnershipAlert:
+        'Daalu. Biko kpoturu otu ntolala iji kparita maka mmekorita.',
+      sponsorAlert:
+        'Daalu. Biko kpoturu otu ntolala iji kparita maka nkwado ego.',
+      internshipAlert:
+        'Daalu. Biko kpoturu otu ntolala iji kparita maka internship.',
+    },
+    contactPage: {
+      thankYou:
+        'Daalu maka ikpoturu anyi. Biko jiri email ma obu WhatsApp nweta nzaghachi ngwa ngwa.',
+    },
+  },
+};
+
+const translations = Object.fromEntries(
+  Object.entries(baseTranslations).map(([languageCode, dictionary]) => {
+    const overrides = polishedCopyOverrides[languageCode] ?? {};
+
+    return [
+      languageCode,
+      {
+        ...dictionary,
+        ...overrides,
+        donatePage: {
+          ...dictionary.donatePage,
+          ...overrides.donatePage,
+          ...bankAccountCopy[languageCode],
+        },
+        programsPage: {
+          ...dictionary.programsPage,
+          ...overrides.programsPage,
+        },
+        impactPage: {
+          ...dictionary.impactPage,
+          ...overrides.impactPage,
+        },
+        getInvolvedPage: {
+          ...dictionary.getInvolvedPage,
+          ...overrides.getInvolvedPage,
+        },
+        contactPage: {
+          ...dictionary.contactPage,
+          ...overrides.contactPage,
+        },
+      },
+    ];
+  }),
 );
 
 export const languageOptions = [

@@ -40,6 +40,9 @@ function AboutPage() {
             <blockquote className="about-story-quote">
               <p>"Your beginning does not determine your end."</p>
             </blockquote>
+            <Link to="/inspiration" className="text-link">
+              Read the inspiration behind the foundation
+            </Link>
           </div>
 
           <div className="split-panel-media">

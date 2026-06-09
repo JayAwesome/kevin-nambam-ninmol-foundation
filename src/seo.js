@@ -23,6 +23,13 @@ const baseRouteMeta = [
     image: '/media/founder-national.jpeg',
   },
   {
+    path: '/inspiration',
+    title: 'The Inspiration Behind Kevin NanBam Ninmol Foundation',
+    description:
+      'Discover the mentors, community experiences, children, and service moments that inspired Kevin NanBam Ninmol Foundation.',
+    image: '/media/inspiration/school-visit-hope.jpeg',
+  },
+  {
     path: '/programs',
     title: 'Programs | Sports, Education and Opportunity',
     description:

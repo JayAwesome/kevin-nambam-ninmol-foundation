@@ -10,8 +10,8 @@ function EventsPage() {
   usePageTitle(t('nav.events'));
 
   const handleRegister = (title) => {
-    console.log('Event registration placeholder', { title });
-    window.alert(`Event registration integration coming soon for "${title}".`);
+    console.log('Event registration interest', { title });
+    window.alert(`Thank you. Please contact the foundation team to complete registration for "${title}".`);
   };
 
   return (

@@ -39,7 +39,7 @@ function ResourcesPage() {
           <SectionIntro
             eyebrow="Reports"
             title="Annual and financial reporting."
-            text="Downloadable placeholders are ready for formal report files as they become available."
+            text="Downloadable report sections are ready for formal files as they become available."
             centered
           />
           <div className="reports-grid">
@@ -83,7 +83,7 @@ function ResourcesPage() {
           <SectionIntro
             eyebrow="Publications"
             title="Useful documents for partners and institutions."
-            text="These placeholders give the site a professional document structure while formal PDFs are prepared."
+            text="These document sections give the site a professional resource structure while formal PDFs are prepared."
           />
           <div className="reports-grid">
             {publications.map((item) => (

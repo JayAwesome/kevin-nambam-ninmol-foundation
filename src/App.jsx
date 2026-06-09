@@ -11,6 +11,7 @@ import DonatePage from './pages/DonatePage';
 import GetInvolvedPage from './pages/GetInvolvedPage';
 import HomePage from './pages/HomePage';
 import ImpactPage from './pages/ImpactPage';
+import InspirationPage from './pages/InspirationPage';
 import ProgramDetailPage from './pages/ProgramDetailPage';
 import ProgramsPage from './pages/ProgramsPage';
 
@@ -30,6 +31,7 @@ export function AppShell() {
         <Routes>
           <Route path="/" element={<HomePage />} />
           <Route path="/about" element={<AboutPage />} />
+          <Route path="/inspiration" element={<InspirationPage />} />
           <Route path="/programs" element={<ProgramsPage />} />
           <Route path="/programs/:slug" element={<ProgramDetailPage />} />
           <Route path="/impact" element={<ImpactPage />} />
