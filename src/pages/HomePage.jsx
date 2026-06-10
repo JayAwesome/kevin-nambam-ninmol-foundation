@@ -1,11 +1,13 @@
 import { Link } from 'react-router-dom';
 import LiveCounter from '../components/LiveCounter';
+import ResponsiveImage from '../components/ResponsiveImage';
 import SectionIntro from '../components/SectionIntro';
 import { useLanguage } from '../context/LanguageContext';
 import usePageTitle from '../hooks/usePageTitle';
 import {
   donorProgramCategories,
   heroStats,
+  mediaVideos,
   partnerSupporters,
   programs,
   testimonials,
@@ -38,12 +40,14 @@ function HomePage() {
           </div>
 
           <div className="home-hero-visual">
-            <img
+            <ResponsiveImage
               src="/media/founder-action.jpeg"
-              alt="Founder Kevin leading basketball training"
+              alt="Founder Kevin with children during a community outreach moment"
               className="media-focus-center"
-              decoding="async"
-              fetchpriority="high"
+              widths={[640, 960, 1280]}
+              sizes="(max-width: 1080px) 100vw, 48vw"
+              loading="eager"
+              fetchPriority="high"
             />
             <div className="home-hero-badge">
               <strong>Sports. Education. Opportunity.</strong>
@@ -109,7 +113,7 @@ function HomePage() {
           <div className="program-preview-grid">
             {programs.slice(0, 3).map((program) => (
               <article key={program.slug} className="feature-card">
-                <img src={program.image} alt={program.title} loading="lazy" decoding="async" />
+                <ResponsiveImage src={program.image} alt={program.alt ?? program.title} />
                 <div className="feature-card-body">
                   <p className="program-tag">{program.category}</p>
                   <h3>{program.title}</h3>
@@ -125,6 +129,56 @@ function HomePage() {
       </section>
 
       <section className="section-space section-alt">
+        <div className="container">
+          <SectionIntro
+            eyebrow="Video Stories"
+            title="See the work in motion."
+            text="Short activity clips help visitors understand the energy, care, and discipline behind the foundation's work."
+          />
+          <div className="home-video-layout">
+            <article className="video-card video-card-featured">
+              <video
+                controls
+                preload="none"
+                poster={mediaVideos[0].poster}
+                playsInline
+                aria-label={mediaVideos[0].title}
+              >
+                <source src={mediaVideos[0].src} type="video/mp4" />
+                Your browser does not support the video tag.
+              </video>
+              <div className="video-card-body">
+                <strong>{mediaVideos[0].title}</strong>
+                <p>Community support moments that show the foundation's humanitarian work in real settings.</p>
+              </div>
+            </article>
+
+            <div className="video-clip-stack">
+              <article className="video-clip-intro">
+                <h3>Moments from the field.</h3>
+                <p>
+                  Watch short highlights from outreach, mentoring, and basketball activities that show the mission in action.
+                </p>
+              </article>
+              <div className="video-clip-grid">
+                {mediaVideos.slice(1).map((video) => (
+                  <article key={video.src} className="video-card">
+                    <video controls preload="none" poster={video.poster} playsInline aria-label={video.title}>
+                      <source src={video.src} type="video/mp4" />
+                      Your browser does not support the video tag.
+                    </video>
+                    <div className="video-card-body">
+                      <strong>{video.title}</strong>
+                    </div>
+                  </article>
+                ))}
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="section-space">
         <div className="container">
           <SectionIntro
             eyebrow="Success Stories"

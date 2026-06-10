@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import PageHero from '../components/PageHero';
+import ResponsiveImage from '../components/ResponsiveImage';
 import SectionIntro from '../components/SectionIntro';
 import usePageTitle from '../hooks/usePageTitle';
 
@@ -22,7 +23,7 @@ const peopleWhoShapedTheVision = [
   {
     name: 'Col. Samuel Amedu',
     role: 'Basketball administrator and institutional leader',
-    image: '/media/inspiration/col-samuel-amedu.jpeg',
+    image: '/media/inspiration/samuel-amedu.jpeg',
     text:
       'This inspiration points to the importance of structure, governance, and credible leadership in building programs that can last.',
   },
@@ -114,10 +115,10 @@ const galleryImages = [
       'Service among displaced families in Mangu, reflecting compassion, dignity, and humanitarian responsibility.',
   },
   {
-    image: '/media/inspiration/children-duty-aspiration.jpeg',
-    title: 'Children who see possibility',
+    image: '/media/community-children-hope.jpeg',
+    title: 'Community hope in action',
     caption:
-      'A community moment showing how children respond when a visible role model encourages them to dream beyond their circumstances.',
+      'A foundation moment with children that reflects encouragement, belonging, and hope through positive community presence.',
   },
   {
     image: '/media/inspiration/school-visit-hope.jpeg',
@@ -138,7 +139,7 @@ const galleryImages = [
       'A tribute to coaching influence, patient leadership, and the people who help athletes grow beyond the court.',
   },
   {
-    image: '/media/inspiration/col-samuel-amedu.jpeg',
+    image: '/media/inspiration/samuel-amedu.jpeg',
     title: 'Leadership and structure',
     caption:
       'A moment connected to organized basketball leadership and the value of credible institutions in youth development.',
@@ -211,6 +212,7 @@ function InspirationPage() {
         title="The Inspiration Behind the Foundation"
         subtitle="The people, experiences, and values that inspired a lifelong commitment to service."
         image="/media/inspiration/school-visit-hope.jpeg"
+        imageAlt="Children gathered during a hopeful school community visit"
       />
 
       <section className="section-space">
@@ -254,7 +256,12 @@ function InspirationPage() {
           <div className="inspiration-people-grid">
             {peopleWhoShapedTheVision.map((person) => (
               <article key={person.name} className="inspiration-person-card">
-                <img src={person.image} alt={person.name} loading="lazy" decoding="async" />
+                <ResponsiveImage
+                  src={person.image}
+                  alt={person.name}
+                  widths={[360, 640, 960]}
+                  sizes="(max-width: 1080px) 100vw, 50vw"
+                />
                 <div>
                   <p className="program-tag">{person.role}</p>
                   <h3>{person.name}</h3>
@@ -335,7 +342,12 @@ function InspirationPage() {
                   onClick={() => setActiveImageIndex(index)}
                   aria-label={`Open image: ${item.title}`}
                 >
-                  <img src={item.image} alt={item.title} loading="lazy" decoding="async" />
+                  <ResponsiveImage
+                    src={item.image}
+                    alt={item.title}
+                    widths={[360, 640, 960]}
+                    sizes="(max-width: 760px) 100vw, (max-width: 1080px) 50vw, 33vw"
+                  />
                   <span className="inspiration-gallery-copy">
                     <strong>{item.title}</strong>
                     <span>{item.caption}</span>
@@ -407,7 +419,13 @@ function InspirationPage() {
             >
               Close
             </button>
-            <img src={activeImage.image} alt={activeImage.title} />
+            <ResponsiveImage
+              src={activeImage.image}
+              alt={activeImage.title}
+              widths={[640, 960, 1280]}
+              sizes="100vw"
+              loading="eager"
+            />
             <div className="inspiration-lightbox-caption">
               <h3>{activeImage.title}</h3>
               <p>{activeImage.caption}</p>

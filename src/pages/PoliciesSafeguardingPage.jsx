@@ -16,7 +16,8 @@ function PoliciesSafeguardingPage() {
         eyebrow={t('policiesPage.heroEyebrow')}
         title={t('policiesPage.heroTitle')}
         subtitle={t('policiesPage.heroSubtitle')}
-        image="/media/community-group.jpeg"
+        image="/media/founder-action.jpeg"
+        imageAlt="Children and community members gathered with the foundation during an outreach visit"
       />
 
       <section className="section-space">

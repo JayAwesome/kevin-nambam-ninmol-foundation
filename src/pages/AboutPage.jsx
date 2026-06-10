@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom';
 import PageHero from '../components/PageHero';
+import ResponsiveImage from '../components/ResponsiveImage';
 import SectionIntro from '../components/SectionIntro';
 import { useLanguage } from '../context/LanguageContext';
 import usePageTitle from '../hooks/usePageTitle';
@@ -15,6 +16,11 @@ function AboutPage() {
   const { t } = useLanguage();
   usePageTitle(t('aboutPage.title'));
 
+  const getLeadershipImageClass = (person) =>
+    person.name === 'Kevin Nambam Ninmol'
+      ? 'team-card-image team-card-image-founder'
+      : 'team-card-image';
+
   return (
     <main>
       <PageHero
@@ -22,6 +28,7 @@ function AboutPage() {
         title="Our story, identity, and commitment."
         subtitle="A focused look at why the foundation exists and how it is led."
         image="/media/founder-national.jpeg"
+        imageAlt="Kevin Nambam Ninmol represented in national basketball kit"
       />
 
       <section className="section-space">
@@ -46,12 +53,12 @@ function AboutPage() {
           </div>
 
           <div className="split-panel-media">
-            <img
-              src="/media/founder-action.jpeg"
-              alt="Founder Kevin training on a basketball court"
+            <ResponsiveImage
+              src="/media/founder-speaking.jpeg"
+              alt="Founder Kevin speaking during a youth development session"
               className="media-focus-center"
-              loading="lazy"
-              decoding="async"
+              widths={[640, 960, 1280]}
+              sizes="(max-width: 1080px) 100vw, 48vw"
             />
           </div>
         </div>
@@ -100,7 +107,11 @@ function AboutPage() {
           <div className="team-grid">
             {leadershipTeam.map((person) => (
               <article key={person.name} className="team-card">
-                <img src={person.image} alt={person.name} loading="lazy" decoding="async" />
+                <ResponsiveImage
+                  src={person.image}
+                  alt={person.alt ?? person.name}
+                  className={getLeadershipImageClass(person)}
+                />
                 <div className="team-card-body">
                   <h3>{person.name}</h3>
                   <p>{person.role}</p>

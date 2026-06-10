@@ -16,7 +16,8 @@ function BlogPage() {
         eyebrow={t('newsPage.heroEyebrow')}
         title={t('newsPage.heroTitle')}
         subtitle={t('newsPage.heroSubtitle')}
-        image="/media/community-group.jpeg"
+        image="/media/humanitarian-relief-supplies.jpeg"
+        imageAlt="Relief supplies arranged during a foundation community outreach"
       />
 
       <section className="section-space">

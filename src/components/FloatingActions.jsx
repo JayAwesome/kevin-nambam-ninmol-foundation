@@ -144,6 +144,7 @@ function FloatingActions() {
 
   const submitQuestion = (input, displayText = input) => {
     const trimmed = sanitizePlainText(input, 220);
+    const safeDisplayText = sanitizePlainText(displayText, 220);
 
     if (!trimmed) {
       return;
@@ -153,7 +154,7 @@ function FloatingActions() {
 
     setMessages((current) => [
       ...current,
-      { role: 'user', text: displayText.trim() },
+      { role: 'user', text: safeDisplayText || trimmed },
       {
         role: 'assistant',
         text: reply.text,

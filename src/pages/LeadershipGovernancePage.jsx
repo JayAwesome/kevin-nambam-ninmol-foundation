@@ -1,5 +1,6 @@
 import PageHero from '../components/PageHero';
 import NewsletterSection from '../components/NewsletterSection';
+import ResponsiveImage from '../components/ResponsiveImage';
 import SectionIntro from '../components/SectionIntro';
 import { useLanguage } from '../context/LanguageContext';
 import usePageTitle from '../hooks/usePageTitle';
@@ -11,6 +12,10 @@ function LeadershipGovernancePage() {
   const localizedBoard = t('content.boardOfTrustees');
   const localizedManagement = t('content.managementProfiles');
   const localizedGovernance = t('content.governanceStatement');
+  const getLeadershipImageClass = (person) =>
+    person.name === 'Kevin Nambam Ninmol'
+      ? 'team-card-image team-card-image-founder'
+      : 'team-card-image';
 
   return (
     <main>
@@ -18,7 +23,8 @@ function LeadershipGovernancePage() {
         eyebrow={t('leadershipPage.heroEyebrow')}
         title={t('leadershipPage.heroTitle')}
         subtitle={t('leadershipPage.heroSubtitle')}
-        image="/media/founder-national.jpeg"
+        image="/media/leadership-team-gathering.jpeg"
+        imageAlt="Foundation team and partners gathered during a leadership and collaboration session"
       />
 
       <section className="section-space">
@@ -32,7 +38,11 @@ function LeadershipGovernancePage() {
           <div className="team-grid">
             {boardOfTrustees.map((person, index) => (
               <article key={person.name} className="team-card governance-card">
-                <img src={person.image} alt={person.name} loading="lazy" decoding="async" />
+                <ResponsiveImage
+                  src={person.image}
+                  alt={person.alt ?? person.name}
+                  className={getLeadershipImageClass(person)}
+                />
                 <div className="team-card-body">
                   <p className="program-tag">{localizedBoard[index]?.role ?? person.role}</p>
                   <h3>{person.name}</h3>
@@ -55,7 +65,11 @@ function LeadershipGovernancePage() {
           <div className="team-grid">
             {managementProfiles.map((person, index) => (
               <article key={person.name} className="team-card governance-card">
-                <img src={person.image} alt={person.name} loading="lazy" decoding="async" />
+                <ResponsiveImage
+                  src={person.image}
+                  alt={person.alt ?? person.name}
+                  className={getLeadershipImageClass(person)}
+                />
                 <div className="team-card-body">
                   <p className="program-tag">{localizedManagement[index]?.role ?? person.role}</p>
                   <h3>{person.name}</h3>

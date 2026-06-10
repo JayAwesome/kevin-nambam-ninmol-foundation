@@ -1,12 +1,21 @@
-function PageHero({ eyebrow, title, subtitle, image }) {
-  const style = image
-    ? {
-        backgroundImage: `linear-gradient(135deg, rgba(13, 27, 42, 0.94), rgba(13, 27, 42, 0.78)), url('${image}')`,
-      }
-    : undefined;
+import ResponsiveImage from './ResponsiveImage';
 
+function PageHero({ eyebrow, title, subtitle, image, imageAlt = '' }) {
   return (
-    <section className="page-hero" style={style}>
+    <section className="page-hero">
+      {image ? (
+        <ResponsiveImage
+          src={image}
+          alt={imageAlt}
+          pictureClassName="page-hero-picture"
+          className="page-hero-image"
+          widths={[640, 960, 1280, 1600]}
+          sizes="100vw"
+          loading="eager"
+          fetchPriority="high"
+        />
+      ) : null}
+      <span className="page-hero-overlay" aria-hidden="true" />
       <div className="container page-hero-inner">
         {eyebrow ? <p className="eyebrow">{eyebrow}</p> : null}
         <h1>{title}</h1>

@@ -28,7 +28,8 @@ function GetInvolvedPage() {
         eyebrow="Get Involved"
         title="Turn support into action."
         subtitle="Choose the clearest way to support the foundation: donate, volunteer, partner, or sponsor a project."
-        image="/media/community-group.jpeg"
+        image="/media/leadership-team-gathering.jpeg"
+        imageAlt="Foundation team and partners gathered during a collaboration session"
       />
 
       <section className="section-space">
@@ -92,6 +93,7 @@ function GetInvolvedPage() {
                   values: payload,
                   honeypot: sanitizePlainText(formData.get('website'), 100),
                   startedAt: formStartedAt,
+                  formKey: 'volunteer',
                 });
 
                 if (!validation.ok) {

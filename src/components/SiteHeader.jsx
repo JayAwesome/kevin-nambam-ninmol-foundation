@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from 'react';
 import { Link, NavLink, useLocation } from 'react-router-dom';
-import { languageOptions, useLanguage } from '../context/LanguageContext';
+import { useLanguage } from '../context/LanguageContext';
 import { navItems } from '../siteData';
 
 const isBrowser = typeof window !== 'undefined';
@@ -19,7 +19,7 @@ function SiteHeader() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [theme, setTheme] = useState(getStoredTheme);
   const themeTransitionTimeoutRef = useRef(null);
-  const { language, setLanguage, t } = useLanguage();
+  const { t } = useLanguage();
   const location = useLocation();
 
   const handleNavClick = () => {
@@ -90,16 +90,6 @@ function SiteHeader() {
               {t(`nav.${item.labelKey}`)}
             </NavLink>
           ))}
-          <label className="language-toggle" aria-label="Language switcher">
-            <span className="sr-only">{t('ui.language')}</span>
-            <select value={language} onChange={(event) => setLanguage(event.target.value)}>
-              {languageOptions.map((option) => (
-                <option key={option.code} value={option.code}>
-                  {t(option.labelKey)}
-                </option>
-              ))}
-            </select>
-          </label>
           <button
             type="button"
             className="theme-toggle"

@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom';
 import PageHero from '../components/PageHero';
+import ResponsiveImage from '../components/ResponsiveImage';
 import SectionIntro from '../components/SectionIntro';
 import { useLanguage } from '../context/LanguageContext';
 import usePageTitle from '../hooks/usePageTitle';
@@ -21,7 +22,8 @@ function ImpactPage() {
         eyebrow="Impact"
         title="Evidence of work, reach, and accountability."
         subtitle="A concise view of the foundation’s results, reporting, stories, and activity proof."
-        image="/media/outreach-school.jpeg"
+        image="/media/humanitarian-relief-supplies.jpeg"
+        imageAlt="Relief supplies prepared during a community support visit"
       />
 
       <section className="section-space">
@@ -111,7 +113,7 @@ function ImpactPage() {
           <div className="gallery-grid">
             {impactGalleryHighlights.map((item) => (
               <article key={item.image + item.title} className="gallery-card">
-                <img src={item.image} alt={item.title} loading="lazy" decoding="async" />
+                <ResponsiveImage src={item.image} alt={item.alt ?? item.title} />
                 <div className="feature-card-body">
                   <h3>{item.title}</h3>
                   <p>{item.detail}</p>

@@ -32,6 +32,7 @@ function ContactPage() {
       values: payload,
       honeypot: sanitizePlainText(formData.get('website'), 100),
       startedAt: formStartedAt,
+      formKey: 'contact',
     });
 
     if (!validation.ok) {
@@ -56,7 +57,8 @@ function ContactPage() {
         eyebrow={t('contactPage.heroEyebrow')}
         title={t('contactPage.heroTitle')}
         subtitle={t('contactPage.heroSubtitle')}
-        image="/media/outreach-school.jpeg"
+        image="/media/founder-speaking.jpeg"
+        imageAlt="Founder Kevin speaking with young people during a development session"
       />
 
       <section className="section-space">

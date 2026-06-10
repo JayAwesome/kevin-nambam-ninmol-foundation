@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom';
 import PageHero from '../components/PageHero';
+import ResponsiveImage from '../components/ResponsiveImage';
 import SectionIntro from '../components/SectionIntro';
 import { useLanguage } from '../context/LanguageContext';
 import usePageTitle from '../hooks/usePageTitle';
@@ -15,7 +16,8 @@ function ProgramsPage() {
         eyebrow={t('programsPage.heroEyebrow')}
         title={t('programsPage.heroTitle')}
         subtitle={t('programsPage.heroSubtitle')}
-        image="/media/hero-court.jpeg"
+        image="/media/youth-court-training-wide.jpeg"
+        imageAlt="Young basketball players receiving coaching on an outdoor court"
       />
 
       <section className="section-space">
@@ -38,11 +40,11 @@ function ProgramsPage() {
 
                 <article className="program-portfolio-card program-portfolio-card-wide">
                   <div className="program-portfolio-media">
-                    <img
+                    <ResponsiveImage
                       src={program.image}
-                      alt={program.title}
-                      loading="lazy"
-                      decoding="async"
+                      alt={program.alt ?? program.title}
+                      widths={[640, 960, 1280]}
+                      sizes="(max-width: 1080px) 100vw, 50vw"
                     />
                   </div>
 

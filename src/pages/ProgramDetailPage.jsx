@@ -1,6 +1,7 @@
 import { Link, useParams } from 'react-router-dom';
 import PageHero from '../components/PageHero';
 import NewsletterSection from '../components/NewsletterSection';
+import ResponsiveImage from '../components/ResponsiveImage';
 import { useLanguage } from '../context/LanguageContext';
 import usePageTitle from '../hooks/usePageTitle';
 import { programs } from '../siteData';
@@ -34,6 +35,7 @@ function ProgramDetailPage() {
         title={program.title}
         subtitle={program.category}
         image={program.image}
+        imageAlt={program.alt ?? program.title}
       />
 
       <section className="section-space">
@@ -51,7 +53,12 @@ function ProgramDetailPage() {
             </Link>
           </div>
           <div className="split-panel-media">
-            <img src={program.image} alt={program.title} loading="lazy" decoding="async" />
+            <ResponsiveImage
+              src={program.image}
+              alt={program.alt ?? program.title}
+              widths={[640, 960, 1280]}
+              sizes="(max-width: 1080px) 100vw, 48vw"
+            />
           </div>
         </div>
       </section>

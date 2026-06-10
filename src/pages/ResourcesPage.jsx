@@ -31,7 +31,8 @@ function ResourcesPage() {
         eyebrow="Resources"
         title="Reports, updates, and documents."
         subtitle="A clear library for donors, partners, and supporters reviewing the foundation’s work."
-        image="/media/hero-community.jpeg"
+        image="/media/education-recognition-award.jpeg"
+        imageAlt="Recognition moment connected to youth education and achievement"
       />
 
       <section className="section-space">

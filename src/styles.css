@@ -29,6 +29,7 @@
   --header-bg: rgba(248, 250, 252, 0.82);
   --footer-bg: #0d2744;
   --toggle-bg: rgba(16, 36, 61, 0.08);
+  --image-frame-bg: linear-gradient(135deg, #f8fafc, #edf2f7);
 }
 
 [data-theme='dark'] {
@@ -58,6 +59,7 @@
   --header-bg: rgba(10, 14, 23, 0.9);
   --footer-bg: #080d15;
   --toggle-bg: rgba(244, 247, 251, 0.16);
+  --image-frame-bg: linear-gradient(135deg, #0f1725, #172235);
 }
 
 * {
@@ -305,49 +307,6 @@ p {
   font-weight: 700;
 }
 
-.language-toggle {
-  display: inline-flex;
-  align-items: center;
-  min-height: 44px;
-  padding: 0;
-  border: 1px solid var(--border);
-  border-radius: 999px;
-  background: var(--surface);
-  overflow: hidden;
-}
-
-.language-toggle select {
-  min-height: 42px;
-  padding: 0 2.2rem 0 0.9rem;
-  border: 0;
-  background: transparent;
-  color: var(--ink);
-  font-size: 0.82rem;
-  font-weight: 800;
-  cursor: pointer;
-  appearance: none;
-}
-
-[data-theme='dark'] .language-toggle {
-  background: linear-gradient(180deg, rgba(18, 26, 40, 0.98), rgba(13, 20, 31, 0.99));
-  border-color: rgba(224, 185, 104, 0.18);
-}
-
-.language-toggle::after {
-  content: '';
-  width: 0.55rem;
-  height: 0.55rem;
-  margin-right: 0.9rem;
-  border-right: 2px solid var(--ink-soft);
-  border-bottom: 2px solid var(--ink-soft);
-  transform: rotate(45deg) translateY(-2px);
-  pointer-events: none;
-}
-
-.language-toggle select:focus {
-  outline: none;
-}
-
 .sr-only {
   position: absolute;
   width: 1px;
@@ -566,14 +525,43 @@ p {
   min-height: 600px;
   border-radius: var(--radius-lg);
   border: 1px solid rgba(255, 255, 255, 0.4);
+  background: var(--image-frame-bg);
   box-shadow: var(--shadow);
 }
 
 .home-hero-visual img {
   height: 100%;
-  object-fit: cover;
-  object-position: center 24%;
+  object-fit: contain;
+  object-position: center;
   filter: saturate(1.04) contrast(1.04);
+}
+
+.home-hero-visual picture,
+.feature-card picture,
+.team-card picture,
+.gallery-card picture,
+.program-portfolio-media picture,
+.split-panel-media picture,
+.inspiration-person-card picture,
+.inspiration-gallery-card picture,
+.inspiration-lightbox-panel picture {
+  display: block;
+}
+
+.home-hero-visual picture,
+.program-portfolio-media picture,
+.split-panel-media picture {
+  height: 100%;
+}
+
+.feature-card picture,
+.gallery-card picture,
+.program-portfolio-media picture,
+.split-panel-media picture,
+.action-media picture,
+.inspiration-person-card picture,
+.inspiration-gallery-card picture {
+  background: var(--image-frame-bg);
 }
 
 [data-theme='dark'] .home-hero-visual img,
@@ -634,19 +622,48 @@ p {
 }
 
 .page-hero {
+  position: relative;
+  overflow: hidden;
   padding: 5.6rem 0 4.6rem;
-  background:
-    linear-gradient(135deg, rgba(13, 39, 68, 0.94), rgba(13, 39, 68, 0.74));
-  background-size: cover;
-  background-position: center;
+  background: var(--blue-900);
   color: #fff;
 }
 
 [data-theme='dark'] .page-hero {
-  background: linear-gradient(135deg, rgba(11, 15, 25, 0.96), rgba(23, 56, 93, 0.92));
+  background: var(--dark-bg);
+}
+
+.page-hero-picture,
+.page-hero-overlay {
+  position: absolute;
+  inset: 0;
+}
+
+.page-hero-picture {
+  z-index: 0;
+  background: var(--image-frame-bg);
+}
+
+.page-hero-image {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  object-position: center;
+  filter: saturate(1.04) contrast(1.04);
+}
+
+.page-hero-overlay {
+  z-index: 1;
+  background: linear-gradient(135deg, rgba(13, 27, 42, 0.94), rgba(13, 27, 42, 0.78));
+}
+
+[data-theme='dark'] .page-hero-overlay {
+  background: linear-gradient(135deg, rgba(11, 15, 25, 0.96), rgba(23, 56, 93, 0.86));
 }
 
 .page-hero-inner {
+  position: relative;
+  z-index: 2;
   max-width: 780px;
 }
 
@@ -866,8 +883,9 @@ p {
 .program-portfolio-media img {
   width: 100%;
   height: 240px;
-  object-fit: cover;
+  object-fit: contain;
   object-position: center;
+  background: var(--image-frame-bg);
 }
 
 .program-portfolio-body {
@@ -1307,11 +1325,32 @@ p {
 }
 
 .feature-card img,
-.team-card img,
 .gallery-card img {
   height: 250px;
-  object-fit: cover;
+  object-fit: contain;
   object-position: center;
+  background: var(--image-frame-bg);
+}
+
+.team-card picture {
+  aspect-ratio: 4 / 5;
+  overflow: hidden;
+  background:
+    linear-gradient(135deg, rgba(13, 39, 68, 0.08), rgba(217, 164, 65, 0.12)),
+    var(--surface-alt);
+}
+
+.team-card img,
+.team-card-image {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  object-position: center top;
+  background: transparent;
+}
+
+.team-card-image-founder {
+  object-position: 50% 8%;
 }
 
 .feature-card img,
@@ -1319,7 +1358,7 @@ p {
 .action-media img,
 .split-panel-media img,
 .gallery-card img {
-  background: linear-gradient(135deg, var(--surface-alt), var(--gold-soft));
+  background: var(--image-frame-bg);
 }
 
 .inspiration-role {
@@ -1439,9 +1478,11 @@ p {
 }
 
 .split-panel-media img {
+  width: 100%;
+  height: 100%;
   min-height: 440px;
-  object-fit: cover;
-  object-position: center 22%;
+  object-fit: contain;
+  object-position: center;
   filter: saturate(1.03) contrast(1.02);
 }
 
@@ -1596,14 +1637,16 @@ p {
 
 .gallery-card img {
   height: 260px;
-  object-fit: cover;
+  object-fit: contain;
+  object-position: center;
+  background: var(--image-frame-bg);
   transition: transform 220ms ease;
 }
 
 .gallery-card:hover img,
 .feature-card:hover img,
 .team-card:hover img {
-  transform: scale(1.03);
+  transform: none;
 }
 
 .video-placeholder {
@@ -1634,8 +1677,9 @@ p {
 
 .action-media img {
   height: 220px;
-  object-fit: cover;
+  object-fit: contain;
   object-position: center;
+  background: var(--image-frame-bg);
 }
 
 .media-focus-center {
@@ -2387,8 +2431,10 @@ p {
 .inspiration-person-card img {
   width: 100%;
   aspect-ratio: 4 / 5;
-  object-fit: cover;
+  object-fit: contain;
+  object-position: center;
   border-radius: var(--radius-md);
+  background: var(--image-frame-bg);
 }
 
 .inspiration-person-card h3 {
@@ -2488,13 +2534,15 @@ p {
 }
 
 .inspiration-gallery-button:hover img {
-  transform: scale(1.035);
+  filter: saturate(1.05) contrast(1.04);
 }
 
 .inspiration-gallery-card img {
   width: 100%;
   aspect-ratio: 4 / 3;
-  object-fit: cover;
+  object-fit: contain;
+  object-position: center;
+  background: var(--image-frame-bg);
   transition: transform 180ms ease;
 }
 
@@ -3232,11 +3280,6 @@ p {
 
   .theme-toggle {
     width: 100%;
-  }
-
-  .language-toggle {
-    width: 100%;
-    justify-content: space-between;
   }
 
   .home-hero,

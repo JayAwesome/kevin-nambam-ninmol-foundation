@@ -66,7 +66,7 @@ export const homepagePrograms = [
     subtitle: 'Learning access and scholarship pathways',
     excerpt:
       'Academic support, school materials, and scholarship pathways that help underserved students remain connected to opportunity.',
-    image: '/media/program-certificate.jpeg',
+    image: '/media/education-recognition-award.jpeg',
   },
   {
     slug: 'fear-no-fear-clinics',
@@ -74,7 +74,7 @@ export const homepagePrograms = [
     subtitle: 'Sports, discipline, and confidence building',
     excerpt:
       'Basketball clinics and mindset coaching that build discipline, resilience, teamwork, and leadership in boys and girls.',
-    image: '/media/hero-court.jpeg',
+    image: '/media/youth-court-training-wide.jpeg',
   },
   {
     slug: 'game-plan-for-life',
@@ -82,7 +82,7 @@ export const homepagePrograms = [
     subtitle: 'Guidance, life skills, and emotional support',
     excerpt:
       'Mentorship that strengthens communication, emotional well-being, decision-making, and practical life direction.',
-    image: '/media/outreach-school.jpeg',
+    image: '/media/founder-speaking.jpeg',
   },
 ];
 
@@ -140,7 +140,7 @@ export const latestActivities = [
     title: 'Basketball clinic and mentoring session in Jos',
     category: 'Youth Outreach',
     timestamp: 'March 22, 2026 · 4:30 PM',
-    image: '/media/hero-court.jpeg',
+    image: '/media/youth-court-training-wide.jpeg',
     update:
       'Young people took part in court drills, teamwork exercises, and short mentoring conversations focused on confidence and discipline.',
   },
@@ -149,7 +149,7 @@ export const latestActivities = [
     title: 'School outreach visit with practical support distribution',
     category: 'Community Visit',
     timestamp: 'March 16, 2026 · 11:00 AM',
-    image: '/media/outreach-school.jpeg',
+    image: '/media/humanitarian-relief-supplies.jpeg',
     update:
       'The foundation engaged children, staff, and community members while delivering support materials and reinforcing hope-centered encouragement.',
   },
@@ -158,7 +158,7 @@ export const latestActivities = [
     title: 'Girls-focused development activity and encouragement session',
     category: 'Girl Child Initiative',
     timestamp: 'March 9, 2026 · 2:15 PM',
-    image: '/media/community-group.jpeg',
+    image: '/media/indoor-youth-clinic.jpeg',
     update:
       'Participants joined a confidence-building activity that combined mentoring, group interaction, and visible support for girls to grow boldly.',
   },
@@ -171,8 +171,8 @@ export const latestActivityFeed = [
     category: 'Youth Outreach',
     date: 'March 22, 2026',
     timestamp: 'March 22, 2026 · 4:30 PM',
-    image: '/media/hero-court.jpeg',
-    caption: 'Youth athletes during a guided outdoor clinic session focused on teamwork and discipline.',
+    image: '/media/youth-court-training-wide.jpeg',
+    caption: 'Young athletes during a guided outdoor clinic focused on teamwork, discipline, and confidence.',
     update:
       'Young people took part in court drills, teamwork exercises, and short mentoring conversations focused on confidence and discipline.',
   },
@@ -182,8 +182,8 @@ export const latestActivityFeed = [
     category: 'Community Visit',
     date: 'March 16, 2026',
     timestamp: 'March 16, 2026 · 11:00 AM',
-    image: '/media/outreach-school.jpeg',
-    caption: 'Foundation outreach with children and school staff during a direct support visit.',
+    image: '/media/humanitarian-relief-supplies.jpeg',
+    caption: 'Practical relief supplies prepared during a school and community support visit.',
     update:
       'The foundation engaged children, staff, and community members while delivering support materials and reinforcing hope-centered encouragement.',
   },
@@ -193,8 +193,8 @@ export const latestActivityFeed = [
     category: 'Girl Child Initiative',
     date: 'March 9, 2026',
     timestamp: 'March 9, 2026 · 2:15 PM',
-    image: '/media/community-group.jpeg',
-    caption: 'A girls-centered encouragement session highlighting visibility, self-belief, and participation.',
+    image: '/media/indoor-youth-clinic.jpeg',
+    caption: 'Girls taking part in structured basketball practice and confidence-building coaching.',
     update:
       'Participants joined a confidence-building activity that combined mentoring, group interaction, and visible support for girls to grow boldly.',
   },
@@ -204,7 +204,7 @@ export const latestActivityFeed = [
     category: 'Skills Development',
     date: 'February 28, 2026',
     timestamp: 'February 28, 2026 · 9:45 AM',
-    image: '/media/indoor-clinic.jpeg',
+    image: '/media/indoor-youth-clinic.jpeg',
     caption: 'A structured indoor coaching session focused on repetition, form, and growth in confidence.',
     update:
       'Participants worked through guided drills, listened to coaching feedback, and built discipline through a more structured training environment.',
@@ -358,17 +358,20 @@ export const leadershipTeam = [
   {
     name: 'Kevin Nambam Ninmol',
     role: 'Founder and Executive Director',
-    image: '/media/founder-national.jpeg',
+    image: '/media/founder-speaking.jpeg',
+    alt: 'Kevin Nambam Ninmol speaking during a youth development session',
   },
   {
     name: 'Program Delivery Team',
     role: 'Youth development, outreach coordination, and field implementation',
-    image: '/media/community-group.jpeg',
+    image: '/media/youth-court-training-wide.jpeg',
+    alt: 'Program delivery in action during an outdoor youth basketball clinic',
   },
   {
     name: 'Partnerships and Community Relations Team',
     role: 'Institutional engagement, school partnerships, and stakeholder collaboration',
-    image: '/media/outreach-school.jpeg',
+    image: '/media/leadership-team-gathering.jpeg',
+    alt: 'Foundation team and partners gathered during a leadership and collaboration session',
   },
 ];
 
@@ -376,19 +379,22 @@ export const boardOfTrustees = [
   {
     name: 'Dr. Rebecca Danjuma',
     role: 'Chairman, Board of Trustees',
-    image: '/media/founder-national.jpeg',
+    image: '/media/leadership-team-gathering.jpeg',
+    alt: 'Leadership and governance gathering representing board oversight',
     bio: 'A governance-focused nonprofit leader with experience in education, social impact strategy, and institutional stewardship.',
   },
   {
     name: 'Barr. Samuel Oche',
     role: 'Secretary, Board of Trustees',
-    image: '/media/community-group.jpeg',
+    image: '/media/founder-speaking.jpeg',
+    alt: 'Foundation speaker representing governance and organizational leadership',
     bio: 'A legal and compliance professional supporting governance processes, record-keeping, and accountability structures for mission-driven organizations.',
   },
   {
     name: 'Mrs. Lydia Pam',
     role: 'Treasurer, Board of Trustees',
-    image: '/media/outreach-school.jpeg',
+    image: '/media/humanitarian-relief-supplies.jpeg',
+    alt: 'Relief supplies representing stewardship and responsible resource management',
     bio: 'A finance and administration practitioner with a focus on responsible resource management, reporting, and operational oversight.',
   },
 ];
@@ -397,19 +403,22 @@ export const managementProfiles = [
   {
     name: 'Kevin Nambam Ninmol',
     role: 'Founder and Executive Director',
-    image: '/media/founder-national.jpeg',
+    image: '/media/founder-speaking.jpeg',
+    alt: 'Kevin Nambam Ninmol speaking during a foundation session',
     bio: 'Provides strategic leadership, program direction, and public representation for the foundation, grounded in lived experience and youth development through sport.',
   },
   {
     name: 'Programs and Outreach Team',
     role: 'Program Implementation',
-    image: '/media/community-group.jpeg',
+    image: '/media/youth-court-training-wide.jpeg',
+    alt: 'Youth program implementation during an outdoor basketball session',
     bio: 'Supports delivery of clinics, mentoring sessions, outreach engagement, and coordination with local communities and schools.',
   },
   {
     name: 'Volunteers and Support Staff',
     role: 'Operations and Field Support',
-    image: '/media/outreach-school.jpeg',
+    image: '/media/humanitarian-relief-supplies.jpeg',
+    alt: 'Relief supplies and community outreach materials prepared for field support',
     bio: 'Assists with logistics, participant support, communications, and day-to-day coordination that help programs run responsibly and effectively.',
   },
 ];
@@ -505,11 +514,11 @@ export const inspirations = [
     sourceUrl: 'https://abu.edu.ng/abu-hosts-first-international-basketball-workshop-for-coaches/',
   },
   {
-    name: 'Colonel Samuel Amedu (Rtd.)',
+    name: 'Col. Samuel Amedu',
     role: 'FIBA Africa Zone 3 president and basketball administrator',
     image: '/media/inspired-amedu.jpeg',
     summary:
-      'Recent basketball reporting identifies Colonel Samuel Amedu as President of FIBA Africa Zone 3 and a Nigerian basketball stakeholder active in clinics, administration, and grassroots development.',
+      'Recent basketball reporting identifies Col. Samuel Amedu as President of FIBA Africa Zone 3 and a Nigerian basketball stakeholder active in clinics, administration, and grassroots development.',
     sourceLabel: 'Sports report',
     sourceUrl: 'https://triumphnewspapers.ng/nssf-holds-basketball-clinic-semi-finals-set-forednesday-showdown/',
   },
@@ -520,7 +529,8 @@ export const programs = [
     slug: 'scholars-of-tomorrow',
     title: 'Scholars of Tomorrow',
     category: 'Education Support',
-    image: '/media/program-certificate.jpeg',
+    image: '/media/education-recognition-award.jpeg',
+    alt: 'Kevin presenting recognition and support to a young athlete during an education-linked program activity',
     summary:
       'An education support initiative that helps underserved youth access school materials, mentoring, and scholarship opportunities.',
     purpose:
@@ -543,7 +553,8 @@ export const programs = [
     slug: 'fear-no-fear-clinics',
     title: 'Fear No Fear Basketball Clinics',
     category: 'Youth Empowerment',
-    image: '/media/hero-court.jpeg',
+    image: '/media/youth-court-training-wide.jpeg',
+    alt: 'Kevin coaching young basketball players during an outdoor court training session',
     summary:
       'Basketball-based youth engagement that teaches confidence, discipline, leadership, and teamwork.',
     purpose:
@@ -566,7 +577,8 @@ export const programs = [
     slug: 'girl-child-initiative',
     title: 'The Girl Child Initiative',
     category: 'Youth Empowerment',
-    image: '/media/indoor-clinic.jpeg',
+    image: '/media/indoor-youth-clinic.jpeg',
+    alt: 'Girls practicing basketball drills during an indoor youth development clinic',
     summary:
       'A focused initiative that affirms girls, builds confidence, and creates supportive pathways for leadership and growth.',
     purpose:
@@ -589,7 +601,8 @@ export const programs = [
     slug: 'game-plan-for-life',
     title: 'Game Plan for Life',
     category: 'Community Development',
-    image: '/media/outreach-school.jpeg',
+    image: '/media/founder-speaking.jpeg',
+    alt: 'Kevin speaking during a youth mentorship and life skills development session',
     summary:
       'A practical life-skills and mentoring track that prepares youth for challenges beyond the court.',
     purpose:
@@ -635,7 +648,8 @@ export const donorProgramCategories = [
   {
     slug: 'education-support',
     title: 'Education Support',
-    image: '/media/program-certificate.jpeg',
+    image: '/media/education-recognition-award.jpeg',
+    alt: 'Recognition and support moment connected to youth education and achievement',
     purpose:
       'Reduce barriers to learning through school materials, encouragement, and scholarship pathways.',
     activities: [
@@ -652,7 +666,8 @@ export const donorProgramCategories = [
   {
     slug: 'healthcare-assistance',
     title: 'Healthcare Assistance',
-    image: '/media/community-group.jpeg',
+    image: '/media/healthcare-wellness-talk.jpeg',
+    alt: 'Group wellbeing and safety talk with young participants seated in a community setting',
     purpose:
       'Support vulnerable children and families with practical health-related outreach and referral support.',
     activities: [
@@ -669,7 +684,8 @@ export const donorProgramCategories = [
   {
     slug: 'humanitarian-relief',
     title: 'Humanitarian Relief',
-    image: '/media/outreach-school.jpeg',
+    image: '/media/humanitarian-relief-supplies.jpeg',
+    alt: 'Relief supplies arranged during a community outreach visit with children and families',
     purpose:
       'Provide practical relief to vulnerable children, families, and communities during times of need.',
     activities: [
@@ -686,7 +702,8 @@ export const donorProgramCategories = [
   {
     slug: 'community-development',
     title: 'Community Development',
-    image: '/media/hero-community.jpeg',
+    image: '/media/founder-action.jpeg',
+    alt: 'Children and community members gathered with the foundation during an outreach visit',
     purpose:
       'Strengthen the local support systems around young people through partnerships, outreach, and shared community action.',
     activities: [
@@ -703,7 +720,8 @@ export const donorProgramCategories = [
   {
     slug: 'youth-empowerment',
     title: 'Youth Empowerment',
-    image: '/media/outreach-school.jpeg',
+    image: '/media/youth-court-training-wide.jpeg',
+    alt: 'Young basketball players receiving coaching on an outdoor court',
     purpose:
       'Build confidence, discipline, leadership, and positive decision-making through sports and mentorship.',
     activities: [
@@ -779,33 +797,39 @@ export const caseStudies = [
 
 export const impactGalleryHighlights = [
   {
+    image: '/media/youth-court-training-wide.jpeg',
+    title: 'Founder-led court mentorship',
+    alt: 'Kevin leading youth basketball players through an outdoor court mentoring session',
+    detail: 'Outdoor court sessions combine practical drills with visible mentorship and encouragement.',
+  },
+  {
+    image: '/media/indoor-youth-clinic.jpeg',
+    title: 'Structured indoor skills training',
+    alt: 'Girls practicing basketball skills during an indoor training session',
+    detail: 'Young athletes practice under guidance, building discipline, confidence, and focus.',
+  },
+  {
+    image: '/media/humanitarian-relief-supplies.jpeg',
+    title: 'Relief support with community partners',
+    alt: 'Relief supplies placed in front of children and community members during an outreach visit',
+    detail: 'Practical supplies and outreach moments show direct support reaching children and families.',
+  },
+  {
     image: '/media/founder-action.jpeg',
-    title: 'Founder-led skills development',
-    detail: 'Basketball sessions combine practical drills with visible mentorship and encouragement.',
+    title: 'School and community engagement',
+    alt: 'Children and volunteers gathered outside a school building during a foundation visit',
+    detail: 'The foundation shows up where children gather, making support visible and easier to access.',
   },
   {
-    image: '/media/hero-court.jpeg',
-    title: 'Structured youth participation',
-    detail: 'Young people are engaged in disciplined activity that builds teamwork, confidence, and focus.',
+    image: '/media/healthcare-wellness-talk.jpeg',
+    title: 'Wellbeing and safety conversations',
+    alt: 'Young participants listening during a wellbeing and safety conversation',
+    detail: 'Group sessions reinforce holistic support, including wellbeing, safety, confidence, and care.',
   },
   {
-    image: '/media/community-group.jpeg',
-    title: 'Community-centered outreach',
-    detail: 'Programs bring together children, families, schools, and volunteers in shared support spaces.',
-  },
-  {
-    image: '/media/outreach-school.jpeg',
-    title: 'School and outreach engagement',
-    detail: 'The foundation shows up where young people already gather, making support easier to access.',
-  },
-  {
-    image: '/media/indoor-clinic.jpeg',
-    title: 'Coaching in action',
-    detail: 'Indoor and organized settings help reinforce discipline, repetition, and personal growth.',
-  },
-  {
-    image: '/media/program-certificate.jpeg',
+    image: '/media/education-recognition-award.jpeg',
     title: 'Recognition and educational progress',
+    alt: 'A young athlete receiving recognition and support after a development activity',
     detail: 'Images of achievement help show how sport, learning, and encouragement are connected.',
   },
 ];
@@ -855,29 +879,25 @@ export const reports = [
 ];
 
 export const mediaGallery = [
+  '/media/youth-court-training-wide.jpeg',
+  '/media/indoor-youth-clinic.jpeg',
+  '/media/humanitarian-relief-supplies.jpeg',
   '/media/founder-action.jpeg',
-  '/media/hero-court.jpeg',
-  '/media/community-group.jpeg',
-  '/media/outreach-school.jpeg',
-  '/media/indoor-clinic.jpeg',
-  '/media/program-certificate.jpeg',
+  '/media/healthcare-wellness-talk.jpeg',
+  '/media/education-recognition-award.jpeg',
+  '/media/equipment-support-youth.jpeg',
 ];
 
 export const mediaVideos = [
   {
-    src: '/media/featured-story.mp4',
-    title: 'Founder story reel',
-    poster: '/media/founder-action.jpeg',
+    src: '/media/community-reel.mp4',
+    title: 'Community story reel',
+    poster: '/media/humanitarian-relief-supplies.jpeg',
   },
   {
     src: '/media/clinic-reel.mp4',
     title: 'Clinic highlights',
-    poster: '/media/hero-court.jpeg',
-  },
-  {
-    src: '/media/community-reel.mp4',
-    title: 'Community engagement reel',
-    poster: '/media/community-group.jpeg',
+    poster: '/media/youth-court-training-wide.jpeg',
   },
 ];
 

@@ -16,6 +16,7 @@ function NewsletterSection() {
       values: { email: cleanEmail },
       honeypot: sanitizePlainText(formData.get('website'), 100),
       startedAt: formStartedAt,
+      formKey: 'newsletter',
     });
 
     if (!validation.ok) {

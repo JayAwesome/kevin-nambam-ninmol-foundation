@@ -34,35 +34,35 @@ const baseRouteMeta = [
     title: 'Programs | Sports, Education and Opportunity',
     description:
       'Explore the foundation programs across sports, education support, mentorship, life skills, and opportunity creation.',
-    image: '/media/hero-court.jpeg',
+    image: '/media/youth-court-training-wide.jpeg',
   },
   {
     path: '/impact',
     title: 'Impact | Kevin NanBam Ninmol Foundation',
     description:
       'See measurable impact, activity photos, case stories, and evidence of the foundation’s work with youth and communities.',
-    image: '/media/community-group.jpeg',
+    image: '/media/humanitarian-relief-supplies.jpeg',
   },
   {
     path: '/get-involved',
     title: 'Get Involved | Kevin NanBam Ninmol Foundation',
     description:
       'Volunteer, partner, sponsor, or support youth development initiatives through Kevin NanBam Ninmol Foundation.',
-    image: '/media/outreach-school.jpeg',
+    image: '/media/leadership-team-gathering.jpeg',
   },
   {
     path: '/donate',
     title: 'Donate to Kevin Nambam Ninmol Foundation',
     description:
       'Use the GTBank NGN, USD, EUR, and GBP accounts to support Kevin Nambam Ninmol Foundation.',
-    image: '/media/program-certificate.jpeg',
+    image: '/media/humanitarian-relief-supplies.jpeg',
   },
   {
     path: '/contact',
     title: 'Contact Kevin NanBam Ninmol Foundation',
     description:
       'Contact Kevin NanBam Ninmol Foundation by email, phone, WhatsApp, or office address in Jos, Plateau State.',
-    image: '/media/community-group.jpeg',
+    image: '/media/founder-speaking.jpeg',
   },
 ];
 
@@ -133,7 +133,7 @@ export function buildStructuredData(pathname = '/') {
           contactType: 'Foundation enquiries',
           email: siteContact.email,
           telephone: siteContact.phone,
-          availableLanguage: ['English', 'French', 'Hausa', 'Yoruba', 'Igbo'],
+          availableLanguage: ['English'],
         },
       },
       {

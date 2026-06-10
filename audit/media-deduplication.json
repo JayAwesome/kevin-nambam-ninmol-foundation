@@ -1,0 +1,212 @@
+{
+  "images_scanned": 47,
+  "videos_scanned": 7,
+  "image_clusters": [
+    {
+      "best_retained": "Images\\indoor-clinic.jpeg",
+      "best_score": 34.249,
+      "members": [
+        {
+          "path": "Images\\indoor-clinic.jpeg",
+          "name": "indoor-clinic.jpeg",
+          "width": 720,
+          "height": 563,
+          "pixels": 405360,
+          "size_bytes": 91064,
+          "sha256": "11cef2862f5dd1055cb7bab3c82cafba6e18218ef13fe02a937de9cd96c63166",
+          "ahash": "ff7f57d3c0440000",
+          "dhash": "175d5a496e624ffc",
+          "phash": "c08447d17fbe324e",
+          "sharpness": 3703.95,
+          "quality_score": 34.249
+        },
+        {
+          "path": "Images\\8WhatsApp Image 2026-03-24 at 12.27.45 PM.jpeg",
+          "name": "8WhatsApp Image 2026-03-24 at 12.27.45 PM.jpeg",
+          "width": 720,
+          "height": 563,
+          "pixels": 405360,
+          "size_bytes": 91064,
+          "sha256": "11cef2862f5dd1055cb7bab3c82cafba6e18218ef13fe02a937de9cd96c63166",
+          "ahash": "ff7f57d3c0440000",
+          "dhash": "175d5a496e624ffc",
+          "phash": "c08447d17fbe324e",
+          "sharpness": 3703.95,
+          "quality_score": 34.249
+        }
+      ],
+      "removed_from_consideration": [
+        "Images\\8WhatsApp Image 2026-03-24 at 12.27.45 PM.jpeg"
+      ],
+      "pairs": [
+        {
+          "a": "Images\\8WhatsApp Image 2026-03-24 at 12.27.45 PM.jpeg",
+          "b": "Images\\indoor-clinic.jpeg",
+          "type": "exact",
+          "distances": [
+            0,
+            0,
+            0,
+            0
+          ]
+        }
+      ]
+    },
+    {
+      "best_retained": "Images\\community-group.jpeg",
+      "best_score": 41.652,
+      "members": [
+        {
+          "path": "Images\\community-group.jpeg",
+          "name": "community-group.jpeg",
+          "width": 720,
+          "height": 558,
+          "pixels": 401760,
+          "size_bytes": 111487,
+          "sha256": "efbadad7d2dd554e2422fe9541b70a58e5aded9e537a0d5e947a1d73c3e5f189",
+          "ahash": "f7fefe3f0f040000",
+          "dhash": "397b5fa6251226c5",
+          "phash": "92e56c023dcb6ea9",
+          "sharpness": 4596.62,
+          "quality_score": 41.652
+        },
+        {
+          "path": "Images\\WhatsApp Image 2026-03-24 at 10.02.07 AM.jpeg",
+          "name": "WhatsApp Image 2026-03-24 at 10.02.07 AM.jpeg",
+          "width": 720,
+          "height": 558,
+          "pixels": 401760,
+          "size_bytes": 111487,
+          "sha256": "efbadad7d2dd554e2422fe9541b70a58e5aded9e537a0d5e947a1d73c3e5f189",
+          "ahash": "f7fefe3f0f040000",
+          "dhash": "397b5fa6251226c5",
+          "phash": "92e56c023dcb6ea9",
+          "sharpness": 4596.62,
+          "quality_score": 41.652
+        }
+      ],
+      "removed_from_consideration": [
+        "Images\\WhatsApp Image 2026-03-24 at 10.02.07 AM.jpeg"
+      ],
+      "pairs": [
+        {
+          "a": "Images\\community-group.jpeg",
+          "b": "Images\\WhatsApp Image 2026-03-24 at 10.02.07 AM.jpeg",
+          "type": "exact",
+          "distances": [
+            0,
+            0,
+            0,
+            0
+          ]
+        }
+      ]
+    },
+    {
+      "best_retained": "Images\\program-certificate.jpeg",
+      "best_score": 51.939,
+      "members": [
+        {
+          "path": "Images\\program-certificate.jpeg",
+          "name": "program-certificate.jpeg",
+          "width": 714,
+          "height": 599,
+          "pixels": 427686,
+          "size_bytes": 133095,
+          "sha256": "47f71003a24d593a1176649a6aa7c57fde3143f4951d8f443d1f8cd16dc3e5a6",
+          "ahash": "fdec0101407c7e7f",
+          "dhash": "2477a20c6d4f3725",
+          "phash": "c13fd3d0698f1835",
+          "sharpness": 5807.72,
+          "quality_score": 51.939
+        },
+        {
+          "path": "Images\\WhatsApp Image 2026-03-24 at 10.07.43 AM.jpeg",
+          "name": "WhatsApp Image 2026-03-24 at 10.07.43 AM.jpeg",
+          "width": 714,
+          "height": 599,
+          "pixels": 427686,
+          "size_bytes": 133095,
+          "sha256": "47f71003a24d593a1176649a6aa7c57fde3143f4951d8f443d1f8cd16dc3e5a6",
+          "ahash": "fdec0101407c7e7f",
+          "dhash": "2477a20c6d4f3725",
+          "phash": "c13fd3d0698f1835",
+          "sharpness": 5807.72,
+          "quality_score": 51.939
+        }
+      ],
+      "removed_from_consideration": [
+        "Images\\WhatsApp Image 2026-03-24 at 10.07.43 AM.jpeg"
+      ],
+      "pairs": [
+        {
+          "a": "Images\\program-certificate.jpeg",
+          "b": "Images\\WhatsApp Image 2026-03-24 at 10.07.43 AM.jpeg",
+          "type": "exact",
+          "distances": [
+            0,
+            0,
+            0,
+            0
+          ]
+        }
+      ]
+    }
+  ],
+  "video_clusters": [
+    {
+      "best_retained": "Video\\1WhatsApp Video 2026-03-24 at 10.02.13 AM.mp4",
+      "type": "exact-binary",
+      "members": [
+        {
+          "path": "Video\\1WhatsApp Video 2026-03-24 at 10.02.13 AM.mp4",
+          "name": "1WhatsApp Video 2026-03-24 at 10.02.13 AM.mp4",
+          "size_bytes": 11057894,
+          "sha256": "cb50e1675e4debf9537a9393c311b138f91db323546e6bed50654b1448c6d1c2",
+          "duration_seconds": 61.1,
+          "width": 640,
+          "height": 360
+        },
+        {
+          "path": "Video\\WhatsApp Video 2026-03-24 at 10.06.26 AM.mp4",
+          "name": "WhatsApp Video 2026-03-24 at 10.06.26 AM.mp4",
+          "size_bytes": 11057894,
+          "sha256": "cb50e1675e4debf9537a9393c311b138f91db323546e6bed50654b1448c6d1c2",
+          "duration_seconds": 61.1,
+          "width": 640,
+          "height": 360
+        }
+      ],
+      "removed_from_consideration": [
+        "Video\\WhatsApp Video 2026-03-24 at 10.06.26 AM.mp4"
+      ]
+    },
+    {
+      "best_retained": "Video\\22WhatsApp Video 2026-03-24 at 10.06.26 AM.mp4",
+      "type": "exact-binary",
+      "members": [
+        {
+          "path": "Video\\22WhatsApp Video 2026-03-24 at 10.06.26 AM.mp4",
+          "name": "22WhatsApp Video 2026-03-24 at 10.06.26 AM.mp4",
+          "size_bytes": 8247005,
+          "sha256": "715a87c31586975974bcaa09b7dae9162430595e9a041321ccbec7b41f382e7f",
+          "duration_seconds": 45.63,
+          "width": 640,
+          "height": 360
+        },
+        {
+          "path": "Video\\WhatsApp Video 2026-03-24 at 10.02.12 AM (1).mp4",
+          "name": "WhatsApp Video 2026-03-24 at 10.02.12 AM (1).mp4",
+          "size_bytes": 8247005,
+          "sha256": "715a87c31586975974bcaa09b7dae9162430595e9a041321ccbec7b41f382e7f",
+          "duration_seconds": 45.63,
+          "width": 640,
+          "height": 360
+        }
+      ],
+      "removed_from_consideration": [
+        "Video\\WhatsApp Video 2026-03-24 at 10.02.12 AM (1).mp4"
+      ]
+    }
+  ]
+}

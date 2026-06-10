@@ -1,4 +1,4 @@
-import { createContext, useContext, useEffect, useMemo, useState } from 'react';
+import { createContext, useContext, useEffect, useMemo } from 'react';
 
 const en = {
   nav: {
@@ -801,9 +801,8 @@ const en = {
       },
     ],
     mediaVideos: [
-      { title: 'Founder story reel' },
+      { title: 'Community story reel' },
       { title: 'Clinic highlights' },
-      { title: 'Community engagement reel' },
     ],
     blogPosts: [
       {
@@ -1209,7 +1208,7 @@ const bankAccountCopy = {
   },
 };
 
-const baseTranslations = { en, fr, ha, yo, ig };
+const baseTranslations = { en };
 
 const polishedCopyOverrides = {
   fr: {
@@ -1311,85 +1310,44 @@ const polishedCopyOverrides = {
   },
 };
 
-const translations = Object.fromEntries(
-  Object.entries(baseTranslations).map(([languageCode, dictionary]) => {
-    const overrides = polishedCopyOverrides[languageCode] ?? {};
-
-    return [
-      languageCode,
-      {
-        ...dictionary,
-        ...overrides,
-        donatePage: {
-          ...dictionary.donatePage,
-          ...overrides.donatePage,
-          ...bankAccountCopy[languageCode],
-        },
-        programsPage: {
-          ...dictionary.programsPage,
-          ...overrides.programsPage,
-        },
-        impactPage: {
-          ...dictionary.impactPage,
-          ...overrides.impactPage,
-        },
-        getInvolvedPage: {
-          ...dictionary.getInvolvedPage,
-          ...overrides.getInvolvedPage,
-        },
-        contactPage: {
-          ...dictionary.contactPage,
-          ...overrides.contactPage,
-        },
-      },
-    ];
-  }),
-);
+// Multilingual UI is intentionally disabled until a complete translation workflow is ready.
+const ACTIVE_LANGUAGE = 'en';
+const translations = {
+  en: {
+    ...baseTranslations.en,
+    donatePage: {
+      ...baseTranslations.en.donatePage,
+      ...bankAccountCopy.en,
+    },
+  },
+};
 
 export const languageOptions = [
   { code: 'en', labelKey: 'ui.english' },
-  { code: 'fr', labelKey: 'ui.french' },
-  { code: 'ha', labelKey: 'ui.hausa' },
-  { code: 'yo', labelKey: 'ui.yoruba' },
-  { code: 'ig', labelKey: 'ui.igbo' },
 ];
 
 const LanguageContext = createContext(null);
 const isBrowser = typeof window !== 'undefined';
-const allowedLanguageCodes = new Set(languageOptions.map((option) => option.code));
 
 function getValue(obj, path) {
   return path.split('.').reduce((current, key) => current?.[key], obj);
 }
 
 export function LanguageProvider({ children }) {
-  const [language, setLanguageState] = useState(() => {
-    if (!isBrowser) {
-      return 'en';
-    }
-
-    const savedLanguage = window.localStorage.getItem('language');
-    return allowedLanguageCodes.has(savedLanguage) ? savedLanguage : 'en';
-  });
-
-  const setLanguage = (nextLanguage) => {
-    setLanguageState(allowedLanguageCodes.has(nextLanguage) ? nextLanguage : 'en');
-  };
-
   useEffect(() => {
     if (!isBrowser) {
       return;
     }
 
-    document.documentElement.lang = language;
-    window.localStorage.setItem('language', language);
-  }, [language]);
+    document.documentElement.lang = ACTIVE_LANGUAGE;
+    window.localStorage.removeItem('language');
+  }, []);
 
   const value = useMemo(() => {
     const t = (path) =>
-      getValue(translations[language], path) ?? getValue(translations.en, path) ?? path;
-    return { language, setLanguage, t };
-  }, [language]);
+      getValue(translations[ACTIVE_LANGUAGE], path) ?? getValue(translations.en, path) ?? path;
+    return { language: ACTIVE_LANGUAGE, setLanguage: () => ACTIVE_LANGUAGE, t };
+  }, []);
 
   return <LanguageContext.Provider value={value}>{children}</LanguageContext.Provider>;
 }
