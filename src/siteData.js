@@ -892,12 +892,12 @@ export const mediaVideos = [
   {
     src: '/media/community-reel.mp4',
     title: 'Community story reel',
-    poster: '/media/humanitarian-relief-supplies.jpeg',
+    poster: '/media/community-group.jpeg',
   },
   {
     src: '/media/clinic-reel.mp4',
     title: 'Clinic highlights',
-    poster: '/media/youth-court-training-wide.jpeg',
+    poster: '/media/indoor-youth-clinic.jpeg',
   },
 ];
 
