@@ -1693,6 +1693,32 @@ p {
   gap: 1rem;
 }
 
+.volunteer-note-card {
+  display: grid;
+  gap: 0.65rem;
+  margin: 1.35rem 0 1.1rem;
+  padding: 1.2rem;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  background: linear-gradient(135deg, rgba(217, 164, 65, 0.14), rgba(255, 255, 255, 0.72));
+  box-shadow: var(--shadow-soft);
+}
+
+.volunteer-note-card h3 {
+  font-family: var(--font-sans);
+  font-size: 1.05rem;
+  letter-spacing: -0.01em;
+}
+
+.volunteer-note-card p {
+  color: var(--ink-soft);
+}
+
+[data-theme='dark'] .volunteer-note-card {
+  background: linear-gradient(135deg, rgba(224, 185, 104, 0.16), rgba(255, 255, 255, 0.045));
+  border-color: var(--border-strong);
+}
+
 .action-media {
   overflow: hidden;
   border-radius: var(--radius-sm);

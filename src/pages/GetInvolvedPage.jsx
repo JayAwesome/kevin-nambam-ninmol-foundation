@@ -73,8 +73,14 @@ function GetInvolvedPage() {
             <SectionIntro
               eyebrow="Volunteer"
               title="Tell us how you want to help."
-              text="Share your interest and the foundation team will follow up through the contact details provided."
+              text="Volunteers help the foundation show up consistently for young people through mentoring, basketball clinics, outreach support, event coordination, media, and community engagement."
             />
+            <div className="volunteer-note-card">
+              <h3>Your time can strengthen a child&apos;s confidence.</h3>
+              <p>
+                Tell us the skills, experience, or availability you would like to offer. The foundation team will review your interest and follow up with the best way to get involved.
+              </p>
+            </div>
             <form
               id="volunteer-form"
               className="event-form-panel contact-form-panel"
@@ -115,43 +121,53 @@ function GetInvolvedPage() {
                 Website
                 <input type="text" name="website" tabIndex="-1" autoComplete="off" />
               </label>
-              <input
-                type="text"
-                name="name"
-                aria-label="Full name"
-                autoComplete="name"
-                maxLength="100"
-                required
-              />
-              <input
-                type="email"
-                name="email"
-                aria-label="Email address"
-                autoComplete="email"
-                maxLength="120"
-                required
-              />
-              <input
-                type="tel"
-                name="phone"
-                aria-label="Phone number"
-                autoComplete="tel"
-                inputMode="tel"
-                maxLength="30"
-              />
-              <input
-                type="text"
-                name="interest"
-                aria-label="Area of interest"
-                maxLength="140"
-              />
-              <textarea
-                name="message"
-                rows="5"
-                aria-label="How would you like to help?"
-                maxLength="1000"
-                required
-              />
+              <label>
+                Full name
+                <input
+                  type="text"
+                  name="name"
+                  autoComplete="name"
+                  maxLength="100"
+                  required
+                />
+              </label>
+              <label>
+                Email address
+                <input
+                  type="email"
+                  name="email"
+                  autoComplete="email"
+                  maxLength="120"
+                  required
+                />
+              </label>
+              <label>
+                Phone number
+                <input
+                  type="tel"
+                  name="phone"
+                  autoComplete="tel"
+                  inputMode="tel"
+                  maxLength="30"
+                />
+              </label>
+              <label>
+                Area of interest
+                <input
+                  type="text"
+                  name="interest"
+                  maxLength="140"
+                />
+              </label>
+              <label>
+                How would you like to help?
+                <textarea
+                  name="message"
+                  rows="5"
+                  maxLength="1000"
+                  required
+                />
+              </label>
               <button type="submit" className="button button-accent">
                 Submit Volunteer Interest
               </button>
