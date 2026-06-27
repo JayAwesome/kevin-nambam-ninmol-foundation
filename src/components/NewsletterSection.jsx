@@ -53,7 +53,6 @@ function NewsletterSection() {
           </label>
           <input
             type="email"
-            placeholder={t('newsletter.placeholder')}
             aria-label={t('newsletter.emailLabel')}
             value={email}
             onChange={(event) => setEmail(event.target.value)}

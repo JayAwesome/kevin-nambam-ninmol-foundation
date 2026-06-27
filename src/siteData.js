@@ -65,26 +65,32 @@ export const homepagePrograms = [
     title: 'Education Support',
     subtitle: 'Learning access and scholarship pathways',
     excerpt:
-      'Academic support, school materials, and scholarship pathways that help underserved students remain connected to opportunity.',
-    image: '/media/education-recognition-award.jpeg',
+      'School visits, learning encouragement, and practical support that help children stay connected to opportunity.',
+    image: '/media/school-visit-hope.jpeg',
   },
   {
     slug: 'fear-no-fear-clinics',
-    title: 'Youth Development',
+    title: 'Youth Basketball Development',
     subtitle: 'Sports, discipline, and confidence building',
     excerpt:
-      'Basketball clinics and mindset coaching that build discipline, resilience, teamwork, and leadership in boys and girls.',
-    image: '/media/youth-court-training-wide.jpeg',
+      'Boys and girls shooting camps that build skill, discipline, confidence, teamwork, and leadership.',
+    image: '/media/boys-shooting-camp.jpeg',
   },
   {
     slug: 'game-plan-for-life',
     title: 'Mentorship',
     subtitle: 'Guidance, life skills, and emotional support',
     excerpt:
-      'Mentorship that strengthens communication, emotional well-being, decision-making, and practical life direction.',
-    image: '/media/founder-speaking.jpeg',
+      'Founder-led talks and coaching moments that strengthen decision-making, discipline, and practical life direction.',
+    image: '/media/founder-giving-speech.jpeg',
   },
 ];
+
+export const heroVideo = {
+  src: '/media/hero-boys-talk-founder.mp4',
+  poster: '/media/boys-shooting-camp.jpeg',
+  title: 'Boys talk with the founder',
+};
 
 export const testimonials = [
   {
@@ -140,27 +146,27 @@ export const latestActivities = [
     title: 'Basketball clinic and mentoring session in Jos',
     category: 'Youth Outreach',
     timestamp: 'March 22, 2026 · 4:30 PM',
-    image: '/media/youth-court-training-wide.jpeg',
+    image: '/media/boys-shooting-camp.jpeg',
     update:
-      'Young people took part in court drills, teamwork exercises, and short mentoring conversations focused on confidence and discipline.',
+      'Young boys took part in shooting drills, teamwork exercises, and mentoring conversations focused on confidence and discipline.',
   },
   {
     slug: 'school-outreach-support-visit',
     title: 'School outreach visit with practical support distribution',
     category: 'Community Visit',
     timestamp: 'March 16, 2026 · 11:00 AM',
-    image: '/media/humanitarian-relief-supplies.jpeg',
+    image: '/media/school-visit-hope.jpeg',
     update:
-      'The foundation engaged children, staff, and community members while delivering support materials and reinforcing hope-centered encouragement.',
+      'The foundation engaged children and school community members with encouragement, presence, and practical hope-centered support.',
   },
   {
     slug: 'girls-development-activity-day',
     title: 'Girls-focused development activity and encouragement session',
     category: 'Girl Child Initiative',
     timestamp: 'March 9, 2026 · 2:15 PM',
-    image: '/media/indoor-youth-clinic.jpeg',
+    image: '/media/girls-shooting-camp.jpeg',
     update:
-      'Participants joined a confidence-building activity that combined mentoring, group interaction, and visible support for girls to grow boldly.',
+      'Girls joined a Fear No Fear shooting camp designed to build offensive skills, confidence, teamwork, and belief.',
   },
 ];
 
@@ -171,10 +177,10 @@ export const latestActivityFeed = [
     category: 'Youth Outreach',
     date: 'March 22, 2026',
     timestamp: 'March 22, 2026 · 4:30 PM',
-    image: '/media/youth-court-training-wide.jpeg',
-    caption: 'Young athletes during a guided outdoor clinic focused on teamwork, discipline, and confidence.',
+    image: '/media/boys-shooting-camp.jpeg',
+    caption: 'Boys during a guided shooting camp focused on confidence, discipline, and offensive skill development.',
     update:
-      'Young people took part in court drills, teamwork exercises, and short mentoring conversations focused on confidence and discipline.',
+      'Young boys took part in court drills, teamwork exercises, and short mentoring conversations focused on confidence and discipline.',
   },
   {
     slug: 'school-outreach-support-visit',
@@ -182,10 +188,10 @@ export const latestActivityFeed = [
     category: 'Community Visit',
     date: 'March 16, 2026',
     timestamp: 'March 16, 2026 · 11:00 AM',
-    image: '/media/humanitarian-relief-supplies.jpeg',
-    caption: 'Practical relief supplies prepared during a school and community support visit.',
+    image: '/media/school-visit-hope.jpeg',
+    caption: 'Children gathered during a school and community visit centered on encouragement and hope.',
     update:
-      'The foundation engaged children, staff, and community members while delivering support materials and reinforcing hope-centered encouragement.',
+      'The foundation engaged children, staff, and community members while reinforcing hope-centered encouragement.',
   },
   {
     slug: 'girls-development-activity-day',
@@ -193,10 +199,10 @@ export const latestActivityFeed = [
     category: 'Girl Child Initiative',
     date: 'March 9, 2026',
     timestamp: 'March 9, 2026 · 2:15 PM',
-    image: '/media/indoor-youth-clinic.jpeg',
-    caption: 'Girls taking part in structured basketball practice and confidence-building coaching.',
+    image: '/media/girls-shooting-camp.jpeg',
+    caption: 'Girls at a first-edition shooting camp building offensive skills and confidence.',
     update:
-      'Participants joined a confidence-building activity that combined mentoring, group interaction, and visible support for girls to grow boldly.',
+      'Participants joined a confidence-building activity that combined coaching, group interaction, and support for girls to grow boldly.',
   },
   {
     slug: 'indoor-training-and-coaching-day',
@@ -204,7 +210,7 @@ export const latestActivityFeed = [
     category: 'Skills Development',
     date: 'February 28, 2026',
     timestamp: 'February 28, 2026 · 9:45 AM',
-    image: '/media/indoor-youth-clinic.jpeg',
+    image: '/media/indoor-clinic.jpeg',
     caption: 'A structured indoor coaching session focused on repetition, form, and growth in confidence.',
     update:
       'Participants worked through guided drills, listened to coaching feedback, and built discipline through a more structured training environment.',
@@ -358,20 +364,20 @@ export const leadershipTeam = [
   {
     name: 'Kevin Nambam Ninmol',
     role: 'Founder and Executive Director',
-    image: '/media/founder-speaking.jpeg',
-    alt: 'Kevin Nambam Ninmol speaking during a youth development session',
+    image: '/media/founder-speaking-highlight.jpeg',
+    alt: 'Kevin Nambam Ninmol speaking during a foundation activity',
   },
   {
     name: 'Program Delivery Team',
     role: 'Youth development, outreach coordination, and field implementation',
-    image: '/media/youth-court-training-wide.jpeg',
-    alt: 'Program delivery in action during an outdoor youth basketball clinic',
+    image: '/media/boys-shooting-camp.jpeg',
+    alt: 'Program delivery in action during a youth shooting camp',
   },
   {
     name: 'Partnerships and Community Relations Team',
     role: 'Institutional engagement, school partnerships, and stakeholder collaboration',
-    image: '/media/leadership-team-gathering.jpeg',
-    alt: 'Foundation team and partners gathered during a leadership and collaboration session',
+    image: '/media/idp-mangu-service.jpeg',
+    alt: 'Foundation community service moment with people gathered outdoors',
   },
 ];
 
@@ -379,15 +385,15 @@ export const boardOfTrustees = [
   {
     name: 'Dr. Rebecca Danjuma',
     role: 'Chairman, Board of Trustees',
-    image: '/media/leadership-team-gathering.jpeg',
-    alt: 'Leadership and governance gathering representing board oversight',
+    image: '/media/founder-giving-speech.jpeg',
+    alt: 'Foundation leadership moment during a public speaking engagement',
     bio: 'A governance-focused nonprofit leader with experience in education, social impact strategy, and institutional stewardship.',
   },
   {
     name: 'Barr. Samuel Oche',
     role: 'Secretary, Board of Trustees',
-    image: '/media/founder-speaking.jpeg',
-    alt: 'Foundation speaker representing governance and organizational leadership',
+    image: '/media/founder-coach-baker-camp.jpeg',
+    alt: 'Founder attending a coaching development camp',
     bio: 'A legal and compliance professional supporting governance processes, record-keeping, and accountability structures for mission-driven organizations.',
   },
   {
@@ -403,15 +409,15 @@ export const managementProfiles = [
   {
     name: 'Kevin Nambam Ninmol',
     role: 'Founder and Executive Director',
-    image: '/media/founder-speaking.jpeg',
+    image: '/media/founder-speaking-highlight.jpeg',
     alt: 'Kevin Nambam Ninmol speaking during a foundation session',
     bio: 'Provides strategic leadership, program direction, and public representation for the foundation, grounded in lived experience and youth development through sport.',
   },
   {
     name: 'Programs and Outreach Team',
     role: 'Program Implementation',
-    image: '/media/youth-court-training-wide.jpeg',
-    alt: 'Youth program implementation during an outdoor basketball session',
+    image: '/media/girls-shooting-camp.jpeg',
+    alt: 'Youth program implementation during a girls shooting camp',
     bio: 'Supports delivery of clinics, mentoring sessions, outreach engagement, and coordination with local communities and schools.',
   },
   {
@@ -487,40 +493,38 @@ export const sitewideCredibility = [
 
 export const inspirations = [
   {
+    name: 'Bishop David Oyedepo',
+    role: 'Faith and purpose influence',
+    image: '/media/bishop-david-oyedepo.jpeg',
+    summary:
+      'He influenced a strong understanding that all things are possible through Christ who strengthens.',
+  },
+  {
+    name: 'Coach Oliver C Johnson',
+    role: 'Coach and rebounding mentor',
+    image: '/media/coach-oliver-johnson.jpeg',
+    summary: 'Coach who challenged improvement in rebounding ability.',
+  },
+  {
     name: 'Masai Ujiri',
-    role: 'Giants of Africa co-founder and global basketball leader',
-    image: '/media/inspired-masai.jpeg',
+    role: 'Basketball development and Dream Big inspiration',
+    image: '/media/masai-ujiri.jpeg',
     summary:
-      'Masai Ujiri’s work across basketball and youth development showed how the game can become a vehicle for confidence, leadership, and continental impact.',
-    sourceLabel: 'Giants of Africa profile',
-    sourceUrl: 'https://giantsofafrica.org/about/our-team/',
-  },
-  {
-    name: 'Coach Michael Akuboh',
-    role: 'Nigerian basketball coach and development mentor',
-    image: '/media/inspired-akuboh.jpeg',
-    summary:
-      'Public basketball coverage connects Michael Akuboh to Ahmadu Bello University coaching and youth development camps, reflecting the kind of technical guidance and grassroots commitment that shaped Kevin’s journey.',
-    sourceLabel: 'FIBA report',
-    sourceUrl: 'https://www.fiba.basketball/en/news/ngr-abu-coach-akuboh-laud-nigeria-big-man-camp',
-  },
-  {
-    name: 'Coach Oliver B. Johnson',
-    role: 'Respected ABU basketball coach',
-    image: '/media/inspired-obj.jpeg',
-    summary:
-      'Ahmadu Bello University described Oliver B. Johnson, also known as OBJ, as one of the notable coaches involved in a major international basketball workshop for coaches in Nigeria.',
-    sourceLabel: 'ABU article',
-    sourceUrl: 'https://abu.edu.ng/abu-hosts-first-international-basketball-workshop-for-coaches/',
+      'Inspired a mindset of dreaming big through basketball development experiences including Giants of Africa and international exposure.',
   },
   {
     name: 'Col. Samuel Amedu',
-    role: 'FIBA Africa Zone 3 president and basketball administrator',
-    image: '/media/inspired-amedu.jpeg',
+    role: 'FIBA Zone 3 leader and governance mentor',
+    image: '/media/samuel-amedu.jpeg',
     summary:
-      'Recent basketball reporting identifies Col. Samuel Amedu as President of FIBA Africa Zone 3 and a Nigerian basketball stakeholder active in clinics, administration, and grassroots development.',
-    sourceLabel: 'Sports report',
-    sourceUrl: 'https://triumphnewspapers.ng/nssf-holds-basketball-clinic-semi-finals-set-forednesday-showdown/',
+      'FIBA Zone 3 leader who provided mentorship and experience in basketball governance.',
+  },
+  {
+    name: 'Coach Mike Akubo',
+    role: 'Education and basketball development coach',
+    image: '/media/coach-mike-akubo.jpeg',
+    summary:
+      'Coach who encouraged focus on education and basketball development, guiding progression toward structured training and discipline.',
   },
 ];
 
@@ -529,44 +533,44 @@ export const programs = [
     slug: 'scholars-of-tomorrow',
     title: 'Scholars of Tomorrow',
     category: 'Education Support',
-    image: '/media/education-recognition-award.jpeg',
-    alt: 'Kevin presenting recognition and support to a young athlete during an education-linked program activity',
+    image: '/media/school-visit-hope.jpeg',
+    alt: 'Children gathered during a school visit focused on hope and encouragement',
     summary:
-      'An education support initiative that helps underserved youth access school materials, mentoring, and scholarship opportunities.',
+      'School visits and education encouragement that help children stay connected to learning and hope.',
     purpose:
-      'To reduce educational barriers for children and young people by connecting academic encouragement with practical support.',
+      'To reduce educational discouragement by showing up in school communities with encouragement, mentoring, and practical support.',
     activities: [
-      'Scholarship identification and referral support',
-      'Books, learning materials, and school resource assistance',
-      'Academic mentoring and encouragement for students',
+      'School and community visits with children and educators',
+      'Encouragement sessions that connect learning with future opportunity',
+      'Education support conversations with families, schools, and volunteers',
       'Guidance for persistence, discipline, and long-term educational planning',
     ],
     description:
-      'Scholars of Tomorrow supports children and adolescents who need practical academic assistance and sustained encouragement. The program combines scholarship support, educational resources, mentorship, and guidance for students who may otherwise be left behind.',
+      'Scholars of Tomorrow reflects the school-visit work shown in the approved media. The program centers on children, learning environments, and consistent encouragement that helps young people believe education can open real doors.',
     impact: [
-      'Improved access to learning materials and school support',
-      'Greater confidence for students working toward educational progress',
-      'Practical scholarship and mentoring pathways for underserved youth',
+      'Children experience visible encouragement in their learning environment',
+      'Families and school communities see the foundation as a steady support partner',
+      'Young people connect education with confidence, discipline, and opportunity',
     ],
   },
   {
     slug: 'fear-no-fear-clinics',
     title: 'Fear No Fear Basketball Clinics',
     category: 'Youth Empowerment',
-    image: '/media/youth-court-training-wide.jpeg',
-    alt: 'Kevin coaching young basketball players during an outdoor court training session',
+    image: '/media/boys-shooting-camp.jpeg',
+    alt: 'Boys participating in a first-edition shooting camp with the foundation',
     summary:
-      'Basketball-based youth engagement that teaches confidence, discipline, leadership, and teamwork.',
+      'Basketball clinics and shooting camps that build confidence, discipline, teamwork, and skill.',
     purpose:
-      'To use basketball as a tool for discipline, resilience, leadership, and positive decision-making among young people.',
+      'To use basketball as a practical tool for discipline, resilience, leadership, and positive decision-making among young people.',
     activities: [
-      'Basketball coaching clinics and skill-development sessions',
+      'Shooting camps and basketball skill-development sessions',
       'Mindset talks on courage, hope, and personal responsibility',
       'Mentorship moments woven into sports training',
       'Team-building activities that strengthen discipline and communication',
     ],
     description:
-      'Fear No Fear Basketball Clinics create safe, inspiring environments where young people can train, grow, and learn. The clinics blend sports fundamentals with encouragement, coaching, life lessons, and a mindset built around resilience and positive decision-making.',
+      'Fear No Fear Basketball Clinics create safe, inspiring spaces where young people can train, grow, and learn. The approved images show real court activity, coaching, and the foundation using basketball to teach both skill and character.',
     impact: [
       'Structured sports participation for boys and girls',
       'Stronger confidence, teamwork, and coachability',
@@ -577,20 +581,20 @@ export const programs = [
     slug: 'girl-child-initiative',
     title: 'The Girl Child Initiative',
     category: 'Youth Empowerment',
-    image: '/media/indoor-youth-clinic.jpeg',
-    alt: 'Girls practicing basketball drills during an indoor youth development clinic',
+    image: '/media/girls-shooting-camp.jpeg',
+    alt: 'Girls participating in a Fear No Fear shooting camp',
     summary:
-      'A focused initiative that affirms girls, builds confidence, and creates supportive pathways for leadership and growth.',
+      'Girls-focused coaching, cultural encouragement, and confidence-building activities.',
     purpose:
-      'To help girls recognize their potential, build confidence, and engage opportunities in education, sport, and leadership without limitation.',
+      'To help girls recognize their potential, build confidence, and engage opportunities in education, sport, culture, and leadership without limitation.',
     activities: [
-      'Mentoring sessions focused on confidence and self-worth',
-      'Leadership conversations and encouragement circles for girls',
-      'Support for girls participating in sports and learning programs',
-      'Practical guidance that reinforces dignity, ambition, and voice',
+      'Girls shooting camps and basketball confidence sessions',
+      'Mentoring conversations focused on dignity, self-worth, and ambition',
+      'Cultural-value encouragement that affirms every girl and her identity',
+      'Practical guidance that reinforces voice, confidence, and leadership',
     ],
     description:
-      'The Girl Child Initiative helps girls understand that their gender is not a disadvantage. Through mentoring, sports participation, leadership conversations, and access to support, the initiative encourages girls to dream boldly and contribute meaningfully to their communities.',
+      'The Girl Child Initiative is now paired with approved images showing girls in training and cultural-value encouragement. The program helps girls understand that their identity is not a disadvantage and that they can contribute powerfully to their communities.',
     impact: [
       'Greater visibility and confidence for girls in community spaces',
       'Mentorship that encourages self-belief and leadership',
@@ -601,20 +605,20 @@ export const programs = [
     slug: 'game-plan-for-life',
     title: 'Game Plan for Life',
     category: 'Community Development',
-    image: '/media/founder-speaking.jpeg',
-    alt: 'Kevin speaking during a youth mentorship and life skills development session',
+    image: '/media/founder-giving-speech.jpeg',
+    alt: 'Founder speaking during a foundation leadership and mentoring session',
     summary:
-      'A practical life-skills and mentoring track that prepares youth for challenges beyond the court.',
+      'Founder-led talks and mentoring sessions that prepare youth for life beyond the court.',
     purpose:
       'To strengthen young people and the communities around them through life-skills development, mentoring, and positive social support.',
     activities: [
+      'Founder-led talks on purpose, discipline, and responsibility',
       'Workshops on communication, problem-solving, and teamwork',
       'Mentorship on emotional well-being and responsible choices',
       'Community-based sessions with schools, families, and youth groups',
-      'Guidance that connects personal growth with community responsibility',
     ],
     description:
-      'Game Plan for Life equips young people with the mental and relational tools needed to grow into responsible adults. The program covers emotional well-being, communication, teamwork, problem-solving, and positive life choices.',
+      'Game Plan for Life uses the founder speaking and mentoring media to show the heart of the program: guidance, conversation, and practical life direction for young people navigating difficult choices.',
     impact: [
       'Stronger life skills for everyday decision-making',
       'Improved emotional resilience and social confidence',
@@ -648,46 +652,64 @@ export const donorProgramCategories = [
   {
     slug: 'education-support',
     title: 'Education Support',
-    image: '/media/education-recognition-award.jpeg',
-    alt: 'Recognition and support moment connected to youth education and achievement',
+    image: '/media/school-visit-hope.jpeg',
+    alt: 'Children gathered during a school visit focused on hope and encouragement',
     purpose:
-      'Reduce barriers to learning through school materials, encouragement, and scholarship pathways.',
+      'Encourage children in school communities and connect learning with hope, discipline, and opportunity.',
     activities: [
-      'Book packs, school materials, and learning resources',
-      'Scholarship identification and education support referrals',
-      'Academic mentoring and student encouragement',
+      'School visits and education encouragement sessions',
+      'Learning support conversations with schools and families',
+      'Mentorship that reinforces persistence and self-belief',
     ],
     impact: [
-      'More students remain connected to learning',
-      'Families receive practical relief around education needs',
+      'Children feel seen and encouraged in their learning environment',
+      'Schools gain a supportive community partner',
       'Young people see education as a real pathway forward',
     ],
   },
   {
-    slug: 'healthcare-assistance',
-    title: 'Healthcare Assistance',
-    image: '/media/healthcare-wellness-talk.jpeg',
-    alt: 'Group wellbeing and safety talk with young participants seated in a community setting',
+    slug: 'boys-shooting-camp',
+    title: 'Boys Shooting Camp',
+    image: '/media/boys-shooting-camp.jpeg',
+    alt: 'Boys participating in a first-edition shooting camp with the foundation',
     purpose:
-      'Support vulnerable children and families with practical health-related outreach and referral support.',
+      'Build basketball fundamentals, confidence, discipline, and teamwork through structured boys shooting camps.',
     activities: [
-      'Health-awareness outreach during community visits',
-      'Basic welfare checks and referral support where needed',
-      'Partnerships with health professionals and local institutions',
+      'Offensive skill development and shooting drills',
+      'Teamwork, discipline, and coachability exercises',
+      'Mentorship conversations during and after court sessions',
     ],
     impact: [
-      'Families are connected to care pathways earlier',
-      'Community outreach responds to urgent practical needs',
-      'Health concerns are treated as part of holistic youth support',
+      'Young players improve confidence and court discipline',
+      'Participants learn teamwork and personal responsibility',
+      'Basketball becomes a bridge to mentoring and positive choices',
+    ],
+  },
+  {
+    slug: 'girl-child-development',
+    title: 'Girl Child Development',
+    image: '/media/girls-shooting-camp.jpeg',
+    alt: 'Girls participating in a Fear No Fear shooting camp',
+    purpose:
+      'Help girls build confidence through sports, mentoring, cultural pride, and positive community encouragement.',
+    activities: [
+      'Girls shooting camps and confidence-building activities',
+      'Cultural-value encouragement and self-worth conversations',
+      'Mentorship that affirms girls as capable leaders',
+    ],
+    impact: [
+      'Girls participate boldly in sports and group activities',
+      'Participants receive practical encouragement from positive role models',
+      'Communities see girls supported with dignity and opportunity',
     ],
   },
   {
     slug: 'humanitarian-relief',
     title: 'Humanitarian Relief',
     image: '/media/humanitarian-relief-supplies.jpeg',
-    alt: 'Relief supplies arranged during a community outreach visit with children and families',
+    alt: 'Relief supplies arranged during a community outreach visit',
     purpose:
-      'Provide practical relief to vulnerable children, families, and communities during times of need.',
+      'Provide practical relief to vulnerable children, families, and communities during moments of need.',
     activities: [
       'Distribution of essential support items',
       'Community outreach and welfare response',
@@ -700,39 +722,21 @@ export const donorProgramCategories = [
     ],
   },
   {
-    slug: 'community-development',
-    title: 'Community Development',
-    image: '/media/founder-action.jpeg',
-    alt: 'Children and community members gathered with the foundation during an outreach visit',
+    slug: 'community-encouragement',
+    title: 'Community Encouragement',
+    image: '/media/idp-mangu-service.jpeg',
+    alt: 'Community members gathered during an IDP and outreach service moment',
     purpose:
-      'Strengthen the local support systems around young people through partnerships, outreach, and shared community action.',
+      'Strengthen community morale through presence, service, encouragement, and responsible outreach.',
     activities: [
-      'School and community engagement visits',
-      'Partnership-building with leaders and local organizations',
-      'Safe spaces for children, youth, families, and mentors to connect',
+      'Visits to vulnerable and displaced communities',
+      'Partnership-building with local leaders and volunteers',
+      'Safe spaces for children, families, and mentors to connect',
     ],
     impact: [
-      'More coordinated support around children and youth',
-      'Stronger trust between the foundation and communities',
-      'Local partners become active participants in lasting change',
-    ],
-  },
-  {
-    slug: 'youth-empowerment',
-    title: 'Youth Empowerment',
-    image: '/media/youth-court-training-wide.jpeg',
-    alt: 'Young basketball players receiving coaching on an outdoor court',
-    purpose:
-      'Build confidence, discipline, leadership, and positive decision-making through sports and mentorship.',
-    activities: [
-      'Basketball clinics and skill-development sessions',
-      'Mentorship and life-skills conversations',
-      'Workshops on teamwork, communication, and resilience',
-    ],
-    impact: [
-      'Young people gain confidence and self-belief',
-      'Participants practice teamwork, discipline, and leadership',
-      'Youth are supported to make positive life choices',
+      'Communities feel remembered and supported',
+      'Local leaders and volunteers become active partners',
+      'Children and families receive encouragement during difficult seasons',
     ],
   },
 ];
@@ -797,40 +801,40 @@ export const caseStudies = [
 
 export const impactGalleryHighlights = [
   {
-    image: '/media/youth-court-training-wide.jpeg',
-    title: 'Founder-led court mentorship',
-    alt: 'Kevin leading youth basketball players through an outdoor court mentoring session',
-    detail: 'Outdoor court sessions combine practical drills with visible mentorship and encouragement.',
+    image: '/media/boys-shooting-camp.jpeg',
+    title: 'Boys shooting camp',
+    alt: 'Boys participating in a first-edition shooting camp with the foundation',
+    detail: 'The shooting camp helps young players develop confidence, discipline, teamwork, and offensive skills.',
   },
   {
-    image: '/media/indoor-youth-clinic.jpeg',
-    title: 'Structured indoor skills training',
-    alt: 'Girls practicing basketball skills during an indoor training session',
-    detail: 'Young athletes practice under guidance, building discipline, confidence, and focus.',
+    image: '/media/girls-shooting-camp.jpeg',
+    title: 'Girls Fear No Fear camp',
+    alt: 'Girls participating in a Fear No Fear shooting camp',
+    detail: 'Girls are encouraged to build skills, confidence, and belief through structured court activity.',
+  },
+  {
+    image: '/media/school-visit-hope.jpeg',
+    title: 'School visit and encouragement',
+    alt: 'Children gathered during a school visit focused on hope and encouragement',
+    detail: 'School visits give children visible encouragement and connect education with hope.',
   },
   {
     image: '/media/humanitarian-relief-supplies.jpeg',
-    title: 'Relief support with community partners',
-    alt: 'Relief supplies placed in front of children and community members during an outreach visit',
-    detail: 'Practical supplies and outreach moments show direct support reaching children and families.',
+    title: 'Humanitarian relief support',
+    alt: 'Relief supplies arranged during a community outreach visit',
+    detail: 'Relief supplies show direct support reaching children, families, and vulnerable communities.',
   },
   {
-    image: '/media/founder-action.jpeg',
-    title: 'School and community engagement',
-    alt: 'Children and volunteers gathered outside a school building during a foundation visit',
-    detail: 'The foundation shows up where children gather, making support visible and easier to access.',
+    image: '/media/idp-mangu-service.jpeg',
+    title: 'IDP and community service',
+    alt: 'Community members gathered during an IDP and outreach service moment',
+    detail: 'Community service moments reflect dignity-centered outreach and presence during hard seasons.',
   },
   {
-    image: '/media/healthcare-wellness-talk.jpeg',
-    title: 'Wellbeing and safety conversations',
-    alt: 'Young participants listening during a wellbeing and safety conversation',
-    detail: 'Group sessions reinforce holistic support, including wellbeing, safety, confidence, and care.',
-  },
-  {
-    image: '/media/education-recognition-award.jpeg',
-    title: 'Recognition and educational progress',
-    alt: 'A young athlete receiving recognition and support after a development activity',
-    detail: 'Images of achievement help show how sport, learning, and encouragement are connected.',
+    image: '/media/girl-child-cultural-values.jpeg',
+    title: 'Girl child cultural values session',
+    alt: 'Girl child encouragement session focused on cultural values and identity',
+    detail: 'Girls are encouraged to value their identity, culture, voice, and future contribution.',
   },
 ];
 
@@ -879,25 +883,36 @@ export const reports = [
 ];
 
 export const mediaGallery = [
-  '/media/youth-court-training-wide.jpeg',
-  '/media/indoor-youth-clinic.jpeg',
+  '/media/boys-shooting-camp.jpeg',
+  '/media/girls-shooting-camp.jpeg',
+  '/media/school-visit-hope.jpeg',
   '/media/humanitarian-relief-supplies.jpeg',
-  '/media/founder-action.jpeg',
-  '/media/healthcare-wellness-talk.jpeg',
-  '/media/education-recognition-award.jpeg',
-  '/media/equipment-support-youth.jpeg',
+  '/media/idp-mangu-service.jpeg',
+  '/media/girl-child-cultural-values.jpeg',
+  '/media/indoor-clinic.jpeg',
 ];
 
 export const mediaVideos = [
   {
-    src: '/media/community-reel.mp4',
-    title: 'Community story reel',
-    poster: '/media/community-group.jpeg',
+    src: '/media/hero-boys-talk-founder.mp4',
+    title: 'Boys talk with the founder',
+    poster: '/media/boys-shooting-camp.jpeg',
+    description:
+      'A short field clip showing boys engaging with the founder during a basketball development activity.',
   },
   {
-    src: '/media/clinic-reel.mp4',
-    title: 'Clinic highlights',
-    poster: '/media/indoor-youth-clinic.jpeg',
+    src: '/media/mrs-ninmol-helpline-camp.mp4',
+    title: 'Mrs. Ninmol supporting the first shooting camp',
+    poster: '/media/girls-shooting-camp.jpeg',
+    description:
+      'A camp moment showing family and volunteer support around girls basketball development.',
+  },
+  {
+    src: '/media/orphanage-visit-dancing.mp4',
+    title: 'Orphanage visit and encouragement',
+    poster: '/media/school-visit-hope.jpeg',
+    description:
+      'A hopeful outreach moment using movement, joy, and encouragement to inspire children to dream big.',
   },
 ];
 

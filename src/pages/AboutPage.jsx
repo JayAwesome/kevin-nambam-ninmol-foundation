@@ -27,8 +27,8 @@ function AboutPage() {
         eyebrow="About"
         title="Our story, identity, and commitment."
         subtitle="A focused look at why the foundation exists and how it is led."
-        image="/media/founder-national.jpeg"
-        imageAlt="Kevin Nambam Ninmol represented in national basketball kit"
+        image="/media/founder-speaking-highlight.jpeg"
+        imageAlt="Kevin Nambam Ninmol speaking during a foundation activity"
       />
 
       <section className="section-space">
@@ -54,8 +54,8 @@ function AboutPage() {
 
           <div className="split-panel-media">
             <ResponsiveImage
-              src="/media/founder-speaking.jpeg"
-              alt="Founder Kevin speaking during a youth development session"
+              src="/media/founder-coach-baker-camp.jpeg"
+              alt="Founder Kevin attending a coaching development camp"
               className="media-focus-center"
               widths={[640, 960, 1280]}
               sizes="(max-width: 1080px) 100vw, 48vw"

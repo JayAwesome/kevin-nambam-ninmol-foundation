@@ -4,7 +4,7 @@ export const siteUrl = 'https://kevinnanbamninmolfoundation.com.ng';
 export const siteName = 'Kevin Nambam Ninmol Foundation';
 export const defaultMetaDescription =
   'Fear No Fear – Empowering Youth Through Sports, Education & Opportunity.';
-export const defaultShareImage = '/media/founder-action.jpeg';
+export const defaultShareImage = '/media/founder-speaking-highlight.jpeg';
 const cleanMetaDescription =
   'Fear No Fear - Empowering Youth Through Sports, Education & Opportunity.';
 
@@ -13,28 +13,28 @@ const baseRouteMeta = [
     path: '/',
     title: 'Kevin NanBam Ninmol Foundation | Fear No Fear',
     description: cleanMetaDescription,
-    image: '/media/founder-action.jpeg',
+    image: '/media/founder-speaking-highlight.jpeg',
   },
   {
     path: '/about',
     title: 'About Kevin NanBam Ninmol Foundation',
     description:
       'Read the founder story, mission, vision, values, and youth development commitment behind Kevin NanBam Ninmol Foundation.',
-    image: '/media/founder-national.jpeg',
+    image: '/media/founder-coach-baker-camp.jpeg',
   },
   {
     path: '/inspiration',
     title: 'The Inspiration Behind Kevin NanBam Ninmol Foundation',
     description:
       'Discover the mentors, community experiences, children, and service moments that inspired Kevin NanBam Ninmol Foundation.',
-    image: '/media/inspiration/school-visit-hope.jpeg',
+    image: '/media/school-visit-hope.jpeg',
   },
   {
     path: '/programs',
     title: 'Programs | Sports, Education and Opportunity',
     description:
       'Explore the foundation programs across sports, education support, mentorship, life skills, and opportunity creation.',
-    image: '/media/youth-court-training-wide.jpeg',
+    image: '/media/boys-shooting-camp.jpeg',
   },
   {
     path: '/impact',
@@ -48,7 +48,7 @@ const baseRouteMeta = [
     title: 'Get Involved | Kevin NanBam Ninmol Foundation',
     description:
       'Volunteer, partner, sponsor, or support youth development initiatives through Kevin NanBam Ninmol Foundation.',
-    image: '/media/leadership-team-gathering.jpeg',
+    image: '/media/idp-mangu-service.jpeg',
   },
   {
     path: '/donate',
@@ -62,7 +62,7 @@ const baseRouteMeta = [
     title: 'Contact Kevin NanBam Ninmol Foundation',
     description:
       'Contact Kevin NanBam Ninmol Foundation by email, phone, WhatsApp, or office address in Jos, Plateau State.',
-    image: '/media/founder-speaking.jpeg',
+    image: '/media/founder-speaking-highlight.jpeg',
   },
 ];
 

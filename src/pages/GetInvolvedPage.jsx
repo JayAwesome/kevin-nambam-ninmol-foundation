@@ -28,8 +28,8 @@ function GetInvolvedPage() {
         eyebrow="Get Involved"
         title="Turn support into action."
         subtitle="Choose the clearest way to support the foundation: donate, volunteer, partner, or sponsor a project."
-        image="/media/leadership-team-gathering.jpeg"
-        imageAlt="Foundation team and partners gathered during a collaboration session"
+        image="/media/idp-mangu-service.jpeg"
+        imageAlt="Community members gathered during a foundation service moment"
       />
 
       <section className="section-space">
@@ -73,7 +73,7 @@ function GetInvolvedPage() {
             <SectionIntro
               eyebrow="Volunteer"
               title="Tell us how you want to help."
-              text="This form is ready to connect to a backend or email workflow when you are ready."
+              text="Share your interest and the foundation team will follow up through the contact details provided."
             />
             <form
               id="volunteer-form"
@@ -118,7 +118,6 @@ function GetInvolvedPage() {
               <input
                 type="text"
                 name="name"
-                placeholder="Full name"
                 aria-label="Full name"
                 autoComplete="name"
                 maxLength="100"
@@ -127,7 +126,6 @@ function GetInvolvedPage() {
               <input
                 type="email"
                 name="email"
-                placeholder="Email address"
                 aria-label="Email address"
                 autoComplete="email"
                 maxLength="120"
@@ -136,7 +134,6 @@ function GetInvolvedPage() {
               <input
                 type="tel"
                 name="phone"
-                placeholder="Phone number"
                 aria-label="Phone number"
                 autoComplete="tel"
                 inputMode="tel"
@@ -145,14 +142,12 @@ function GetInvolvedPage() {
               <input
                 type="text"
                 name="interest"
-                placeholder="Area of interest"
                 aria-label="Area of interest"
                 maxLength="140"
               />
               <textarea
                 name="message"
                 rows="5"
-                placeholder="How would you like to help?"
                 aria-label="How would you like to help?"
                 maxLength="1000"
                 required

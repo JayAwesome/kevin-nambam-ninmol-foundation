@@ -9,40 +9,31 @@ import { boardOfTrustees, governanceStatement, managementProfiles } from '../sit
 function LeadershipGovernancePage() {
   const { t } = useLanguage();
   usePageTitle(t('leadershipPage.title'));
-  const localizedBoard = t('content.boardOfTrustees');
-  const localizedManagement = t('content.managementProfiles');
-  const localizedGovernance = t('content.governanceStatement');
-  const getLeadershipImageClass = (person) =>
-    person.name === 'Kevin Nambam Ninmol'
-      ? 'team-card-image team-card-image-founder'
-      : 'team-card-image';
+  const localizedBoard = t('content.boardOfTrustees') || [];
+  const localizedManagement = t('content.managementProfiles') || [];
 
   return (
     <main>
       <PageHero
-        eyebrow={t('leadershipPage.heroEyebrow')}
-        title={t('leadershipPage.heroTitle')}
-        subtitle={t('leadershipPage.heroSubtitle')}
-        image="/media/leadership-team-gathering.jpeg"
-        imageAlt="Foundation team and partners gathered during a leadership and collaboration session"
+        eyebrow="Leadership"
+        title="Leadership and governance."
+        subtitle="A professional view of the people and accountability structures supporting the foundation."
+        image="/media/founder-giving-speech.jpeg"
+        imageAlt="Foundation leadership moment during a public speaking engagement"
       />
 
       <section className="section-space">
         <div className="container">
           <SectionIntro
-            eyebrow={t('leadershipPage.boardEyebrow')}
-            title={t('leadershipPage.boardTitle')}
-            text={t('leadershipPage.boardText')}
+            eyebrow="Board of Trustees"
+            title="Oversight for responsible growth."
+            text="The board provides guidance, accountability, and stewardship as the foundation grows."
             centered
           />
           <div className="team-grid">
             {boardOfTrustees.map((person, index) => (
-              <article key={person.name} className="team-card governance-card">
-                <ResponsiveImage
-                  src={person.image}
-                  alt={person.alt ?? person.name}
-                  className={getLeadershipImageClass(person)}
-                />
+              <article key={person.name} className="team-card">
+                <ResponsiveImage src={person.image} alt={person.alt ?? person.name} className="team-card-image" />
                 <div className="team-card-body">
                   <p className="program-tag">{localizedBoard[index]?.role ?? person.role}</p>
                   <h3>{person.name}</h3>
@@ -57,19 +48,15 @@ function LeadershipGovernancePage() {
       <section className="section-space section-alt">
         <div className="container">
           <SectionIntro
-            eyebrow={t('leadershipPage.managementEyebrow')}
-            title={t('leadershipPage.managementTitle')}
-            text={t('leadershipPage.managementText')}
+            eyebrow="Management Team"
+            title="Program leadership and implementation."
+            text="The management and volunteer structure supports daily coordination, delivery, and community engagement."
             centered
           />
           <div className="team-grid">
             {managementProfiles.map((person, index) => (
-              <article key={person.name} className="team-card governance-card">
-                <ResponsiveImage
-                  src={person.image}
-                  alt={person.alt ?? person.name}
-                  className={getLeadershipImageClass(person)}
-                />
+              <article key={person.name} className="team-card">
+                <ResponsiveImage src={person.image} alt={person.alt ?? person.name} className="team-card-image" />
                 <div className="team-card-body">
                   <p className="program-tag">{localizedManagement[index]?.role ?? person.role}</p>
                   <h3>{person.name}</h3>
@@ -84,17 +71,15 @@ function LeadershipGovernancePage() {
       <section className="section-space">
         <div className="container">
           <SectionIntro
-            eyebrow={t('leadershipPage.governanceEyebrow')}
-            title={t('leadershipPage.governanceTitle')}
-            text={t('leadershipPage.governanceText')}
+            eyebrow="Governance Statement"
+            title="Decisions are guided by accountability and mission alignment."
+            text="The foundation continues to strengthen governance, documentation, and responsible reporting practices."
           />
           <div className="objectives-panel">
             <ol className="objectives-list">
-              {localizedGovernance.map((item, index) => (
+              {governanceStatement.map((item, index) => (
                 <li key={item} className="objective-item">
-                  <span className="objective-icon" aria-hidden="true">
-                    {index + 1}
-                  </span>
+                  <span className="objective-icon" aria-hidden="true">{index + 1}</span>
                   <p>{item}</p>
                 </li>
               ))}

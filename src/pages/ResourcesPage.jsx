@@ -13,12 +13,12 @@ const publications = [
   {
     title: 'Safeguarding Summary',
     type: 'Policy Summary',
-    description: 'A short overview of child protection, conduct, transparency, and data privacy commitments.',
+    description: 'An overview of child protection, conduct, transparency, and data privacy commitments.',
   },
   {
     title: 'Partnership Brief',
     type: 'Partner Document',
-    description: 'A simple brief explaining how organizations can collaborate with the foundation.',
+    description: 'A practical brief explaining how organizations can collaborate with the foundation.',
   },
 ];
 
@@ -30,9 +30,9 @@ function ResourcesPage() {
       <PageHero
         eyebrow="Resources"
         title="Reports, updates, and documents."
-        subtitle="A clear library for donors, partners, and supporters reviewing the foundation’s work."
-        image="/media/education-recognition-award.jpeg"
-        imageAlt="Recognition moment connected to youth education and achievement"
+        subtitle="A clear library for donors, partners, and supporters reviewing the foundation's work."
+        image="/media/school-visit-hope.jpeg"
+        imageAlt="Children gathered during a school visit focused on hope and encouragement"
       />
 
       <section className="section-space">
@@ -40,7 +40,7 @@ function ResourcesPage() {
           <SectionIntro
             eyebrow="Reports"
             title="Annual and financial reporting."
-            text="Downloadable report sections are ready for formal files as they become available."
+            text="These reporting sections organize the foundation's public accountability materials as formal files are approved for release."
             centered
           />
           <div className="reports-grid">
@@ -61,11 +61,7 @@ function ResourcesPage() {
 
       <section className="section-space section-alt">
         <div className="container">
-          <SectionIntro
-            eyebrow="News"
-            title="Latest updates."
-            text="Short updates and reflections from foundation activity."
-          />
+          <SectionIntro eyebrow="News" title="Latest updates." text="Short updates and reflections from foundation activity." />
           <div className="news-grid">
             {blogPosts.map((post) => (
               <article key={post.slug} className="news-card">
@@ -84,7 +80,7 @@ function ResourcesPage() {
           <SectionIntro
             eyebrow="Publications"
             title="Useful documents for partners and institutions."
-            text="These document sections give the site a professional resource structure while formal PDFs are prepared."
+            text="These resources help supporters understand the foundation's identity, standards, and partnership pathways."
           />
           <div className="reports-grid">
             {publications.map((item) => (

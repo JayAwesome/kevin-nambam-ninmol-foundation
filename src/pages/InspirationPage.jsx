@@ -4,37 +4,14 @@ import PageHero from '../components/PageHero';
 import ResponsiveImage from '../components/ResponsiveImage';
 import SectionIntro from '../components/SectionIntro';
 import usePageTitle from '../hooks/usePageTitle';
+import { inspirations } from '../siteData';
 
-const peopleWhoShapedTheVision = [
-  {
-    name: 'Coach Michael Akuboh',
-    role: 'Basketball mentor and development influence',
-    image: '/media/inspiration/coach-michael-akuboh.jpeg',
-    text:
-      'A reminder that mentorship can be both personal and practical. Coaches help young people turn discipline, correction, and encouragement into confidence.',
-  },
-  {
-    name: 'Coach Oliver B. Johnson',
-    role: 'Respected coach and role model',
-    image: '/media/inspiration/coach-oliver-johnson.jpeg',
-    text:
-      'His influence reflects the value of patient leadership: showing up, guiding others, and helping athletes grow beyond the scoreboard.',
-  },
-  {
-    name: 'Col. Samuel Amedu',
-    role: 'Basketball administrator and institutional leader',
-    image: '/media/inspiration/samuel-amedu.jpeg',
-    text:
-      'This inspiration points to the importance of structure, governance, and credible leadership in building programs that can last.',
-  },
-  {
-    name: 'Masai Ujiri',
-    role: 'Global basketball and youth-development inspiration',
-    image: '/media/inspiration/masai-ujiri.jpeg',
-    text:
-      'A wider African basketball example showing that sport can carry education, leadership, pride, and opportunity across borders.',
-  },
-];
+const peopleWhoShapedTheVision = inspirations.map((person) => ({
+  name: person.name,
+  role: person.role,
+  image: person.image,
+  text: person.summary,
+}));
 
 const lessons = [
   {
@@ -83,72 +60,84 @@ const foundationConnections = [
   {
     title: 'Education support',
     text:
-      'School and orphanage visits revealed how learning support, encouragement, and basic materials can protect a child from being left behind.',
+      'School visits show why children need encouragement, learning support, and visible reminders that their future matters.',
   },
   {
-    title: 'Healthcare initiatives',
+    title: 'Basketball mentorship',
     text:
-      'Humanitarian encounters reinforce that wellbeing matters. Families facing vulnerability need care, dignity, and connection to practical support.',
+      'Coaching influences and camp moments show how sport can teach discipline, confidence, teamwork, and positive identity.',
+  },
+  {
+    title: 'Girl child confidence',
+    text:
+      'Girls shooting camp and cultural-value moments show why the foundation affirms girls with dignity, voice, and opportunity.',
   },
   {
     title: 'Humanitarian assistance',
     text:
-      'Images from outreach with displaced and vulnerable families show why compassion must become direct action in moments of need.',
+      'Relief supplies and outreach visits show why compassion must become practical action for vulnerable families.',
   },
   {
-    title: 'Community development',
+    title: 'Community encouragement',
     text:
-      'The foundation is shaped by communities, schools, and local leaders working together to create safer spaces for growth.',
-  },
-  {
-    title: 'Youth empowerment',
-    text:
-      'Basketball remains a bridge for mentorship, discipline, teamwork, leadership, and positive identity among young people.',
+      'IDP and community service moments show the foundation standing with people during difficult seasons.',
   },
 ];
 
 const galleryImages = [
   {
-    image: '/media/inspiration/idp-mangu-service.jpeg',
-    title: 'Standing with vulnerable families',
-    caption:
-      'Service among displaced families in Mangu, reflecting compassion, dignity, and humanitarian responsibility.',
-  },
-  {
-    image: '/media/community-children-hope.jpeg',
-    title: 'Community hope in action',
-    caption:
-      'A foundation moment with children that reflects encouragement, belonging, and hope through positive community presence.',
-  },
-  {
-    image: '/media/inspiration/school-visit-hope.jpeg',
+    image: '/media/school-visit-hope.jpeg',
     title: 'Hope in school communities',
     caption:
       'Children gathered with energy and expectation, reflecting why education, mentorship, and community care matter.',
   },
   {
-    image: '/media/inspiration/coach-michael-akuboh.jpeg',
-    title: 'Mentorship through basketball',
+    image: '/media/bishop-david-oyedepo.jpeg',
+    title: 'Faith that strengthens purpose',
     caption:
-      'A relationship of respect and encouragement, showing how coaches can shape confidence and discipline.',
+      'A faith influence connected to the belief that all things are possible through Christ who strengthens.',
   },
   {
-    image: '/media/inspiration/coach-oliver-johnson.jpeg',
-    title: 'Honoring those who guide',
+    image: '/media/coach-oliver-johnson.jpeg',
+    title: 'Challenged to improve',
     caption:
-      'A tribute to coaching influence, patient leadership, and the people who help athletes grow beyond the court.',
+      'A coaching influence that challenged improvement in rebounding ability and personal discipline.',
   },
   {
-    image: '/media/inspiration/samuel-amedu.jpeg',
-    title: 'Leadership and structure',
-    caption:
-      'A moment connected to organized basketball leadership and the value of credible institutions in youth development.',
-  },
-  {
-    image: '/media/inspiration/masai-ujiri.jpeg',
+    image: '/media/masai-ujiri.jpeg',
     title: 'Dreaming beyond borders',
     caption:
       'A reminder that African basketball can inspire leadership, ambition, and opportunity across communities and nations.',
+  },
+  {
+    image: '/media/samuel-amedu.jpeg',
+    title: 'Governance and mentorship',
+    caption:
+      'A basketball governance influence connected to mentorship, structure, and experience in organized basketball.',
+  },
+  {
+    image: '/media/coach-mike-akubo.jpeg',
+    title: 'Education and structured training',
+    caption:
+      'A coaching influence that encouraged education, basketball development, discipline, and structured training.',
+  },
+  {
+    image: '/media/founder-coach-baker-camp.jpeg',
+    title: 'Learning to coach better',
+    caption:
+      'The founder attending a coaching camp, reflecting humility, growth, and continued learning.',
+  },
+  {
+    image: '/media/idp-mangu-service.jpeg',
+    title: 'Standing with vulnerable families',
+    caption:
+      'Service among displaced and vulnerable families, reflecting compassion, dignity, and humanitarian responsibility.',
+  },
+  {
+    image: '/media/girl-child-cultural-values.jpeg',
+    title: 'Culture, dignity, and confidence',
+    caption:
+      'A girl child encouragement moment affirming cultural values, identity, and confidence.',
   },
 ];
 
@@ -211,7 +200,7 @@ function InspirationPage() {
         eyebrow="Inspiration"
         title="The Inspiration Behind the Foundation"
         subtitle="The people, experiences, and values that inspired a lifelong commitment to service."
-        image="/media/inspiration/school-visit-hope.jpeg"
+        image="/media/school-visit-hope.jpeg"
         imageAlt="Children gathered during a hopeful school community visit"
       />
 

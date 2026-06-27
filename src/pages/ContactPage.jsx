@@ -21,18 +21,24 @@ function ContactPage() {
     event.preventDefault();
     const form = event.currentTarget;
     const formData = new FormData(form);
-    const payload = {
-      name: sanitizePlainText(formData.get('name'), 100),
+    const values = {
+      name: sanitizePlainText(formData.get('name'), 120),
       email: sanitizeEmail(formData.get('email')),
-      phone: sanitizePlainText(formData.get('phone'), 30),
+      phone: sanitizePlainText(formData.get('phone'), 40),
       subject: sanitizePlainText(formData.get('subject'), 140),
-      message: sanitizePlainText(formData.get('message'), 1000),
+      message: sanitizePlainText(formData.get('message'), 1200),
     };
+
+    if (!values.name || !isValidEmail(values.email) || !values.subject || !values.message) {
+      window.alert('Please enter your name, a valid email address, a subject, and your message.');
+      return;
+    }
+
     const validation = validatePublicForm({
-      values: payload,
-      honeypot: sanitizePlainText(formData.get('website'), 100),
+      values,
+      honeypot: sanitizePlainText(formData.get('website'), 80),
       startedAt: formStartedAt,
-      formKey: 'contact',
+      formKey: 'contact-form',
     });
 
     if (!validation.ok) {
@@ -40,144 +46,38 @@ function ContactPage() {
       return;
     }
 
-    if (!payload.name || !isValidEmail(payload.email) || !payload.message) {
-      window.alert('Please enter your name, a valid email address, and a message.');
-      return;
-    }
-
-    console.log('Contact form validated');
+    console.log('Contact form submission prepared', values);
+    window.alert('Thank you. Please send your message to the foundation email while online form delivery is being connected.');
     form.reset();
     setFormStartedAt(Date.now());
-    window.alert(t('contactPage.thankYou'));
   };
 
   return (
     <main>
       <PageHero
-        eyebrow={t('contactPage.heroEyebrow')}
-        title={t('contactPage.heroTitle')}
-        subtitle={t('contactPage.heroSubtitle')}
-        image="/media/founder-speaking.jpeg"
-        imageAlt="Founder Kevin speaking with young people during a development session"
+        eyebrow="Contact"
+        title="Reach the foundation."
+        subtitle="Use the contact details below to connect with the Kevin Nambam Ninmol Foundation team."
+        image="/media/founder-speaking-highlight.jpeg"
+        imageAlt="Kevin Nambam Ninmol speaking during a foundation activity"
       />
 
       <section className="section-space">
         <div className="container">
           <SectionIntro
-            eyebrow={t('contactPage.introEyebrow')}
-            title={t('contactPage.introTitle')}
-            text={t('contactPage.introText')}
-            ctaLabel={t('contactPage.readAbout')}
-            ctaTo="/about"
+            eyebrow="Contact Information"
+            title="The organization is reachable and accountable."
+            text="For donations, partnerships, volunteering, or program enquiries, contact the foundation directly."
           />
-
-          <div className="contact-channel-grid">
-            <article className="info-panel contact-channel-card">
-              <p className="program-tag">{t('contactPage.officeTag')}</p>
-              <h3>{t('contactPage.officeTitle')}</h3>
-              <p>{siteContact.address}</p>
-              <p className="micro-note">{t('contactPage.officeNote')}</p>
-            </article>
-
-            <article className="info-panel contact-channel-card">
-              <p className="program-tag">{t('contactPage.phoneTag')}</p>
-              <h3>{t('contactPage.phoneTitle')}</h3>
-              <p>
-                <a href={`tel:${siteContact.phone.replace(/\s+/g, '')}`}>{siteContact.phone}</a>
-              </p>
-              <p>
-                <a href={`mailto:${siteContact.email}`}>{siteContact.email}</a>
-              </p>
-              <p className="micro-note">{t('contactPage.phoneNote')}</p>
-            </article>
-
-            <article className="info-panel contact-channel-card contact-whatsapp-card">
-              <p className="program-tag">{t('contactPage.whatsappTag')}</p>
-              <h3>{t('contactPage.whatsappTitle')}</h3>
-              <p>{t('contactPage.whatsappText')}</p>
-              <a
-                href={siteContact.whatsapp}
-                className="button button-accent"
-                target="_blank"
-                rel="noreferrer"
-              >
-                {t('contactPage.startWhatsapp')}
-              </a>
-            </article>
-          </div>
-        </div>
-      </section>
-
-      <section className="section-space section-alt">
-        <div className="container contact-page-grid">
-          <div className="contact-details-panel">
-            <SectionIntro
-              eyebrow={t('contactPage.formEyebrow')}
-              title={t('contactPage.formTitle')}
-              text={t('contactPage.formText')}
-              ctaLabel={t('contactPage.readInvolved')}
-              ctaTo="/get-involved"
-            />
-
-            <form className="event-form-panel contact-form-panel" onSubmit={handleSubmit}>
-              <label className="form-honeypot">
-                Website
-                <input type="text" name="website" tabIndex="-1" autoComplete="off" />
-              </label>
-              <input
-                type="text"
-                name="name"
-                placeholder={t('getInvolvedPage.fullName')}
-                aria-label={t('getInvolvedPage.fullName')}
-                autoComplete="name"
-                maxLength="100"
-                required
-              />
-              <input
-                type="email"
-                name="email"
-                placeholder={t('getInvolvedPage.email')}
-                aria-label={t('getInvolvedPage.email')}
-                autoComplete="email"
-                maxLength="120"
-                required
-              />
-              <input
-                type="tel"
-                name="phone"
-                placeholder={t('getInvolvedPage.phone')}
-                aria-label={t('getInvolvedPage.phone')}
-                autoComplete="tel"
-                inputMode="tel"
-                maxLength="30"
-              />
-              <input
-                type="text"
-                name="subject"
-                placeholder={t('contactPage.subject')}
-                aria-label={t('contactPage.subject')}
-                maxLength="140"
-              />
-              <textarea
-                name="message"
-                rows="6"
-                placeholder={t('contactPage.yourMessage')}
-                aria-label={t('contactPage.yourMessage')}
-                maxLength="1000"
-                required
-              />
-              <button type="submit" className="button button-accent">
-                {t('contactPage.sendMessage')}
-              </button>
-              <p className="micro-note">{t('contactPage.formNote')}</p>
-            </form>
-          </div>
-
-          <div className="contact-aside-stack">
+          <div className="contact-card-grid">
             <article className="info-panel">
-              <p className="program-tag">{t('contactPage.officeInfoTag')}</p>
-              <h2>{t('contactPage.officeInfoTitle')}</h2>
+              <p className="program-tag">Office</p>
+              <h3>Physical Address</h3>
               <p>{siteContact.address}</p>
+            </article>
+            <article className="info-panel">
+              <p className="program-tag">Phone and Email</p>
+              <h3>Direct Contact</h3>
               <p>
                 Phone: <a href={`tel:${siteContact.phone.replace(/\s+/g, '')}`}>{siteContact.phone}</a>
               </p>
@@ -185,40 +85,63 @@ function ContactPage() {
                 Email: <a href={`mailto:${siteContact.email}`}>{siteContact.email}</a>
               </p>
             </article>
-
             <article className="info-panel">
-              <p className="program-tag">{t('contactPage.responseTag')}</p>
-              <h2>{t('contactPage.responseTitle')}</h2>
-              <p>{t('contactPage.responseText')}</p>
-              <a
-                href={siteContact.whatsapp}
-                className="button button-ghost"
-                target="_blank"
-                rel="noreferrer"
-              >
-                {t('contactPage.chatWhatsapp')}
+              <p className="program-tag">WhatsApp</p>
+              <h3>Instant Message</h3>
+              <p>Use WhatsApp for quick enquiries and follow-up conversations.</p>
+              <a href={siteContact.whatsapp} className="button button-accent" target="_blank" rel="noreferrer">
+                Chat on WhatsApp
               </a>
             </article>
           </div>
         </div>
       </section>
 
-      <section className="section-space">
-        <div className="container">
-          <SectionIntro
-            eyebrow={t('contactPage.findUsEyebrow')}
-            title={t('contactPage.findUsTitle')}
-            text={t('contactPage.findUsText')}
-          />
-          <div className="map-panel contact-map-panel">
-            <iframe
-              src={siteContact.mapEmbed}
-              title={t('contactPage.mapTitle')}
-              loading="lazy"
-              referrerPolicy="no-referrer"
-              sandbox="allow-scripts allow-same-origin allow-popups"
-            />
+      <section className="section-space section-alt">
+        <div className="container contact-grid">
+          <div className="form-panel">
+            <p className="program-tag">Send a Message</p>
+            <h2>Contact form</h2>
+            <form onSubmit={handleSubmit} className="event-form-panel">
+              <label className="visually-hidden">
+                Leave this field empty
+                <input type="text" name="website" tabIndex="-1" autoComplete="off" />
+              </label>
+              <label>
+                Full name
+                <input name="name" type="text" autoComplete="name" required aria-label="Full name" />
+              </label>
+              <label>
+                Email address
+                <input name="email" type="email" autoComplete="email" required aria-label="Email address" />
+              </label>
+              <label>
+                Phone number
+                <input name="phone" type="tel" autoComplete="tel" aria-label="Phone number" />
+              </label>
+              <label>
+                Subject
+                <input name="subject" type="text" required aria-label="Subject" />
+              </label>
+              <label>
+                Message
+                <textarea name="message" rows="5" required aria-label="How can we help?" />
+              </label>
+              <button type="submit" className="button button-accent">
+                Send Message
+              </button>
+              <p className="micro-note">For urgent enquiries, use the email or WhatsApp contact above.</p>
+            </form>
           </div>
+
+          <aside className="map-panel" aria-label="Office location map">
+            <iframe
+              title="Kevin Nambam Ninmol Foundation office location"
+              src={siteContact.mapEmbed}
+              loading="lazy"
+              referrerPolicy="no-referrer-when-downgrade"
+            />
+          </aside>
         </div>
       </section>
 

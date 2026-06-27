@@ -251,7 +251,6 @@ function FloatingActions() {
               type="text"
               value={query}
               onChange={(event) => setQuery(event.target.value)}
-              placeholder={t('floating.assistantInput')}
               aria-label={t('floating.assistantInputLabel')}
               maxLength="220"
               autoComplete="off"

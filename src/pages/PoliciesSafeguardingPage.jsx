@@ -8,29 +8,28 @@ import { policySections } from '../siteData';
 function PoliciesSafeguardingPage() {
   const { t } = useLanguage();
   usePageTitle(t('policiesPage.title'));
-  const localizedPolicies = t('content.policySections');
 
   return (
     <main>
       <PageHero
-        eyebrow={t('policiesPage.heroEyebrow')}
-        title={t('policiesPage.heroTitle')}
-        subtitle={t('policiesPage.heroSubtitle')}
-        image="/media/founder-action.jpeg"
-        imageAlt="Children and community members gathered with the foundation during an outreach visit"
+        eyebrow="Policies"
+        title="Policies and safeguarding."
+        subtitle="The foundation is committed to safe, ethical, and accountable service with children and communities."
+        image="/media/humanitarian-relief-supplies.jpeg"
+        imageAlt="Relief supplies arranged during a community outreach visit"
       />
 
       <section className="section-space">
         <div className="container">
           <SectionIntro
-            eyebrow={t('policiesPage.introEyebrow')}
-            title={t('policiesPage.introTitle')}
-            text={t('policiesPage.introText')}
+            eyebrow="Safeguarding"
+            title="Practical standards for responsible service."
+            text="These summaries help donors, partners, volunteers, and families understand the foundation's operating commitments."
             centered
           />
           <div className="values-grid">
-            {localizedPolicies.map((section) => (
-              <article key={section.title} className="value-card policy-card">
+            {policySections.map((section) => (
+              <article key={section.title} className="value-card">
                 <h3>{section.title}</h3>
                 <p>{section.summary}</p>
                 <ul className="program-bullet-list">

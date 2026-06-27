@@ -16,8 +16,8 @@ function ProgramsPage() {
         eyebrow={t('programsPage.heroEyebrow')}
         title={t('programsPage.heroTitle')}
         subtitle={t('programsPage.heroSubtitle')}
-        image="/media/youth-court-training-wide.jpeg"
-        imageAlt="Young basketball players receiving coaching on an outdoor court"
+        image="/media/boys-shooting-camp.jpeg"
+        imageAlt="Boys participating in a foundation shooting camp"
       />
 
       <section className="section-space">
