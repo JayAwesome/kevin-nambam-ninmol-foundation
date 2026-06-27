@@ -12,6 +12,21 @@ import {
   validatePublicForm,
 } from '../utils/formSecurity';
 
+const volunteerPathways = [
+  {
+    title: 'Mentor young people',
+    text: 'Share guidance, encouragement, and life skills with children and youth who need positive role models.',
+  },
+  {
+    title: 'Support sports clinics',
+    text: 'Assist with basketball sessions, registration, equipment, safety, and team activities during foundation programs.',
+  },
+  {
+    title: 'Serve communities',
+    text: 'Help with outreach visits, school engagement, humanitarian support, media, logistics, and follow-up communication.',
+  },
+];
+
 function GetInvolvedPage() {
   const { t } = useLanguage();
   usePageTitle(t('getInvolvedPage.title'));
@@ -72,14 +87,22 @@ function GetInvolvedPage() {
           <div>
             <SectionIntro
               eyebrow="Volunteer"
-              title="Tell us how you want to help."
-              text="Volunteers help the foundation show up consistently for young people through mentoring, basketball clinics, outreach support, event coordination, media, and community engagement."
+              title="Volunteer your time, skills, and heart."
+              text="Every program becomes stronger when committed people stand with the foundation. Whether you can mentor, coach, organize, document activities, or support outreach, your service helps young people feel seen, guided, and encouraged."
             />
             <div className="volunteer-note-card">
-              <h3>Your time can strengthen a child&apos;s confidence.</h3>
+              <h3>Your presence can strengthen a child&apos;s confidence.</h3>
               <p>
-                Tell us the skills, experience, or availability you would like to offer. The foundation team will review your interest and follow up with the best way to get involved.
+                Tell us the skills, experience, or availability you would like to offer. The foundation team will review your interest and connect you to a role that fits the work on the ground.
               </p>
+            </div>
+            <div className="volunteer-pathway-grid" aria-label="Ways to volunteer">
+              {volunteerPathways.map((item) => (
+                <article className="volunteer-pathway-card" key={item.title}>
+                  <h3>{item.title}</h3>
+                  <p>{item.text}</p>
+                </article>
+              ))}
             </div>
             <form
               id="volunteer-form"
