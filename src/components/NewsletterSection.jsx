@@ -1,16 +1,19 @@
 import { useState } from 'react';
 import { useLanguage } from '../context/LanguageContext';
+import RecaptchaField from './RecaptchaField';
 import { isValidEmail, sanitizeEmail, sanitizePlainText, validatePublicForm } from '../utils/formSecurity';
 
 function NewsletterSection() {
   const [email, setEmail] = useState('');
+  const [captchaToken, setCaptchaToken] = useState('');
   const [isSubscribed, setIsSubscribed] = useState(false);
   const [formStartedAt, setFormStartedAt] = useState(() => Date.now());
   const { t } = useLanguage();
 
-  const handleSubscribe = (event) => {
+  const handleSubscribe = async (event) => {
     event.preventDefault();
-    const formData = new FormData(event.currentTarget);
+    const form = event.currentTarget;
+    const formData = new FormData(form);
     const cleanEmail = sanitizeEmail(email);
     const validation = validatePublicForm({
       values: { email: cleanEmail },
@@ -29,11 +32,22 @@ function NewsletterSection() {
       return;
     }
 
+    if (!captchaToken) {
+      window.alert('Please complete the security verification before subscribing.');
+      return;
+    }
+
+    const responseField = form.elements.namedItem('g-recaptcha-response');
+    if (responseField) {
+      responseField.value = captchaToken;
+    }
+
     console.log('Newsletter subscription validated');
     setIsSubscribed(true);
     setEmail('');
+    setCaptchaToken('');
     setFormStartedAt(Date.now());
-    event.currentTarget.reset();
+    form.reset();
   };
 
   return (
@@ -60,6 +74,8 @@ function NewsletterSection() {
             maxLength="120"
             required
           />
+          <RecaptchaField action="newsletter_signup" onToken={setCaptchaToken} />
+          <input type="hidden" name="g-recaptcha-response" value={captchaToken} />
           <button type="submit" className="button button-accent">
             {t('newsletter.subscribe')}
           </button>

@@ -70,12 +70,12 @@ const foundationConnections = [
   {
     title: 'Girl child confidence',
     text:
-      'Girls shooting camp and cultural-value moments show why the foundation affirms girls with dignity, voice, and opportunity.',
+      "The girls shooting camp is to help the girl child develop offensive confidence on the court, This will help the girl child have confidence on court and off court and not to be afraid or see herself as a disadvantage. That is why the camp is a fear no fear camp.",
   },
   {
     title: 'Humanitarian assistance',
     text:
-      'Relief supplies and outreach visits show why compassion must become practical action for vulnerable families.',
+      'Humanitarian assistance is basically for idp victims displaced due to farmers harders classes in plateau state.',
   },
   {
     title: 'Community encouragement',

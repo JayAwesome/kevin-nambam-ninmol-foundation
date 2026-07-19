@@ -792,7 +792,7 @@ p {
 .stacked-copy p,
 .newsletter-layout p,
 .detail-copy {
-  color: var(--ink-soft);
+  color: var(--ink);
 }
 
 .section-intro-link {
@@ -1711,7 +1711,7 @@ p {
 }
 
 .volunteer-note-card p {
-  color: var(--ink-soft);
+  color: var(--ink);
 }
 
 .volunteer-pathway-grid {
@@ -1737,7 +1737,7 @@ p {
 }
 
 .volunteer-pathway-card p {
-  color: var(--ink-soft);
+  color: var(--ink);
   font-size: 0.94rem;
   line-height: 1.62;
 }
@@ -2813,6 +2813,115 @@ p {
   width: 1px;
   height: 1px;
   overflow: hidden;
+}
+
+.cookie-banner {
+  position: sticky;
+  bottom: 0;
+  z-index: 50;
+  padding: 1rem 0;
+  background: rgba(16, 36, 61, 0.96);
+  color: #f8fafc;
+  box-shadow: 0 -8px 36px rgba(15, 23, 42, 0.18);
+}
+
+.cookie-banner-content {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.cookie-banner-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
+
+.cookie-banner .button-ghost {
+  border-color: rgba(255, 255, 255, 0.4);
+  color: #f8fafc;
+}
+
+.legal-page {
+  max-width: 860px;
+}
+
+.legal-content {
+  display: grid;
+  gap: 1rem;
+  padding: 1.5rem;
+  border: 1px solid rgba(16, 36, 61, 0.08);
+  border-radius: 1rem;
+  background: var(--surface-soft);
+}
+
+.legal-content h2 {
+  margin-top: 0.5rem;
+}
+
+.footer-legal-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin-top: 0.75rem;
+}
+
+.footer-legal-links a {
+  color: rgba(255, 255, 255, 0.86);
+}
+
+.donation-warning {
+  margin-bottom: 1.5rem;
+  padding: 1rem 1.25rem;
+  border-left: 4px solid var(--gold);
+  border-radius: 0.75rem;
+  background: rgba(224, 185, 104, 0.16);
+  color: var(--blue-950);
+}
+
+.cookie-placeholder {
+  display: grid;
+  place-items: center;
+  min-height: 240px;
+  border: 1px dashed rgba(16, 36, 61, 0.2);
+  border-radius: 1rem;
+  padding: 1.5rem;
+  text-align: center;
+  color: var(--blue-700);
+  background: rgba(248, 250, 252, 0.8);
+}
+
+.metric-source {
+  margin: 0.25rem 0 0;
+  font-size: 0.85rem;
+  color: var(--blue-700);
+}
+
+.recaptcha-wrapper {
+  display: flex;
+  justify-content: flex-start;
+  margin: 0.5rem 0 1rem;
+}
+
+.testimonial-card-no-image {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  gap: 0.7rem;
+}
+
+.testimonial-card-no-image p {
+  margin: 0;
+}
+
+.testimonial-location {
+  display: block;
+  margin-top: 0.25rem;
+  font-size: 0.92rem;
+  color: var(--blue-700);
 }
 
 .contact-map-panel iframe {

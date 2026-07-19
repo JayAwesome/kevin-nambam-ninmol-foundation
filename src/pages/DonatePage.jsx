@@ -86,6 +86,10 @@ function DonatePage() {
             <p>All donations are processed through Guaranty Trust Bank (GTBank).</p>
           </header>
 
+          <div className="donation-warning" role="alert">
+            <strong>Security note:</strong> Please verify every account detail on this page before sending funds. The foundation never requests donations through WhatsApp, SMS, or unofficial channels. Registration number: pending verification with the foundation’s administrator.
+          </div>
+
           {showToast ? (
             <p className="donation-copy-toast" role="status" aria-live="polite">
               Copied successfully

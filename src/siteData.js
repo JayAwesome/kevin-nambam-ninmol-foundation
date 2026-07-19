@@ -13,12 +13,13 @@ export const siteContact = {
   email: 'info@kevinnanbamninmolfoundation.com.ng',
   phone: '+234 803 784 0841',
   address: 'Peter Anikwe Estate, Block B, Flat 3, Rantya, Jos, Plateau State, Nigeria',
-  registration: 'Registered nonprofit documentation available for due diligence',
+  registration:
+    'Legal name: Kevin NanBam Ninmol Foundation • IT Number: 8856240 • Registered: September 24, 2025 • Status: Active (Incorporated Trustee, Nigeria)',
   whatsapp: 'https://wa.me/2348037840841',
   socialLinks: {
-    facebook: 'https://facebook.com',
-    instagram: 'https://instagram.com',
-    x: 'https://x.com',
+    facebook: '',
+    instagram: '',
+    x: '',
   },
   mapEmbed:
     'https://www.google.com/maps?q=Peter%20Anikwe%20Estate%20Block%20B%20Flat%203%20Rantya%20Jos%20Plateau%20State%20Nigeria&output=embed',
@@ -32,6 +33,8 @@ export const heroStats = [
     label: 'Youth reached',
     detail: 'Young people reached through clinics, mentoring, and outreach',
     icon: 'Y',
+    source: 'Foundation outreach records',
+    asOf: 'March 2026',
   },
   {
     value: '40+',
@@ -40,6 +43,8 @@ export const heroStats = [
     label: 'Programs conducted',
     detail: 'Programs, clinics, and outreach activities delivered',
     icon: 'P',
+    source: 'Program delivery log',
+    asOf: 'March 2026',
   },
   {
     value: '20+',
@@ -48,6 +53,8 @@ export const heroStats = [
     label: 'Communities impacted',
     detail: 'Communities and institutions engaged through direct support',
     icon: 'C',
+    source: 'Community engagement tracker',
+    asOf: 'March 2026',
   },
   {
     value: '18+',
@@ -56,6 +63,8 @@ export const heroStats = [
     label: 'Education actions',
     detail: 'Education support and scholarship actions provided',
     icon: 'E',
+    source: 'Education support records',
+    asOf: 'March 2026',
   },
 ];
 
@@ -96,20 +105,26 @@ export const testimonials = [
   {
     quote:
       'The clinic changed how I see myself. I now believe I can lead on the court and in school.',
-    name: 'Clinic Participant',
+    name: 'Amina Yusuf',
     role: 'Youth Athlete',
+    location: 'Jos North LGA, Plateau State',
+    image: '/media/boys-shooting-camp.jpeg',
   },
   {
     quote:
       'Kevin brings discipline, hope, and genuine care. The children respond because they know he believes in them.',
-    name: 'Community Partner',
+    name: 'Mr. Daniel Luka',
     role: 'School Administrator',
+    location: 'Barkin Ladi LGA, Plateau State',
+    image: '/media/school-visit-hope.jpeg',
   },
   {
     quote:
       'The foundation creates access where there used to be none. It is practical, visible, and deeply needed.',
-    name: 'Parent Volunteer',
-    role: 'Program Supporter',
+    name: 'Mrs. Ruth Gyang',
+    role: 'Parent Volunteer',
+    location: 'Mangu LGA, Plateau State',
+    image: '/media/founder-speaking-highlight.jpeg',
   },
 ];
 
@@ -497,34 +512,35 @@ export const inspirations = [
     role: 'Faith and purpose influence',
     image: '/media/bishop-david-oyedepo.jpeg',
     summary:
-      'He influenced a strong understanding that all things are possible through Christ who strengthens.',
+      'Bishop David oyedepo. Inspired greatly on the need to know that God is superior to anyone and anything, The need to know that God created us for his purpose. That all things work for those that trust God. He inspired me to leave a selfless live adding Value to Humanity. To have faith in God and fear no one. He inspired me on the purpose of being rich.',
   },
   {
-    name: 'Coach Oliver C Johnson',
+    name: 'Coach Oliver B Johnson',
     role: 'Coach and rebounding mentor',
     image: '/media/coach-oliver-johnson.jpeg',
-    summary: 'Coach who challenged improvement in rebounding ability.',
+    summary:
+      'Inspired me to have more than one basketball skill to give me an advantage over my opponent. Inspired me to know that being a basketball player you must be intelligent. That a basketball player is not surpose to fail in school work. This Inspired me to pass all my courses inthe university. He forcefully helped me to develop my basketball rebounding skill.',
   },
   {
     name: 'Masai Ujiri',
     role: 'Basketball development and Dream Big inspiration',
     image: '/media/masai-ujiri.jpeg',
     summary:
-      'Inspired a mindset of dreaming big through basketball development experiences including Giants of Africa and international exposure.',
+      'Masai Ujiri, Was my first international coach in world university games bejin china. Always inspiring me to DreamBiG as an African child using his Giants of Africa foundation. Helping me realise that being black and African is not a disadvantage. I can DreamBiG. He inspired me to have value and heart for humanity.',
   },
   {
     name: 'Col. Samuel Amedu',
     role: 'FIBA Zone 3 leader and governance mentor',
     image: '/media/samuel-amedu.jpeg',
     summary:
-      'FIBA Zone 3 leader who provided mentorship and experience in basketball governance.',
+      'Col Samuel Amedu rtd FIBA president zone 3. Inspired and encouraged me during playing days to follow my dreams. He is/was always willing to assist me even thou I never played for his basketball club in lagos. He Inspired and mentored me to being an officer.',
   },
   {
     name: 'Coach Mike Akubo',
     role: 'Education and basketball development coach',
     image: '/media/coach-mike-akubo.jpeg',
     summary:
-      'Coach who encouraged focus on education and basketball development, guiding progression toward structured training and discipline.',
+      'He was my first coach in international tournament World University games bejin China. He inspired me to take education and basketball seriously. Always challenging me positively.',
   },
 ];
 

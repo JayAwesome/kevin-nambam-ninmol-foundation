@@ -1,6 +1,7 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import PageHero from '../components/PageHero';
 import NewsletterSection from '../components/NewsletterSection';
+import RecaptchaField from '../components/RecaptchaField';
 import SectionIntro from '../components/SectionIntro';
 import { useLanguage } from '../context/LanguageContext';
 import usePageTitle from '../hooks/usePageTitle';
@@ -16,8 +17,32 @@ function ContactPage() {
   const { t } = useLanguage();
   usePageTitle(t('contactPage.title'));
   const [formStartedAt, setFormStartedAt] = useState(() => Date.now());
+  const [captchaToken, setCaptchaToken] = useState('');
+  const [cookieConsent, setCookieConsent] = useState(() => {
+    if (typeof window === 'undefined') {
+      return 'pending';
+    }
 
-  const handleSubmit = (event) => {
+    return window.localStorage.getItem('knnf-cookie-consent') || 'pending';
+  });
+
+  useEffect(() => {
+    if (typeof window === 'undefined') {
+      return undefined;
+    }
+
+    const updateConsent = () => {
+      setCookieConsent(window.localStorage.getItem('knnf-cookie-consent') || 'pending');
+    };
+
+    updateConsent();
+    window.addEventListener('cookie-consent-updated', updateConsent);
+    return () => {
+      window.removeEventListener('cookie-consent-updated', updateConsent);
+    };
+  }, []);
+
+  const handleSubmit = async (event) => {
     event.preventDefault();
     const form = event.currentTarget;
     const formData = new FormData(form);
@@ -46,9 +71,20 @@ function ContactPage() {
       return;
     }
 
+    if (!captchaToken) {
+      window.alert('Please complete the security verification before sending your message.');
+      return;
+    }
+
+    const responseField = form.elements.namedItem('g-recaptcha-response');
+    if (responseField) {
+      responseField.value = captchaToken;
+    }
+
     console.log('Contact form submission prepared', values);
     window.alert('Thank you. Please send your message to the foundation email while online form delivery is being connected.');
     form.reset();
+    setCaptchaToken('');
     setFormStartedAt(Date.now());
   };
 
@@ -103,7 +139,7 @@ function ContactPage() {
             <p className="program-tag">Send a Message</p>
             <h2>Contact form</h2>
             <form onSubmit={handleSubmit} className="event-form-panel">
-              <label className="visually-hidden">
+              <label className="form-honeypot">
                 Leave this field empty
                 <input type="text" name="website" tabIndex="-1" autoComplete="off" />
               </label>
@@ -127,20 +163,29 @@ function ContactPage() {
                 Message
                 <textarea name="message" rows="5" required aria-label="How can we help?" />
               </label>
+              <RecaptchaField action="contact_form" onToken={setCaptchaToken} />
+              <input type="hidden" name="g-recaptcha-response" value={captchaToken} />
               <button type="submit" className="button button-accent">
                 Send Message
               </button>
+              <p className="micro-note">This form is protected by reCAPTCHA and our team will review all enquiries.</p>
               <p className="micro-note">For urgent enquiries, use the email or WhatsApp contact above.</p>
             </form>
           </div>
 
           <aside className="map-panel" aria-label="Office location map">
-            <iframe
-              title="Kevin Nambam Ninmol Foundation office location"
-              src={siteContact.mapEmbed}
-              loading="lazy"
-              referrerPolicy="no-referrer-when-downgrade"
-            />
+            {cookieConsent === 'accepted' ? (
+              <iframe
+                title="Kevin Nambam Ninmol Foundation office location"
+                src={siteContact.mapEmbed}
+                loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade"
+              />
+            ) : (
+              <div className="cookie-placeholder">
+                <p>Accept optional cookies to view the embedded map and location details.</p>
+              </div>
+            )}
           </aside>
         </div>
       </section>

@@ -202,10 +202,11 @@ function HomePage() {
           />
           <div className="testimonial-grid">
             {testimonials.map((item) => (
-              <article key={item.name} className="testimonial-card">
+              <article key={item.name} className="testimonial-card testimonial-card-no-image">
                 <p>"{item.quote}"</p>
                 <strong>{item.name}</strong>
                 <span>{item.role}</span>
+                {item.location ? <span className="testimonial-location">{item.location}</span> : null}
               </article>
             ))}
           </div>
@@ -243,7 +244,7 @@ function HomePage() {
           <div className="partners-grid">
             {partnerSupporters.map((partner) => (
               <article key={partner.name} className="partner-card">
-                <span className="partner-mark">{partner.mark}</span>
+                <span className="partner-mark" aria-hidden="true">✦</span>
                 <h3>{partner.name}</h3>
                 <p>{partner.description}</p>
               </article>

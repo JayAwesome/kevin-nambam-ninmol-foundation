@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import PageHero from '../components/PageHero';
+import RecaptchaField from '../components/RecaptchaField';
 import SectionIntro from '../components/SectionIntro';
 import { useLanguage } from '../context/LanguageContext';
 import usePageTitle from '../hooks/usePageTitle';
@@ -31,10 +32,55 @@ function GetInvolvedPage() {
   const { t } = useLanguage();
   usePageTitle(t('getInvolvedPage.title'));
   const [formStartedAt, setFormStartedAt] = useState(() => Date.now());
+  const [captchaToken, setCaptchaToken] = useState('');
 
   const showStatusMessage = (message) => {
     console.log(message);
     window.alert(message);
+  };
+
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    const form = event.currentTarget;
+    const formData = new FormData(form);
+    const payload = {
+      name: sanitizePlainText(formData.get('name'), 100),
+      email: sanitizeEmail(formData.get('email')),
+      phone: sanitizePlainText(formData.get('phone'), 30),
+      interest: sanitizePlainText(formData.get('interest'), 140),
+      message: sanitizePlainText(formData.get('message'), 1000),
+    };
+    const validation = validatePublicForm({
+      values: payload,
+      honeypot: sanitizePlainText(formData.get('website'), 100),
+      startedAt: formStartedAt,
+      formKey: 'volunteer',
+    });
+
+    if (!validation.ok) {
+      window.alert(validation.reason);
+      return;
+    }
+
+    if (!payload.name || !isValidEmail(payload.email) || !payload.message) {
+      window.alert('Please enter your name, a valid email address, and how you would like to help.');
+      return;
+    }
+
+    if (!captchaToken) {
+      window.alert('Please complete the security verification before submitting your volunteer interest.');
+      return;
+    }
+
+    const responseField = form.elements.namedItem('g-recaptcha-response');
+    if (responseField) {
+      responseField.value = captchaToken;
+    }
+
+    form.reset();
+    setCaptchaToken('');
+    setFormStartedAt(Date.now());
+    showStatusMessage('Thank you. Please contact the foundation team to complete your volunteer interest.');
   };
 
   return (
@@ -90,6 +136,9 @@ function GetInvolvedPage() {
               title="Volunteer your time, skills, and heart."
               text="Every program becomes stronger when committed people stand with the foundation. Whether you can mentor, coach, organize, document activities, or support outreach, your service helps young people feel seen, guided, and encouraged."
             />
+            <p className="registration-info" style={{ marginTop: '0.6rem', color: 'var(--muted)', fontSize: '0.95rem' }}>
+              Registered: Kevin NanBam Ninmol Foundation — IT No. 8856240 — Registered 24 September 2025 — Status: Active (Incorporated Trustee, Nigeria)
+            </p>
             <div className="volunteer-note-card">
               <h3>Your presence can strengthen a child&apos;s confidence.</h3>
               <p>
@@ -107,38 +156,7 @@ function GetInvolvedPage() {
             <form
               id="volunteer-form"
               className="event-form-panel contact-form-panel"
-              onSubmit={(event) => {
-                event.preventDefault();
-                const form = event.currentTarget;
-                const formData = new FormData(form);
-                const payload = {
-                  name: sanitizePlainText(formData.get('name'), 100),
-                  email: sanitizeEmail(formData.get('email')),
-                  phone: sanitizePlainText(formData.get('phone'), 30),
-                  interest: sanitizePlainText(formData.get('interest'), 140),
-                  message: sanitizePlainText(formData.get('message'), 1000),
-                };
-                const validation = validatePublicForm({
-                  values: payload,
-                  honeypot: sanitizePlainText(formData.get('website'), 100),
-                  startedAt: formStartedAt,
-                  formKey: 'volunteer',
-                });
-
-                if (!validation.ok) {
-                  window.alert(validation.reason);
-                  return;
-                }
-
-                if (!payload.name || !isValidEmail(payload.email) || !payload.message) {
-                  window.alert('Please enter your name, a valid email address, and how you would like to help.');
-                  return;
-                }
-
-                form.reset();
-                setFormStartedAt(Date.now());
-                showStatusMessage('Thank you. Please contact the foundation team to complete your volunteer interest.');
-              }}
+              onSubmit={handleSubmit}
             >
               <label className="form-honeypot">
                 Website
@@ -191,6 +209,8 @@ function GetInvolvedPage() {
                   required
                 />
               </label>
+              <RecaptchaField action="volunteer_form" onToken={setCaptchaToken} />
+              <input type="hidden" name="g-recaptcha-response" value={captchaToken} />
               <button type="submit" className="button button-accent">
                 Submit Volunteer Interest
               </button>

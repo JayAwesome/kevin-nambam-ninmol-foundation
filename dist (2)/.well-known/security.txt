@@ -1,0 +1,4 @@
+Contact: mailto:info@kevinnanbamninmolfoundation.com.ng
+Preferred-Languages: en
+Canonical: https://kevinnanbamninmolfoundation.com.ng/.well-known/security.txt
+Policy: https://kevinnanbamninmolfoundation.com.ng/contact
