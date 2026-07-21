@@ -7,7 +7,6 @@ import usePageTitle from '../hooks/usePageTitle';
 import {
   donorProgramCategories,
   heroStats,
-  heroVideo,
   mediaVideos,
   partnerSupporters,
   programs,
@@ -41,27 +40,11 @@ function HomePage() {
           </div>
 
           <div className="home-hero-visual">
-            <video
-              className="home-hero-video"
-              autoPlay
-              muted
-              loop
-              playsInline
-              preload="metadata"
-              poster={heroVideo.poster}
-              aria-label={heroVideo.title}
-            >
-              <source src={heroVideo.src} type="video/mp4" />
-            </video>
-            <ResponsiveImage
-              src={heroVideo.poster}
-              alt="Boys participating in a foundation basketball development activity"
-              pictureClassName="home-hero-poster"
+            <img
+              src="/media/homepage-cover.jpg"
+              alt="Young people in a foundation basketball development activity"
               className="home-hero-poster-image"
-              widths={[640, 960, 1280]}
-              sizes="(max-width: 1080px) 100vw, 48vw"
               loading="eager"
-              fetchPriority="high"
             />
             <div className="home-hero-badge">
               <strong>Sports. Education. Opportunity.</strong>
